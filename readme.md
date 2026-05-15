@@ -14,9 +14,10 @@ Alarkius is active on Reddit, YouTube, Discord, and also has his own LinkedIn </
 - [AlarkiusEJ's LinkedIn](https://www.linkedin.com/in/alarkiusej/)
 - [AlarkiusEJ's Music Channels](https://www.youtube.com/@AlarkiusJay)
 - [The Hibrythian Saga Music Channel](https://www.youtube.com/@thehibrythiansaga)
+  
 ---
-## Current Apps in the Making
 
+## Current Apps in the Making
 All Apps here will have the Apache 3.0 License
 
 ### Quillosofi - An All-in-One Writing App Free of Distractions
