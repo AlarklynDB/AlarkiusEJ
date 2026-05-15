@@ -1,6 +1,6 @@
 ## TheAlarklynZone
 #### Important README Files Alarkius' Works. 
-Half of the Projects here are for AlarkiusEJ's Worldbulding Content, which is an automatic copyright created upon creation. All Woorldbuilding Content here will have the `All Rights Reserved` tag or label so no content will be stolen. 
+Half of the Projects here are for AlarkiusEJ's Worldbulding Content, which is an automatic copyright created upon creation. All Worldbuilding Content here will have the `All Rights Reserved` tag or label so no content will be stolen. 
 All Worldbuilding Content for:
 - The Hibrythian Saga
 - AlarkiusEJ's Portfolio
@@ -13,7 +13,7 @@ Alarkius is active on Reddit, YouTube, Discord, and also has his own LinkedIn </
 ### Author Socials since this Repository can't carry more than 5:
 - [AlarkiusEJ's LinkedIn](https://www.linkedin.com/in/alarkiusej/)
 - [AlarkiusEJ's Music Channels](https://www.youtube.com/@AlarkiusJay)
-- [The Hibrythian Saga Music Channel](https://www.youtube.com/@AlarkiusJay)
+- [The Hibrythian Saga Music Channel](https://www.youtube.com/@thehibrythiansaga)
 ---
 ## Current Apps in the Making
 ### Quillsofi - An All-in-One Writing App Free of Distractions
@@ -22,8 +22,8 @@ Alarkius is active on Reddit, YouTube, Discord, and also has his own LinkedIn </
 ### MultiRP - A Rich Discord Presence Customizer
 <p> Inspired by [CustomRP](https://www.customrp.xyz) — reimagined with profile tabs, system tray + auto-start, and drop-in compatibility with your existing CustomRP .crp presets. Switch between presences with a single click. No accounts, no telemetry, fully local. </p>
 
-### Quilver - A Lightweight Systen Tray Clipboard App (Upcoming)
+### Quilvar - A Lightweight System Tray Clipboard App (Upcoming)
 <p> Quilvar is a lightweight cross-platform clipboard manager for Windows, macOS, and Linux. It lives in the system tray/menu bar, enhances the native clipboard with persistent local history, and lets users recover, search, pin, organize, and re-paste copied text. Core features include Quick Draw via `Shift + Alt + V`, 50 default pinned clips, Quivers for collections, dark mode, right-click menus, resizable app window, and privacy-focused local storage. Future modules include Quilvault for encrypted/private clips, Quilvert for text cleanup/conversion, and Quivergraph for advanced searchable history.</p>
 
-### Varmojii - A Lightweight Systen Tray Emoji and Emotes App (Upcoming)
+### Varmojii - A Lightweight System Tray Emoji and Emotes App (Upcoming)
 <p> A system-wide emoji & symbol picker for Windows, Mac, and Linux — built with Tauri, dark-mode-first, local-only, no telemetry. You can find all kaomojis, emotes, stickers and more through a simple click. </p>
