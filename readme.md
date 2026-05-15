@@ -15,6 +15,8 @@ Alarkius is active on Reddit, YouTube, Discord, and also has his own LinkedIn </
 - [AlarkiusEJ's Music Channels](https://www.youtube.com/@AlarkiusJay)
 - [The Hibrythian Saga Music Channel](https://www.youtube.com/@thehibrythiansaga)
   
-This Repository is JUST for The Hibrythian Saga and The Naiseikai Universe
+This Repository is JUST for The Hibrythian Saga The Naiseikai Universe, and AlarkiusEJ's Author Website
 
+In attempt to steal or copy Alarkius' Worldbuilding Works will be tracked and maybe potentially be erased from YOUR existence by Alarkius himself. 
+No plagarizing! Or I'll send the Deathlichzcen Aliens to your place! 
 
