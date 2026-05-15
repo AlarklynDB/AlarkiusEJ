@@ -26,8 +26,8 @@ Inspired by CustomRP (https://www.customrp.xyz) — reimagined with profile tabs
 
 ### Quilvar - A Lightweight System Tray Clipboard App (Upcoming)
 
-Quilvar is a lightweight cross-platform clipboard manager for Windows, macOS, and Linux. It lives in the system tray/menu bar, enhances the native clipboard with persistent local history, and lets users recover, search, pin, organize, and re-paste copied text. Core features include Quick Draw via **Shift + Alt + V**, 50 default pinned clips, Quivers for collections, dark mode, right-click menus, resizable app window, and privacy-focused local storage. Future modules include Quilvault for encrypted/private clips, Quilvert for text cleanup/conversion, and Quivergraph for advanced searchable history.
+Quilvar is a lightweight cross-platform clipboard manager for Windows, macOS, and Linux. It lives in the system tray/menu bar, enhances the native clipboard with persistent local history, and lets users recover, search, pin, organize, and re-paste copied text. Core features include Quick Draw via   Shift + Alt + V  , 50 default pinned clips, Quivers for collections, dark mode, right-click menus, resizable app window, and privacy-focused local storage. Future modules include Quilvault for encrypted/private clips, Quilvert for text cleanup/conversion, and Quivergraph for advanced searchable history.
 
 ### Varmojii - A Lightweight System Tray Emoji and Emotes App (Upcoming)
 
-<A system-wide emoji & symbol picker for Windows, Mac, and Linux — built with Tauri, dark-mode-first, local-only, no telemetry. You can find all kaomojis, emotes, stickers and more through a simple click.
+A system-wide emoji & symbol picker for Windows, Mac, and Linux — built with Tauri, dark-mode-first, local-only, no telemetry. You can find all kaomojis, emotes, stickers and more through a simple click.
