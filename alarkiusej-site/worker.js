@@ -1,7 +1,7 @@
 // ============================================================
-// alaria-aurelia — Author Site Worker
-// Handles: alarkiusej.com (primary)
-// Schema + favicon + early theme injection only — no Notion proxying
+// alaria-aurelia — Author Schema Worker
+// Domain: alarkiusej.com
+// Injects structured data (JSON-LD) + favicon into HTML responses
 // ============================================================
 
 const AUTHOR_ID       = "https://www.alarkiusej.com/#author";
@@ -15,7 +15,7 @@ const NAISEIKAI_SITE_ID   = "https://www.naiseikaiuniverse.com/#website";
 const NAISEIKAI_SERIES_ID = "https://www.naiseikaiuniverse.com/#series";
 
 // ------------------------------------------------------------
-// Nodes
+// Shared Nodes
 // ------------------------------------------------------------
 
 const PERSON_NODE = {
@@ -162,59 +162,8 @@ function escapeScriptJson(value) {
 }
 
 // ------------------------------------------------------------
-// Early theme — prevents flash of white/unstyled content
-// ------------------------------------------------------------
-
-const EARLY_THEME_FRAGMENT = `
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="color-scheme" content="dark light">
-<meta name="theme-color" content="#f5f5f5" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#191919" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#191919">
-<style id="aej-early-theme">
-  :root {
-    color-scheme: dark light;
-    background-color: #191919;
-    color: #f5f5f5;
-  }
-  html { background-color: #191919; color-scheme: dark light; }
-  body { background-color: #191919; color: #f5f5f5; }
-  @media (prefers-color-scheme: light) {
-    :root { background-color: #f5f5f5; color: #111111; }
-    html, body { background-color: #f5f5f5; color: #111111; }
-  }
-</style>
-<script id="aej-theme-bootstrap">
-(() => {
-  const doc = document.documentElement;
-  const isDark = globalThis.matchMedia &&
-    globalThis.matchMedia("(prefers-color-scheme: dark)").matches;
-  const theme = isDark ? "dark" : "light";
-  const bg    = isDark ? "#191919" : "#f5f5f5";
-  const fg    = isDark ? "#f5f5f5" : "#111111";
-  doc.setAttribute("data-theme", theme);
-  doc.style.backgroundColor = bg;
-  doc.style.colorScheme = theme;
-  const syncBody = () => {
-    if (!document.body) return;
-    document.body.style.backgroundColor = bg;
-    document.body.style.color = fg;
-  };
-  syncBody();
-  document.addEventListener("DOMContentLoaded", syncBody, { once: true });
-})();
-</script>
-`;
-
-// ------------------------------------------------------------
 // HTMLRewriter handlers
 // ------------------------------------------------------------
-
-class HtmlHandler {
-  element(element) {
-    element.setAttribute("data-theme-ready", "true");
-  }
-}
 
 class HeadHandler {
   constructor(schema, faviconUrl) {
@@ -223,8 +172,6 @@ class HeadHandler {
   }
 
   element(element) {
-    element.prepend(EARLY_THEME_FRAGMENT, { html: true });
-
     if (this.faviconUrl) {
       element.prepend(`
         <link rel="icon" type="image/png" sizes="192x192" href="${this.faviconUrl}">
@@ -244,7 +191,7 @@ class HeadHandler {
 }
 
 // ------------------------------------------------------------
-// Fetch handler — no Notion proxying, just passthrough + inject
+// Fetch handler
 // ------------------------------------------------------------
 
 export default {
@@ -252,18 +199,15 @@ export default {
     const url = new URL(request.url);
     const hostname = url.hostname;
 
-    // Pass the request straight through — this worker only serves alarkiusej.com
     const response = await fetch(request, { redirect: "follow" });
     const contentType = response.headers.get("content-type") || "";
 
-    // Only transform HTML responses
     if (!contentType.includes("text/html")) return response;
 
     const schema  = getSchemaByHostname(hostname);
     const favicon = getFaviconByHostname(hostname);
 
     const transformed = new HTMLRewriter()
-      .on("html", new HtmlHandler())
       .on("head", new HeadHandler(schema, favicon))
       .transform(response);
 
