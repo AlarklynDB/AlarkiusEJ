@@ -1,4 +1,4 @@
-// Lore worker source reference for alaria-aurelia
+// Lore worker source reference for alaria-aurelia cloudflare worker, along with alarcia-aurelia
 // Purpose: Notion-hosted lore domains + schema injection + favicon + flash fix
 // Domains: thehibrythiansaga.com, naiseikaiuniverse.com
 // Stored in alarkiusej-site repo as a non-executing reference file
