@@ -152,7 +152,7 @@ export default function HibrythianSaga() {
                 </h3>
                 <p className="text-xs text-text-faint mb-4">Available at {book.where}</p>
                 <a
-                  href={book.href}
+                  href={book.href = "https://www.barnesandnoble.com/s/the-hibrythian-saga"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-xs text-rose hover:text-rose-light transition-colors"
