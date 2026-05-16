@@ -9,7 +9,7 @@ const themes = [
 
 const books = [
   {
-    title: 'Hibryds — The Hibrythian Genesis of Everything,
+    title: 'Hibryds — The Hibrythian Genesis of Everything',
     volume: 'Book 0 - The Genesis / Prequel',
     status: 'Available Now',
     where: 'Barnes & Noble',
