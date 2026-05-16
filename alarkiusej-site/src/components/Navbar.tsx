@@ -13,8 +13,13 @@ const navLinks = [
   },
   { label: 'Music', path: '/music' },
   { label: 'Tools & Apps', path: '/tools' },
-  { label: 'Manifesto', path: '/manifesto' },
-  { label: 'Policies', path: '/policies' },
+  {
+    label: 'Policies',
+    children: [
+      { label: 'Policies', path: '/policies' },
+      { label: 'Manifesto', path: '/manifesto' },
+    ],
+  },
   { label: 'Contact', path: '/contact' },
 ]
 
@@ -22,6 +27,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [wordsOpen, setWordsOpen] = useState(false)
+  const [policiesOpen, setPoliciesOpen] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -33,9 +39,26 @@ export default function Navbar() {
   useEffect(() => {
     setMobileOpen(false)
     setWordsOpen(false)
+    setPoliciesOpen(false)
   }, [location.pathname])
 
   const isActive = (path: string) => location.pathname === path
+
+  const handleDropdown = (label: string) => {
+    if (label === 'Worlds') {
+      setWordsOpen(!wordsOpen)
+      setPoliciesOpen(false)
+    } else if (label === 'Policies') {
+      setPoliciesOpen(!policiesOpen)
+      setWordsOpen(false)
+    }
+  }
+
+  const isDropdownOpen = (label: string) => {
+    if (label === 'Worlds') return wordsOpen
+    if (label === 'Policies') return policiesOpen
+    return false
+  }
 
   return (
     <header
@@ -58,16 +81,16 @@ export default function Navbar() {
             link.children ? (
               <li key={link.label} className="relative">
                 <button
-                  onClick={() => setWordsOpen(!wordsOpen)}
+                  onClick={() => handleDropdown(link.label)}
                   className={`px-3 py-2 text-sm rounded-md transition-all duration-200 flex items-center gap-1 ${
-                    wordsOpen
+                    isDropdownOpen(link.label)
                       ? 'text-rose-light bg-rose-bg'
                       : 'text-text-muted hover:text-text hover:bg-surface'
                   }`}
                 >
                   {link.label}
                   <svg
-                    className={`w-3 h-3 transition-transform duration-200 ${wordsOpen ? 'rotate-180' : ''}`}
+                    className={`w-3 h-3 transition-transform duration-200 ${isDropdownOpen(link.label) ? 'rotate-180' : ''}`}
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -75,7 +98,7 @@ export default function Navbar() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                {wordsOpen && (
+                {isDropdownOpen(link.label) && (
                   <div className="absolute top-full left-0 mt-1 w-52 bg-surface-raised border border-border rounded-lg shadow-xl shadow-black/30 overflow-hidden">
                     {link.children.map((child) => (
                       <Link
