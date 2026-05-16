@@ -4,6 +4,7 @@ const books = [
     volume: 'Vol 1 - Standard Edition',
     status: 'Available',
     genre: "Girls' Love · Supernatural · Drama",
+    where: 'Barnes & Noble',
     href: "https://www.barnesandnoble.com/w/the-quiet-crow-the-ninja-alarkius-elvya-jay/1149627312?ean=9798994097656",
   },
   {
@@ -11,6 +12,7 @@ const books = [
     volume: 'Vol 1 - Colored Edition (Character Profiles)',
     status: 'Available',
     genre: "Girls' Love · Supernatural · Drama",
+    where: 'Barnes & Noble',
     href: "https://www.barnesandnoble.com/w/the-quiet-crow-the-ninja-alarkius-elvya-jay/1149627312?ean=9798995278108",
   },
 ]
@@ -98,11 +100,11 @@ export default function NaiseikaiUniverse() {
           <h2 className="font-serif text-2xl font-semibold text-text mb-5">Universe Premise</h2>
           <blockquote className="border-l-2 border-teal pl-6 py-1 mb-6">
             <p className="text-text leading-relaxed italic font-serif text-lg">
-              “There are those who walk unseen among us — whispers in the wind, shadows in the
+              "There are those who walk unseen among us — whispers in the wind, shadows in the
               crowd. In the age of concrete cities and neon skies, beings of ancient bloodlines still
               move beneath the surface. They are shinobi, assassins, spies, demis, androids, youkai,
               elemental majin, and shifters — each gifted with strange powers that bend the rules of
-              our world.”
+              our world."
             </p>
           </blockquote>
           <p className="text-text-muted leading-relaxed mb-4">
@@ -112,7 +114,7 @@ export default function NaiseikaiUniverse() {
           </p>
           <div className="p-5 bg-surface-raised border border-border rounded-xl text-center">
             <p className="font-serif text-base text-text-muted italic">
-              “This is not the world you know.”
+              "This is not the world you know."
             </p>
             <p className="font-serif text-lg font-semibold text-text mt-1">
               This is The World of Introspection.
@@ -148,7 +150,7 @@ export default function NaiseikaiUniverse() {
           <div className="space-y-4">
             {books.map((book) => (
               <div
-                key={book.title}
+                key={book.volume}
                 className="p-6 bg-surface rounded-xl border border-border hover:border-border-light transition-colors group"
               >
                 <div className="flex items-center gap-2 mb-2">
@@ -167,7 +169,18 @@ export default function NaiseikaiUniverse() {
                 <h3 className="font-serif text-lg font-semibold text-text mb-1 group-hover:text-teal-light transition-colors">
                   {book.title}
                 </h3>
-                <p className="text-xs text-text-faint">{book.genre}</p>
+                <p className="text-xs text-text-faint mb-4">{book.genre}</p>
+                <a
+                  href={book.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-xs text-teal hover:text-teal-light transition-colors"
+                >
+                  Find on {book.where}
+                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
               </div>
             ))}
           </div>
