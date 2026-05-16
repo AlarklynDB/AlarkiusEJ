@@ -1,0 +1,7 @@
+name = "alarkiusej-authorsite"
+main = "dist/index.html"
+compatibility_date = "2026-05-16"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "./dist"
