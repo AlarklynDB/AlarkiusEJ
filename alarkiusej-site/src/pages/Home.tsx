@@ -40,14 +40,14 @@ export default function Home() {
   return (
     <div className="pt-16">
       {/* Hero */}
-      <section className="relative flex items-center">
+      <section className="relative flex items-start">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-rose/5 rounded-full blur-3xl" />
           <div className="absolute bottom-1/3 left-1/4 w-72 h-72 bg-teal/4 rounded-full blur-3xl" />
         </div>
 
-        <div className="max-w-5xl mx-auto px-6 pt-16 pb-6 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="max-w-5xl mx-auto px-6 pt-16 pb-2 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Text */}
             <div>
               <p className="text-rose text-sm font-medium tracking-widest uppercase mb-4">
@@ -129,7 +129,7 @@ export default function Home() {
       </section>
 
       {/* Divider between hero and portfolio */}
-      <div className="max-w-5xl mx-auto px-6 mt-6">
+      <div className="max-w-5xl mx-auto px-6 mt-2">
         <div className="section-divider" />
       </div>
 
