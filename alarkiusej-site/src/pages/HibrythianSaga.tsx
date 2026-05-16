@@ -4,6 +4,7 @@ const themes = [
   { icon: '🔥', label: 'Cosmic Conflict & Internal Battles' },
   { icon: '🌸', label: 'Friendship, Family, and Emotional Bonds' },
   { icon: '⏳', label: 'Myth, Memory, and Legacy' },
+  { icon: '🐉', label: 'Adventure, Fantasy, Action & More!' },
 ]
 
 const books = [
