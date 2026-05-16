@@ -6,9 +6,6 @@ const books = [
     genre: "Girls' Love · Supernatural · Drama",
     href: "https://www.barnesandnoble.com/w/the-quiet-crow-the-ninja-alarkius-elvya-jay/1149627312?ean=9798994097656",
   },
-]
-
-const books = [
   {
     title: 'The Quiet Crow & The Ninja',
     volume: 'Vol 1 - Colored Edition (Character Profiles)',
