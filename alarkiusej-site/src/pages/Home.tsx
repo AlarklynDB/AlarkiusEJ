@@ -46,7 +46,7 @@ export default function Home() {
           <div className="absolute bottom-1/3 left-1/4 w-72 h-72 bg-teal/4 rounded-full blur-3xl" />
         </div>
 
-        <div className="max-w-5xl mx-auto px-6 py-16 w-full">
+        <div className="max-w-5xl mx-auto px-6 pt-16 pb-6 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Text */}
             <div>
@@ -103,10 +103,10 @@ export default function Home() {
                       <div className="w-24 h-24 rounded-full border-2 border-rose/40 overflow-hidden mx-auto mb-4">
                         <img
                           src="/AlarkiusEJ.jpg"
-                             alt="Alarkius Elvya Jay"
-                              className="w-full h-full object-cover"
-                            />
-                        </div>
+                          alt="Alarkius Elvya Jay"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                       <p className="text-xs text-text-faint uppercase tracking-widest mb-1">Alarkius Elvya Jay</p>
                       <p className="text-text-muted text-sm">@alarkiusjay.bsky.social</p>
                       <p className="text-text-faint text-xs mt-1">He/Him · Lvl 25</p>
@@ -129,7 +129,7 @@ export default function Home() {
       </section>
 
       {/* Divider between hero and portfolio */}
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6 mt-6">
         <div className="section-divider" />
       </div>
 
