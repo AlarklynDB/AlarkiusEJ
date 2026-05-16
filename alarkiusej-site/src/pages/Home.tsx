@@ -100,9 +100,13 @@ export default function Home() {
                 <div className="relative">
                   <div className="w-full aspect-[3/4] rounded-2xl bg-surface-raised border border-border overflow-hidden flex items-center justify-center">
                     <div className="text-center p-8">
-                      <div className="w-24 h-24 rounded-full bg-rose-bg border-2 border-rose/40 flex items-center justify-center mx-auto mb-4">
-                        <span className="font-serif text-4xl font-bold text-rose">AJ</span>
-                      </div>
+                      <div className="w-24 h-24 rounded-full border-2 border-rose/40 overflow-hidden mx-auto mb-4">
+                        <img
+                          src="/AlarkiusEJ.jpg"
+                             alt="Alarkius Elvya Jay"
+                              className="w-full h-full object-cover"
+                            />
+                        </div>
                       <p className="text-xs text-text-faint uppercase tracking-widest mb-1">Alarkius Elvya Jay</p>
                       <p className="text-text-muted text-sm">@alarkiusjay.bsky.social</p>
                       <p className="text-text-faint text-xs mt-1">He/Him · Lvl 25</p>
