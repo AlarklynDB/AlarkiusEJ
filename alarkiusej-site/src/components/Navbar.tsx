@@ -12,6 +12,7 @@ const navLinks = [
     ],
   },
   { label: 'Music', path: '/music' },
+  { label: 'Tools & Apps', path: '/tools' },
   { label: 'Manifesto', path: '/manifesto' },
   { label: 'Policies', path: '/policies' },
   { label: 'Contact', path: '/contact' },

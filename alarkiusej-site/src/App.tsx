@@ -9,6 +9,7 @@ import Music from './pages/Music'
 import Manifesto from './pages/Manifesto'
 import Policies from './pages/Policies'
 import Contact from './pages/Contact'
+import Tools from './pages/Tools'
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
             <Route path="/manifesto" element={<Manifesto />} />
             <Route path="/policies" element={<Policies />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/tools" element={<Tools />} />
           </Routes>
         </main>
         <Footer />
