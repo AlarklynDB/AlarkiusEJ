@@ -34,7 +34,7 @@ const upcomingTools = [
     description:
       'A lightweight, cross-platform clipboard manager that lives in your system tray and acts like an default app too. Search your clip history, pin what matters, organize into Quivers, and summon it all with Shift+Alt+V. Never lose copied text again.',
     platform: 'Windows · macOS · Linux (Tauri)',
-    github: 'https://github.com/TheAlarklynZone/',
+    github: 'https://github.com/TheAlarklynZone/Quilvar',
     icon: '📋',
     tags: ['Clipboard Manager', 'Desktop', 'Coming Soon'],
   },
@@ -44,7 +44,7 @@ const upcomingTools = [
     description:
       'A system-wide emoji, symbol & glyph picker that replaces the broken Win+. experience. One global chord summons a fast overlay — search emoji, kaomoji, IPA symbols, math glyphs, and more — and inserts directly into any active app, zero clipboard roundtrip.',
     platform: 'Windows · macOS · Linux (Tauri)',
-    github: 'https://github.com/TheAlarklynZone/',
+    github: 'https://github.com/TheAlarklynZone/Varmojii',
     icon: '✨',
     tags: ['Emoji Picker', 'Desktop', 'Coming Soon'],
   },
