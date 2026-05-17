@@ -1,3 +1,5 @@
+<img width="1200" height="630" alt="alarkiusej-banner" src="https://github.com/user-attachments/assets/398a6759-9771-420c-bfa6-3b8de00b8bd3" />
+
 # Important README Files for Alarkius' Worldbuilding Sites & More
 Half of the Projects here are for AlarkiusEJ's Worldbulding Content, which is an automatic copyright created upon creation. All Worldbuilding Content here will have the `All Rights Reserved` tag or label so no content will be stolen. 
 
