@@ -196,19 +196,11 @@ class HeadHandler {
 // ------------------------------------------------------------
 
 export default {
-  async fetch(request) {
+  async fetch(request, env) {
     const url = new URL(request.url);
     const hostname = url.hostname;
 
-    let response = await fetch(request, { redirect: "follow" });
-
-    // SPA fallback: if 404 and path has no file extension, serve index.html
-    // This allows React Router to handle client-side routing on hard refresh
-    if (response.status === 404 && !url.pathname.includes('.')) {
-      const indexUrl = new URL('/', url);
-      response = await fetch(indexUrl.toString());
-    }
-
+    const response = await env.ASSETS.fetch(request);
     const contentType = response.headers.get("content-type") || "";
 
     if (!contentType.includes("text/html")) return response;
