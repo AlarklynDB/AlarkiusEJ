@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const skills = [
   'Traditional & Digital Drawing',
   'Musician / Composer',
-  'Writer',
+  'Author / Writer',
   'Graphic Designer',
   'Worldbuilding',
   'Creative Artist',
@@ -14,13 +14,13 @@ const projects = [
     title: 'The Hibrythian Saga',
     subtitle: 'Adventure Fantasy · Mythic Fiction · Emotional Epic',
     description:
-      'A mythic Adventure Fantasy epic chronicling the fate of a fractured world born from divine ambition and human emotion. 81 books planned.',
+      'A Mythic Adventure Fantasy Epic chronicling the fate of a fractured world born from divine ambition and human emotion. 81 books planned.',
     path: '/hibrythian-saga',
     accent: 'rose',
   },
   {
     title: 'The Naiseikai Universe',
-    subtitle: 'Original English Light Novel · Anime Universe',
+    subtitle: 'Original English Light Novel · Anime GL Universe',
     description:
       'The World of Introspection — where shinobi, demis, youkai, and elemental majin move beneath the surface of a hidden society.',
     path: '/naiseikai-universe',
@@ -66,9 +66,9 @@ export default function Home() {
               <div className="callout callout-rose mb-8">
                 <span className="text-lg flex-shrink-0">🎨</span>
                 <p className="text-sm text-text leading-relaxed">
-                  One fateful day in December of 2017, he stepped into the world of crafting stories
+                  One fateful day in December of 2017, Alarkius stepped into the world of crafting stories
                   and worldbuilding. What started as a spark of passion became{' '}
-                  <em>The Hibrythian Saga</em> — a world he calls his child, and it keeps growing.
+                  <em>The Hibrythian Saga</em> — a project he calls his first world--an ever expanding world!
                 </p>
               </div>
 
