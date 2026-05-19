@@ -21,19 +21,15 @@ export default defineConfig({
         icons: [
           {
             src: '/ELVYA-pwa.png',
-            sizes: '192x192',
-            type: 'image/png'
-          },
-          {
-            src: '/ELVYA-pwa.png',
-            sizes: '512x512',
-            type: 'image/png'
-          },
-          {
-            src: '/ELVYA-pwa.png',
-            sizes: '512x512',
+            sizes: 'any',
             type: 'image/png',
-            purpose: 'any maskable'
+            purpose: 'any'
+          },
+          {
+            src: '/ELVYA-pwa.png',
+            sizes: 'any',
+            type: 'image/png',
+            purpose: 'maskable'
           }
         ]
       },
