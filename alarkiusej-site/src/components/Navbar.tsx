@@ -63,9 +63,9 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
           <span className="font-serif text-xl font-semibold text-text group-hover:text-rose-light transition-colors duration-200">
-            AlarkiusEJ
+            AlarkiusEJ 
           </span>
-          <span className="text-text-faint text-sm hidden sm:inline">| Author Library</span>
+          <span className="text-text-faint text-sm hidden sm:inline"> |Author Library</span>
         </Link>
 
         {/* Desktop Nav */}
