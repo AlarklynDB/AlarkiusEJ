@@ -85,6 +85,7 @@ type AnyTitle = {
 
 const titleRoutes: Record<string, string> = {
   tqctn: '/titles/tqctn',
+  sorenaoane: '/titles/nevertheless',
 }
 
 function TitleCard({ t }: { t: AnyTitle }) {
