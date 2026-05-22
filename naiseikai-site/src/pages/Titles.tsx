@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const publishedTitles = [
   {
-    id: 'quiet-crow',
+    id: 'tqctn',
     title: 'The Quiet Crow and The Ninja!',
     vol: 'Vol 1',
     status: 'published',
@@ -85,31 +85,40 @@ type AnyTitle = {
 
 function TitleCard({ t }: { t: AnyTitle }) {
   return (
-    <div className={`border rounded-xl p-6 bg-surface transition-all duration-300 hover:bg-surface-raised ${colorBorder[t.color]}`}
+    <div className={`border rounded-xl overflow-hidden bg-surface transition-all duration-300 hover:bg-surface-raised ${colorBorder[t.color]}`}
       style={{ boxShadow: t.status === 'published' ? `0 0 20px rgba(0,229,255,0.08)` : undefined }}>
-      <div className="flex items-start justify-between gap-3 mb-3">
-        <div>
-          <p className={`font-serif text-xl font-semibold mb-0.5 ${colorLabel[t.color]}`}>{t.title}</p>
-          {t.subtitle && (
-            <p className="text-xs text-text-faint font-mono">{t.subtitle}</p>
-          )}
-          {t.vol && (
-            <p className="text-xs text-text-faint font-mono">{t.vol}</p>
-          )}
-        </div>
-        <span className={`text-[10px] px-2 py-0.5 rounded-full border font-mono flex-shrink-0 ${
-          t.status === 'published'
-            ? 'border-[rgba(0,255,204,0.5)] text-[#00ffcc] bg-[rgba(0,255,204,0.08)]'
-            : 'border-[rgba(150,150,220,0.4)] text-text-faint bg-[rgba(100,100,180,0.08)]'
-        }`}>
-          {t.status === 'published' ? '● Published' : '○ Upcoming'}
-        </span>
+
+      {/* IMAGE PLACEHOLDER — drop your cover art here */}
+      {/* TODO: replace div below with: <img src={`/titles/${t.id}.jpg`} alt={t.title} className="w-full h-full object-cover" /> */}
+      <div className="w-full aspect-[3/1] bg-[rgba(255,255,255,0.03)] border-b border-white/5 flex items-center justify-center">
+        <span className="text-[10px] font-mono text-text-faint opacity-50">/titles/{t.id}.jpg</span>
       </div>
-      <p className="text-sm text-text-muted leading-relaxed mb-4">{t.desc}</p>
-      <div className="flex flex-wrap gap-2">
-        {t.tags.map((tag) => (
-          <span key={tag} className={colorTag[t.color]}>{tag}</span>
-        ))}
+
+      <div className="p-6">
+        <div className="flex items-start justify-between gap-3 mb-3">
+          <div>
+            <p className={`font-serif text-xl font-semibold mb-0.5 ${colorLabel[t.color]}`}>{t.title}</p>
+            {t.subtitle && (
+              <p className="text-xs text-text-faint font-mono">{t.subtitle}</p>
+            )}
+            {t.vol && (
+              <p className="text-xs text-text-faint font-mono">{t.vol}</p>
+            )}
+          </div>
+          <span className={`text-[10px] px-2 py-0.5 rounded-full border font-mono flex-shrink-0 ${
+            t.status === 'published'
+              ? 'border-[rgba(0,255,204,0.5)] text-[#00ffcc] bg-[rgba(0,255,204,0.08)]'
+              : 'border-[rgba(150,150,220,0.4)] text-text-faint bg-[rgba(100,100,180,0.08)]'
+          }`}>
+            {t.status === 'published' ? '● Published' : '○ Upcoming'}
+          </span>
+        </div>
+        <p className="text-sm text-text-muted leading-relaxed mb-4">{t.desc}</p>
+        <div className="flex flex-wrap gap-2">
+          {t.tags.map((tag) => (
+            <span key={tag} className={colorTag[t.color]}>{tag}</span>
+          ))}
+        </div>
       </div>
     </div>
   )
