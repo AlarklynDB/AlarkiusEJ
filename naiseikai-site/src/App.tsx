@@ -10,6 +10,7 @@ import Titles from './pages/Titles'
 import Songbook from './pages/Songbook'
 import Author from './pages/Author'
 import Characters from './pages/Characters'
+import TQCTN from './pages/TQCTN'
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="/lore"          element={<Lore />} />
             <Route path="/worldbuilding" element={<Worldbuilding />} />
             <Route path="/titles"        element={<Titles />} />
+            <Route path="/titles/tqctn"  element={<TQCTN />} />
             <Route path="/characters"    element={<Characters />} />
             <Route path="/songbook"      element={<Songbook />} />
             <Route path="/author"        element={<Author />} />
