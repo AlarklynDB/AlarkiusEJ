@@ -1,0 +1,163 @@
+import { Link } from 'react-router-dom'
+
+const publishedTitles = [
+  {
+    id: 'quiet-crow',
+    title: 'The Quiet Crow and The Ninja!',
+    vol: 'Vol 1',
+    status: 'published',
+    color: 'cyan',
+    tags: ['Slice of Life', 'Action', 'Found Family'],
+    desc: 'The story that kicks off the Naiseikai Universe. A quiet crow and a ninja find their lives unexpectedly intertwined in Neo-Japan\'s hidden world.',
+  },
+]
+
+const upcomingTitles = [
+  {
+    id: 'sorenaoane',
+    title: "Nevertheless, You're Still My Sister!",
+    subtitle: 'SorenaoANE',
+    status: 'upcoming',
+    color: 'pink',
+    tags: ["Girls' Love", 'Slice of Life', 'Found Family'],
+    desc: 'A story about sisterhood, identity, and the complicated love between those bound by blood — or something stronger.',
+  },
+  {
+    id: 'dullahan',
+    title: 'Can This Dullahan Fall in Love?',
+    vol: 'Vol 1',
+    status: 'upcoming',
+    color: 'purple',
+    tags: ["Girls' Love", 'Romance', 'Supernatural'],
+    desc: 'A Dullahan navigates the world of emotions and connection in a society still learning what love means across species.',
+  },
+  {
+    id: 'lonely-android',
+    title: 'The Lonely Android and Her 2GFs',
+    vol: 'Vol 1',
+    status: 'upcoming',
+    color: 'cyan',
+    tags: ["Girls' Love", 'Sci-Fi', 'Romance', 'Slow Burn'],
+    desc: 'An android grapples with the meaning of love, loneliness, and belonging when two girls enter her life.',
+  },
+]
+
+const alternateTitles = [
+  {
+    id: 'gyakuten',
+    title: 'GyakuTen – Paradoxical Reincarnation',
+    status: 'upcoming',
+    color: 'amber',
+    tags: ['Alternate Reality', 'Mystery', 'Action'],
+    desc: 'A paradox of reincarnation tears across the universe. Set in an alternate reality that challenges everything you know about the Naiseikai world.',
+  },
+]
+
+const colorBorder: Record<string, string> = {
+  cyan:   'border-[rgba(0,229,255,0.4)]',
+  purple: 'border-[rgba(191,95,255,0.4)]',
+  pink:   'border-[rgba(255,110,180,0.4)]',
+  amber:  'border-[rgba(255,179,71,0.4)]',
+}
+const colorLabel: Record<string, string> = {
+  cyan:   'text-[#7ef5ff]',
+  purple: 'text-[#d49fff]',
+  pink:   'text-[#ffaad4]',
+  amber:  'text-[#ffd080]',
+}
+const colorTag: Record<string, string> = {
+  cyan:   'tag tag-cyan',
+  purple: 'tag tag-purple',
+  pink:   'tag tag-pink',
+  amber:  'tag tag-amber',
+}
+
+function TitleCard({ t }: { t: typeof publishedTitles[0] & { subtitle?: string } }) {
+  return (
+    <div className={`border rounded-xl p-6 bg-surface transition-all duration-300 hover:bg-surface-raised ${colorBorder[t.color]}`}
+      style={{ boxShadow: t.status === 'published' ? `0 0 20px rgba(0,229,255,0.08)` : undefined }}>
+      <div className="flex items-start justify-between gap-3 mb-3">
+        <div>
+          <p className={`font-serif text-xl font-semibold mb-0.5 ${colorLabel[t.color]}`}>{t.title}</p>
+          {(t as typeof upcomingTitles[0]).subtitle && (
+            <p className="text-xs text-text-faint font-mono">{(t as typeof upcomingTitles[0]).subtitle}</p>
+          )}
+          {(t as typeof publishedTitles[0]).vol && (
+            <p className="text-xs text-text-faint font-mono">{(t as typeof publishedTitles[0]).vol}</p>
+          )}
+        </div>
+        <span className={`text-[10px] px-2 py-0.5 rounded-full border font-mono flex-shrink-0 ${
+          t.status === 'published'
+            ? 'border-[rgba(0,255,204,0.5)] text-[#00ffcc] bg-[rgba(0,255,204,0.08)]'
+            : 'border-[rgba(150,150,220,0.4)] text-text-faint bg-[rgba(100,100,180,0.08)]'
+        }`}>
+          {t.status === 'published' ? '● Published' : '○ Upcoming'}
+        </span>
+      </div>
+      <p className="text-sm text-text-muted leading-relaxed mb-4">{t.desc}</p>
+      <div className="flex flex-wrap gap-2">
+        {t.tags.map((tag) => (
+          <span key={tag} className={colorTag[t.color]}>{tag}</span>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default function Titles() {
+  return (
+    <div className="page-container">
+
+      {/* Header */}
+      <div className="mb-12">
+        <span className="neon-sign neon-sign-pink text-[10px] mb-4 inline-block">Story Order</span>
+        <h1 className="font-serif text-4xl sm:text-5xl mb-4 text-text">Naiseikai Titles</h1>
+        <p className="text-text-muted text-base leading-relaxed max-w-2xl">
+          All published and upcoming light novels in The Naiseikai Universe, listed in story order.
+          Each title exists within the same world, connected by shared lore and overlapping lives.
+        </p>
+      </div>
+
+      {/* Published */}
+      <section className="mb-14">
+        <div className="section-divider" />
+        <div className="flex items-center gap-3 mb-6">
+          <span className="neon-sign text-[10px]">Published</span>
+          <span className="w-2 h-2 rounded-full bg-[#00ffcc]" style={{ boxShadow: '0 0 6px rgba(0,255,204,0.8)' }} />
+        </div>
+        <div className="space-y-5">
+          {publishedTitles.map((t) => <TitleCard key={t.id} t={t} />)}
+        </div>
+      </section>
+
+      {/* Upcoming */}
+      <section className="mb-14">
+        <div className="section-divider" />
+        <div className="flex items-center gap-3 mb-6">
+          <span className="neon-sign neon-sign-purple text-[10px]">Upcoming</span>
+          <span className="text-xs text-text-faint font-mono">In Development</span>
+        </div>
+        <div className="space-y-5">
+          {upcomingTitles.map((t) => <TitleCard key={t.id} t={t} />)}
+        </div>
+      </section>
+
+      {/* Alternate Realities */}
+      <section className="mb-14">
+        <div className="section-divider" />
+        <span className="neon-sign neon-sign-pink text-[10px] mb-4 inline-block">Alternate Realities</span>
+        <h2 className="font-serif text-2xl mb-6 text-text">Alternate Reality Stories</h2>
+        <div className="space-y-5">
+          {alternateTitles.map((t) => <TitleCard key={t.id} t={t} />)}
+        </div>
+      </section>
+
+      {/* Nav */}
+      <div className="section-divider" />
+      <div className="flex flex-wrap gap-3">
+        <Link to="/lore" className="btn-neon-cyan text-xs">Lore & Timeline →</Link>
+        <Link to="/universe" className="btn-neon-purple text-xs">Universe Overview →</Link>
+      </div>
+    </div>
+  )
+}
