@@ -12,6 +12,7 @@ import Author from './pages/Author'
 import Characters from './pages/Characters'
 import TQCTN from './pages/TQCTN'
 import Nevertheless from './pages/Nevertheless'
+import Dullahan from './pages/Dullahan'
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
             <Route path="/titles"        element={<Titles />} />
             <Route path="/titles/tqctn"  element={<TQCTN />} />
             <Route path="/titles/nevertheless" element={<Nevertheless />} />
+            <Route path="/titles/dullahan"     element={<Dullahan />} />
             <Route path="/characters"    element={<Characters />} />
             <Route path="/songbook"      element={<Songbook />} />
             <Route path="/author"        element={<Author />} />
