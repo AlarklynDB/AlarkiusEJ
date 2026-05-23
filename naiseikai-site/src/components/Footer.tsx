@@ -15,7 +15,8 @@ export default function Footer() {
             <p className="text-xs text-text-faint leading-relaxed">
               The Naiseikai Universe<br />
               A world of introspection.<br />
-              Set in Neo-Japan 2100+.
+              Set in Neo-Japan 2100+.<br />
+              This Universe is constantly expanding....<br />
             </p>
           </div>
 
