@@ -88,6 +88,7 @@ const titleRoutes: Record<string, string> = {
   sorenaoane: '/titles/nevertheless',
   dullahan: '/titles/dullahan',
   'lonely-android': '/titles/lonely-android',
+  'gyakuten': '/titles/gyakuten',
 }
 
 function TitleCard({ t }: { t: AnyTitle }) {
