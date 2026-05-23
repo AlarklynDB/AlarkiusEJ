@@ -66,7 +66,7 @@ export default function Home() {
 
         {/* English title */}
         <h2 className="text-xl sm:text-3xl font-serif font-light mb-2 text-text tracking-wide">
-          The Naiseikai Universe
+          The Naiseikai Universe | Naisei no Sekai
         </h2>
 
         {/* Tagline */}
