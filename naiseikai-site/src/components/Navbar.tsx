@@ -8,7 +8,6 @@ const navLinks = [
     children: [
       { label: 'Universe Overview', path: '/universe' },
       { label: 'Lore & Timeline', path: '/lore' },
-      { label: 'Worldbuilding', path: '/worldbuilding' },
     ],
   },
   { label: 'Titles', path: '/titles' },
