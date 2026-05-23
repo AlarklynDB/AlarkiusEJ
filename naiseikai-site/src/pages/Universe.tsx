@@ -269,20 +269,6 @@ export default function Universe() {
         </div>
       </section>
 
-      {/* YARC Notice */}
-      <section className="mb-14">
-        <div className="section-divider" />
-        <div className="callout callout-red">
-          <div>
-            <p className="text-sm font-mono text-red-400 mb-1">⚠ Y.A.R.C. NOTICE — CLASS C PIRACY VIOLATION</p>
-            <p className="text-sm text-text-muted">
-              Unauthorized redistribution of Naiseikai-Encoded lore and Stories has been detected.
-              This universe is heavily protected. The YARC might be evil in this universe, but don't let them get you too.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Quick links */}
       <div className="section-divider" />
       <div className="flex flex-wrap gap-3">
