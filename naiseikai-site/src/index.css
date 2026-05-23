@@ -17,6 +17,15 @@
     line-height: 1.8;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
+  }
+
+  /* Starfield bg lives on ::before so we can blur it without affecting content */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
     /* The starfield bg is applied here as a CSS background layer */
     background-image:
       /* scattered small stars */
@@ -48,7 +57,7 @@
         #05050f 100%
       );
     background-size: 100% 100%;
-    background-attachment: fixed;
+    filter: blur(1.5px);
   }
 
   h1, h2, h3, h4, h5, h6 {
