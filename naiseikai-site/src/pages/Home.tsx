@@ -139,7 +139,7 @@ export default function Home() {
             <p className="text-sm text-text-muted">All published and upcoming light novels in story order — from The Quiet Crow to GyakuTen.</p>
           </Link>
 
-          <Link to="/worldbuilding" className="neon-card neon-card group block">
+          <Link to="/universe" className="neon-card neon-card group block">
             <div className="mb-3">
               <span className="neon-sign text-[10px]">World</span>
             </div>
@@ -163,6 +163,17 @@ export default function Home() {
             <p className="text-sm text-text-muted">A word from Alarkius Elvya Jay — on craft, respect, and this universe's meaning.</p>
           </Link>
 
+        </div>
+
+        {/* YARC Notice */}
+        <div className="mt-10 callout callout-red">
+          <div>
+            <p className="text-sm font-mono text-red-400 mb-1">⚠ Y.A.R.C. NOTICE — CLASS C PIRACY VIOLATION</p>
+            <p className="text-sm text-text-muted">
+              Unauthorized redistribution of Naiseikai-Encoded lore and Stories has been detected.
+              This universe is heavily protected. The YARC might be evil in this universe, but don't let them get you too.
+            </p>
+          </div>
         </div>
       </section>
     </div>
