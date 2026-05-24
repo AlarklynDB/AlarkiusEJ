@@ -141,7 +141,8 @@
 
   /* ── Callouts ── */
   .callout {
-    @apply border border-border bg-surface rounded-lg p-4 flex gap-3;
+    /* flex-col ensures stacked children never overflow sideways on mobile */
+    @apply border border-border bg-surface rounded-lg p-4 flex flex-col gap-3;
   }
   .callout-purple {
     @apply border-[rgba(191,95,255,0.3)] bg-[rgba(191,95,255,0.08)];
