@@ -8,7 +8,6 @@ import Lore from './pages/Lore'
 import Titles from './pages/Titles'
 import Songbook from './pages/Songbook'
 import Author from './pages/Author'
-import Characters from './pages/Characters'
 import TQCTN from './pages/TQCTN'
 import Nevertheless from './pages/Nevertheless'
 import Dullahan from './pages/Dullahan'
@@ -31,7 +30,6 @@ export default function App() {
             <Route path="/titles/dullahan"     element={<Dullahan />} />
             <Route path="/titles/lonely-android" element={<LonelyAndroid />} />
             <Route path="/titles/gyakuten" element={<GyakuTen />} />
-            <Route path="/characters"    element={<Characters />} />
             <Route path="/songbook"      element={<Songbook />} />
             <Route path="/author"        element={<Author />} />
           </Routes>
