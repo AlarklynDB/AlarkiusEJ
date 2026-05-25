@@ -63,7 +63,7 @@ function OverviewTab() {
         </h1>
         <p className="text-text-faint font-mono text-sm mb-1">静かなカラスと忍者 / Shizukana Karasu to Ninja!</p>
         <p className="text-text-faint text-xs font-mono leading-relaxed">
-          Also known as: The Crow and The Ninja / Karasu no Ninja! / The Crowless Crow and The Ninja
+          Also known as: The Crow and The Ninja / Karasu To Ninja! / The Crowless Crow and The Ninja
         </p>
       </div>
 
