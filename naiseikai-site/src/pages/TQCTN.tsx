@@ -63,7 +63,7 @@ function OverviewTab() {
         </h1>
         <p className="text-text-faint font-mono text-sm mb-1">静かなカラスと忍者 / Shizukana Karasu to Ninja!</p>
         <p className="text-text-faint text-xs font-mono leading-relaxed">
-          Also known as: The Crow and The Ninja / Karasu To Ninja! / The Crowless Crow and The Ninja
+          Also known as: The Crow and The Ninja / Karasu To Ninja! / The Quiet Crow and The Ninja
         </p>
       </div>
 
@@ -75,7 +75,7 @@ function OverviewTab() {
           { label: 'Date Created', value: '5/31/2025' },
           { label: 'Writing Finished', value: '7/16/2025' },
           { label: 'Series Status', value: 'Ongoing' },
-          { label: 'Vol / Book', value: 'VOL 1 – Book 1 – Published' },
+          { label: 'Vol / Book', value: 'VOL 1 – Book 1 – Published (Ongoing)' },
           { label: 'Original Publish', value: 'December 10, 2025' },
           { label: 'Republished (B&N)', value: 'March 5, 2026' },
           { label: 'Story Setting', value: 'Neo Tokyo — Ruruka\'s Apartment Complex or Haruhi\'s Usagi Cafe' },
