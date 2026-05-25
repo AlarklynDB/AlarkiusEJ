@@ -233,7 +233,7 @@ function OverviewTab() {
 
       {/* Where to Read */}
       <div>
-        <h2 className="font-serif text-xl text-text mb-4">Where to Read</h2>
+        <h2 className="font-serif text-xl text-text mb-4">Avaliable on B&N!</h2>
         <div className="space-y-3">
           <div className="neon-card">
             <p className="font-mono text-sm text-[#7ef5ff] mb-2">Barnes &amp; Noble</p>
@@ -242,7 +242,7 @@ function OverviewTab() {
               <p>Premium Paperback — <span className="text-text">$17.99 USD</span> <span className="text-text-faint text-xs">(colored interior)</span></p>
             </div>
             <a
-              href="https://www.barnesandnoble.com/s/alarkius%20elvya%20jay"
+              href="https://www.barnesandnoble.com/s/alarkius-elvya-jay"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-neon-cyan text-xs mt-4 inline-block"
