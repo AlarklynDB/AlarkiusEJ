@@ -12,6 +12,7 @@ const navLinks = [
   },
   { label: 'Music', path: '/music' },
   { label: 'Tools & Apps', path: '/tools' },
+  { label: 'Buy My Books', path: 'https://www.barnesandnoble.com/search?q=Alarkius%20Elvya%20Jay&contributorName=alarkius-elvya-jay', external: true },
   {
     label: 'Policies',
     children: [
@@ -109,6 +110,17 @@ export default function Navbar() {
                   </div>
                 )}
               </li>
+            ) : link.external ? (
+              <li key={link.label}>
+                <a
+                  href={link.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-2 text-sm rounded-md transition-all duration-200 text-rose-light hover:text-text hover:bg-surface font-medium"
+                >
+                  {link.label}
+                </a>
+              </li>
             ) : (
               <li key={link.path}>
                 <Link
@@ -159,6 +171,17 @@ export default function Navbar() {
                       {child.label}
                     </Link>
                   ))}
+                </li>
+              ) : link.external ? (
+                <li key={link.label}>
+                  <a
+                    href={link.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-3 py-2 text-sm rounded-md transition-colors text-rose-light hover:text-text font-medium"
+                  >
+                    {link.label}
+                  </a>
                 </li>
               ) : (
                 <li key={link.path}>
