@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+
 const themes = [
   { icon: '🌀', label: 'Creation vs Consequence' },
   { icon: '🕊️', label: 'Identity, Purpose, and Self-Worth' },
@@ -25,6 +27,40 @@ const books = [
 ]
 
 const characters = ['Zohl Celestreule', 'Kydel', 'Raeya Flutters', 'Neàh']
+
+function DisqusComments() {
+  useEffect(() => {
+    if ((window as any).DISQUS) {
+      (window as any).DISQUS.reset({
+        reload: true,
+        config: function (this: any) {
+          this.page.url = 'https://alarkiusej.com/hibrythian-saga'
+          this.page.identifier = 'hibrythian-saga'
+        },
+      })
+      return
+    }
+    const d = document
+    const s = d.createElement('script')
+    s.src = 'https://the-hibrythian-saga.disqus.com/embed.js'
+    s.setAttribute('data-timestamp', String(+new Date()))
+    ;(d.head || d.body).appendChild(s)
+  }, [])
+
+  return (
+    <section className="mt-16">
+      <div className="section-divider mb-10" />
+      <h2 className="font-serif text-2xl font-semibold text-text mb-6">Comments &amp; Reviews</h2>
+      <div id="disqus_thread" />
+      <noscript>
+        Please enable JavaScript to view the{' '}
+        <a href="https://disqus.com/?ref_noscript" className="text-rose-light underline">
+          comments powered by Disqus.
+        </a>
+      </noscript>
+    </section>
+  )
+}
 
 export default function HibrythianSaga() {
   return (
@@ -219,6 +255,9 @@ export default function HibrythianSaga() {
             </div>
           </div>
         </section>
+
+        {/* Disqus Comments */}
+        <DisqusComments />
       </div>
     </div>
   )
