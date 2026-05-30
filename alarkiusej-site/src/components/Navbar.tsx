@@ -14,17 +14,13 @@ const navLinks = [
   { label: 'Tools & Apps', path: '/tools' },
   { label: 'Buy My Books', path: 'https://www.barnesandnoble.com/search?q=Alarkius%20Elvya%20Jay&contributorName=alarkius-elvya-jay', external: true },
   {
-    label: 'Policies',
-    children: [
-      { label: 'Policies', path: '/policies' },
-      { label: 'Manifesto', path: '/manifesto' },
-    ],
-  },
-  {
     label: 'About',
     children: [
+      { label: 'FAQ', path: '/faq' },
       { label: 'About', path: '/about' },
       { label: 'Contact', path: '/contact' },
+      { label: 'Policies', path: '/policies' },
+      { label: 'Manifesto', path: '/manifesto' },
     ],
   },
 ]
