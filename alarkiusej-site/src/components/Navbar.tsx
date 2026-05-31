@@ -12,7 +12,7 @@ const navLinks = [
   },
   { label: 'Music', path: '/music' },
   { label: 'Tools & Apps', path: '/tools' },
-  { label: 'Buy My Books', path: 'https://www.barnesandnoble.com/search?q=Alarkius%20Elvya%20Jay&contributorName=alarkius-elvya-jay', external: true },
+  { label: 'Buy My Books', path: '/find-my-books' },
   {
     label: 'FAQ',
     children: [
@@ -105,23 +105,14 @@ export default function Navbar() {
                   </div>
                 )}
               </li>
-            ) : link.external ? (
-              <li key={link.label}>
-                <a
-                  href={link.path}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-2 text-sm rounded-md transition-all duration-200 text-rose-light hover:text-text hover:bg-surface font-medium"
-                >
-                  {link.label}
-                </a>
-              </li>
             ) : (
               <li key={link.path}>
                 <Link
                   to={link.path!}
                   className={`px-3 py-2 text-sm rounded-md transition-all duration-200 ${
-                    isActive(link.path!)
+                    link.label === 'Buy My Books'
+                      ? 'text-rose-light hover:text-text hover:bg-surface font-medium'
+                      : isActive(link.path!)
                       ? 'text-rose-light bg-rose-bg'
                       : 'text-text-muted hover:text-text hover:bg-surface'
                   }`}
@@ -167,23 +158,16 @@ export default function Navbar() {
                     </Link>
                   ))}
                 </li>
-              ) : link.external ? (
-                <li key={link.label}>
-                  <a
-                    href={link.path}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-3 py-2 text-sm rounded-md transition-colors text-rose-light hover:text-text font-medium"
-                  >
-                    {link.label}
-                  </a>
-                </li>
               ) : (
                 <li key={link.path}>
                   <Link
                     to={link.path!}
                     className={`block px-3 py-2 text-sm rounded-md transition-colors ${
-                      isActive(link.path!) ? 'text-rose-light bg-rose-bg' : 'text-text-muted hover:text-text hover:bg-surface'
+                      link.label === 'Buy My Books'
+                        ? 'text-rose-light font-medium'
+                        : isActive(link.path!)
+                        ? 'text-rose-light bg-rose-bg'
+                        : 'text-text-muted hover:text-text hover:bg-surface'
                     }`}
                   >
                     {link.label}
