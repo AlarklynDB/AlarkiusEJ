@@ -14,6 +14,11 @@
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Content protection */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -22,9 +27,22 @@
     color: #e8e3dc;
   }
 
+  /* Remove text highlight/selection color entirely */
   ::selection {
-    background-color: rgba(201, 123, 115, 0.3);
-    color: #e8e3dc;
+    background-color: transparent;
+    color: inherit;
+  }
+  ::-moz-selection {
+    background-color: transparent;
+    color: inherit;
+  }
+
+  /* Allow selection in inputs/textareas */
+  input, textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
   }
 
   ::-webkit-scrollbar {

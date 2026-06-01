@@ -1,10 +1,21 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
 import './index.css'
+import App from './App.tsx'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+// Content protection
+document.addEventListener('contextmenu', (e) => e.preventDefault())
+document.addEventListener('copy', (e) => e.preventDefault())
+document.addEventListener('cut', (e) => e.preventDefault())
+document.addEventListener('paste', (e) => {
+  // Allow paste in inputs/textareas
+  const tag = (e.target as HTMLElement).tagName
+  if (tag !== 'INPUT' && tag !== 'TEXTAREA') e.preventDefault()
+})
+document.addEventListener('dragstart', (e) => e.preventDefault())
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
     <App />
-  </React.StrictMode>,
+  </StrictMode>,
 )
