@@ -24,7 +24,7 @@ export default function App() {
           <Routes>
             <Route path="/"              element={<Home />} />
             <Route path="/universe"      element={<Universe />} />
-            <Route path="/universe/power-scaling" element={<PowerScaling />} />
+            <Route path="/power-scaling" element={<PowerScaling />} />
             <Route path="/lore"          element={<Lore />} />
             <Route path="/titles"        element={<Titles />} />
             <Route path="/titles/KarasuToNinja-TQCTN" element={<TQCTN />} />
