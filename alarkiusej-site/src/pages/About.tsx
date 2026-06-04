@@ -41,7 +41,7 @@ export default function About() {
                   <span className="font-serif text-5xl font-bold text-rose">AJ</span>
                 </div>
                 <p className="font-serif text-xl font-semibold text-text">Alarkius Elvya Jay</p>
-                <p className="text-text-muted text-sm mt-1">@alarkiusjay.bsky.social</p>
+                <p className="text-text-muted text-sm mt-1">alarkiusej.com </p>
                 <p className="text-text-faint text-xs mt-1">He/Him · Lvl 25</p>
                 <div className="mt-4 flex flex-wrap gap-2 justify-center">
                   <span className="tag text-xs">Author</span>
@@ -84,7 +84,8 @@ export default function About() {
             Alarkius Elvya Jay is an online pen-name and pseudonym, which can be shortened to "AJ"
             or "Jay." Ideas are inspired through various mediums and media: anime, stories, and pop
             culture. Music is a huge part of identity — a fan of video game soundtracks, Japanese
-            music, and cool orchestral soundtracks.
+            music, and cool orchestral soundtracks. Other similar names to Alariius Elvya Jay include: 
+            "AlarkiusJay" , "AlarkiusElvyaJ" , or "AlarkiusElvyaJay."
           </p>
         </section>
 
@@ -96,7 +97,7 @@ export default function About() {
             Soundtrack Composer
           </h2>
           <p className="text-text-muted leading-relaxed mb-4">
-            Growing up taking piano lessons for eight years, now self-learning and practicing. In
+            Growing up, I took piano lessons for eight years, now self-learning and practicing. In
             2020, composition began with the first piece for the Hibrythian Saga. As time continued,
             more compositions were made for the saga, which has made home to its own{' '}
             <a
