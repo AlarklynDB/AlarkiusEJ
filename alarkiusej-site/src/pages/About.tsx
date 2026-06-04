@@ -84,8 +84,8 @@ export default function About() {
             Alarkius Elvya Jay is an online pen-name and pseudonym, which can be shortened to "AJ"
             or "Jay." Ideas are inspired through various mediums and media: anime, stories, and pop
             culture. Music is a huge part of identity — a fan of video game soundtracks, Japanese
-            music, and cool orchestral soundtracks. Other similar names to Alariius Elvya Jay include: 
-            "AlarkiusJay" , "AlarkiusElvyaJ" , or "AlarkiusElvyaJay"——these names are taken and not avaliable for use. 
+            music, and cool orchestral soundtracks. Other similar names to Alarkius Elvya Jay include: 
+            "AlarkiusJay" , "AlarkiusElvyaJ" , or "AlarkiusElvyaJay" — these names are taken and not avaliable for use. 
           </p>
         </section>
 
