@@ -85,7 +85,7 @@ export default function About() {
             or "Jay." Ideas are inspired through various mediums and media: anime, stories, and pop
             culture. Music is a huge part of identity — a fan of video game soundtracks, Japanese
             music, and cool orchestral soundtracks. Other similar names to Alariius Elvya Jay include: 
-            "AlarkiusJay" , "AlarkiusElvyaJ" , or "AlarkiusElvyaJay."
+            "AlarkiusJay" , "AlarkiusElvyaJ" , or "AlarkiusElvyaJay"——these names are taken and not avaliable for use. 
           </p>
         </section>
 
