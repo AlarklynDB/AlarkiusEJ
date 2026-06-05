@@ -670,6 +670,37 @@ const STYLES = `
   .hetra-cal .dn-events { display: none; }
   .hetra-cal .cal-day-header span { display: none; }
 }
+.hetra-cal .year-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 0.75rem 0;
+}
+.hetra-cal .cal-year-display {
+  font-family: var(--font-heading);
+  font-size: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+  font-weight: 700;
+  color: var(--color-accent-gold);
+  letter-spacing: 0.08em;
+  min-width: 120px;
+  text-align: center;
+  text-shadow: 0 0 24px rgba(232, 176, 74, 0.25);
+}
+.hetra-cal .year-btn {
+  font-family: var(--font-heading) !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.1em;
+  padding: 0.5rem 1rem !important;
+  width: auto !important;
+  white-space: nowrap;
+  color: var(--color-accent-gold) !important;
+  border-color: color-mix(in srgb, var(--color-accent-gold) 40%, transparent) !important;
+}
+.hetra-cal .year-btn:hover {
+  background: color-mix(in srgb, var(--color-accent-gold) 12%, transparent) !important;
+  border-color: var(--color-accent-gold) !important;
+}
 `
 
 export default function TimeSystem() {
@@ -681,6 +712,25 @@ export default function TimeSystem() {
     const $ = (id: string) => root.querySelector<HTMLElement>(`#${id}`)
 
     let currentMonthIdx = 0
+    let currentYear = 2245
+
+    // Anchor: Year 2245 Month 1 Day 1 = Bhuseday (index 2)
+    // 444 days/year → 444 % 7 = 3 → each year shifts +3
+    const ANCHOR_YEAR = 2245
+    const ANCHOR_START_DAY = 2
+    const YEAR_DAY_SHIFT = 3 // 444 % 7
+
+    function getYearStartDay(year: number): number {
+      const diff = year - ANCHOR_YEAR
+      return (((ANCHOR_START_DAY + diff * YEAR_DAY_SHIFT) % 7) + 7) % 7
+    }
+
+    function getMonthStartDay(year: number, monthIdx: number): number {
+      const yearStart = getYearStartDay(year)
+      let daysBefore = 0
+      for (let i = 0; i < monthIdx; i++) daysBefore += MONTHS[i].days
+      return (yearStart + daysBefore) % 7
+    }
 
     function getHetraTime() {
       const now = new Date()
@@ -864,29 +914,38 @@ export default function TimeSystem() {
       })
     }
 
-    function buildCalendar(monthIdx: number) {
-      currentMonthIdx = ((monthIdx % 14) + 14) % 14
+    function buildCalendar(monthIdx: number, year?: number) {
+      if (year !== undefined) currentYear = year
+
+      if (monthIdx < 0) {
+        currentYear -= 1
+        monthIdx = 13
+      } else if (monthIdx > 13) {
+        currentYear += 1
+        monthIdx = 0
+      }
+      currentMonthIdx = monthIdx
+
       const month = MONTHS[currentMonthIdx]
       const nameEl = $('cal-month-name')
       const numEl = $('cal-month-num')
       const loreEl = $('month-lore-text')
+      const yearEl = $('cal-year-display')
       if (nameEl) nameEl.textContent = month.name
       if (numEl) numEl.textContent = `Month ${month.num} of 14 · ${month.days} days`
       if (loreEl) loreEl.textContent = month.lore
+      if (yearEl) yearEl.textContent = `${currentYear} AD`
 
-      let daysBefore = 0
-      for (let i = 0; i < currentMonthIdx; i++) daysBefore += MONTHS[i].days
-      const startDayOfWeek = daysBefore % 7
-
+      const startDayOfWeek = getMonthStartDay(currentYear, currentMonthIdx)
       const grid = $('cal-grid')
       if (!grid) return
+
       let html = ''
-      for (let i = 0; i < startDayOfWeek; i++) html += `<div class="cal-cell empty"></div>`
+      for (let i = 0; i < startDayOfWeek; i++) html += '<div class="cal-cell empty"></div>'
       for (let d = 1; d <= month.days; d++) {
         const isEclipse = month.special === 'eclipse' && d === 31
-        const classList = ['cal-cell', 'day']
-        if (isEclipse) classList.push('eclipse-day')
-        html += `<div class="${classList.join(' ')}">${d}${isEclipse ? '<div class="eclipse-indicator" title="Red Blood Eclipse · 24:25 PM"></div>' : ''}</div>`
+        const cls = isEclipse ? 'cal-cell day eclipse-day' : 'cal-cell day'
+        html += `<div class="${cls}">${d}${isEclipse ? '<div class="eclipse-indicator" title="Red Blood Eclipse · 24:25 PM"></div>' : ''}</div>`
       }
       grid.innerHTML = html
       buildYearProgress()
@@ -898,6 +957,13 @@ export default function TimeSystem() {
     const onNext = () => buildCalendar(currentMonthIdx + 1)
     prevBtn?.addEventListener('click', onPrev)
     nextBtn?.addEventListener('click', onNext)
+
+    const prevYearBtn = $('prev-year')
+    const nextYearBtn = $('next-year')
+    const onPrevYear = () => buildCalendar(currentMonthIdx, currentYear - 1)
+    const onNextYear = () => buildCalendar(currentMonthIdx, currentYear + 1)
+    prevYearBtn?.addEventListener('click', onPrevYear)
+    nextYearBtn?.addEventListener('click', onNextYear)
 
     buildClockFace()
     buildCalendar(0)
@@ -911,6 +977,8 @@ export default function TimeSystem() {
       window.clearInterval(intervalId)
       prevBtn?.removeEventListener('click', onPrev)
       nextBtn?.removeEventListener('click', onNext)
+      prevYearBtn?.removeEventListener('click', onPrevYear)
+      nextYearBtn?.removeEventListener('click', onNextYear)
     }
   }, [])
 
@@ -1043,6 +1111,13 @@ export default function TimeSystem() {
                 <div className="section-label">The Hetranian Almanac</div>
                 <h2 className="section-title">Year Calendar</h2>
                 <p className="section-desc">444 days · 14 months · Named after The Five Giants and their companions</p>
+
+                {/* Year navigation */}
+                <div className="year-nav">
+                  <button className="cal-nav-btn year-btn" id="prev-year" aria-label="Previous year">« Prev Year</button>
+                  <span className="cal-year-display" id="cal-year-display">2245 AD</span>
+                  <button className="cal-nav-btn year-btn" id="next-year" aria-label="Next year">Next Year »</button>
+                </div>
 
                 <div className="calendar-nav">
                   <button className="cal-nav-btn" id="prev-month" aria-label="Previous month">&#8592;</button>
