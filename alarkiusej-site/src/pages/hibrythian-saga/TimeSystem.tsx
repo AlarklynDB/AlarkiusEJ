@@ -117,8 +117,8 @@ const STYLES = `
   font-family: var(--font-body);
   font-size: var(--text-base);
   line-height: 1.6;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
 }
 .hetra-cal *, .hetra-cal *::before, .hetra-cal *::after { box-sizing: border-box; margin: 0; padding: 0; }
 .hetra-cal img, .hetra-cal svg { display: block; max-width: 100%; }
@@ -917,8 +917,9 @@ export default function TimeSystem() {
   return (
     <div className="pt-16">
       <style>{STYLES}</style>
-      <div className="max-w-4xl mx-auto px-6 py-16">
-        {/* Page header */}
+
+      {/* Page header — stays in the narrow site column */}
+      <div className="max-w-4xl mx-auto px-6 pt-16 pb-8">
         <div className="page-hero">
           <Link
             to="/hibrythian-saga"
@@ -939,9 +940,10 @@ export default function TimeSystem() {
             The Hetranian Calendar — Planet Hetra, The Hibrythian Saga
           </p>
         </div>
+      </div>
 
-        {/* Embedded Hetranian Calendar app */}
-        <div className="hetra-cal mt-10" ref={rootRef}>
+      {/* Hetranian Calendar — full-width, breaks out of the site column */}
+      <div className="hetra-cal" ref={rootRef} style={{ width: '100%' }}>
           <main>
             {/* Hero Banner */}
             <section className="hero">
@@ -1176,7 +1178,6 @@ export default function TimeSystem() {
             </section>
           </main>
         </div>
-      </div>
     </div>
   )
 }
