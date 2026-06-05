@@ -918,28 +918,17 @@ export default function TimeSystem() {
     <div className="pt-16">
       <style>{STYLES}</style>
 
-      {/* Page header — stays in the narrow site column */}
-      <div className="max-w-4xl mx-auto px-6 pt-16 pb-8">
-        <div className="page-hero">
-          <Link
-            to="/hibrythian-saga"
-            className="inline-flex items-center gap-1 text-sm text-rose hover:text-rose-light transition-colors mb-6"
-          >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to The Hibrythian Saga
-          </Link>
-          <p className="text-rose text-xs font-medium tracking-widest uppercase mb-3">
-            The Hibrythian Saga — Planet Hetra
-          </p>
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-text mb-4">
-            ⌚ The 32/16-Hour Time System
-          </h1>
-          <p className="text-text-muted text-sm">
-            The Hetranian Calendar — Planet Hetra, The Hibrythian Saga
-          </p>
-        </div>
+      {/* Back link only */}
+      <div className="max-w-4xl mx-auto px-6 pt-6 pb-2">
+        <Link
+          to="/hibrythian-saga"
+          className="inline-flex items-center gap-1 text-sm text-rose hover:text-rose-light transition-colors"
+        >
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to The Hibrythian Saga
+        </Link>
       </div>
 
       {/* Hetranian Calendar — full-width, breaks out of the site column */}
