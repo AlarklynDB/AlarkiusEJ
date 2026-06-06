@@ -521,7 +521,8 @@ const STYLES = `
   ) !important;
 }
 .hetra-cal .cal-cell {
-  min-height: 58px;
+  aspect-ratio: 1 / 1;
+  min-height: unset;
   padding: 6px;
   background: #1a1b2e;
   border-radius: 0;
@@ -839,7 +840,8 @@ const STYLES = `
 
   /* Tighter cells */
   .hetra-cal .cal-cell {
-    min-height: 32px;
+    aspect-ratio: 1 / 1;
+    min-height: unset;
     padding: 2px;
     font-size: 11px;
   }
