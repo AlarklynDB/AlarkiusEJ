@@ -473,6 +473,7 @@ const STYLES = `
   border-radius: 6px 6px 0 0;
   overflow: hidden;
   border: none;
+  border-bottom: 1px solid rgba(232, 176, 74, 0.25);
 }
 .hetra-cal .cal-day-header {
   text-align: center;
