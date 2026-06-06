@@ -44,57 +44,39 @@ const SEASONS = [
   {
     name: 'Pink Spring',
     color: '#f4a0c8',
-    ranges: [
-      { month: 0, from: 1, to: 31 },
-      { month: 1, from: 1, to: 31 },
-      { month: 2, from: 1, to: 31 },
-      { month: 3, from: 1, to: 30 },
-      { month: 4, from: 1, to: 31 },
-    ],
+    start: { month: 0, day: 1 },
+    end:   { month: 4, day: 31 }
   },
   {
     name: "Calderia's Heat",
-    color: '#f5a623',
-    ranges: [
-      { month: 5, from: 1, to: 30 },
-      { month: 6, from: 1, to: 31 },
-      { month: 7, from: 1, to: 26 },
-    ],
+    color: '#f5e642',
+    start: { month: 5, day: 1 },
+    end:   { month: 7, day: 26 }
   },
   {
     name: 'Aburhalle Fall',
-    color: '#c8762a',
-    ranges: [
-      { month: 7, from: 27, to: 31 },
-      { month: 8, from: 1, to: 30 },
-      { month: 9, from: 1, to: 31 },
-      { month: 10, from: 1, to: 26 },
-    ],
+    color: '#8b5e3c',
+    start: { month: 7, day: 27 },
+    end:   { month: 10, day: 26 }
   },
   {
     name: 'Wintervahle',
     color: '#7ec8e3',
-    ranges: [
-      { month: 10, from: 27, to: 30 },
-      { month: 11, from: 1, to: 60 },
-      { month: 12, from: 1, to: 39 },
-    ],
+    start: { month: 10, day: 27 },
+    end:   { month: 12, day: 39 }
   },
   {
     name: 'Diebus Vitae Eve',
-    color: '#d4af37',
-    ranges: [
-      { month: 12, from: 40, to: 40 },
-      { month: 13, from: 1, to: 7 },
-    ],
-  },
+    color: '#a8e6b0',
+    start: { month: 12, day: 40 },
+    end:   { month: 13, day: 7 }
+  }
 ]
 
-function getSeasonForDay(monthIdx: number, day: number) {
+function getSeasonMarker(monthIdx: number, day: number) {
   for (const s of SEASONS) {
-    for (const r of s.ranges) {
-      if (r.month === monthIdx && day >= r.from && day <= r.to) return s
-    }
+    if (s.start.month === monthIdx && s.start.day === day) return { dot: 'start', season: s }
+    if (s.end.month   === monthIdx && s.end.day   === day) return { dot: 'end',   season: s }
   }
   return null
 }
@@ -533,14 +515,43 @@ const STYLES = `
   top: 4px;
   right: 4px;
 }
+/* Season dot — only on start/end days */
 .hetra-cal .season-dot {
-  width: 6px;
-  height: 6px;
+  --sdot-color: #fff;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   flex-shrink: 0;
   margin-top: auto;
-  opacity: 0.9;
-  box-shadow: 0 0 4px currentColor;
+  background: var(--sdot-color);
+  box-shadow: 0 0 5px var(--sdot-color);
+  position: relative;
+  cursor: default;
+}
+.hetra-cal .season-dot::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e2035;
+  color: #e8e6f0;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--sdot-color);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--sdot-color) 40%, transparent);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 10;
+}
+.hetra-cal .season-dot:hover::after {
+  opacity: 1;
 }
 .hetra-cal .season-legend {
   display: flex;
@@ -1071,10 +1082,14 @@ export default function TimeSystem() {
       for (let d = 1; d <= month.days; d++) {
         const isEclipse = month.special === 'eclipse' && d === 31
         const cls = isEclipse ? 'cal-cell day eclipse-day' : 'cal-cell day'
-        const season = getSeasonForDay(currentMonthIdx, d)
-        const seasonDot = season
-          ? `<div class="season-dot" style="background:${season.color}" title="${season.name}"></div>`
-          : ''
+        const marker = getSeasonMarker(currentMonthIdx, d)
+        let seasonDot = ''
+        if (marker) {
+          const label = marker.dot === 'start'
+            ? `${marker.season.name} begins`
+            : `${marker.season.name} ends`
+          seasonDot = `<div class="season-dot" style="--sdot-color:${marker.season.color}" data-label="${label}"></div>`
+        }
         html += `<div class="${cls}">${d}${seasonDot}${isEclipse ? '<div class="eclipse-indicator" title="Red Blood Eclipse · 24:25 PM"></div>' : ''}</div>`
       }
       grid.innerHTML = html
