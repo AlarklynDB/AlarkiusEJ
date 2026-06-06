@@ -304,6 +304,28 @@ const STYLES = `
   align-items: start;
 }
 @media (max-width: 700px) { .hetra-cal .clock-layout { grid-template-columns: 1fr; } }
+/* Centered two-clock layout */
+.hetra-cal .clocks-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+.hetra-cal .clock-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+  width: clamp(180px, 38%, 260px);
+}
+.hetra-cal .clock-unit-label {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
 .hetra-cal .analog-clock-wrap {
   display: flex;
   justify-content: center;
@@ -955,35 +977,30 @@ export default function TimeSystem() {
     const isDaytime = (h: number) => h >= 5 && h < 25
     const pad = (n: number, len = 2) => String(n).padStart(len, '0')
 
-    function buildClockFace() {
-      const ticksG = $('clock-ticks')
-      const labelsG = $('clock-labels')
+    const buildClockFaceFor = (ticksId: string, labelsId: string, totalHours: number) => {
+      const ticksG = $(ticksId)
+      const labelsG = $(labelsId)
       if (!ticksG || !labelsG) return
-      const cx = 150, cy = 150, r = 138
-      const labelR = 118
-      const totalHours = 32
-      let tickHTML = ''
-      let labelHTML = ''
+
+      const cx = 150, cy = 150, r = 138, labelR = 118
+      const majorEvery = totalHours / 4
+
+      let tickHTML = '', labelHTML = ''
       for (let i = 0; i < totalHours; i++) {
         const angle = (i / totalHours) * 2 * Math.PI - Math.PI / 2
-        const isMajor = i % 8 === 0
-        const isMid = i % 4 === 0
-        const tickLen = isMajor ? 12 : isMid ? 8 : 5
+        const isMajor = i % majorEvery === 0
+        const isMid = i % (majorEvery / 2) === 0
+        const tickLen = isMajor ? 12 : (isMid ? 8 : 5)
         const strokeW = isMajor ? 2 : 1
-        const x1 = cx + r * Math.cos(angle)
-        const y1 = cy + r * Math.sin(angle)
-        const x2 = cx + (r - tickLen) * Math.cos(angle)
-        const y2 = cy + (r - tickLen) * Math.sin(angle)
-        const opacity = isMajor ? 0.9 : isMid ? 0.6 : 0.3
-        tickHTML += `<line x1="${x1.toFixed(2)}" y1="${y1.toFixed(2)}" x2="${x2.toFixed(2)}" y2="${y2.toFixed(2)}" stroke="var(--color-text)" stroke-width="${strokeW}" opacity="${opacity}"/>`
+        const x1 = cx + r * Math.cos(angle), y1 = cy + r * Math.sin(angle)
+        const x2 = cx + (r - tickLen) * Math.cos(angle), y2 = cy + (r - tickLen) * Math.sin(angle)
+        const opacity = isMajor ? 0.9 : (isMid ? 0.6 : 0.3)
+        tickHTML += `<line x1="${x1.toFixed(2)}" y1="${y1.toFixed(2)}" x2="${x2.toFixed(2)}" y2="${y2.toFixed(2)}" stroke="currentColor" stroke-width="${strokeW}" opacity="${opacity}"/>`
         if (isMajor) {
-          const lx = cx + labelR * Math.cos(angle)
-          const ly = cy + labelR * Math.sin(angle)
-          const fontSize = i === 0 ? 14 : 12
-          labelHTML += `<text x="${lx.toFixed(2)}" y="${ly.toFixed(2)}" font-size="${fontSize}" font-weight="600" opacity="0.85">${i === 0 ? '0/32' : i}</text>`
+          const lx = cx + labelR * Math.cos(angle), ly = cy + labelR * Math.sin(angle)
+          labelHTML += `<text x="${lx.toFixed(2)}" y="${ly.toFixed(2)}" font-size="${i === 0 ? 14 : 12}" font-weight="600" opacity="0.85">${i === 0 ? `0/${totalHours}` : i}</text>`
         } else if (isMid) {
-          const lx = cx + labelR * Math.cos(angle)
-          const ly = cy + labelR * Math.sin(angle)
+          const lx = cx + labelR * Math.cos(angle), ly = cy + labelR * Math.sin(angle)
           labelHTML += `<text x="${lx.toFixed(2)}" y="${ly.toFixed(2)}" font-size="9" opacity="0.5">${i}</text>`
         }
       }
@@ -1028,6 +1045,26 @@ export default function TimeSystem() {
       if (dayNightEl) dayNightEl.textContent = isDaytime(hHours) ? 'Day (19h)' : 'Night (13h)'
       const hourTypeEl = $('hour-type')
       if (hourTypeEl) hourTypeEl.textContent = getHourLabel(hHours)
+
+      // 16-hour clock
+      const h16Hours = hHours % 16
+      const h16HourAngle = ((h16Hours + hMinutes / 80) / 16) * 360 - 90
+      const hourEnd16 = handCoords(h16HourAngle, 68)
+
+      const hh16 = $('hand-hour-16')
+      const hm16 = $('hand-minute-16')
+      const hs16 = $('hand-second-16')
+      if (hh16) { hh16.setAttribute('x2', hourEnd16.x.toFixed(2)); hh16.setAttribute('y2', hourEnd16.y.toFixed(2)) }
+      if (hm16) { hm16.setAttribute('x2', minEnd.x.toFixed(2)); hm16.setAttribute('y2', minEnd.y.toFixed(2)) }
+      if (hs16) {
+        hs16.setAttribute('x2', secEnd.x.toFixed(2)); hs16.setAttribute('y2', secEnd.y.toFixed(2))
+        hs16.setAttribute('x1', secBack.x.toFixed(2)); hs16.setAttribute('y1', secBack.y.toFixed(2))
+      }
+      const dt16 = $('digital-time-16')
+      if (dt16) dt16.textContent = `${pad(h16Hours)}:${pad(hMinutes)}:${pad(hSeconds)}`
+      const dp16 = $('digital-period-16')
+      if (dp16) dp16.textContent = hHours < 16 ? 'AM Cycle' : 'PM Cycle'
+
       const marker = $('dn-marker')
       if (marker) {
         const fraction = (hHours + hMinutes / 80) / 32
@@ -1165,7 +1202,8 @@ export default function TimeSystem() {
     prevYearBtn?.addEventListener('click', onPrevYear)
     nextYearBtn?.addEventListener('click', onNextYear)
 
-    buildClockFace()
+    buildClockFaceFor('clock-ticks', 'clock-labels', 32)
+    buildClockFaceFor('clock-ticks-16', 'clock-labels-16', 16)
     buildCalendar(0)
     buildMonthsGrid()
     buildDaysGrid()
@@ -1228,57 +1266,93 @@ export default function TimeSystem() {
                 <h2 className="section-title">The 32-Hour Clock</h2>
                 <p className="section-desc">1 minute = 80 seconds · 1 hour = 80 minutes · 32 hours per day · 19h of Daylight, 13h of Night-time</p>
 
-                <div className="clock-layout">
-                  <div className="analog-clock-wrap">
-                    <svg className="analog-clock" viewBox="0 0 300 300" aria-label="Hetranian analog clock">
-                      <circle cx="150" cy="150" r="145" fill="var(--clock-face)" stroke="var(--clock-ring)" strokeWidth="2" />
-                      <circle cx="150" cy="150" r="138" fill="none" stroke="var(--clock-ring-inner)" strokeWidth="0.5" strokeDasharray="2 4" />
-                      <g id="clock-ticks" />
-                      <g id="clock-labels" fontFamily="Cinzel, serif" fill="var(--color-text)" textAnchor="middle" dominantBaseline="middle" />
-                      <g opacity="0.25">
-                        <circle cx="150" cy="60" r="8" fill="var(--color-accent-gold)" />
-                        <circle cx="155" cy="57" r="6" fill="var(--clock-face)" />
-                      </g>
-                      <g opacity="0.18">
-                        <circle cx="150" cy="240" r="5" fill="var(--color-accent-teal)" />
-                        <circle cx="152" cy="239" r="3.5" fill="var(--clock-face)" />
-                      </g>
-                      <line id="hand-hour" x1="150" y1="150" x2="150" y2="75" stroke="var(--color-text)" strokeWidth="4" strokeLinecap="round" />
-                      <line id="hand-minute" x1="150" y1="150" x2="150" y2="58" stroke="var(--color-accent-teal)" strokeWidth="2.5" strokeLinecap="round" />
-                      <line id="hand-second" x1="150" y1="160" x2="150" y2="50" stroke="var(--color-accent-red)" strokeWidth="1.5" strokeLinecap="round" />
-                      <circle cx="150" cy="150" r="5" fill="var(--color-text)" />
-                      <circle cx="150" cy="150" r="2.5" fill="var(--color-accent-red)" />
-                    </svg>
+                {/* Two clocks centered */}
+                <div className="clocks-row">
+
+                  {/* 32-Hour Clock */}
+                  <div className="clock-unit">
+                    <div className="clock-unit-label">32-Hour Clock</div>
+                    <div className="analog-clock-wrap" style={{ filter: 'drop-shadow(0 0 12px rgba(74,201,197,0.3))' }}>
+                      <svg className="analog-clock" viewBox="0 0 300 300" aria-label="32-hour Hetranian analog clock">
+                        <circle cx="150" cy="150" r="145" fill="var(--clock-face, #0d0e1a)" stroke="rgba(255,255,255,0.1)" strokeWidth="2"/>
+                        <circle cx="150" cy="150" r="138" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="0.5" strokeDasharray="2 4"/>
+                        <g id="clock-ticks" />
+                        <g id="clock-labels" fontFamily="Cinzel, serif" fill="currentColor" textAnchor="middle" dominantBaseline="middle" />
+                        <g opacity="0.25">
+                          <circle cx="150" cy="60" r="8" fill="#e8b04a" />
+                          <circle cx="155" cy="57" r="6" fill="var(--clock-face, #0d0e1a)" />
+                        </g>
+                        <g opacity="0.18">
+                          <circle cx="150" cy="240" r="5" fill="#4ac9c5" />
+                          <circle cx="152" cy="239" r="3.5" fill="var(--clock-face, #0d0e1a)" />
+                        </g>
+                        <line id="hand-hour" x1="150" y1="150" x2="150" y2="75" stroke="white" strokeWidth="4" strokeLinecap="round"/>
+                        <line id="hand-minute" x1="150" y1="150" x2="150" y2="58" stroke="#4ac9c5" strokeWidth="2.5" strokeLinecap="round"/>
+                        <line id="hand-second" x1="150" y1="160" x2="150" y2="50" stroke="#e05060" strokeWidth="1.5" strokeLinecap="round"/>
+                        <circle cx="150" cy="150" r="5" fill="white"/>
+                        <circle cx="150" cy="150" r="2.5" fill="#e05060"/>
+                      </svg>
+                    </div>
+                    <div id="digital-time" className="digital-time" style={{ textAlign: 'center' }}>00:00:00</div>
+                    <div id="digital-period" className="digital-period" style={{ textAlign: 'center', marginTop: 0 }}>Dawn</div>
                   </div>
 
-                  <div className="digital-display">
-                    <div className="digital-time" id="digital-time">00:00:00</div>
-                    <div className="digital-period" id="digital-period">Dawn</div>
-                    <div className="time-info-grid">
-                      <div className="time-info-card">
-                        <span className="ti-label">Day Period</span>
-                        <span className="ti-val" id="day-period">Daybreak</span>
-                      </div>
-                      <div className="time-info-card">
-                        <span className="ti-label">Day / Night</span>
-                        <span className="ti-val" id="day-night">Day (19h) & Night (13h)</span>
-                      </div>
-                      <div className="time-info-card">
-                        <span className="ti-label">Hour Type</span>
-                        <span className="ti-val" id="hour-type">AM & PM</span>
-                      </div>
-                      <div className="time-info-card">
-                        <span className="ti-label">UCC Offset</span>
-                        <span className="ti-val">±0 (Rynel)</span>
-                      </div>
+                  {/* 16-Hour Clock */}
+                  <div className="clock-unit">
+                    <div className="clock-unit-label">16-Hour Clock</div>
+                    <div className="analog-clock-wrap" style={{ filter: 'drop-shadow(0 0 12px rgba(74,201,197,0.3))' }}>
+                      <svg className="analog-clock" viewBox="0 0 300 300" aria-label="16-hour Hetranian analog clock">
+                        <circle cx="150" cy="150" r="145" fill="var(--clock-face, #0d0e1a)" stroke="rgba(255,255,255,0.1)" strokeWidth="2"/>
+                        <circle cx="150" cy="150" r="138" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="0.5" strokeDasharray="2 4"/>
+                        <g id="clock-ticks-16" />
+                        <g id="clock-labels-16" fontFamily="Cinzel, serif" fill="currentColor" textAnchor="middle" dominantBaseline="middle" />
+                        <g opacity="0.25">
+                          <circle cx="150" cy="60" r="8" fill="#e8b04a" />
+                          <circle cx="155" cy="57" r="6" fill="var(--clock-face, #0d0e1a)" />
+                        </g>
+                        <g opacity="0.18">
+                          <circle cx="150" cy="240" r="5" fill="#4ac9c5" />
+                          <circle cx="152" cy="239" r="3.5" fill="var(--clock-face, #0d0e1a)" />
+                        </g>
+                        <line id="hand-hour-16" x1="150" y1="150" x2="150" y2="75" stroke="white" strokeWidth="4" strokeLinecap="round"/>
+                        <line id="hand-minute-16" x1="150" y1="150" x2="150" y2="58" stroke="#4ac9c5" strokeWidth="2.5" strokeLinecap="round"/>
+                        <line id="hand-second-16" x1="150" y1="160" x2="150" y2="50" stroke="#e05060" strokeWidth="1.5" strokeLinecap="round"/>
+                        <circle cx="150" cy="150" r="5" fill="white"/>
+                        <circle cx="150" cy="150" r="2.5" fill="#e05060"/>
+                      </svg>
                     </div>
-                    <div className="time-conversion">
-                      <p className="conv-label">Time Conversion Reference</p>
-                      <div className="conv-row"><span>1 minute</span><span>= 80 seconds</span></div>
-                      <div className="conv-row"><span>1 hour</span><span>= 6,400 seconds</span></div>
-                      <div className="conv-row"><span>Half hour</span><span>= 40 min · 3,200 sec</span></div>
-                      <div className="conv-row"><span>Full day</span><span>= 32 hours · 204,800 sec</span></div>
+                    <div id="digital-time-16" className="digital-time" style={{ textAlign: 'center' }}>00:00:00</div>
+                    <div id="digital-period-16" className="digital-period" style={{ textAlign: 'center', marginTop: 0 }}>AM Cycle</div>
+                  </div>
+
+                </div>
+
+                {/* Info cards and conversion table below both clocks */}
+                <div className="digital-display">
+                  <div className="time-info-grid">
+                    <div className="time-info-card">
+                      <span className="ti-label">Day Period</span>
+                      <span id="day-period" className="ti-val">Daybreak</span>
                     </div>
+                    <div className="time-info-card">
+                      <span className="ti-label">Day / Night</span>
+                      <span id="day-night" className="ti-val">Day (19h)</span>
+                    </div>
+                    <div className="time-info-card">
+                      <span className="ti-label">Hour Type</span>
+                      <span id="hour-type" className="ti-val">AM</span>
+                    </div>
+                    <div className="time-info-card">
+                      <span className="ti-label">UCC Offset</span>
+                      <span className="ti-val">±0 (Rynel)</span>
+                    </div>
+                  </div>
+                  <div className="time-conversion">
+                    <p className="conv-label">Time Conversion Reference</p>
+                    <div className="conv-row"><span>1 minute</span><span>= 80 seconds</span></div>
+                    <div className="conv-row"><span>1 hour</span><span>= 6,400 seconds</span></div>
+                    <div className="conv-row"><span>Half hour</span><span>= 40 min · 3,200 sec</span></div>
+                    <div className="conv-row"><span>Full day</span><span>= 32 hours · 204,800 sec</span></div>
                   </div>
                 </div>
 
