@@ -40,6 +40,65 @@ const DAYS_OF_WEEK = [
   { num: 7, name: 'Sethraday', equiv: 'Saturday', named_after: 'Sethra', lore: 'His first church was built on Rynel — The Church of Unity, close to the Oakgnar Grand Tree.' },
 ]
 
+const SEASONS = [
+  {
+    name: 'Pink Spring',
+    color: '#f4a0c8',
+    ranges: [
+      { month: 0, from: 1, to: 31 },
+      { month: 1, from: 1, to: 31 },
+      { month: 2, from: 1, to: 31 },
+      { month: 3, from: 1, to: 30 },
+      { month: 4, from: 1, to: 31 },
+    ],
+  },
+  {
+    name: "Calderia's Heat",
+    color: '#f5a623',
+    ranges: [
+      { month: 5, from: 1, to: 30 },
+      { month: 6, from: 1, to: 31 },
+      { month: 7, from: 1, to: 26 },
+    ],
+  },
+  {
+    name: 'Aburhalle Fall',
+    color: '#c8762a',
+    ranges: [
+      { month: 7, from: 27, to: 31 },
+      { month: 8, from: 1, to: 30 },
+      { month: 9, from: 1, to: 31 },
+      { month: 10, from: 1, to: 26 },
+    ],
+  },
+  {
+    name: 'Wintervahle',
+    color: '#7ec8e3',
+    ranges: [
+      { month: 10, from: 27, to: 30 },
+      { month: 11, from: 1, to: 60 },
+      { month: 12, from: 1, to: 39 },
+    ],
+  },
+  {
+    name: 'Diebus Vitae Eve',
+    color: '#d4af37',
+    ranges: [
+      { month: 12, from: 40, to: 40 },
+      { month: 13, from: 1, to: 7 },
+    ],
+  },
+]
+
+function getSeasonForDay(monthIdx: number, day: number) {
+  for (const s of SEASONS) {
+    for (const r of s.ranges) {
+      if (r.month === monthIdx && day >= r.from && day <= r.to) return s
+    }
+  }
+  return null
+}
+
 const TIME_ZONES = [
   { name: 'Eulerich (Eulan Kingdom)', offset: 'UCC +12', desc: 'A prosperous continent. The Eulan Kingdom sits at the highest offset.' },
   { name: 'Eulerich (Oelen Kingdom)', offset: 'UCC +10', desc: 'The Oelen Kingdom, sharing the continent with Eulan but at a different zone.' },
@@ -442,7 +501,7 @@ const STYLES = `
 .hetra-cal .cal-day-header span { font-size: 9px; font-weight: 400; color: var(--color-text-faint); text-transform: none; letter-spacing: 0; font-family: var(--font-body); }
 .hetra-cal .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
 .hetra-cal .cal-cell {
-  min-height: 44px;
+  min-height: 58px;
   padding: var(--space-2);
   background: var(--color-surface-offset);
   border-radius: var(--radius-sm);
@@ -473,6 +532,40 @@ const STYLES = `
   position: absolute;
   top: 4px;
   right: 4px;
+}
+.hetra-cal .season-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: auto;
+  opacity: 0.9;
+  box-shadow: 0 0 4px currentColor;
+}
+.hetra-cal .season-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding: 12px 24px;
+  background: var(--hetra-surface-offset, #141525);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-radius: 0 0 8px 8px;
+}
+.hetra-cal .season-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.hetra-cal .season-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 .hetra-cal .year-progress-wrap {
   background: var(--color-surface-offset);
@@ -978,7 +1071,11 @@ export default function TimeSystem() {
       for (let d = 1; d <= month.days; d++) {
         const isEclipse = month.special === 'eclipse' && d === 31
         const cls = isEclipse ? 'cal-cell day eclipse-day' : 'cal-cell day'
-        html += `<div class="${cls}">${d}${isEclipse ? '<div class="eclipse-indicator" title="Red Blood Eclipse · 24:25 PM"></div>' : ''}</div>`
+        const season = getSeasonForDay(currentMonthIdx, d)
+        const seasonDot = season
+          ? `<div class="season-dot" style="background:${season.color}" title="${season.name}"></div>`
+          : ''
+        html += `<div class="${cls}">${d}${seasonDot}${isEclipse ? '<div class="eclipse-indicator" title="Red Blood Eclipse · 24:25 PM"></div>' : ''}</div>`
       }
       grid.innerHTML = html
       buildYearProgress()
@@ -1176,6 +1273,15 @@ export default function TimeSystem() {
                     <div className="cal-day-header" data-short="Set">Sethraday<span>Sat eq.</span></div>
                   </div>
                   <div className="cal-grid" id="cal-grid" />
+                  {/* Season legend */}
+                  <div className="season-legend">
+                    {SEASONS.map((s) => (
+                      <div key={s.name} className="season-legend-item">
+                        <div className="season-legend-dot" style={{ background: s.color }} />
+                        {s.name}
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 <div className="year-progress-wrap">
