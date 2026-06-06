@@ -1388,7 +1388,7 @@ export default function TimeSystem() {
               <div className="section-inner">
                 <div className="section-label">The Hetranian Almanac</div>
                 <h2 className="section-title">Year Calendar</h2>
-                <p className="section-desc">444 days · 14 months · Named after The Five Giants and their companions</p>
+                <p className="section-desc">444 days · 14 months · Named after The Five Giants and their companions. The Hibrythian Saga's is set in the year 2245+ </p>
 
                 {/* Year navigation */}
                 <div className="year-nav">
