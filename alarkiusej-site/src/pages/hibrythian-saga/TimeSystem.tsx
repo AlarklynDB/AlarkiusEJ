@@ -54,7 +54,7 @@ const SEASONS = [
     end:   { month: 7, day: 26 }
   },
   {
-    name: 'Aburhalle Fall',
+    name: 'Aburhalle (Fall)',
     color: '#8b5e3c',
     start: { month: 7, day: 27 },
     end:   { month: 10, day: 26 }
