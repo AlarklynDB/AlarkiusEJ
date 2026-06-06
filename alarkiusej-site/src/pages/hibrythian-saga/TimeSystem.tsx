@@ -335,12 +335,16 @@ const STYLES = `
 .hetra-cal .digital-display { display: flex; flex-direction: column; gap: var(--space-5); }
 .hetra-cal .digital-time {
   font-family: 'Cinzel', monospace;
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
   font-weight: 700;
   color: var(--color-accent-gold);
   letter-spacing: 0.08em;
   text-shadow: var(--shadow-glow-gold);
   line-height: 1;
+}
+.hetra-cal .digital-time-16 {
+  color: #9f7fe0;
+  text-shadow: 0 0 12px rgba(159,127,224,0.5);
 }
 .hetra-cal .digital-period {
   font-family: var(--font-heading);
@@ -1321,7 +1325,7 @@ export default function TimeSystem() {
                         <circle cx="150" cy="150" r="2.5" fill="#e05060"/>
                       </svg>
                     </div>
-                    <div id="digital-time-16" className="digital-time" style={{ textAlign: 'center' }}>00:00:00</div>
+                    <div id="digital-time-16" className="digital-time digital-time-16" style={{ textAlign: 'center' }}>00:00:00</div>
                     <div id="digital-period-16" className="digital-period" style={{ textAlign: 'center', marginTop: 0 }}>AM Cycle</div>
                   </div>
 
