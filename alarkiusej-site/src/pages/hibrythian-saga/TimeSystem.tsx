@@ -504,10 +504,10 @@ const STYLES = `
 }
 /* Checkerboard */
 .hetra-cal .cal-cell:nth-child(odd) {
-  background: #141525;
+  background: #1a1b2e;
 }
 .hetra-cal .cal-cell:nth-child(even) {
-  background: #1a1c2e;
+  background: #1d1f36;
 }
 .hetra-cal .cal-cell.empty {
   cursor: default;
@@ -515,7 +515,7 @@ const STYLES = `
 .hetra-cal .cal-cell {
   min-height: 58px;
   padding: 6px;
-  background: #141525;
+  background: #1a1b2e;
   border-radius: 0;
   border: none;
   display: flex;
