@@ -1094,7 +1094,7 @@ export default function TimeSystem() {
                       </div>
                       <div className="time-info-card">
                         <span className="ti-label">Day / Night</span>
-                        <span className="ti-val" id="day-night">Day (19h)</span>
+                        <span className="ti-val" id="day-night">Day (19h) | Night (13h)</span>
                       </div>
                       <div className="time-info-card">
                         <span className="ti-label">Hour Type</span>
