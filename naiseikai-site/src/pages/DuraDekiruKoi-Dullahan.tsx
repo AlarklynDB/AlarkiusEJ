@@ -496,7 +496,13 @@ const CHARACTER_TABS: { key: Tab; label: string; color: string }[] = [
   { key: 'characters-hinoka', label: 'Amane Hinoka',  color: 'text-[#ffaad4]' },
 ]
 
-function CharactersIndex({ onSelect }: { onSelect: (t: Tab) => void }) {
+
+const CHARACTER_ROUTES: Record<string, string> = {
+  'characters-kori': '/titles/DuraDekiruKoi-Dullahan/Kori-Yukino',
+  'characters-hinoka': '/titles/DuraDekiruKoi-Dullahan/Hinoka-Amane',
+}
+
+function CharactersIndex() {
   return (
     <div className="space-y-6">
       <div>
@@ -505,14 +511,14 @@ function CharactersIndex({ onSelect }: { onSelect: (t: Tab) => void }) {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {CHARACTER_TABS.map(({ key, label, color }) => (
-          <button
+          <Link
             key={key}
-            onClick={() => onSelect(key)}
-            className="border border-white/10 rounded-xl p-5 bg-[rgba(255,255,255,0.03)] hover:bg-[rgba(255,255,255,0.07)] transition-all text-left group"
+            to={CHARACTER_ROUTES[key]}
+            className="block border border-white/10 rounded-xl p-5 bg-[rgba(255,255,255,0.03)] hover:bg-[rgba(255,255,255,0.07)] transition-all text-left group"
           >
             <p className={`font-serif text-lg ${color} mb-1 group-hover:underline`}>{label}</p>
             <p className="text-[10px] font-mono text-text-faint">View full profile →</p>
-          </button>
+          </Link>
         ))}
       </div>
     </div>
@@ -601,7 +607,7 @@ export default function Dullahan() {
 
       {/* Content */}
       {activeTab === 'overview'             && <OverviewTab />}
-      {activeTab === 'characters'           && <CharactersIndex onSelect={setActiveTab} />}
+      {activeTab === 'characters'           && <CharactersIndex />}
       {activeTab === 'characters-kori'      && <KoriTab />}
       {activeTab === 'characters-hinoka'    && <HinokaTab />}
 
