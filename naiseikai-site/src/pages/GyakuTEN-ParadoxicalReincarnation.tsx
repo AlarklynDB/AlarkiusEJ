@@ -680,7 +680,14 @@ const CHARACTER_TABS: { key: Tab; label: string; color: string; sub: string }[] 
   { key: 'characters-masato',   label: 'Masato Ren',         color: 'text-[#ffaad4]', sub: 'Antagonist · "Killer-kun"' },
 ]
 
-function CharactersIndex({ onSelect }: { onSelect: (t: Tab) => void }) {
+
+const CHARACTER_ROUTES: Record<string, string> = {
+  'characters-narrator': '/titles/GyakuTEN-ParadoxicalReincarnation/Narrator-Kun',
+  'characters-eina': '/titles/GyakuTEN-ParadoxicalReincarnation/Eina-Arataki',
+  'characters-masato': '/titles/GyakuTEN-ParadoxicalReincarnation/Masato-Ren-Killer-kun',
+}
+
+function CharactersIndex() {
   return (
     <div className="space-y-6">
       <div>
@@ -689,15 +696,15 @@ function CharactersIndex({ onSelect }: { onSelect: (t: Tab) => void }) {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {CHARACTER_TABS.map(({ key, label, color, sub }) => (
-          <button
+          <Link
             key={key}
-            onClick={() => onSelect(key)}
-            className="border border-white/10 rounded-xl p-5 bg-[rgba(255,255,255,0.03)] hover:bg-[rgba(255,255,255,0.07)] transition-all text-left group"
+            to={CHARACTER_ROUTES[key]}
+            className="block border border-white/10 rounded-xl p-5 bg-[rgba(255,255,255,0.03)] hover:bg-[rgba(255,255,255,0.07)] transition-all text-left group"
           >
             <p className={`font-serif text-lg ${color} mb-0.5 group-hover:underline`}>{label}</p>
             <p className="text-[10px] font-mono text-text-faint mb-2">{sub}</p>
             <p className="text-[10px] font-mono text-text-faint">View full profile →</p>
-          </button>
+          </Link>
         ))}
         {/* Supporting */}
         {['The Arataki Family', 'Runa Mizuki', 'Junto "Junta" Hayasaka'].map(n => (
@@ -793,7 +800,7 @@ export default function GyakuTen() {
 
       {/* Content */}
       {activeTab === 'overview'               && <OverviewTab />}
-      {activeTab === 'characters'             && <CharactersIndex onSelect={setActiveTab} />}
+      {activeTab === 'characters'             && <CharactersIndex />}
       {activeTab === 'characters-narrator'    && <NarratorTab />}
       {activeTab === 'characters-eina'        && <EinaTab />}
       {activeTab === 'characters-masato'      && <MasatoTab />}
