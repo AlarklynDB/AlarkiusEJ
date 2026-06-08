@@ -772,7 +772,14 @@ const CHARACTER_TABS: { key: Tab; label: string; color: string }[] = [
   { key: 'characters-ayumi',  label: 'Kazehara, Ayumi',  color: 'text-[#d49fff]' },
 ]
 
-function CharactersIndex({ onSelect }: { onSelect: (t: Tab) => void }) {
+
+const CHARACTER_ROUTES: Record<string, string> = {
+  'characters-ayane': '/titles/HitoJinzo2GF-LonelyAndroid/Ayane-Otokura',
+  'characters-akari': '/titles/HitoJinzo2GF-LonelyAndroid/Akari-Chisaki',
+  'characters-ayumi': '/titles/HitoJinzo2GF-LonelyAndroid/Ayumi-Kazehara',
+}
+
+function CharactersIndex() {
   return (
     <div className="space-y-6">
       <div>
@@ -781,14 +788,14 @@ function CharactersIndex({ onSelect }: { onSelect: (t: Tab) => void }) {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {CHARACTER_TABS.map(({ key, label, color }) => (
-          <button
+          <Link
             key={key}
-            onClick={() => onSelect(key)}
-            className="border border-white/10 rounded-xl p-5 bg-[rgba(255,255,255,0.03)] hover:bg-[rgba(255,255,255,0.07)] transition-all text-left group"
+            to={CHARACTER_ROUTES[key]}
+            className="block border border-white/10 rounded-xl p-5 bg-[rgba(255,255,255,0.03)] hover:bg-[rgba(255,255,255,0.07)] transition-all text-left group"
           >
             <p className={`font-serif text-lg ${color} mb-1 group-hover:underline`}>{label}</p>
             <p className="text-[10px] font-mono text-text-faint">View full profile →</p>
-          </button>
+          </Link>
         ))}
         <div className="border border-white/5 rounded-xl p-5 bg-[rgba(255,255,255,0.01)] opacity-40">
           <p className="font-serif text-lg text-text-faint mb-1">"Ayafutsu-Sensei"</p>
@@ -881,7 +888,7 @@ export default function LonelyAndroid() {
 
       {/* Content */}
       {activeTab === 'overview'            && <OverviewTab />}
-      {activeTab === 'characters'          && <CharactersIndex onSelect={setActiveTab} />}
+      {activeTab === 'characters'          && <CharactersIndex />}
       {activeTab === 'characters-ayane'    && <AyaneTab />}
       {activeTab === 'characters-akari'    && <AkariTab />}
       {activeTab === 'characters-ayumi'    && <AyumiTab />}
