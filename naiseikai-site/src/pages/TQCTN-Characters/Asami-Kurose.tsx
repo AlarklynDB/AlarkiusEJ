@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 
 // ─── Shared helpers ───────────────────────────────────────────────────────────
@@ -19,7 +20,7 @@ function Divider() {
 
 // ─── Identity block ───────────────────────────────────────────────────────────
 
-function IdentityBlock({ icon, title, children }: { icon: string; title: string; children: React.ReactNode }) {
+function IdentityBlock({ icon, title, children }: { icon: string; title: string; children: ReactNode }) {
   const [open, setOpen] = useState(false)
   return (
     <div className="border border-white/10 rounded-xl overflow-hidden mb-3">
