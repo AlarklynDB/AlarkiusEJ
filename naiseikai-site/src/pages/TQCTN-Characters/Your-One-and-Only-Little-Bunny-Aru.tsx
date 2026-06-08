@@ -16,29 +16,6 @@ function Divider() {
   return <div className="section-divider my-8" />
 }
 
-// ─── Identity block ───────────────────────────────────────────────────────────
-
-function IdentityBlock({ icon, title, children }: { icon: string; title: string; children: React.ReactNode }) {
-  const [open, setOpen] = useState(false)
-  return (
-    <div className="border border-white/10 rounded-xl overflow-hidden mb-3">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-5 py-3 bg-[rgba(255,255,255,0.03)] hover:bg-[rgba(255,255,255,0.06)] transition-colors text-left"
-      >
-        <span className="font-mono text-sm text-text-muted">
-          <span className="mr-2">{icon}</span>{title}
-        </span>
-        <span className="text-text-faint text-xs font-mono">{open ? '▲' : '▼'}</span>
-      </button>
-      {open && (
-        <div className="px-5 py-4 text-sm text-text-muted leading-relaxed space-y-2 bg-[rgba(255,255,255,0.01)] border-t border-white/5">
-          {children}
-        </div>
-      )}
-    </div>
-  )
-}
 
 // ─── Overview Tab ────────────────────────────────────────────────────────────
 
