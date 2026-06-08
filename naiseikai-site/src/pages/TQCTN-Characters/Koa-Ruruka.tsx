@@ -12,13 +12,9 @@ function ImgPlaceholder({ label, aspect = 'aspect-[3/4]' }: { label: string; asp
   )
 }
 
-// ─── Section divider ─────────────────────────────────────────────────────────
-
 function Divider() {
   return <div className="section-divider my-8" />
 }
-
-// ─── Identity block ───────────────────────────────────────────────────────────
 
 function IdentityBlock({ icon, title, children }: { icon: string; title: string; children: ReactNode }) {
   const [open, setOpen] = useState(false)
@@ -42,9 +38,6 @@ function IdentityBlock({ icon, title, children }: { icon: string; title: string;
   )
 }
 
-// ─── Overview Tab ────────────────────────────────────────────────────────────
-
-
 // ─── Breadcrumb ───────────────────────────────────────────────────────────────
 
 function Breadcrumb() {
@@ -56,19 +49,20 @@ function Breadcrumb() {
       <span>/</span>
       <Link to="/titles/KarasuToNinja-TQCTN" className="hover:text-[#00e5ff] transition-colors">Characters</Link>
       <span>/</span>
-      <span className="text-[#ff6b9d]">Koa Ruruka</span>
+      <span className="text-[#d49fff]">Koa Ruruka</span>
     </nav>
   )
 }
 
 // ─── Character content ────────────────────────────────────────────────────────
+
 function KoaRurukaTab() {
   return (
     <div className="space-y-8">
       <ImgPlaceholder label="/characters/koa-ruruka.jpg" aspect="aspect-[3/4]" />
 
       <div>
-        <span className="neon-sign neon-sign-purple text-[10px] mb-3 inline-block">Main Character</span>
+        <span className="neon-sign-purple text-[10px] mb-3 inline-block">Main Character</span>
         <h2 className="font-serif text-3xl text-[#d49fff] mb-1">Koa Ruruka</h2>
         <p className="text-text-faint font-mono text-sm italic">"She's the one. My one and only."</p>
       </div>
@@ -82,11 +76,12 @@ function KoaRurukaTab() {
           {[
             { label: 'First Name', value: 'Koa' },
             { label: 'Last Name', value: 'Ruruka' },
-            { label: 'Full Name', value: '瑠月琥空' },
+            { label: 'Nickname', value: 'Koa-chan' },
             { label: 'Gender', value: 'Female' },
             { label: 'Sexuality', value: 'Lesbian' },
             { label: 'Age', value: '24' },
             { label: 'Birthday', value: 'November 2nd, 2076' },
+            { label: 'OC Date of Creation', value: '2025' },
             { label: 'Height', value: '167.64 cm (5\'6")' },
           ].map(({ label, value }) => (
             <div key={label} className="bg-[rgba(255,255,255,0.03)] border border-white/10 rounded-xl p-3">
@@ -102,28 +97,43 @@ function KoaRurukaTab() {
       {/* Nicknames */}
       <div>
         <h3 className="font-serif text-lg text-text mb-3">Nicknames</h3>
-        <div className="space-y-2 text-sm text-text-muted">
-          <p><span className="text-text-faint font-mono text-xs">General — </span>Koa-chan, Ruruka, Ruru-chii (Reina / Haruhi), Ko-achii, Ururu (Haruhi), Koru / Koara / Koala (Asami)</p>
-          <div>
-            <p className="text-text-faint font-mono text-xs mb-1">Little Aru's Nicknames —</p>
-            <div className="flex flex-wrap gap-2">
-              {['Purple Lady', 'Mommy #3', 'Ninja Lady', 'Thwacky Parkour Mommy #3', 'BIG OPPAI NINJA'].map(n => (
-                <span key={n} className="tag">{n}</span>
-              ))}
-            </div>
+        <div className="space-y-3 text-sm text-text-muted">
+          <div className="neon-card">
+            <p className="text-[10px] font-mono text-text-faint mb-2">General</p>
+            <p>Koa-chan</p>
+            <ul className="list-disc list-inside mt-2 space-y-1">
+              <li>Ruruka, since Ruruka prefers it with everyone</li>
+              <li>Ruru-chii (from Reina and Haruhi)</li>
+              <li>Ko-achii (by everyone)</li>
+              <li>Ururu sometimes, by Haruhi</li>
+              <li>Koru or Koara (Koala) by Asami</li>
+            </ul>
+          </div>
+          <div className="neon-card">
+            <p className="text-[10px] font-mono text-text-faint mb-2">Aru's Nicknames for Ruruka!!!</p>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Purple Lady by Little Aru, sometimes Mommy #3 and Ninja Lady</li>
+              <li>Thwacky Parkour Mommy #3 - Yes, ARU likes calling her that</li>
+              <li>BIG OPPAI NINJA!!!! (WHAT?! IT'S TRUE. ARU HAS SEEN HEAVEN!!!)</li>
+            </ul>
           </div>
         </div>
       </div>
 
       <Divider />
 
-      {/* Story */}
+      {/* The Story */}
       <div>
-        <h3 className="font-serif text-lg text-text mb-4">Story</h3>
+        <h3 className="font-serif text-lg text-text mb-4">The Story</h3>
         <div className="space-y-3 text-sm text-text-muted leading-relaxed">
-          <p>Koa Ruruka comes from a wealthy ninja heritage — the Koa Clan of Hiroshima Prefecture. She was exiled from her clan for the unforgivable reason of being a lesbian. The Koa Clan holds that only the union of man and woman is sacred. The NYAQ and Ujuukyō disagree.</p>
-          <p>She found Hanako Reina crying alone in a park one night. She took her in. At first she saw Reina as a daughter figure. But Reina confessed her feelings. Ruruka was caught off guard — her emotions were more complicated than she expected.</p>
-          <p>Reina gave Ruruka a handmade ice snowflake necklace with both their names engraved. Ruruka cried. And then, on her birthday, she asked Reina out. They are now dating.</p>
+          <p>Koa Ruruka, she comes from a wealthy ninja heritage, but was stripped of it after her family found out she had preferences for women. Despite her outgoing and laidback personality, she never cared of her heritage because it didn't matter to her. She wanted to live a life to work diligently to earn her own income even without inheriting it from her parents. Ruruka always has her guard up.</p>
+          <p>One day, coming home from work, she found a girl crying next to a play structure in a park, where she commutes daily. She asks if she was okay but she wasn't. Getting her name, she was known as Hanako Reina, a girl who had lost a life that meant everything. Hanako tells her story to Koa, and she felt deeply moved, wanting to care for her. So, she offers her to stay at her place.</p>
+          <p>Ruruka acted like a motherly figure to Hanako when they started living together as room-mates, but as time passed, Hanako had grown to like Koa, and confessed her feelings to her.</p>
+          <p>Hanako states that she only saw her as a daughter, someone who had no one else to care for. But Hanako ignores that remark and wants to stay with Koa.</p>
+          <blockquote className="border-l-2 border-[#d49fff]/40 pl-4 italic">"I would risk anything to be by your side, Ruruka-san" Hanako says to her.</blockquote>
+          <p>However, her feelings to Hanako changed one day, as Hanako presented a necklace she made herself to Ruruka. It had completely broke her high guard and she cried in Hanako's arms, unable to comprehend the feelings she had for her. The present was an ice snowflake, with both of their names etched in it. Ruruka wore it, but all she could do was weep. Eventually, she spoke of the elephant in the room, telling Hanako that her feelings towards her was mixed, including herself, apologizing even. Hanako, however, accepts it, but her feelings for Ruruka still stayed the same.</p>
+          <p>Ruruka asks Hanako out on her birthday, and they started dating.</p>
+          <p>This bold move from Hanako was enough to break Ruruka into tears.</p>
         </div>
       </div>
 
@@ -131,9 +141,38 @@ function KoaRurukaTab() {
 
       {/* The Koa Clan */}
       <div>
-        <h3 className="font-serif text-lg text-text mb-4">The Koa Clan</h3>
-        <div className="callout space-y-3 text-sm text-text-muted leading-relaxed">
-          <p>The Koa Clan hails from Hiroshima Prefecture. The full clan name is <span className="font-mono text-text">"Koaru-hanaeitana-kayamei-mizukana"</span>, split into 15 generations. One descendant is a half-dragon, half-human hybrid.</p>
+        <h3 className="font-serif text-lg text-text mb-4">The "Koa" Clan</h3>
+        <div className="space-y-3 text-sm text-text-muted leading-relaxed">
+          <p>Her Ninja Clan, called the Koa Clan (from where she was ostracized from) is in the Hiroshima Prefecture of Neo-Japan. Well, truth be told, Koa is actually a shortened version of the name:</p>
+          <div className="callout font-mono text-center text-text-faint italic">
+            "Koaru-hanaeitana-kayamei-mizukana"—
+          </div>
+          <p>which is supposedly the longest name a Ninja Family had for generations. This long name can be split up into different parts, which became their own families later down the line:</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {[
+              { gen: '15th, Last Gen', name: 'Koa', note: 'Where Ruruka came from.' },
+              { gen: '14th Gen', name: 'Koaru' },
+              { gen: '13th Gen', name: 'Hanae' },
+              { gen: '12th Gen', name: 'Eita' },
+              { gen: '11th Gen', name: 'Ruha' },
+              { gen: '10th Gen', name: 'Tana' },
+              { gen: '9th Gen', name: 'Itana' },
+              { gen: '8th Gen', name: 'Kaya' },
+              { gen: '7th Gen', name: 'Kayamei' },
+              { gen: '6th Gen', name: 'Mei' },
+              { gen: '5th Gen', name: 'Ayame' },
+              { gen: '4th Gen', name: 'Mizu' },
+              { gen: '3rd Gen', name: 'Mizuka' },
+              { gen: '2nd Gen', name: 'Kana' },
+              { gen: '1st Gen', name: 'Izuka' },
+            ].map(({ gen, name, note }) => (
+              <div key={gen} className="bg-[rgba(255,255,255,0.03)] border border-white/10 rounded-xl p-3">
+                <p className="text-[10px] font-mono text-text-faint mb-0.5">{gen}</p>
+                <p className="text-sm text-text-muted font-mono">{name}{note ? <span className="text-text-faint text-xs ml-2">— {note}</span> : ''}</p>
+              </div>
+            ))}
+          </div>
+          <p>The entire list of families and names here have up to four or five siblings, which makes their children at least long distant cousins of Ruruka by at least 3% of their shared bloodline. Among one of these generations, one of their kids is a half dragon half human hybrid.</p>
         </div>
       </div>
 
@@ -143,51 +182,97 @@ function KoaRurukaTab() {
       <div>
         <h3 className="font-serif text-lg text-text mb-4">The Four Identities</h3>
         <IdentityBlock icon="😃" title="The Social Self">
-          <p>Outgoing and warm. She meets new people easily — yokai and human alike. Naturally motherly. People feel safe around her.</p>
+          <p>Ruruka is plenty outgoing. She likes to meet new people whether or not they are yokai or not. In fact, during her time with the NYAQ, she has a couple of good acquaintances she often keeps up with even if they hadn't chatted with her in a while. Gets along well with others. Sometimes would help others or protect them if needed, which gives her this "mother" like personality. Warm and distinguished.</p>
         </IdentityBlock>
         <IdentityBlock icon="🦋" title="The Personal Self">
-          <p>Deeply trusts Reina, Haruhi, and Aru. Soft and fully open with them. Sweet with Reina since they started dating — she pampers her. Loves giving Aru headpats.</p>
+          <p>Whenever she's with Reina or Haruhi, <em>maybe even Little Aru</em>, she trusts them because they're friends. Haruhi is the best friend that stays platonic no matter what. If Ruruka ever goes out of line, she trusts them enough to bring her back to her senses. Ruruka allows herself to be soft and open with them and sometimes would share her troubles. But with Reina, she's got this very sweet side to her ever since they started dating. She loves her friends very much. Likes to pamper Aru with headpats and snuggles.</p>
         </IdentityBlock>
         <IdentityBlock icon="👤" title="The Core Self">
-          <p>Always holds her guard. Trained to protect herself first. Reina has been slowly teaching her that equality matters more than self-preservation. It's a work in progress — and it's changing her.</p>
+          <p>As a Ninja, she always holds her guard up. Even after being exiled from the Koa Clan, she swears to herself to protect herself at all costs, even if it becomes risky. Despite still retaining great skills as a Ninja she doesn't heavily rely on them when needed, only when the situation is called for. But ever since Reina had come into her life, she swore to change this side of her, because Reina taught her that equality is more important than self preservation and guardedness.</p>
         </IdentityBlock>
-        <IdentityBlock icon="👤" title="Core Self with Haruhi">
-          <p>They dated in high school for about 2 years. Haruhi once confided in Ruruka about her past with Asami — Ruruka was furious. She tracked Asami down and gave her words. She can't kill due to YHCA laws, but she made her point.</p>
+        <IdentityBlock icon="👤" title="The Core Self with Haruhi">
+          <p>There was a time they dated in High School when Haruhi moved to Tokyo to finish school, and to start the Usagi Cafe. They roughly dated for around two years. It was decent. At least. Because Haruhi had asked Ruruka out during one year and that's when they started going out. But at some point, Haruhi had to confide Ruruka into her previous relationship with Asami, which made Ruruka furious (she had the right to be mad). Ruruka tracked Asami down just to see her and give her some words. She could kill Asami for what she did to Haruhi, but death would be a harsh judgement since it wouldn't rectify what she did. But it's deemed illegal for humans to kill yokai, as stated in the YHCA laws.</p>
+          <p>However, with Haruhi being with Ruruka, she gave her the chance to be herself, which is what enabled that cheerful personality Haruhi needed so much.</p>
         </IdentityBlock>
-        <IdentityBlock icon="🤐" title="The Hidden Self">
-          <p>Stoic beneath the warmth. The Koa Clan exile troubled her more than she shows. She trusts her intuition fiercely — always knows right from wrong, even when everything around her is wrong.</p>
+        <IdentityBlock icon="🤕" title="The Hidden Self">
+          <p>Ruruka can….be a little stoic even if she doesn't know it. She knows she's not perfect, but being evicted from the Koa Clan deeply troubled her. Even if the folks there knew about her preferences in women. The Koa Clan strictly follows the belief that man and women should be together, but Ruruka thinks otherwise. She knows the distinction of right and wrong, and she trusts her intuitiveness when it comes to choosing who her partner is to her.</p>
         </IdentityBlock>
-        <IdentityBlock icon="🤕" title="Hidden Self — Full Tragedy">
-          <p>A training mission went wrong. She unsealed a cursed coffin — spirits escaped and corrupted her parents. Her parents were impaled on a fence. She witnessed it.</p>
-          <p>The Koa Clan blamed her. She was imprisoned for 2 years. Then she stole a forbidden tome and used it on her parents' graves — her parents returned, but as twisted homunculi. The tome cursed her with 400 years of slowed aging.</p>
-          <p>She was imprisoned for 4 more years. She broke four laws in total. The final, unforgivable reason for her exile? Being a lesbian.</p>
+        <IdentityBlock icon="🤕" title="The Hidden Self - 2">
+          <p>The deeper root of her guarded nature comes from a tragedy she carries alone. When Ruruka was still training as a ninja, she went on a mission with her parents—a "take your kid to work day" that went horribly wrong. She carelessly unsealed a cursed coffin containing dangerous spirits. The spirits corrupted her parents, took control of their bodies, and forced them to impale themselves on a sharp wooden fence. Ruruka witnessed it all.</p>
+          <p>The clan blamed her for their deaths and imprisoned her for two years before placing her with a host family. But grief turned to obsession. She broke into the Clan Archive Building, stole a forbidden tome said to revive the dead, and used it on her parents' graves. The spell went wrong—her parents returned as twisted homunculi, and the tome cursed her with 400 years of slowed aging. She never wanted immortality. She just wanted them back.</p>
+          <p>The clan discovered what she'd done and imprisoned her for four more years. She had broken four laws: defying Ujuukyō's teachings by turning her back on honoring death, attempting forbidden revival, and later—though unrelated to this incident—killing yokai during the YARC destruction (a YHCA violation). But the final reason for her exile wasn't any of these infractions.</p>
+          <p>Being lesbian was why the Koa Clan cast her out. They taught that only relationships between men and women were sacred, though Ujuukyō and the NYAQ say otherwise. Not all Ninja Clans hold these beliefs, but hers did. This is why Ruruka built walls around her heart—why she struggles with vulnerability, why guardedness became her armor, and why loyalty means everything to her now.</p>
         </IdentityBlock>
       </div>
 
       <Divider />
 
-      {/* Abilities */}
+      {/* Ninja Status and Abilities */}
       <div>
-        <h3 className="font-serif text-lg text-text mb-4">Ninja Status &amp; Abilities</h3>
+        <h3 className="font-serif text-lg text-text mb-4">Ninja Status and Abilities</h3>
         <div className="space-y-3 text-sm text-text-muted leading-relaxed">
-          <p><span className="font-mono text-xs text-text-faint">Classification — </span>High class human ninja.</p>
-          <p><span className="font-mono text-xs text-text-faint">Power — </span>Can pulverize a factory-sized building. If she stopped holding back, she could destroy a state-wide city.</p>
-          <p><span className="font-mono text-xs text-text-faint">Speed — </span>90–120 mph in under 15 minutes. Trained at Japan National Stadium. Nickname: "Speed Demon."</p>
-          <p><span className="font-mono text-xs text-text-faint">Tools — </span>Shadow Tomes, Runes, Talismans, Glyphs, spells, Kunai, Shurikens, Swords.</p>
-          <p><span className="font-mono text-xs text-text-faint">Vision — </span>Cat and bat vision — sees clearly in the dark for miles. Hilariously, she mistakes planes for birds and shopping bags for Vapor Spirits.</p>
-          <p><span className="font-mono text-xs text-text-faint">Reflexes — </span>Under 10ms (close to the Condylostylus fly; better than cats at 20ms). Emotionally, though? Dense and slow.</p>
+          <p>Ninjas in this world are High Class Humans that often like to affiliate themselves with Yokai, due to the Ninja Yokai Association Quarters. Her Ninja Status in the NYAQ, she's known as The Speed Demon.</p>
+          <div className="neon-card">
+            <p className="font-mono text-xs text-text-faint mb-2">Ruruka is QUITE strong!</p>
+            <p>She can pulverize a factory size building if she wanted. That's how strong she is. If she wanted, and hadn't held back, she could assassinate and destroy a single state-wide city. Although she is not a yokai, her status as a Ninja is very high (less known) in the Ninja Yokai Association Quarters (NYAQ). She doesn't want fame as much, but she does get missions from them every now and then.</p>
+          </div>
+          <div className="neon-card">
+            <p className="font-mono text-xs text-text-faint mb-2">Her speed is something else!</p>
+            <p>When she trained under the NYAQ, her top recorded speed was at 90-120 miles per hour, in under 15 minutes. She was trained in the Japan National Stadium. Her nickname was <em>"Speed Demon."</em></p>
+          </div>
+          <div className="neon-card">
+            <p className="font-mono text-xs text-text-faint mb-2">Ruruka uses Tomes, Runes, and Glyphs, Talismans….etc</p>
+            <p>As a Ninja, she specializes in Shadow Tomes, Runes, Talismans, and Glyphs. Sometimes spells too. She has a lot of these in her arsenal. But ever since she was evicted and kicked out from the Koa Clan (for being gay), she still has them. It is unknown of how <em>many</em> she has. Kunai, Shurkiens and Swords are her main form of combat, not just her fists.</p>
+          </div>
+          <div className="neon-card">
+            <p className="font-mono text-xs text-text-faint mb-2">Her Perception is Strong!</p>
+            <p>Her eyesight as a Ninja rivals that of a cat and a bat. She can see well in the dark, along with far away objects that are miles away. Comparable to Reina. But Ruruka is dumb and often mistakes a plane as a bird, even when it's up close. She confused a shopping bag for a Vapor Spirit.</p>
+          </div>
+          <div className="neon-card">
+            <p className="font-mono text-xs text-text-faint mb-2">Her Reflexes are OFF THE CHARTS</p>
+            <p>She doesn't know it, but her hyper-reflexive reaction time is UNDER 10ms, which is as close to a Condylostylus (long legged fly) and far better than a cat! (cats react at 20ms). But when it comes to emotional reflexes…..she is emotionally dense and also slow. Which is why she often holds her guard up.</p>
+          </div>
         </div>
       </div>
 
       <Divider />
 
-      {/* Jobs */}
+      {/* More about Ruruka */}
       <div>
-        <h3 className="font-serif text-lg text-text mb-3">Jobs</h3>
-        <div className="flex flex-wrap gap-2">
-          {['Interior Designer / Judge (day)', 'Bartender (night)', 'Freelance pet caretaker'].map(j => (
-            <span key={j} className="tag tag-cyan">{j}</span>
-          ))}
+        <h3 className="font-serif text-lg text-text mb-4">More about Ruruka!</h3>
+        <div className="space-y-3">
+          <div className="neon-card text-sm text-text-muted">
+            <p className="font-mono text-xs text-text-faint mb-2">Relationships</p>
+            <p>She is happily taken, Hanako Reina's girlfriend.</p>
+            <p>Haruhi Aoi's acquaintance and friend.</p>
+            <p>Friends from high school, used to be couples.</p>
+          </div>
+          <div className="neon-card text-sm text-text-muted">
+            <p className="font-mono text-xs text-text-faint mb-2">Sexuality</p>
+            <p>Lesbian / Gay. She has a strong preference in women, specifically those who are quiet or have rare talents.</p>
+          </div>
+          <div className="neon-card text-sm text-text-muted">
+            <p className="font-mono text-xs text-text-faint mb-2">Jobs</p>
+            <p>She works three jobs. During the day, she is an Interior Designer / Judge</p>
+            <p>During the night, she works as a bartender</p>
+            <p>She is also a freelance pet caretaker</p>
+          </div>
+          <div className="neon-card text-sm text-text-muted">
+            <p className="font-mono text-xs text-text-faint mb-2">Personality</p>
+            <p>Outgoing and extroverted, she acts like a mom to others. The only person she will ever spoil is Hanako. She is a strange yet mysterious person, and she loves to be open.</p>
+          </div>
+          <div className="neon-card text-sm text-text-muted">
+            <p className="font-mono text-xs text-text-faint mb-2">Likes</p>
+            <p>She likes all kinds of animals. Music is also something she likes.</p>
+          </div>
+          <div className="neon-card text-sm text-text-muted">
+            <p className="font-mono text-xs text-text-faint mb-2">Dislikes</p>
+            <p>abusive parents, toxic traits</p>
+          </div>
+          <div className="neon-card text-sm text-text-muted">
+            <p className="font-mono text-xs text-text-faint mb-2">Hobbies</p>
+            <p>She loves playing with dogs and cats, bunnies also.</p>
+          </div>
         </div>
       </div>
 
@@ -196,35 +281,9 @@ function KoaRurukaTab() {
       {/* Appearance */}
       <div>
         <h3 className="font-serif text-lg text-text mb-4">Appearance</h3>
-        <div className="space-y-2 text-sm text-text-muted">
-          <p><span className="text-text-faint font-mono text-xs">Hair — </span>Long purple-brown hair.</p>
-          <p><span className="text-text-faint font-mono text-xs">Eyes — </span>Amethyst.</p>
-          <p><span className="text-text-faint font-mono text-xs">Style — </span>Often wears ninja clothing; switches to casual on days off.</p>
-        </div>
-      </div>
-
-      <Divider />
-
-      {/* Personality & Traits */}
-      <div>
-        <h3 className="font-serif text-lg text-text mb-4">Personality &amp; Traits</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <div className="neon-card">
-            <p className="font-mono text-xs text-text-faint mb-2">Personality</p>
-            <p className="text-sm text-text-muted">Outgoing, extroverted. Acts like a mom to everyone around her — but only truly spoils Hanako. Strange yet mysterious. Loves being open.</p>
-          </div>
-          <div className="neon-card">
-            <p className="font-mono text-xs text-text-faint mb-2">Likes</p>
-            <p className="text-sm text-text-muted">All kinds of animals. Music.</p>
-          </div>
-          <div className="neon-card">
-            <p className="font-mono text-xs text-text-faint mb-2">Dislikes</p>
-            <p className="text-sm text-text-muted">Abusive parents. Toxic traits.</p>
-          </div>
-        </div>
-        <div className="neon-card mt-3">
-          <p className="font-mono text-xs text-text-faint mb-2">Hobbies</p>
-          <p className="text-sm text-text-muted">Playing with dogs, cats, and bunnies.</p>
+        <div className="neon-card text-sm text-text-muted leading-relaxed">
+          <p>She has long purple-brown hair, her eyes, an amethyst like color. She's 167.64 cm tall (5'6)</p>
+          <p className="mt-2">Often wears her ninja clothing everywhere even to her jobs. She still likes to uphold her ninja status for legal reasons. But on her days off, she wears casual clothes.</p>
         </div>
       </div>
 
@@ -233,19 +292,27 @@ function KoaRurukaTab() {
       {/* Name Meaning */}
       <div>
         <h3 className="font-serif text-lg text-text mb-3">Name Meaning</h3>
-        <div className="callout space-y-2 text-sm text-text-muted font-mono">
-          <p>琥空 <span className="text-text">Koa</span> — 琥 = Amber, 空 = Sky</p>
-          <p>瑠月 <span className="text-text">Ruruka</span> — 瑠 = Lapis lazuli, 月 = Moon</p>
-          <p className="font-sans text-text-faint italic mt-1">Full name: 瑠月琥空</p>
+        <div className="space-y-4 text-sm text-text-muted">
+          <div className="callout">
+            <p className="font-mono text-xs text-text-faint mb-2">─────⊰ First Name Breakdown - Koa 琥空:</p>
+            <p className="font-mono">琥 = Amber</p>
+            <p className="font-mono">空 = Sky</p>
+          </div>
+          <div className="callout">
+            <p className="font-mono text-xs text-text-faint mb-2">─────⊰ Last Name Breakdown - Ruruka 瑠月</p>
+            <p className="font-mono">瑠 = Lapis, lapis lazuli</p>
+            <p className="font-mono">月 = Moon, month</p>
+          </div>
+          <div className="callout">
+            <p className="font-mono text-xs text-text-faint mb-1">Full Name:</p>
+            <p className="font-mono text-base text-[#d49fff]">瑠月琥空</p>
+          </div>
         </div>
       </div>
 
     </div>
   )
 }
-
-// ─── Haruhi Aoi ──────────────────────────────────────────────────────────────
-
 
 // ─── Page wrapper ─────────────────────────────────────────────────────────────
 
