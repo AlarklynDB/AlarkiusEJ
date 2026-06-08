@@ -143,7 +143,7 @@ export default function Titles() {
     <div className="page-container">
 
       {/* Header */}
-      <div className="mb-12">
+      <div className="mb-8">
         <span className="neon-sign neon-sign-pink text-[10px] mb-4 inline-block">Story Order</span>
         <h1 className="font-serif text-4xl sm:text-5xl mb-4 text-text">Naiseikai Titles</h1>
         <p className="text-text-muted text-base leading-relaxed max-w-2xl">
@@ -151,6 +151,32 @@ export default function Titles() {
           Each title exists within the same world, connected by shared lore and overlapping lives.
         </p>
       </div>
+
+      {/* ── All Characters Banner ─────────────────────────────────────────── */}
+      <Link
+        to="/titles/all-characters"
+        className="block group mb-12"
+      >
+        <div className="border border-[rgba(212,159,255,0.35)] rounded-xl bg-[rgba(212,159,255,0.04)] hover:bg-[rgba(212,159,255,0.08)] transition-all duration-300 p-5 flex items-center justify-between gap-4"
+          style={{ boxShadow: '0 0 24px rgba(212,159,255,0.06)' }}>
+          <div className="flex items-center gap-4">
+            <div className="w-10 h-10 rounded-lg bg-[rgba(212,159,255,0.12)] border border-[rgba(212,159,255,0.25)] flex items-center justify-center flex-shrink-0">
+              <span className="text-lg">👥</span>
+            </div>
+            <div>
+              <p className="font-serif text-base text-[#d49fff] mb-0.5 group-hover:opacity-90 transition-opacity">
+                View all Naiseikai Characters
+              </p>
+              <p className="text-xs text-text-faint font-mono">
+                18 characters across 5 titles — all profiles in one place
+              </p>
+            </div>
+          </div>
+          <span className="text-[#d49fff] text-sm font-mono opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all flex-shrink-0">
+            →
+          </span>
+        </div>
+      </Link>
 
       {/* Published */}
       <section className="mb-14">
