@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import '../TQCTN-Characters/CharacterPage.css'
 
 interface TabProps {
   label: string
