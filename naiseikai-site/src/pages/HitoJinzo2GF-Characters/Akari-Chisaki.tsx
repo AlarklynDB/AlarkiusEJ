@@ -31,7 +31,7 @@ export default function AkariChisakiPage() {
           <span className="neon-sign-purple text-[10px] mb-3 inline-block">Main Character</span>
           <h2 className="font-serif text-3xl text-[#d49fff] mb-1">👥 Chisaki, Akari</h2>
           <p className="text-text-faint font-mono text-sm italic">一人の人造人間と、二人の彼女？!</p>
-          <p className="text-text-faint font-mono text-xs mt-1">Hitori no Jinzō Ningen to, Futari no Kanojo?! — One Human Droid, Two Girls?!</p>
+          <p className="text-text-faint font-mono text-xs mt-1">Hitoribocchi no Jinzō Shōjo to Futari no Kanojo-tachi >> The Lonely Android and her Two Girlfriends!</p>
         </div>
 
         <Divider />
