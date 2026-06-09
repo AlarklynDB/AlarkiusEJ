@@ -34,7 +34,7 @@ export default function ReligionOfUjuukyo() {
       </nav>
 
       {/* Page Title */}
-      <h1 className="neon-sign text-4xl font-extrabold mb-2" style={{ color: ACCENT }}>
+      <h1 className="text-4xl font-extrabold mb-2" style={{ color: ACCENT, textShadow: `0 0 18px ${ACCENT}99, 0 0 40px ${ACCENT}44` }}>
         🕍 The Religion of Ujuukyō
       </h1>
 
