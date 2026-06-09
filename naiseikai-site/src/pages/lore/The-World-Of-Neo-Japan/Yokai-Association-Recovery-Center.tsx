@@ -22,10 +22,6 @@ function SubHeading({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Divider() {
-  return <p className="text-text-faint my-3">─────⊰</p>;
-}
-
 export default function YokaiAssociationRecoveryCenter() {
   return (
     <div className="page-container">
