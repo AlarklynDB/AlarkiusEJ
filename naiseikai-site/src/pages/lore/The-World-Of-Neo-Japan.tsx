@@ -106,10 +106,6 @@ export default function TheWorldOfNeoJapan() {
           >
             <div className="flex items-start gap-3 mb-3">
               <span className="text-2xl flex-shrink-0">{topic.icon}</span>
-              <div
-                className="w-6 h-0.5 rounded-full mt-3 opacity-50 group-hover:opacity-100 transition-opacity flex-shrink-0"
-                style={{ backgroundColor: topic.color }}
-              />
             </div>
             <p
               className="font-serif text-base font-medium mb-2 group-hover:opacity-90 transition-opacity"
