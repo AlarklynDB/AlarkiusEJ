@@ -31,7 +31,7 @@ export default function AyumiKazeharaPage() {
           <span className="neon-sign text-[10px] mb-3 inline-block">Main Character</span>
           <h2 className="font-serif text-3xl text-[#a8ff8a] mb-1">👥 Kazehara, Ayumi</h2>
           <p className="text-text-faint font-mono text-sm italic">一人の人造人間と、二人の彼女？!</p>
-          <p className="text-text-faint font-mono text-xs mt-1">Hitoribocchi no Jinzō Shōjo to Futari no Kanojo-tachi >> The Lonely Android and her Two Girlfriends!</p>
+          <p className="text-text-faint font-mono text-xs mt-1">Hitoribocchi no Jinzō Shōjo to Futari no Kanojo-tachi — The Lonely Android and her Two Girlfriends!</p>
         </div>
 
         <Divider />
