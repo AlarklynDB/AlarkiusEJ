@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import LorePageLayout from '../../../../components/LorePageLayout'
 
 // ─── Reusable sub-components ──────────────────────────────────────────────────
 
@@ -27,6 +28,7 @@ function BulletList({ items }: { items: string[] }) {
 
 export default function YokaiCitizensOfNeoJapan() {
   return (
+    <LorePageLayout>
     <div className="page-container">
 
       {/* Breadcrumb */}
@@ -66,7 +68,7 @@ export default function YokaiCitizensOfNeoJapan() {
 
       {/* ── Avian Yokai ───────────────────────────────────────────────────── */}
       <section className="mb-10">
-        <h2 className="font-serif text-2xl text-text mb-6">Avian Yokai</h2>
+        <h2 id="avian-yokai" className="font-serif text-2xl text-text mb-6">Avian Yokai</h2>
 
         {/* Crow */}
         <YokaiEntry name="Yokai: Crow (Karasu)" color="#7ef5ff">
@@ -252,7 +254,7 @@ export default function YokaiCitizensOfNeoJapan() {
 
       {/* ── Supernatural Yokai ────────────────────────────────────────────── */}
       <section className="mb-10">
-        <h2 className="font-serif text-2xl text-text mb-6">Supernatural Yokai</h2>
+        <h2 id="supernatural-yokai" className="font-serif text-2xl text-text mb-6">Supernatural Yokai</h2>
 
         <YokaiEntry name="Yokai: Octoquid (Tako-Ika — Octopus + Squid)" color="#7eb8ff">
           <p>Octopus Yokai descended from the Octoquid Yokai Line established in 1779. The YARC infused this lineage with a cursed tome of Venomous Snake Blood, creating half-octoquid, half-snake hybrids. Many fled to Mizuki Shoto for freedom. Notable family lines include Kurohashi → Kurohase → Kurokaze → Kurohana → Kurose. Octopus Yokai possess telepathic abilities through their tendril-like hair, hydrokinesis, camouflage abilities, and can morph between human and full octopus forms. They have natural immunity to natural venoms but are weak to artificial poisons.</p>
@@ -399,7 +401,7 @@ export default function YokaiCitizensOfNeoJapan() {
 
       {/* ── Spirit Yokai ──────────────────────────────────────────────────── */}
       <section className="mb-10">
-        <h2 className="font-serif text-2xl text-text mb-6">Spirit Yokai</h2>
+        <h2 id="spirit-yokai" className="font-serif text-2xl text-text mb-6">Spirit Yokai</h2>
 
         <div className="border border-border rounded-xl bg-surface p-5 space-y-5">
           <p className="font-serif text-base font-semibold text-[#d49fff]">─────⊰ Yokai: Spirit Types</p>
@@ -430,7 +432,7 @@ export default function YokaiCitizensOfNeoJapan() {
 
       {/* ── Elemental Yokai ───────────────────────────────────────────────── */}
       <section className="mb-10">
-        <h2 className="font-serif text-2xl text-text mb-6">Elemental Yokai</h2>
+        <h2 id="elemental-yokai" className="font-serif text-2xl text-text mb-6">Elemental Yokai</h2>
 
         <YokaiEntry name="Yokai: Earth Yokai (Tsuchi Yōkai)" color="#ffd080">
           <p>Earth Yokai possess deep connections to the land and have caused tectonic shifts and the formation of new landmasses in Neo-Japan through their presence. They work in harmony with Water Yokai to maintain the massive earth pillars that support Neo-Japan's floating landmass. Earth Yokai magic is woven into the Magnoid levitation systems and infrastructure.</p>
@@ -450,7 +452,7 @@ export default function YokaiCitizensOfNeoJapan() {
 
       {/* ── Half Yokai ────────────────────────────────────────────────────── */}
       <section className="mb-10">
-        <h2 className="font-serif text-2xl text-text mb-4">Half Yokai (Demi-Yokai)</h2>
+        <h2 id="half-yokai-demi-yokai" className="font-serif text-2xl text-text mb-4">Half Yokai (Demi-Yokai)</h2>
         <p className="text-sm text-text-muted leading-relaxed mb-6">Half Yokai, also known as Demi-Yokai, are individuals who possess both human and yokai heritage or characteristics. They emerged as a distinct population following the Y&H Coalition Act of 1700 AD, when interspecies relationships became more common and socially accepted. Half Yokai occupy a unique space in Neo-Japan's supernatural society, often experiencing both the benefits and challenges of their dual nature.</p>
 
         {/* Origins */}
@@ -639,7 +641,7 @@ export default function YokaiCitizensOfNeoJapan() {
 
       {/* ── Important Notes ───────────────────────────────────────────────── */}
       <section className="mb-10">
-        <h2 className="font-serif text-2xl text-text mb-6">Important Notes on Yokai Society</h2>
+        <h2 id="important-notes-on-yokai-society" className="font-serif text-2xl text-text mb-6">Important Notes on Yokai Society</h2>
         <div className="space-y-3 text-sm text-text-muted leading-relaxed">
           <div className="border border-border rounded-xl bg-surface p-4">
             <p className="font-semibold text-[#d4a96a] mb-1">The Y&H Coalition Act (1700 AD)</p>
@@ -668,5 +670,6 @@ export default function YokaiCitizensOfNeoJapan() {
       </div>
 
     </div>
+    </LorePageLayout>
   )
 }
