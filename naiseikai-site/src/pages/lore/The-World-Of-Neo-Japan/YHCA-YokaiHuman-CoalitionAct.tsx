@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 function Breadcrumb() {
   return (
     <nav className="flex items-center gap-2 text-xs font-mono text-text-faint mb-8 flex-wrap">
-      <Link to="/lore" className="hover:text-[#00e5ff] transition-colors">Lore & Timeline</Link>
+      <Link to="/lore" className="hover:text-[#00e5ff] transition-colors">Lore &amp; Timeline</Link>
       <span>/</span>
       <Link to="/lore/the-world-of-neo-japan" className="hover:text-[#00e5ff] transition-colors">The World of Neo-Japan</Link>
       <span>/</span>
@@ -16,7 +16,7 @@ function Divider() {
   return <div className="section-divider my-8" />
 }
 
-export default function YHCA-YokaiHuman-CoalitionActPage() {
+export default function YHCAYokaiHumanCoalitionAct() {
   return (
     <div className="page-container">
       <Breadcrumb />
@@ -39,15 +39,11 @@ export default function YHCA-YokaiHuman-CoalitionActPage() {
 
       <div className="mt-12 section-divider" />
       <div className="flex justify-between items-center gap-4 flex-wrap mt-6">
-        <div>
-          <Link to="/lore/the-world-of-neo-japan/religion-of-ujuukyo" className="btn-neon-cyan text-xs">← Religion of Ujuukyo</Link>
-        </div>
+        <div><Link to="/lore/the-world-of-neo-japan/religion-of-ujuukyo" className="btn-neon-cyan text-xs">← Religion of Ujuukyo</Link></div>
         <Link to="/lore/the-world-of-neo-japan" className="text-xs font-mono text-text-faint hover:text-text transition-colors">
           ↑ All Topics
         </Link>
-        <div>
-          <Link to="/lore/the-world-of-neo-japan/yokai-association-recovery-center" className="btn-neon-cyan text-xs">YARC →</Link>
-        </div>
+        <div><Link to="/lore/the-world-of-neo-japan/yokai-association-recovery-center" className="btn-neon-cyan text-xs">YARC →</Link></div>
       </div>
     </div>
   )
