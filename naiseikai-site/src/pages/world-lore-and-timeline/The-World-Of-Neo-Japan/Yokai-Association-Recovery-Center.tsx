@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import LorePageLayout from '../../../../components/LorePageLayout'
+import LorePageLayout from '../../../components/LorePageLayout'
 
 const ACCENT = '#ff6b6b';
 const ACCENT2 = '#7ef5ff';
