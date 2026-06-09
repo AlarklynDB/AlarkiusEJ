@@ -43,6 +43,7 @@ export default function NinjaYokaiAssociationQuarters() {
         >
           🥷 The Ninja Yokai Association Quarters
         </h1>
+        <p className="text-base font-semibold mb-1" style={{ color: ACCENT }}>忍者妖怪協会本部 — Ninja Yōkai Kyōkai Honbu</p>
         <p className="text-sm font-mono text-text-faint">Ninja Yokai Association Quarters | NYAQ</p>
       </div>
 
