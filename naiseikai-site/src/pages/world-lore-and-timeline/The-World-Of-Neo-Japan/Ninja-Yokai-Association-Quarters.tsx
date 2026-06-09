@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import LorePageLayout from '../../../../components/LorePageLayout'
+import LorePageLayout from '../../../components/LorePageLayout'
 
 const ACCENT = '#7ef5ff';
 const GOLD = '#c8a87a';
