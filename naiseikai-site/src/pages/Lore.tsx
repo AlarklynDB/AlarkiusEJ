@@ -7,6 +7,9 @@ interface SubSection {
   content: React.ReactNode
 }
 
+const LINK = 'text-[#7ab8f5] hover:underline'
+const BASE = '/world-lore-and-timeline/the-world-of-neo-japan'
+
 // ─── Lore & Timeline Content ──────────────────────────────────────────────────
 
 const timelineSections: SubSection[] = [
@@ -36,25 +39,25 @@ const timelineSections: SubSection[] = [
         <div>
           <p className="font-semibold text-[#ffd080]">Year 5 — 1599 · The Great Yokai Descent</p>
           <p>Appearance of Yokai and Supernatural beings begins to show in Ancient Japan. It's not just Japan though — Yokai began to show up around the world!</p>
-          <div className="mt-2 ml-4 space-y-2">
-            <p><span className="text-[#d4a96a]">Yokai Relinquishment</span> — A dangerous powerful act for Yokai Shrines. It takes away the yokai status, powers, and the ability to change into their yokai counterparts, turning them into a human. But the cost? Emotions are taken away. Only for a vessel to walk adrift across the Earth. The only place to do this is at Tenshi Shima (Angel Island) and Ryuu no Shima (Dragon Island). This act is more of a forced relinquishment for yokais who have committed atrocities. Total Relinquishment must be done through Ujuukyo Practices.</p>
-            <p><span className="text-[#ffd080]">May 05, 050</span> AD — <strong className="text-text">The Religion of Ujuukyō forms.</strong></p>
-            <p><span className="text-[#d4a96a]">Sept 18th, 1465</span> — Japan Imperialists and Immigrants (500k of them) traverse the world to spread their Japanese influence to different cultures. On September 18th, The Japanese Language has been immortalized worldwide. Japanese is now the main native language. This is now regarded as a National Holiday.</p>
-          </div>
+          <ul className="list-none mt-2 space-y-2">
+            <li>• <span className="text-[#d4a96a]"><Link to={`${BASE}/yokai-citizens-of-neo-japan`} className={LINK}>Yokai Relinquishment</Link></span> — A dangerous powerful act for Yokai Shrines. It takes away the yokai status, powers, and the ability to change into their yokai counterparts, turning them into a human. But the cost? Emotions are taken away. Only for a vessel to walk adrift across the Earth. The only place to do this is at Tenshi Shima (Angel Island) and Ryuu no Shima (Dragon Island). This act is more of a forced relinquishment for yokais who have committed atrocities. Total Relinquishment must be done through Ujuukyo Practices.</li>
+            <li>• <span className="text-[#ffd080]">May 05, 050</span> AD — <strong className="text-text"><Link to={`${BASE}/religion-of-ujuukyo`} className={LINK}>The Religion of Ujuukyō forms.</Link></strong></li>
+            <li>• <span className="text-[#d4a96a]">Sept 18th, 1465</span> — Japan Imperialists and Immigrants (500k of them) traverse the world to spread their Japanese influence to different cultures. On September 18th, The Japanese Language has been immortalized worldwide. Japanese is now the main native language. This is now regarded as a National Holiday.</li>
+          </ul>
         </div>
         <div>
           <p className="font-semibold text-[#ffd080]">1600 · Yokai-Edo Japan Era Begins</p>
           <p><span className="text-[#ffd080]">Jan 7th, 1650</span> — Kori Yukino is born from a line of Dullahans, Warriors, and Martial Artists (DuraDekiruKoi)</p>
-          <p>March 25th, 1675 — Education in Neo Japan has been Formed.</p>
+          <p>March 25th, 1675 — <Link to={`${BASE}/education-in-neo-japan`} className={LINK}>Education in Neo Japan has been Formed.</Link></p>
         </div>
         <div>
-          <p className="font-semibold text-[#d49fff]">1700 · The Yokai & Human Coalition Act (YHCA)</p>
+          <p className="font-semibold text-[#d49fff]">1700 · The Yokai &amp; Human Coalition Act (YHCA)</p>
           <p>A formal agreement that integrates both societies in balance.</p>
-          <div className="mt-2 ml-4 space-y-2">
-            <p><span className="text-[#d4a96a]">The Y&H Coalition Act</span> — The YHCA was formed exactly on 1700. Yokai cannot kill or murder humans because it is illegal, even if it's the other way around. It's about moral laws and ambiguity between parties. However, it is NOT illegal for Yokai to kill Yokai. It has been a tradition since the early yokai settlements from Year 5 - 1599.</p>
-            <p>The Yokai Association Recovery Center (YARC) — Formed in 1779 AD by the YHCA. The YARC rehabilitates repeat offenders into making them relive their past errors so that they can make up for it.</p>
-            <p>The Ninja Yokai Association Quarters (NYAQ) — Formed in 1795 by the YHCA. There are a lot of yokai and humans who band together to become Ninjas through wealth, fame, and mercenaries.</p>
-          </div>
+          <ul className="list-none mt-2 space-y-2">
+            <li>• <span className="text-[#d4a96a]"><Link to={`${BASE}/yhca-yokaihuman-coalition-act`} className={LINK}>The Y&amp;H Coalition Act</Link></span> — The YHCA was formed exactly on 1700. Yokai cannot kill or murder humans because it is illegal, even if it's the other way around. It's about moral laws and ambiguity between parties. However, it is NOT illegal for Yokai to kill Yokai. It has been a tradition since the early yokai settlements from Year 5 - 1599.</li>
+            <li>• <Link to={`${BASE}/yokai-association-recovery-center`} className={LINK}>The Yokai Association Recovery Center (YARC)</Link> — Formed in 1779 AD by the YHCA. The YARC rehabilitates repeat offenders into making them relive their past errors so that they can make up for it.</li>
+            <li>• <Link to={`${BASE}/ninja-yokai-association-quarters`} className={LINK}>The Ninja Yokai Association Quarters (NYAQ)</Link> — Formed in 1795 by the YHCA. There are a lot of yokai and humans who band together to become Ninjas through wealth, fame, and mercenaries.</li>
+          </ul>
         </div>
         <div>
           <p className="font-semibold text-[#ffd080]">1809</p>
@@ -180,7 +183,7 @@ export default function Lore() {
       {/* Header */}
       <div className="mb-10">
         <span className="neon-sign text-[10px] mb-4 inline-block">History</span>
-        <h1 className="font-serif text-4xl sm:text-5xl mb-4 text-text">🌋 Lore & Timeline</h1>
+        <h1 className="font-serif text-4xl sm:text-5xl mb-4 text-text">🌋 Lore &amp; Timeline</h1>
         <p className="text-text-muted text-base leading-relaxed max-w-2xl">
           The history of an alternate Earth — where Yokai and humans have lived side by side for centuries,
           and where Japan rose not through conquest, but through spiritual resonance.
@@ -233,7 +236,7 @@ export default function Lore() {
       <div>
         <div className="mb-6">
           <div className="section-divider" />
-          <h2 className="font-serif text-2xl text-text mt-4">🗓️ Lore & Timeline</h2>
+          <h2 className="font-serif text-2xl text-text mt-4">🗓️ Lore &amp; Timeline</h2>
           <p className="text-sm text-text-faint font-mono mt-1">The chronological history of the Naisei-Kai Universe</p>
         </div>
 
@@ -265,7 +268,7 @@ export default function Lore() {
       <div className="mt-12 section-divider" />
       <div className="flex flex-wrap gap-3 mt-4">
         <Link to="/worldbuilding" className="btn-neon-cyan text-xs">Worldbuilding →</Link>
-        <Link to="/titles" className="btn-neon-purple text-xs">Titles & Stories →</Link>
+        <Link to="/titles" className="btn-neon-purple text-xs">Titles &amp; Stories →</Link>
       </div>
     </div>
   )
