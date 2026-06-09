@@ -66,7 +66,7 @@ export default function EducationInNeoJapan() {
       </p>
 
       <p className="text-base text-text-muted leading-relaxed mb-4">
-        Most of the professors, councilors, and teachers in this edu-system are Ninjas, since they both have deep understanding of both human and yokai traits. It's very rare to see actual yokai or human teachers, but they're often here as Alumni or Shadows in search of a Teaching Assistant Field or if they want to be staff that works behind the scenes.
+        Most of the professors, counselors, councilors, and teachers in this edu-system are Ninjas, since they hold a deep understanding of both human and yokai traits. It's very rare to see actual yokai or human teachers, but they're often here as Alumni or Shadows in search of a Teaching Assistant Field or if they want to be staff that works behind the scenes.
       </p>
 
       <p className="text-base text-text-muted leading-relaxed mb-4">
