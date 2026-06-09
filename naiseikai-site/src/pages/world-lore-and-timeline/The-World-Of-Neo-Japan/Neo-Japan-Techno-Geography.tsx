@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
+import LorePageLayout from '../../../../components/LorePageLayout'
 
 export default function NeoJapanTechnoGeography() {
   return (
+    <LorePageLayout>
     <div className="page-container">
 
       {/* Breadcrumb */}
@@ -26,7 +28,7 @@ export default function NeoJapanTechnoGeography() {
 
       {/* ── A Different Earth ──────────────────────────────────────────────── */}
       <section className="mb-10">
-        <h2 className="font-serif text-2xl text-text mb-4">A Different…..Earth</h2>
+        <h2 id="a-differentearth" className="font-serif text-2xl text-text mb-4">A Different…..Earth</h2>
         <div className="space-y-3 text-sm text-text-muted leading-relaxed">
           <p>
             In the Naiseikai Universe, this is an Alternate Earth that differs from the Earth we know and love.<br />
@@ -47,7 +49,7 @@ export default function NeoJapanTechnoGeography() {
 
       {/* ── Overview ──────────────────────────────────────────────────────── */}
       <section className="mb-10">
-        <h2 className="font-serif text-2xl text-text mb-4">Overview of Neo-Japan's Techno-Geography</h2>
+        <h2 id="overview-of-neo-japans-techno-geography" className="font-serif text-2xl text-text mb-4">Overview of Neo-Japan's Techno-Geography</h2>
         <div className="space-y-3 text-sm text-text-muted leading-relaxed">
           <p>Neo-Japan is significantly larger than the Japan of our Earth due to spiritual and supernatural influences. Earth Yokais, through their connection to the land, have caused tectonic shifts and the formation of new landmasses over centuries. The continent now spans a greater area with additional islands, mountain ranges, and coastal regions that did not exist in our timeline.</p>
           <p>While many familiar prefectures and cities still exist, their locations have been adjusted to accommodate the expanded geography. Some regions have been relocated entirely, and new spiritual zones have emerged that operate outside traditional prefecture boundaries.</p>
@@ -116,7 +118,7 @@ export default function NeoJapanTechnoGeography() {
 
       {/* ── Floating Technology ────────────────────────────────────────────── */}
       <section className="mb-10">
-        <h2 className="font-serif text-2xl text-text mb-2">Floating Technology</h2>
+        <h2 id="floating-technology" className="font-serif text-2xl text-text mb-2">Floating Technology</h2>
 
         {/* Image placeholder: Floating Technology of NEO-Japan */}
         <div className="mb-6 rounded-xl border border-[rgba(126,245,255,0.2)] bg-[rgba(126,245,255,0.03)] flex flex-col items-center justify-center py-12 px-6 text-center gap-2">
@@ -150,7 +152,7 @@ export default function NeoJapanTechnoGeography() {
 
       {/* ── Magnetic Suspension / Magnoids ────────────────────────────────── */}
       <section className="mb-10">
-        <h2 className="font-serif text-2xl text-text mb-2">Magnetic Suspension via Superconductors</h2>
+        <h2 id="magnetic-suspension-via-superconductors" className="font-serif text-2xl text-text mb-2">Magnetic Suspension via Superconductors</h2>
         <p className="text-sm text-[#7ef5ff] font-mono mb-2">Also known as Magnoids</p>
 
         {/* Image placeholder: Magnoids of Neo-Japan */}
@@ -252,7 +254,7 @@ export default function NeoJapanTechnoGeography() {
 
       {/* ── Systems of Neo-Japan ──────────────────────────────────────────── */}
       <section className="mb-10">
-        <h2 className="font-serif text-2xl text-text mb-6">Systems of Neo-Japan</h2>
+        <h2 id="systems-of-neo-japan" className="font-serif text-2xl text-text mb-6">Systems of Neo-Japan</h2>
 
         {/* Network System */}
         <div className="border border-[rgba(126,245,255,0.2)] rounded-xl bg-[rgba(126,245,255,0.03)] p-5 mb-4">
@@ -306,5 +308,6 @@ export default function NeoJapanTechnoGeography() {
       </div>
 
     </div>
+    </LorePageLayout>
   )
 }
