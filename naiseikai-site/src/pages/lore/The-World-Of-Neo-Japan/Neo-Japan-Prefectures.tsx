@@ -67,7 +67,7 @@ export default function NeoJapanPrefectures() {
             <p className="font-serif text-base text-text font-semibold mb-2">Kanto Region</p>
             <div className="space-y-1 text-sm text-text-muted">
               <p>• The orange-coded central-eastern region containing major urban centers including Tokyo, Kanagawa, Saitama, Chiba, Gunma, Tochigi, and Ibaraki. Due to continental expansion, these prefectures have shifted positions compared to our Earth.</p>
-              <p className="ml-4 text-[#d4a96a]">New/Notable Cities: Hashi, Naomi, Rosa, Tenka, & Usa</p>
+              <p className="text-[#d4a96a]">New/Notable Cities: Hashi, Naomi, Rosa, Tenka, & Usa</p>
             </div>
           </div>
 
@@ -76,7 +76,7 @@ export default function NeoJapanPrefectures() {
             <p className="font-serif text-base text-text font-semibold mb-2">Chubu Region</p>
             <div className="space-y-1 text-sm text-text-muted">
               <p>• The mint/cyan central region, home to prefectures such as Niigata, Toyama, Ishikawa, Fukui, Nagano, Gifu, Shizuoka, Aichi, and Yamanashi.</p>
-              <p className="ml-4 text-[#d4a96a]">New/Notable Cities: Raoki, Yue, Yae</p>
+              <p className="text-[#d4a96a]">New/Notable Cities: Raoki, Yue, Yae</p>
             </div>
           </div>
 
@@ -93,7 +93,7 @@ export default function NeoJapanPrefectures() {
             <p className="font-serif text-base text-text font-semibold mb-2">Chugoku Region</p>
             <div className="space-y-1 text-sm text-text-muted">
               <p>• The lavender western region containing Tottori, Shimane, Okayama, Hiroshima, and Yamaguchi.</p>
-              <p className="ml-4 text-[#d4a96a]">New/Notable Cities: Takahashi</p>
+              <p className="text-[#d4a96a]">New/Notable Cities: Takahashi</p>
             </div>
           </div>
 
@@ -110,7 +110,7 @@ export default function NeoJapanPrefectures() {
             <p className="font-serif text-base text-text font-semibold mb-2">Kyushu Region</p>
             <div className="space-y-1 text-sm text-text-muted">
               <p>• The gray southwestern region encompassing Fukuoka, Saga, Nagasaki, Kumamoto, Oita, Miyazaki, Okinawa, and Kagoshima.</p>
-              <p className="ml-4 text-[#d4a96a]">New/Notable Cities: Natsuya is a new island that rivals Okinawa</p>
+              <p className="text-[#d4a96a]">New/Notable Cities: Natsuya is a new island that rivals Okinawa</p>
             </div>
           </div>
 
