@@ -2,9 +2,10 @@ import { Link } from 'react-router-dom';
 
 const ACCENT = '#ffd080';
 
-function SectionHeading({ children }: { children: React.ReactNode }) {
+function SectionHeading({ children, id }: { children: React.ReactNode; id?: string }) {
   return (
     <h2
+      id={id}
       className="font-serif text-2xl font-bold mt-10 mb-3"
       style={{ color: ACCENT, borderBottom: `1px solid ${ACCENT}44`, paddingBottom: '0.4rem' }}
     >
@@ -149,7 +150,7 @@ export default function ReligionOfUjuukyo() {
       </ul>
 
       {/* ── Yokai Relinquishment ── */}
-      <SectionHeading>Yokai Relinquishment (YRQMT)</SectionHeading>
+      <SectionHeading id="yokai-relinquishment">Yokai Relinquishment (YRQMT)</SectionHeading>
 
       <p className="text-base text-text-muted leading-relaxed mb-4">
         Forced. Takes away identity, emotions, yokai status, abilities, and powers. Only at Tenshi Shima or Ryuu no Shima. If criminal recognizes wrong doings, severity dialed down — only yokai status, abilities, and powers taken, replaced with human body. Record transferred to Human Police Task Force.
