@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import LorePageLayout from '../../../../components/LorePageLayout'
+import LorePageLayout from '../../../components/LorePageLayout'
 
 // ─── Reusable sub-components ──────────────────────────────────────────────────
 
