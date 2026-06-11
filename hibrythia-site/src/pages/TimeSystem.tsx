@@ -94,30 +94,30 @@ const TIME_ZONES = [
 
 const STYLES = `
 .hetra-cal {
-  --color-bg: #0b0c14;
-  --color-surface: #0f1020;
-  --color-surface-2: #141628;
-  --color-surface-offset: #1a1c30;
-  --color-surface-offset-2: #1f2238;
-  --color-surface-dynamic: #252842;
-  --color-divider: #252840;
-  --color-border: #2e3158;
-  --color-text: #e8e6f0;
-  --color-text-muted: #8b8aaa;
-  --color-text-faint: #4a4960;
-  --color-text-inverse: #0b0c14;
-  --color-accent-gold: #e8b04a;
-  --color-accent-gold-hover: #f5c96a;
+  --color-bg: #0e0d0b;
+  --color-surface: #131210;
+  --color-surface-2: #1a1814;
+  --color-surface-offset: #1e1c18;
+  --color-surface-offset-2: #242018;
+  --color-surface-dynamic: #2a2620;
+  --color-divider: #2e2b26;
+  --color-border: #3a3630;
+  --color-text: #d8d4cc;
+  --color-text-muted: #8a867e;
+  --color-text-faint: #504c46;
+  --color-text-inverse: #0e0d0b;
+  --color-accent-gold: #c9a84c;
+  --color-accent-gold-hover: #dbbe6a;
   --color-accent-teal: #4ac9c5;
   --color-accent-teal-hover: #7adbd8;
   --color-accent-red: #e05060;
   --color-accent-purple: #9f7fe0;
   --color-accent-green: #5ecb6a;
-  --color-primary: #4ac9c5;
-  --color-primary-hover: #7adbd8;
-  --clock-face: #0d0e1a;
-  --clock-ring: #3a3d6a;
-  --clock-ring-inner: #2a2d50;
+  --color-primary: #c9a84c;
+  --color-primary-hover: #dbbe6a;
+  --clock-face: #0e0d0b;
+  --clock-ring: #3a3630;
+  --clock-ring-inner: #2e2b26;
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
@@ -204,7 +204,7 @@ const STYLES = `
   padding: clamp(var(--space-20), 12vw, var(--space-24)) var(--space-6);
   text-align: center;
   background: radial-gradient(ellipse 80% 60% at 50% 0%,
-    color-mix(in srgb, var(--color-accent-purple) 15%, transparent),
+    rgba(201, 168, 76, 0.08),
     transparent 70%);
 }
 .hetra-cal .hero-stars {
@@ -1228,16 +1228,23 @@ export default function TimeSystem() {
     <div className="pt-16">
       <style>{STYLES}</style>
 
-      {/* Back link only */}
-      <div className="max-w-4xl mx-auto px-6 pt-6 pb-2">
+      {/* Back link — blends into site background, no black bar */}
+      <div style={{ background: '#0e0d0b', padding: '1rem 1.5rem 0.5rem' }}>
         <Link
-          to="/hibrythian-saga"
-          className="inline-flex items-center gap-1 text-sm text-rose hover:text-rose-light transition-colors"
+          to="/"
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: '0.25rem',
+            fontSize: '0.875rem', color: '#8a867e', textDecoration: 'none',
+            transition: 'color 0.2s',
+            fontFamily: "'Raleway', sans-serif",
+          }}
+          onMouseEnter={e => (e.currentTarget.style.color = '#c9a84c')}
+          onMouseLeave={e => (e.currentTarget.style.color = '#8a867e')}
         >
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          Back to The Hibrythian Saga
+          Back to Home
         </Link>
       </div>
 
