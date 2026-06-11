@@ -149,7 +149,7 @@ function getFaviconByHostname(hostname) {
   if (hostname === "www.naiseikaiuniverse.com" || hostname === "naiseikaiuniverse.com")
     return "https://i.ibb.co/XZWTy55s/Naiseikai-Universe-Mascot-Haruhi-3.png";
   if (hostname === "www.thehibrythiansaga.com" || hostname === "thehibrythiansaga.com")
-    return "https://i.ibb.co/TMyBRP17/HAXL-Hibryds-Adventure-Xinematic-Library-Logo-V3.png";
+    return "https://i.ibb.co/zVLr0yRP/HAXL-Hibryds-Adventure-Xinematic-Library-Logo-V2.png";
   return null;
 }
 
@@ -200,9 +200,27 @@ export default {
     const url = new URL(request.url);
     const hostname = url.hostname;
 
-    const response = await env.ASSETS.fetch(request);
-    const contentType = response.headers.get("content-type") || "";
+    // Fetch asset — on any error (e.g. hard refresh cache-busting headers),
+    // fall back to serving the SPA root (index.html) so React Router handles it.
+    let response;
+    try {
+      response = await env.ASSETS.fetch(request);
+    } catch (_) {
+      // Fallback: serve root SPA shell
+      const fallbackReq = new Request(new URL("/", url).toString(), request);
+      response = await env.ASSETS.fetch(fallbackReq);
+    }
 
+    // If asset fetch returned a non-2xx for a navigation request, serve root
+    if (!response.ok) {
+      const accept = request.headers.get("accept") || "";
+      if (accept.includes("text/html")) {
+        const fallbackReq = new Request(new URL("/", url).toString(), request);
+        response = await env.ASSETS.fetch(fallbackReq);
+      }
+    }
+
+    const contentType = response.headers.get("content-type") || "";
     if (!contentType.includes("text/html")) return response;
 
     const schema  = getSchemaByHostname(hostname);
