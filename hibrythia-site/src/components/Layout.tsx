@@ -5,6 +5,7 @@ const navLinks = [
   { to: '/lore',       label: 'Lore' },
   { to: '/world',      label: 'World' },
   { to: '/characters', label: 'Characters' },
+  { to: '/bookshelf',  label: 'Bookshelf' },
 ];
 
 export default function Layout() {
