@@ -35,7 +35,7 @@ export default function Home() {
         {/* Nav CTAs */}
         <div className="flex flex-wrap items-center gap-3 pt-1">
           <a
-            href="/lore"
+            href="/world"
             className="font-body text-xs tracking-widest uppercase px-5 py-2.5 border border-[#c9a84c]/40 text-[#c9a84c] rounded-sm hover:bg-[#c9a84c]/8 hover:border-[#c9a84c]/70 transition-all duration-[180ms]"
           >
             Explore Our Legends →
@@ -65,13 +65,13 @@ export default function Home() {
         </p>
         <div className="flex flex-wrap gap-3">
           <a
-            href="/lore#world-intro"
+            href="/world"
             className="font-body text-xs tracking-widest uppercase px-4 py-2 border border-[#c9a84c]/30 text-[#c9a84c] rounded-sm hover:bg-[#c9a84c]/8 transition-all duration-[180ms]"
           >
             Read our World Introduction
           </a>
           <a
-            href="/lore#issues"
+            href="/world"
             className="font-body text-xs tracking-widest uppercase px-4 py-2 border border-[#2e2b26] text-[#7a7670] rounded-sm hover:border-[#c9a84c]/30 hover:text-[#d8d4cc] transition-all duration-[180ms]"
           >
             Check out our Bookshelf
