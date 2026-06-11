@@ -166,10 +166,26 @@ function escapeScriptJson(value) {
 // HTMLRewriter handlers
 // ------------------------------------------------------------
 
+// Page-specific OG overrides keyed by pathname
+const PAGE_OG = {
+  "/32-16TimeSystem": {
+    title: "The 32/16-Hour Time System | The Hibrythian Saga",
+    description: "Explore the Hetranian Calendar — 32-hour days, 14 months, 444 days per year. An interactive lore tool for The Hibrythian Saga.",
+    image: "https://i.ibb.co/kgRVHnXw/32-16-clock-banner.png",
+  },
+};
+
+function getPageOG(pathname) {
+  // Strip trailing slash for matching
+  const key = pathname.replace(/\/$/, "") || "/";
+  return PAGE_OG[key] || null;
+}
+
 class HeadHandler {
-  constructor(schema, faviconUrl) {
+  constructor(schema, faviconUrl, pageOG) {
     this.schema = schema;
     this.faviconUrl = faviconUrl;
+    this.pageOG = pageOG;
   }
 
   element(element) {
@@ -179,6 +195,19 @@ class HeadHandler {
         <link rel="icon" type="image/png" sizes="96x96" href="${this.faviconUrl}">
         <link rel="shortcut icon" href="${this.faviconUrl}">
         <link rel="apple-touch-icon" sizes="180x180" href="${this.faviconUrl}">
+      `, { html: true });
+    }
+
+    if (this.pageOG) {
+      const og = this.pageOG;
+      element.append(`
+        <meta property="og:title" content="${og.title}" />
+        <meta property="og:description" content="${og.description}" />
+        <meta property="og:image" content="${og.image}" />
+        <meta property="og:url" content="https://www.thehibrythiansaga.com${og.url || ''}" />
+        <meta name="twitter:title" content="${og.title}" />
+        <meta name="twitter:description" content="${og.description}" />
+        <meta name="twitter:image" content="${og.image}" />
       `, { html: true });
     }
 
@@ -225,9 +254,10 @@ export default {
 
     const schema  = getSchemaByHostname(hostname);
     const favicon = getFaviconByHostname(hostname);
+    const pageOG  = getPageOG(url.pathname);
 
     const transformed = new HTMLRewriter()
-      .on("head", new HeadHandler(schema, favicon))
+      .on("head", new HeadHandler(schema, favicon, pageOG))
       .transform(response);
 
     const newHeaders = new Headers(transformed.headers);
