@@ -37,9 +37,9 @@ export default function Home() {
       <section className="py-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#2e2b26]" aria-label="Explore">
         {[
           {
-            label: 'Lore',
+            label: 'Legends & Myths',
             href: '/lore',
-            desc: 'Myths, history, and the deep chronicles of the Hibrythian age.',
+            desc: 'Legends, stories, and myths, written by people around the world!',
           },
           {
             label: 'World',
