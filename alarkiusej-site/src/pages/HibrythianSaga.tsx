@@ -115,26 +115,6 @@ export default function HibrythianSaga() {
 
           {/* 32/16-Hour Time System Card */}
           <Link
-            to="/hibrythian-saga/32-16TimeSystem"
-            className="mt-4 flex items-center justify-between gap-4 p-4 bg-surface border border-border hover:border-rose/40 hover:bg-surface-raised rounded-xl transition-all duration-200 group"
-          >
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg bg-gold-bg border border-gold/30 flex items-center justify-center flex-shrink-0">
-                <span className="text-base">⌚</span>
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-text group-hover:text-rose-light transition-colors">
-                  32/16-Hour Time System
-                </p>
-                <p className="text-xs text-text-faint">
-                  The Hetranian Calendar — 32-hour days, 14 months, 444-day year
-                </p>
-              </div>
-            </div>
-            <svg className="w-4 h-4 text-text-faint group-hover:text-rose-light transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
         </div>
 
         {/* Tone */}
