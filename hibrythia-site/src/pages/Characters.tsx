@@ -8,7 +8,7 @@ export default function Characters() {
       </h1>
       <p className="font-body text-base text-[#7a7670]">
         The figures who shaped — and were shaped by — the Hibrythian saga.
-        Content synced from Notion.
+        We're slowly migrating our content here! Check back soon.
       </p>
     </div>
   );
