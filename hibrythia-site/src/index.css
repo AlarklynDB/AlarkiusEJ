@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Alegreya+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,7 +27,7 @@ body {
   min-height: 100dvh;
   background-color: #0e0d0b;
   color: #f2ebeb;
-  font-family: 'Raleway', system-ui, sans-serif;
+  font-family: 'Alegreya Sans', system-ui, sans-serif;
   font-size: clamp(1rem, 0.975rem + 0.23vw, 1.15rem); /* was clamp(0.875rem, 0.85rem + 0.2vw, 1rem) */
   line-height: 1.7;
 }
@@ -85,7 +85,7 @@ p, li { text-wrap: pretty; max-width: 72ch; }
 
 /* ── Utility: Cinzel headings ── */
 .font-display { font-family: 'Cinzel', Georgia, serif; }
-.font-body    { font-family: 'Raleway', system-ui, sans-serif; }
+.font-body    { font-family: 'Alegreya Sans', system-ui, sans-serif; }
 
 /* ── Hetrix currency symbol (Ħ) ── */
 .font-hetrix  { font-family: 'Merriweather', Georgia, serif; }
@@ -114,7 +114,7 @@ p, li { text-wrap: pretty; max-width: 72ch; }
   margin-bottom: 0.4rem;
 }
 .piracy-notice-body {
-  font-family: 'Raleway', system-ui, sans-serif;
+  font-family: 'Alegreya Sans', system-ui, sans-serif;
   font-size: 0.69rem; /* was 0.6rem */
   line-height: 1.6;
   color: #a04040;
