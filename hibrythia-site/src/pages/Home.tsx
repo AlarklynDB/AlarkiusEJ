@@ -11,8 +11,9 @@ export default function Home() {
           The Hibrythian Saga
         </h1>
         <p className="font-body text-base text-[#7a7670] max-w-[52ch]">
-          A world of ancient magic, forgotten empires, and living myth.
-          Enter the lore of Hibrythia — where every shadow has a name.
+          A mythopoetic epic of spiritual warfare, lost magic, divine reckoning, and identity reborn. 
+          From skyward continents to ancient divine realms, 
+          this saga dares to walk the line between high fantasy and eternal truth.
         </p>
         <div className="flex items-center gap-4 pt-2">
           <a
