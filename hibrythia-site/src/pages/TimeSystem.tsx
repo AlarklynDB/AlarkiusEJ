@@ -642,6 +642,25 @@ const STYLES = `
   background: var(--spill-color);
   flex-shrink: 0;
 }
+/* Mobile: collapse pill → dot */
+@media (max-width: 640px) {
+  .hetra-cal .season-pill {
+    padding: 0;
+    width: 9px;
+    height: 9px;
+    min-width: unset;
+    border-radius: 50%;
+    background: var(--spill-color);
+    border: none;
+    box-shadow: 0 0 6px var(--spill-color);
+    overflow: hidden;
+    font-size: 0;
+    gap: 0;
+  }
+  .hetra-cal .season-pill::before {
+    display: none;
+  }
+}
 .hetra-cal .season-legend {
   display: flex;
   flex-wrap: wrap;
