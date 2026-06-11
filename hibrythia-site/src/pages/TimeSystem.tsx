@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
 
 // ── Lore Data ────────────────────────────────────────────────
 type Month = {
@@ -1244,25 +1243,6 @@ export default function TimeSystem() {
     <div className="pt-16">
       <style>{STYLES}</style>
 
-      {/* Back link — sits flush under navbar, no visual bar */}
-      <div style={{ padding: '0.5rem 1.5rem 0' }}>
-        <Link
-          to="/"
-          style={{
-            display: 'inline-flex', alignItems: 'center', gap: '0.25rem',
-            fontSize: '0.875rem', color: '#8a867e', textDecoration: 'none',
-            transition: 'color 0.2s',
-            fontFamily: "'Raleway', sans-serif",
-          }}
-          onMouseEnter={e => (e.currentTarget.style.color = '#c9a84c')}
-          onMouseLeave={e => (e.currentTarget.style.color = '#8a867e')}
-        >
-          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          Back to Home
-        </Link>
-      </div>
 
       {/* Hetranian Calendar — full-width, breaks out of the site column */}
       <div className="hetra-cal" ref={rootRef} style={{ width: '100%' }}>
