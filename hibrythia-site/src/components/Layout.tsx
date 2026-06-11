@@ -18,7 +18,7 @@ export default function Layout() {
           <a href="/" className="flex items-center group" aria-label="The Hibrythian Saga">
             <span className="font-display text-xs tracking-[0.15em] text-[#c9a84c] uppercase"
               style={{ letterSpacing: '0.18em' }}
-            >The Hibrythian Saga</span>
+            >The Hibrythian Saga | Official Website </span>
           </a>
 
           {/* Nav */}
