@@ -1244,8 +1244,8 @@ export default function TimeSystem() {
     <div className="pt-16">
       <style>{STYLES}</style>
 
-      {/* Back link — blends into site background, no black bar */}
-      <div style={{ background: '#0e0d0b', padding: '1rem 1.5rem 0.5rem' }}>
+      {/* Back link — sits flush under navbar, no visual bar */}
+      <div style={{ padding: '0.5rem 1.5rem 0' }}>
         <Link
           to="/"
           style={{
