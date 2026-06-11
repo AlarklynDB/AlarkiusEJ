@@ -12,10 +12,10 @@ export default function Layout() {
     <div className="min-h-dvh flex flex-col bg-[#0e0d0b]">
       {/* ── Header ── */}
       <header className="sticky top-0 z-50 border-b border-[#2e2b26] bg-[#0e0d0b]/90 backdrop-blur-sm">
-        <div className="max-w-[1200px] mx-auto px-6 h-14 flex items-center justify-between">
+        <div className="max-w-[1200px] mx-auto px-5 h-12 flex items-center justify-between">
           {/* Logo mark */}
-          <a href="/" className="flex items-center gap-3 group" aria-label="The Hibrythian Saga">
-            <svg viewBox="0 0 28 28" width="28" height="28" fill="none" aria-hidden="true">
+          <a href="/" className="flex items-center gap-2.5 group" aria-label="The Hibrythian Saga">
+            <svg viewBox="0 0 28 28" width="22" height="22" fill="none" aria-hidden="true">
               <path d="M5 4 L5 24 M5 14 L23 14 M23 4 L23 24"
                 stroke="#c9a84c" strokeWidth="2" strokeLinecap="round"
                 className="transition-all duration-200 group-hover:stroke-[#e0be6a]"
@@ -24,14 +24,14 @@ export default function Layout() {
               <circle cx="14" cy="4" r="1" fill="#c9a84c" opacity="0.4" />
               <circle cx="23" cy="4" r="1" fill="#c9a84c" />
             </svg>
-            <span className="font-display text-sm tracking-[0.15em] text-[#c9a84c] uppercase"
+            <span className="font-display text-xs tracking-[0.15em] text-[#c9a84c] uppercase"
               style={{ letterSpacing: '0.18em' }}
             >Hibrythia</span>
           </a>
 
           {/* Nav */}
           <nav aria-label="Main navigation">
-            <ul className="flex items-center gap-1" role="list">
+            <ul className="flex items-center gap-0.5" role="list">
               {navLinks.map(({ to, label }) => (
                 <li key={to}>
                   <NavLink
@@ -39,7 +39,7 @@ export default function Layout() {
                     end={to === '/'}
                     className={({ isActive }) =>
                       [
-                        'font-body text-xs tracking-widest uppercase px-3 py-1.5 rounded-sm transition-all duration-[180ms]',
+                        'font-body text-[0.65rem] tracking-widest uppercase px-2.5 py-1 rounded-sm transition-all duration-[180ms]',
                         isActive
                           ? 'text-[#c9a84c] bg-[#c9a84c]/8'
                           : 'text-[#7a7670] hover:text-[#d8d4cc]',
@@ -61,15 +61,33 @@ export default function Layout() {
       </main>
 
       {/* ── Footer ── */}
-      <footer className="border-t border-[#2e2b26] py-8 mt-16">
-        <div className="max-w-[1200px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="font-body text-xs text-[#4a4844] tracking-wider uppercase">
-            © {new Date().getFullYear()} The Hibrythian Saga · Alarkius Elvya Jay
-          </p>
-          <div className="gold-rule hidden sm:block" aria-hidden="true" />
-          <p className="font-body text-xs text-[#4a4844] tracking-wider">
-            All Lore & Worldbuilding Rights Reserved
-          </p>
+      <footer className="border-t border-[#2e2b26] py-6 mt-12">
+        <div className="max-w-[1200px] mx-auto px-5 flex flex-col items-center gap-5">
+          {/* Copyright row */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 w-full">
+            <p className="font-body text-[0.6rem] text-[#4a4844] tracking-wider uppercase">
+              © {new Date().getFullYear()} The Hibrythian Saga · Alarkius Elvya Jay
+            </p>
+            <div className="gold-rule hidden sm:block" aria-hidden="true" />
+            <p className="font-body text-[0.6rem] text-[#4a4844] tracking-wider">
+              All Lore &amp; Worldbuilding Rights Reserved
+            </p>
+          </div>
+
+          {/* Anti-piracy notice */}
+          <div className="piracy-notice w-full" role="note" aria-label="Anti-piracy notice">
+            <p className="piracy-notice-title">[The Dead Shard Continuity Notice — Class C Piracy Violation]</p>
+            <p className="piracy-notice-body">
+              Unauthorized redistribution of Hibrythiea-Encoded lore and Stories has been detected.<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;You're not trying to pirate this entire site, are you… <em>user·? Do you really want to find out the hard way?</em><br />
+              This universe is heavily protected! Reuploading or stealing content will lead to legal
+              consequences — and yes, we can track it. Don't try and fight{' '}
+              <a href="/characters" target="_self">Hunter Noxx</a>,{' '}
+              <a href="/characters" target="_self">Zohl</a>, or{' '}
+              <a href="/characters" target="_self">Kydel Rhunes</a>.
+              {' '}Or any of our characters. They will obliterate you to smithereens!
+            </p>
+          </div>
         </div>
       </footer>
     </div>
