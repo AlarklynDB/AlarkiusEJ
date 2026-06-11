@@ -77,12 +77,6 @@ export default function Home() {
             Check out our Issues
           </a>
           <a
-            href="/lore#calendar"
-            className="font-body text-xs tracking-widest uppercase px-4 py-2 border border-[#2e2b26] text-[#7a7670] rounded-sm hover:border-[#c9a84c]/30 hover:text-[#d8d4cc] transition-all duration-[180ms]"
-          >
-            World Calendar
-          </a>
-          <a
             href="/32-16TimeSystem"
             className="font-body text-xs tracking-widest uppercase px-4 py-2 border border-[#c9a84c]/30 text-[#c9a84c] rounded-sm hover:bg-[#c9a84c]/8 hover:border-[#c9a84c]/60 transition-all duration-[180ms]"
           >
