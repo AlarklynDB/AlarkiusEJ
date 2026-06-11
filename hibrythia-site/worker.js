@@ -149,7 +149,7 @@ function getFaviconByHostname(hostname) {
   if (hostname === "www.naiseikaiuniverse.com" || hostname === "naiseikaiuniverse.com")
     return "https://i.ibb.co/XZWTy55s/Naiseikai-Universe-Mascot-Haruhi-3.png";
   if (hostname === "www.thehibrythiansaga.com" || hostname === "thehibrythiansaga.com")
-    return "https://i.ibb.co/TMyBRP17/HAXL-Hibryds-Adventure-Xinematic-Library-Logo-V3.png";
+    return "https://i.ibb.co/zVLr0yRP/HAXL-Hibryds-Adventure-Xinematic-Library-Logo-V2.png";
   return null;
 }
 
