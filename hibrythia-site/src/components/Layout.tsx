@@ -14,19 +14,10 @@ export default function Layout() {
       <header className="sticky top-0 z-50 border-b border-[#2e2b26] bg-[#0e0d0b]/90 backdrop-blur-sm">
         <div className="max-w-[1200px] mx-auto px-5 h-12 flex items-center justify-between">
           {/* Logo mark */}
-          <a href="/" className="flex items-center gap-2.5 group" aria-label="The Hibrythian Saga">
-            <svg viewBox="0 0 28 28" width="22" height="22" fill="none" aria-hidden="true">
-              <path d="M5 4 L5 24 M5 14 L23 14 M23 4 L23 24"
-                stroke="#c9a84c" strokeWidth="2" strokeLinecap="round"
-                className="transition-all duration-200 group-hover:stroke-[#e0be6a]"
-              />
-              <circle cx="5"  cy="4" r="1" fill="#c9a84c" />
-              <circle cx="14" cy="4" r="1" fill="#c9a84c" opacity="0.4" />
-              <circle cx="23" cy="4" r="1" fill="#c9a84c" />
-            </svg>
+          <a href="/" className="flex items-center group" aria-label="The Hibrythian Saga">
             <span className="font-display text-xs tracking-[0.15em] text-[#c9a84c] uppercase"
               style={{ letterSpacing: '0.18em' }}
-            >Hibrythia</span>
+            >The Hibrythian Saga</span>
           </a>
 
           {/* Nav */}
