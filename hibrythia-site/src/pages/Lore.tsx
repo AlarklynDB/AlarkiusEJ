@@ -8,7 +8,7 @@ export default function Lore() {
       </h1>
       <p className="font-body text-base text-[#7a7670]">
         This section will house the deep lore — myths, histories, and ancient chronicles
-        of the Hibrythian world. Content synced from Notion.
+        of the Hibrythian world. We're slowly migrating our content here! Check back soon.
       </p>
     </div>
   );
