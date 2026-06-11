@@ -8,7 +8,7 @@ export default function World() {
       </h1>
       <p className="font-body text-base text-[#7a7670]">
         Kingdoms, regions, cartography, and the living geography of the known realm.
-        Content synced from Notion.
+        We're slowly migrating our content here! Check back soon.
       </p>
     </div>
   );
