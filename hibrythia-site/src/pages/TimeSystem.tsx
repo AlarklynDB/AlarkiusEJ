@@ -548,14 +548,14 @@ const STYLES = `
 }
 .hetra-cal .cal-cell {
   aspect-ratio: 1 / 1;
-  min-height: unset;
+  min-height: 60px;
   padding: 6px;
   background: #1a1814;
   border-radius: 0;
   border: none;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: flex-start;
   font-family: 'Cinzel', serif;
   font-size: 13px;
@@ -563,16 +563,17 @@ const STYLES = `
   transition: all 0.15s ease;
   cursor: default;
   position: relative;
+  overflow: hidden;
 }
 /* Day number — top-right corner */
 .hetra-cal .cal-day-num {
-  position: absolute;
-  top: 5px;
-  right: 7px;
+  display: block;
+  text-align: right;
   font-family: 'Cinzel', serif;
   font-size: 13px;
   line-height: 1;
-  color: rgba(216,212,204,0.55);
+  color: rgba(216,212,204,0.6);
+  padding: 2px 4px 0 0;
 }
 .hetra-cal .cal-cell.day { color: var(--color-text); }
 .hetra-cal .cal-cell.day:hover {
