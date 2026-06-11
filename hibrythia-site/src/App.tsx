@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import PWADevTools from '@/components/PWADevTools';
 import Layout from '@/components/Layout';
 import Home from '@/pages/Home';
 import LegendsAndMyths from '@/pages/LegendsAndMyths';
@@ -10,6 +11,8 @@ import NotFound from '@/pages/NotFound';
 
 export default function App() {
   return (
+    <>
+    <PWADevTools />
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
@@ -21,6 +24,7 @@ export default function App() {
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
+  </>
   );
 }
 
