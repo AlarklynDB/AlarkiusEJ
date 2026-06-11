@@ -7,27 +7,6 @@ export default function Home() {
   return (
     <div className="max-w-[1200px] mx-auto px-6">
 
-      {/* ── DEAD SHARD CONTINUITY NOTICE ──────────────────────────────────── */}
-      <aside className="mt-8 border border-red-900/40 bg-red-950/10 rounded-sm px-5 py-4 font-body text-xs text-red-400/80 leading-relaxed">
-        <p className="font-bold tracking-wide uppercase mb-1 text-red-500">
-          [THE DEAD SHARD CONTINUITY NOTICE — CLASS C PIRACY VIOLATION]
-        </p>
-        <p>
-          Unauthorized redistribution of Hibrythiea-Encoded lore and Stories has been detected.
-        </p>
-        <p className="mt-1 pl-4">
-          You're not trying to pirate this entire site, are you…. <em>user</em>…?{' '}
-          <em>Do you really want to find out the hard way?</em>
-        </p>
-        <p className="mt-1">
-          This universe is heavily protected! Reuploading or stealing content will lead to legal
-          consequences — and yes, we can track it. Don't try and fight{' '}
-          <a href="/characters/hunter-noxx" className="underline hover:text-red-300 transition-colors">Hunter Noxx</a>,{' '}
-          <a href="/characters/zohl" className="underline hover:text-red-300 transition-colors">Zohl</a>, or{' '}
-          <a href="/characters/kydel-rhunes" className="underline hover:text-red-300 transition-colors">Kydel Rhunes</a>.
-          Or any of our characters. They will obliterate you to smithereens!
-        </p>
-      </aside>
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
       <section className="pt-16 pb-14 flex flex-col items-start gap-5">
