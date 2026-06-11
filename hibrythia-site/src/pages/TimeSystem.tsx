@@ -611,28 +611,29 @@ const STYLES = `
   top: 4px;
   left: 4px;
 }
-/* Season pill — replaces dot, shown inline in cell */
+/* Season pill — absolute overlay, centered in cell */
 .hetra-cal .season-pill {
   --spill-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  margin-top: auto;
-  padding: 2px 6px;
+  padding: 2px 7px;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--spill-color) 15%, transparent);
-  border: 1px solid color-mix(in srgb, var(--spill-color) 50%, transparent);
+  background: color-mix(in srgb, var(--spill-color) 18%, rgba(14,13,11,0.85));
+  border: 1px solid color-mix(in srgb, var(--spill-color) 55%, transparent);
   font-family: 'Raleway', sans-serif;
   font-size: 9px;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--spill-color);
   white-space: nowrap;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
   line-height: 1.4;
-  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
 }
 .hetra-cal .season-pill::before {
   content: '';
