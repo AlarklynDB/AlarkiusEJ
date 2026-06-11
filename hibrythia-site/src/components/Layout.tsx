@@ -64,11 +64,11 @@ export default function Layout() {
       <footer className="border-t border-[#2e2b26] py-8 mt-16">
         <div className="max-w-[1200px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-body text-xs text-[#4a4844] tracking-wider uppercase">
-            © {new Date().getFullYear()} The Hibrythian Saga · Alarkius EJ
+            © {new Date().getFullYear()} The Hibrythian Saga · Alarkius Elvya Jay
           </p>
           <div className="gold-rule hidden sm:block" aria-hidden="true" />
           <p className="font-body text-xs text-[#4a4844] tracking-wider">
-            All lore & worldbuilding rights reserved
+            All Lore & Worldbuilding Rights Reserved
           </p>
         </div>
       </footer>
