@@ -14,16 +14,16 @@ const CATEGORIES = [
     tag: 'Locations & Geography',
   },
   {
-    to: '/world/meta',
-    label: 'Meta Worldbuilding',
-    description: 'The cosmic architecture beyond Hetra — multiverses, spiritual realms, and forces outside the known world.',
-    tag: 'Cosmic & Meta',
-  },
-  {
     to: '/lore',
     label: 'Legends & Myths',
     description: 'Ancient chronicles, myths, and lore fragments from the deep history of the Hibrythian world.',
     tag: 'Chronicles & Lore',
+  },
+  {
+    to: '/world/meta',
+    label: 'Meta Worldbuilding',
+    description: 'The cosmic architecture beyond Hetra — multiverses, spiritual realms, and forces outside the known world.',
+    tag: 'Cosmic & Meta',
   },
 ];
 
