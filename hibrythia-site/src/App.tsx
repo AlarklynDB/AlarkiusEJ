@@ -11,6 +11,7 @@ import LocalesAndSights from '@/pages/LocalesAndSights';
 import MetaWorldbuilding from '@/pages/MetaWorldbuilding';
 import OurCharacters from '@/pages/OurCharacters';
 import Bookshelf from '@/pages/Bookshelf';
+import Vol0HTHGOE from '@/pages/Bookshelf/Vol0HTHGOE';
 import TimeSystem from '@/pages/TimeSystem';
 import NotFound from '@/pages/NotFound';
 
@@ -53,6 +54,7 @@ export default function App() {
           <Route path="world/meta" element={<PageTransition><MetaWorldbuilding /></PageTransition>} />
           <Route path="characters" element={<PageTransition><OurCharacters /></PageTransition>} />
           <Route path="bookshelf" element={<PageTransition><Bookshelf /></PageTransition>} />
+          <Route path="bookshelf/vol0" element={<PageTransition><Vol0HTHGOE /></PageTransition>} />
           <Route path="32-16TimeSystem" element={<PageTransition><TimeSystem /></PageTransition>} />
           <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
         </Route>
