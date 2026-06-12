@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
 const SECTIONS = [
@@ -47,6 +48,21 @@ const SECTIONS = [
 ];
 
 export default function OurCharacters() {
+  const sections = useMemo(
+    () =>
+      SECTIONS.map((section) => {
+        if (section.title !== 'Main Protagonists (Rotating)') return section;
+        const characters = [...section.characters];
+        // Fisher-Yates shuffle
+        for (let i = characters.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [characters[i], characters[j]] = [characters[j], characters[i]];
+        }
+        return { ...section, characters };
+      }),
+    [],
+  );
+
   return (
     <div className="max-w-[960px] mx-auto px-6 py-20">
       <div className="gold-rule mb-6" aria-hidden="true" />
@@ -59,7 +75,7 @@ export default function OurCharacters() {
       </p>
 
       <div className="space-y-14">
-        {SECTIONS.map(({ title, description, characters }) => (
+        {sections.map(({ title, description, characters }) => (
           <section key={title}>
             <h2 className="font-display text-base text-[#f2ebeb] mb-1">{title}</h2>
             <p className="font-body text-xs text-[#4a4844] mb-5 leading-relaxed">{description}</p>
