@@ -116,14 +116,7 @@ export default function Layout() {
       <main
         className="flex-1"
         style={{
-          background: `
-            radial-gradient(ellipse 28% 65% at 0% 75%, rgba(122,48,5,0.35) 0%, transparent 70%),
-            radial-gradient(ellipse 28% 65% at 100% 75%, rgba(122,48,5,0.35) 0%, transparent 70%),
-            radial-gradient(ellipse 16% 42% at 0% 32%, rgba(122,48,5,0.16) 0%, transparent 65%),
-            radial-gradient(ellipse 16% 42% at 100% 32%, rgba(122,48,5,0.16) 0%, transparent 65%),
-            linear-gradient(to bottom, #100908 0%, #100908 70%, #0e0d0b 100%),
-            #100908
-          `,
+          background: `linear-gradient(to bottom, #100908 0%, #3a1602 60%, #7a3005 100%)`,
         }}
       >
         <Outlet />
