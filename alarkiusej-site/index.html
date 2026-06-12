@@ -51,9 +51,50 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
     <title>AlarkiusEJ | Official Author Library & Portfolio</title>
+    <!-- Splash screen: dark overlay, fades out after 1.5s -->
+    <style>
+      html, body { background-color: #191919; margin: 0; padding: 0; }
+      #splash {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background-color: #191919;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: splashFade 0.5s ease-out 1.2s forwards;
+        pointer-events: none;
+      }
+      #splash-logo {
+        font-family: 'Lora', 'Georgia', serif;
+        font-size: 1.05rem;
+        letter-spacing: 0.25em;
+        color: #d4af6e;
+        text-transform: uppercase;
+        opacity: 0;
+        animation: splashTextIn 0.6s ease-out 0.2s forwards;
+      }
+      @keyframes splashTextIn {
+        from { opacity: 0; transform: translateY(6px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes splashFade {
+        from { opacity: 1; }
+        to   { opacity: 0; pointer-events: none; }
+      }
+    </style>
   </head>
   <body>
+    <!-- Splash overlay -->
+    <div id="splash" aria-hidden="true">
+      <span id="splash-logo">Alarkius Elvya Jay</span>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      document.getElementById('splash').addEventListener('animationend', function(e) {
+        if (e.animationName === 'splashFade') this.remove();
+      });
+    </script>
   </body>
 </html>
