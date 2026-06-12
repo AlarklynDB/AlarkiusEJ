@@ -16,18 +16,7 @@ export default function Layout() {
   useEffect(() => { setMobileOpen(false) }, [location.pathname])
 
   return (
-    <div
-      className="min-h-dvh flex flex-col"
-      style={{
-        background: `
-          radial-gradient(ellipse 28% 70% at 0% 80%, rgba(122,48,5,0.38) 0%, transparent 70%),
-          radial-gradient(ellipse 28% 70% at 100% 80%, rgba(122,48,5,0.38) 0%, transparent 70%),
-          radial-gradient(ellipse 16% 45% at 0% 35%, rgba(122,48,5,0.18) 0%, transparent 65%),
-          radial-gradient(ellipse 16% 45% at 100% 35%, rgba(122,48,5,0.18) 0%, transparent 65%),
-          #100908
-        `,
-      }}
-    >
+    <div className="min-h-dvh flex flex-col bg-[#100908]">
       {/* ── Header ── */}
       <header className="sticky top-0 z-50 border-b border-[#2e2b26] bg-[#0e0d0b]/90 backdrop-blur-sm">
         <div className="max-w-[1200px] mx-auto px-5 h-12 flex items-center justify-between">
@@ -124,7 +113,19 @@ export default function Layout() {
       </header>
 
       {/* ── Main ── */}
-      <main className="flex-1">
+      <main
+        className="flex-1"
+        style={{
+          background: `
+            radial-gradient(ellipse 28% 65% at 0% 75%, rgba(122,48,5,0.35) 0%, transparent 70%),
+            radial-gradient(ellipse 28% 65% at 100% 75%, rgba(122,48,5,0.35) 0%, transparent 70%),
+            radial-gradient(ellipse 16% 42% at 0% 32%, rgba(122,48,5,0.16) 0%, transparent 65%),
+            radial-gradient(ellipse 16% 42% at 100% 32%, rgba(122,48,5,0.16) 0%, transparent 65%),
+            linear-gradient(to bottom, #100908 0%, #100908 70%, #0e0d0b 100%),
+            #100908
+          `,
+        }}
+      >
         <Outlet />
       </main>
 
