@@ -27,6 +27,7 @@ function PageTransition({ children }: { children: React.ReactNode }) {
   const wrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const el = wrapRef.current;
     if (!el) return;
     el.style.opacity = '0';
