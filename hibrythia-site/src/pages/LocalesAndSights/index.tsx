@@ -197,10 +197,10 @@ export default function LocalesAndSights() {
           <section key={section.category}>
             {/* Section header */}
             <div className="mb-6">
-              <p className="font-body text-[9px] tracking-widest uppercase text-[#c9a84c]/60 mb-1">
+              <p className="font-body text-[9px] tracking-widest uppercase text-[#c9a84c]/60 mb-2">
                 {section.label}
               </p>
-              <p className="font-body text-xs text-[#4a4844] leading-relaxed">
+              <p className="font-body text-[11px] text-[#4a4844] leading-relaxed">
                 {section.description}
               </p>
             </div>
@@ -218,7 +218,7 @@ export default function LocalesAndSights() {
                       {item.icon}
                     </span>
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-display text-sm text-[#f2ebeb] group-hover:text-[#c9a84c] transition-colors leading-snug mb-1">
+                      <h3 className="font-display text-base text-[#f2ebeb] group-hover:text-[#c9a84c] transition-colors leading-snug mb-1">
                         {item.title}
                       </h3>
                       <p className="font-body text-xs text-[#4a4844] leading-relaxed">
