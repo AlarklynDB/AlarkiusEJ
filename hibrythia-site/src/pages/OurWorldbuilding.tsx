@@ -33,7 +33,7 @@ export default function OurWorldbuilding() {
       <div className="gold-rule mb-6" aria-hidden="true" />
       <p className="font-body text-xs tracking-[0.25em] text-[#c9a84c] uppercase mb-3">Worldbuilding & Lore</p>
       <h1 className="font-display text-[clamp(1.5rem,1.2rem+1.25vw,2.25rem)] text-[#f2ebeb] mb-4">
-        The World and Lore
+        How Our Universe Works
       </h1>
       <p className="font-body text-sm text-[#7a7670] mb-12 max-w-[600px] leading-relaxed">
         Everything that makes Hibrythia real — the planet, its people, its history, and the ancient forces that shaped it all. 
