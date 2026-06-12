@@ -26,8 +26,8 @@ export default function EP0() {
       <p className="font-body text-sm text-[#c9a84c] leading-[1.85] text-center" dangerouslySetInnerHTML={{__html: `One.`}} />
       <p className="font-body text-sm text-[#c9a84c] leading-[1.85] text-center" dangerouslySetInnerHTML={{__html: `Single.`}} />
       <p className="font-body text-sm text-[#c9a84c] leading-[1.85] text-center" dangerouslySetInnerHTML={{__html: `<em className="italic text-[#c9a84c]">Point</em>.`}} />
-      <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]" dangerouslySetInnerHTML={{__html: `A dot.`}} />
-      <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]" dangerouslySetInnerHTML={{__html: `A period.`}} />
+      <p className="font-body text-sm text-[#c9a84c] leading-[1.85] text-center" dangerouslySetInnerHTML={{__html: `A dot.`}} />
+      <p className="font-body text-sm text-[#c9a84c] leading-[1.85] text-center" dangerouslySetInnerHTML={{__html: `A period.`}} />
       <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]" dangerouslySetInnerHTML={{__html: `The point itself wiggled and stretched like it had a will of its own. And as it moved around, White Matter particles began to collide with it, shaping it into a box.`}} />
       <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]" dangerouslySetInnerHTML={{__html: `It then changed into many different shapes: like a circle, a triangle, a sphere, a rectangle… and into many more!`}} />
       <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]" dangerouslySetInnerHTML={{__html: `Alas, the point itself didn&#39;t like those shapes. It wanted to be free and infinite.`}} />
