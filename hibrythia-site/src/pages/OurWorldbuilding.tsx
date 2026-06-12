@@ -34,6 +34,7 @@ export default function OurWorldbuilding() {
         Pick a category below to start exploring.
       </p>
 
+      <h2 className="font-display text-base text-[#f2ebeb] mb-4">The World &amp; Lore</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {CATEGORIES.map(({ to, label, description, tag }) => (
           <Link
