@@ -83,7 +83,7 @@ const SECTIONS = [
         description: 'Technological advancements, transportation, and infrastructure of Hetra.',
       },
       {
-        to: '/32-16TimeSystem',
+        to: '/world/databases/CalendarAndTime',
         label: 'Calendar & Time — The 32-Hour System',
         description: 'The Hetranian calendar: 32-hour days, 14 months, 444 days per year.',
       },
