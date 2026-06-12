@@ -25,13 +25,13 @@ export default function OurWorldbuilding() {
   return (
     <div className="max-w-[960px] mx-auto px-6 py-20">
       <div className="gold-rule mb-6" aria-hidden="true" />
-      <p className="font-body text-xs tracking-[0.25em] text-[#c9a84c] uppercase mb-3">The World & Lore</p>
+      <p className="font-body text-xs tracking-[0.25em] text-[#c9a84c] uppercase mb-3">Worldbuilding & Lore</p>
       <h1 className="font-display text-[clamp(1.5rem,1.2rem+1.25vw,2.25rem)] text-[#f2ebeb] mb-4">
-        Explore Hibrythia
+        The World and Lore
       </h1>
       <p className="font-body text-sm text-[#7a7670] mb-12 max-w-[600px] leading-relaxed">
-        Dive into the systems, locations, and ancient history that make up the world of The Hibrythian Saga. 
-        Select a category below to begin exploring.
+        Everything that makes Hibrythia real — the planet, its people, its history, and the ancient forces that shaped it all. 
+        Pick a category below to start exploring.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
