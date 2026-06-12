@@ -84,6 +84,34 @@
         to   { opacity: 0; pointer-events: none; }
       }
     </style>
+    <!-- Content protection -->
+    <script>
+      document.addEventListener('contextmenu',  function(e) { e.preventDefault(); });
+      document.addEventListener('copy',         function(e) { e.preventDefault(); });
+      document.addEventListener('cut',          function(e) { e.preventDefault(); });
+      document.addEventListener('paste',        function(e) { e.preventDefault(); });
+      document.addEventListener('selectstart',  function(e) { e.preventDefault(); });
+      document.addEventListener('dragstart',    function(e) { e.preventDefault(); });
+      // Block F12, Ctrl+Shift+I/J/C, Ctrl+U, Ctrl+Shift+K
+      document.addEventListener('keydown', function(e) {
+        if (
+          e.key === 'F12' ||
+          (e.ctrlKey && e.shiftKey && ['I','i','J','j','C','c','K','k'].includes(e.key)) ||
+          (e.ctrlKey && ['u','U'].includes(e.key))
+        ) { e.preventDefault(); e.stopPropagation(); return false; }
+      });
+      // Detect devtools open via window size diff
+      (function devtoolsBlock() {
+        var threshold = 160;
+        function check() {
+          if (window.outerWidth - window.innerWidth > threshold ||
+              window.outerHeight - window.innerHeight > threshold) {
+            document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#0d0b12;color:#bf5fff;font-family:Georgia,serif;font-size:1rem;letter-spacing:0.2em;text-transform:uppercase;">Access Denied</div>';
+          }
+        }
+        setInterval(check, 1000);
+      })();
+    </script>
   </head>
   <body>
     <!-- Splash overlay -->
