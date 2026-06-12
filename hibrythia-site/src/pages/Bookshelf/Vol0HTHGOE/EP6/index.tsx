@@ -46,6 +46,7 @@ export default function EP6() {
 
       <div className="mt-16 pt-8 border-t border-[#2e2b26] grid grid-cols-2 gap-4">
           <Link to="/bookshelf/vol0/ep5" className="group flex flex-col text-left border border-[#2e2b26] rounded-sm px-4 py-3 bg-[#131210] hover:border-[#c9a84c]/40 hover:bg-[#1a1814] transition-all duration-200"><span className="font-body text-[9px] tracking-widest uppercase text-[#4a4844] mb-1">← Previous</span><span className="font-display text-xs text-[#f2ebeb] group-hover:text-[#c9a84c] transition-colors">EP V — The Aexterium</span></Link>
+          <Link to="/bookshelf/vol0" className="group flex flex-col text-right border border-[#c9a84c]/20 rounded-sm px-4 py-3 bg-[#131210] hover:border-[#c9a84c]/60 hover:bg-[#1a1814] transition-all duration-200 ml-auto w-full max-w-[240px]"><span className="font-body text-[9px] tracking-widest uppercase text-[#c9a84c]/50 mb-1">↩ Back to</span><span className="font-display text-xs text-[#c9a84c] group-hover:text-[#f2ebeb] transition-colors">Vol 0 — Table of Contents</span></Link>
 
       </div>
     </div>
