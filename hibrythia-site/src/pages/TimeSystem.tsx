@@ -169,7 +169,7 @@ const STYLES = `
 .hetra-cal a:hover { color: var(--color-accent-teal-hover); text-decoration: underline; }
 
 .hetra-cal section { padding: clamp(var(--space-12), 8vw, var(--space-20)) var(--space-6); }
-.hetra-cal section:nth-child(even) { background: var(--color-surface); }
+.hetra-cal section:nth-child(even) { background: transparent; }
 .hetra-cal .section-inner {
   max-width: var(--content-default);
   margin: 0 auto;
@@ -846,7 +846,7 @@ const STYLES = `
 }
 
 /* ECLIPSE */
-.hetra-cal .eclipse-section { background: var(--color-surface); }
+.hetra-cal .eclipse-section { background: transparent; }
 .hetra-cal .eclipse-card {
   display: flex;
   gap: var(--space-8);
