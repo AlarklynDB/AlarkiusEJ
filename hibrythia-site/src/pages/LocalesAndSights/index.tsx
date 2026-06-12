@@ -1,142 +1,241 @@
 import { Link } from 'react-router-dom';
 
-const PAGES = [
+const SECTIONS = [
+  {
+    category: 'Continents',
+    label: 'CONTINENTS OF PLANET HETRA',
+    description: 'The great landmasses that shape the world of Hetra — each with its own civilizations, climates, and histories.',
+    items: [
       {
-        to: '/world/locales/TheSkyContinentOfHetrania',
-        label: 'The Sky Continent of Hetrania',
-        description: 'A floating continent high above Hetra, home to ancient civilizations.',
+        title: 'Alarctic Alpines',
+        desc: 'The north pole continent stretching across Hetra\'s northern hemisphere. Home to Pangolarin Bears, Seapertant Dragons, and the legendary Ice Palace of Queen Eira.',
+        path: '/world/locales/alarctic-alpines',
+        icon: '🗺️',
       },
       {
-        to: '/world/locales/TheContinentOfEulerich',
-        label: 'The Continent of Eulerich',
-        description: 'A vast continent known for its scholarly traditions and Eulerian culture.',
+        title: 'Eulerich',
+        desc: 'A supercontinent east of the known world, home to the Eulerians — a highly intelligent race versed in ancient technology and forgotten magic.',
+        path: '/world/locales/eulerich',
+        icon: '🗺️',
       },
       {
-        to: '/world/locales/TheContinentOfLynneria',
-        label: 'The Continent of Lynneria',
-        description: 'A lush continent defined by its diverse kingdoms and natural wonders.',
+        title: 'Hetrania',
+        desc: 'The Sky Continent floating high above Hetra, home to ancient civilizations and the source of many of the world\'s oldest mysteries.',
+        path: '/world/locales/hetrania',
+        icon: '🗺️',
       },
       {
-        to: '/world/locales/TheContinentOfNorrane',
-        label: 'The Continent of Norrane',
-        description: 'A northern landmass of harsh climates and resilient peoples.',
+        title: 'Lynneria',
+        desc: 'A lush continent defined by its diverse kingdoms, vibrant cultures, and breathtaking natural wonders.',
+        path: '/world/locales/lynneria',
+        icon: '🗺️',
       },
       {
-        to: '/world/locales/TheContinentOfRynel',
-        label: 'The Continent of Rynel',
-        description: 'A continent rich in ancient history and contested territories.',
+        title: 'Norrane',
+        desc: 'A northern landmass of harsh climates and resilient peoples, shaped by centuries of struggle and survival.',
+        path: '/world/locales/norrane',
+        icon: '🗺️',
       },
       {
-        to: '/world/locales/AlarcticAlpines',
-        label: 'Alarctic Alpines',
-        description: 'A frozen mountain range of extreme cold and rare wildlife.',
+        title: 'Rynel',
+        desc: 'A continent of contrasts — its landscapes range from dense rainforests to open plains, harboring some of Hetra\'s most unique wildlife.',
+        path: '/world/locales/rynel',
+        icon: '🗺️',
       },
       {
-        to: '/world/locales/TheAlarcticIcePalace',
-        label: 'The Alarctic Ice Palace',
-        description: 'A legendary palace carved entirely from ancient ice.',
+        title: 'Varleqe',
+        desc: 'A vast supercontinent whose origins remain shrouded in mystery, with ancient ruins that hint at a civilization far older than recorded history.',
+        path: '/world/locales/varleqe',
+        icon: '🗺️',
+      },
+    ],
+  },
+  {
+    category: 'Attractions',
+    label: 'ATTRACTIONS & TOURISM',
+    description: 'Notable landmarks and points of interest drawing travelers from across the known world.',
+    items: [
+      {
+        title: 'The Skypeak Obelisk',
+        desc: 'A towering monument rising at the highest elevation on Hetra, visible from continents away on a clear day.',
+        path: '/world/locales/skypeak-obelisk',
+        icon: '🏛️',
       },
       {
-        to: '/world/locales/TheLostCityOfLhavaria',
-        label: 'The Lost City of Lhavaria',
-        description: 'A mythical sunken city, lost to the ages and sought by many.',
+        title: 'HetraS.E.A.P — Space Program',
+        desc: 'Hetra\'s pioneering space exploration program, pushing the boundaries of what civilizations on this world can achieve.',
+        path: '/world/locales/hetra-seap',
+        icon: '🚀',
+      },
+    ],
+  },
+  {
+    category: 'Wonders',
+    label: 'SEVEN WONDERS OF THE WORLD',
+    description: 'Worldwide wonders of Planet Hetra — natural and constructed marvels recognized across all continents.',
+    items: [
+      {
+        title: 'The Erbgeroger Flower',
+        desc: 'A legendary bloom said to grow only once every century, its petals possessing properties beyond natural understanding.',
+        path: '/world/locales/erbgeroger-flower',
+        icon: '🌸',
       },
       {
-        to: '/world/locales/TheOakgnarGrandTree',
-        label: 'The Oakgnar Grand Tree',
-        description: 'The largest living tree on Hetra, considered sacred by many cultures.',
+        title: 'The Eulerian Catalogs',
+        desc: 'An ancient repository of Eulerian knowledge — vast libraries carved into the rock of Eulerich holding texts of forgotten eras.',
+        path: '/world/locales/eulerian-catalogs',
+        icon: '📜',
       },
       {
-        to: '/world/locales/TheVarleqianWaterfall',
-        label: 'The Varleqian Waterfall',
-        description: 'A colossal waterfall believed to have mystical properties.',
+        title: 'The Tree of Elenia',
+        desc: 'A colossal sacred tree whose roots are said to reach every corner of the world, revered across religions and cultures alike.',
+        path: '/world/locales/tree-of-elenia',
+        icon: '🌳',
       },
       {
-        to: '/world/locales/TheErbgerogerFlower',
-        label: 'The Erbgeroger Flower',
-        description: 'A rare flower that blooms once a decade and holds great spiritual meaning.',
+        title: 'The Oakgnar Grand Tree',
+        desc: 'An ancient giant standing at the heart of the continent, its canopy wide enough to shelter an entire village.',
+        path: '/world/locales/oakgnar-grand-tree',
+        icon: '🌲',
       },
       {
-        to: '/world/locales/TheEulerianCatalogs',
-        label: 'The Eulerian Catalogs',
-        description: 'A massive library and archive system maintained by Eulerian scholars.',
+        title: 'The Varleqian Waterfall',
+        desc: 'The mightiest waterfall on Hetra, cascading from the cliffs of Varleqe in a roar that can be heard for miles.',
+        path: '/world/locales/varleqian-waterfall',
+        icon: '💧',
       },
       {
-        to: '/world/locales/TheHynnianChurch',
-        label: 'The Hynnian Church',
-        description: 'The primary religious institution of the Hynnian faith.',
+        title: 'The Lost City of Lhavaria',
+        desc: 'A submerged city whose ruins hold secrets to a civilization that vanished long before recorded history began.',
+        path: '/world/locales/lost-city-lhavaria',
+        icon: '🏚️',
       },
       {
-        to: '/world/locales/TheIyonianChurches',
-        label: 'The Iyonian Churches',
-        description: 'A collection of churches devoted to the Iyonian deities.',
+        title: 'The Alarctic Ice Palace',
+        desc: 'Built by the ancient Queen Eira and later claimed by the ice giant Ischvnielle, this crystalline palace stands as both monument and warning.',
+        path: '/world/locales/alarctic-ice-palace',
+        icon: '🧊',
+      },
+    ],
+  },
+  {
+    category: 'Churches',
+    label: 'THE CHURCHES OF THE WORLD',
+    description: "Planet Hetra's main churches — seats of faith, culture, and spiritual power scattered across every continent.",
+    items: [
+      {
+        title: 'The Hynnian Church',
+        desc: 'The oldest and most widespread faith on Hetra, with congregations reaching every major continent.',
+        path: '/world/locales/hynnian-church',
+        icon: '⛪',
       },
       {
-        to: '/world/locales/TheDraxianSkyChurch',
-        label: 'The Draxian Sky Church',
-        description: 'A church built in the clouds, accessible only by those with flight.',
+        title: 'The Iyonian Churches',
+        desc: 'A network of sister churches bound by shared doctrine but divided by regional interpretations of ancient scripture.',
+        path: '/world/locales/iyonian-churches',
+        icon: '⛪',
       },
       {
-        to: '/world/locales/TheBhuseianIceChurch',
-        label: 'The Bhuseian Ice Church',
-        description: 'A church constructed from enchanted ice in the frozen north.',
+        title: 'The Bhuseian Ice Church',
+        desc: 'A remote church carved into the glaciers of the north, practiced by those who revere the cold as sacred.',
+        path: '/world/locales/bhuseian-ice-church',
+        icon: '❄️',
       },
       {
-        to: '/world/locales/TheRunthianChurch',
-        label: 'The Runthian Church',
-        description: 'The house of worship for followers of the Runthian faith.',
+        title: 'The Runthian Church',
+        desc: 'A militant order of faith, known for their discipline, armor-clad clergy, and long history of holy wars.',
+        path: '/world/locales/runthian-church',
+        icon: '⚔️',
       },
       {
-        to: '/world/locales/TheSethranianChurch',
-        label: 'The Sethranian Church',
-        description: 'A dark and imposing church tied to the Sethranian order.',
+        title: 'The Yhursian Demon Church',
+        desc: 'A feared and misunderstood sect that venerates what others call demons — their true motives remain debated.',
+        path: '/world/locales/yhursian-demon-church',
+        icon: '🔥',
       },
       {
-        to: '/world/locales/TheYhursianDemonChurch',
-        label: 'The Yhursian Demon Church',
-        description: 'A forbidden church worshipping demon-aligned entities.',
+        title: 'The Draxian Sky Church',
+        desc: 'Worshippers of the sky and celestial bodies, this church holds its services at Hetrania\'s highest elevations.',
+        path: '/world/locales/draxian-sky-church',
+        icon: '🌌',
       },
       {
-        to: '/world/locales/TheSkypeakObelisk',
-        label: 'The Skypeak Obelisk',
-        description: 'A towering obelisk at the world\'s highest elevation — its purpose unknown.',
+        title: 'The Sethranian Church of Unity',
+        desc: 'A progressive church seeking to bridge the theological divides between Hetra\'s many competing faiths.',
+        path: '/world/locales/sethranian-church',
+        icon: '🕊️',
       },
-      {
-        to: '/world/locales/HetraSEAPSpaceProgram',
-        label: 'Hetra SEAP Space Program',
-        description: 'Hetra\'s space exploration and astronomical program — reaching beyond the sky.',
-      },
+    ],
+  },
 ];
 
 export default function LocalesAndSights() {
   return (
-    <div className="max-w-[960px] mx-auto px-6 py-20">
-      <div className="gold-rule mb-6" aria-hidden="true" />
-      <Link to="/world" className="font-body text-[10px] tracking-widest uppercase text-[#4a4844] hover:text-[#c9a84c] transition-colors duration-200 mb-6 inline-block">
+    <div className="min-h-screen px-6 py-16 max-w-[860px] mx-auto">
+      {/* Back nav */}
+      <Link
+        to="/world"
+        className="inline-flex items-center gap-2 font-body text-[10px] tracking-widest uppercase text-[#4a4844] hover:text-[#c9a84c] transition-colors mb-10"
+      >
         ← Back to World
       </Link>
-      <p className="font-body text-xs tracking-[0.25em] text-[#c9a84c] uppercase mb-3">Locations & Geography</p>
-      <h1 className="font-display text-[clamp(1.5rem,1.2rem+1.25vw,2.25rem)] text-[#f2ebeb] mb-4">
-        Locales & Sights
+
+      {/* Hero */}
+      <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
+        Locations &amp; Geography
+      </p>
+      <h1 className="font-display text-4xl md:text-5xl text-[#f2ebeb] mb-4">
+        Locales &amp; Sights
       </h1>
-      <p className="font-body text-sm text-[#7a7670] mb-10 max-w-[600px] leading-relaxed">
+      <p className="font-body text-sm text-[#7a746e] leading-relaxed mb-16 max-w-[560px]">
         Continents, sacred sites, churches, natural wonders, and iconic landmarks scattered across the world of Hetra.
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {PAGES.map(({ to, label, description }) => (
-          <Link
-            key={to}
-            to={to}
-            className="group block border border-[#2e2b26] rounded-sm p-5 bg-[#131210] hover:border-[#c9a84c]/40 hover:bg-[#1a1814] transition-all duration-200"
-          >
-            <h2 className="font-display text-sm text-[#f2ebeb] mb-2 group-hover:text-[#c9a84c] transition-colors duration-200">
-              {label}
-            </h2>
-            <p className="font-body text-xs text-[#7a7670] leading-relaxed mb-3">{description}</p>
-            <span className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c]/60 group-hover:text-[#c9a84c] transition-colors duration-200">
-              Read →
-            </span>
-          </Link>
+
+      {/* Sections */}
+      <div className="space-y-16">
+        {SECTIONS.map((section) => (
+          <section key={section.category}>
+            {/* Section header */}
+            <div className="mb-6">
+              <p className="font-body text-[9px] tracking-widest uppercase text-[#c9a84c]/60 mb-1">
+                {section.label}
+              </p>
+              <p className="font-body text-xs text-[#4a4844] leading-relaxed">
+                {section.description}
+              </p>
+            </div>
+
+            {/* Cards grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {section.items.map((item) => (
+                <Link
+                  key={item.title}
+                  to={item.path}
+                  className="group flex flex-col border border-[#2e2b26] rounded-sm bg-[#0f0d0c] hover:border-[#c9a84c]/40 hover:bg-[#151210] transition-all duration-200 px-5 py-4"
+                >
+                  <div className="flex items-start gap-3">
+                    <span className="text-lg mt-0.5 opacity-70 group-hover:opacity-100 transition-opacity select-none">
+                      {item.icon}
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-display text-sm text-[#f2ebeb] group-hover:text-[#c9a84c] transition-colors leading-snug mb-1">
+                        {item.title}
+                      </h3>
+                      <p className="font-body text-xs text-[#4a4844] leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                  <span className="font-body text-[9px] tracking-widest uppercase text-[#c9a84c]/40 group-hover:text-[#c9a84c]/70 transition-colors mt-4 self-end">
+                    Read →
+                  </span>
+                </Link>
+              ))}
+            </div>
+
+            {/* Section divider */}
+            <div className="mt-10 border-t border-[#1e1c1a]" />
+          </section>
         ))}
       </div>
     </div>
