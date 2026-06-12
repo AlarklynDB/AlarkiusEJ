@@ -113,16 +113,15 @@ export default function Layout() {
       </header>
 
       {/* ── Main ── */}
-      <main className="flex-1" style={{ position: 'relative' }}>
-        {/* Grid background with blur */}
+      <main className="flex-1" style={{ position: 'relative', backgroundColor: '#100908' }}>
+        {/* Grid background with blur — absolute so footer is untouched */}
         <div
           aria-hidden="true"
           style={{
-            position: 'fixed',
+            position: 'absolute',
             inset: 0,
             zIndex: 0,
             pointerEvents: 'none',
-            backgroundColor: '#100908',
             backgroundImage: `
               linear-gradient(rgba(46,16,0,0.8) 1px, transparent 1px),
               linear-gradient(90deg, rgba(46,16,0,0.8) 1px, transparent 1px)
