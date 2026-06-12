@@ -195,6 +195,32 @@ const STYLES = `
   color: var(--color-text-muted);
   margin-top: calc(-1 * var(--space-5));
 }
+.hetra-cal .section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0;
+  padding: 0 var(--space-6);
+}
+.hetra-cal .section-divider::before,
+.hetra-cal .section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to var(--div-dir, right), transparent, rgba(255,255,255,0.55) 40%, rgba(255,255,255,0.55) 60%, transparent);
+  box-shadow: 0 0 6px 1px rgba(180, 80, 0, 0.45), 0 0 14px 2px rgba(180, 80, 0, 0.2);
+}
+.hetra-cal .section-divider::before { --div-dir: right; }
+.hetra-cal .section-divider::after  { --div-dir: left;  }
+.hetra-cal .section-divider-icon {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 0 8px 2px rgba(180, 80, 0, 0.6), 0 0 18px 4px rgba(180, 80, 0, 0.25);
+  flex-shrink: 0;
+}
 
 /* HERO */
 .hetra-cal .hero {
@@ -202,9 +228,6 @@ const STYLES = `
   overflow: hidden;
   padding: clamp(var(--space-20), 12vw, var(--space-24)) var(--space-6);
   text-align: center;
-  background: radial-gradient(ellipse 80% 60% at 50% 0%,
-    rgba(201, 168, 76, 0.08),
-    transparent 70%);
 }
 .hetra-cal .hero-stars {
   position: absolute;
@@ -1284,6 +1307,7 @@ export default function TimeSystem() {
                 </div>
               </div>
             </section>
+            <div className="section-divider" aria-hidden="true"><span className="section-divider-icon" /></div>
 
             {/* Live Clock Section */}
             <section className="clock-section">
@@ -1404,6 +1428,7 @@ export default function TimeSystem() {
                 </div>
               </div>
             </section>
+            <div className="section-divider" aria-hidden="true"><span className="section-divider-icon" /></div>
 
             {/* Calendar Section */}
             <section className="calendar-section">
@@ -1460,6 +1485,7 @@ export default function TimeSystem() {
                 </div>
               </div>
             </section>
+            <div className="section-divider" aria-hidden="true"><span className="section-divider-icon" /></div>
 
             {/* Months Reference */}
             <section className="months-section">
@@ -1469,6 +1495,7 @@ export default function TimeSystem() {
                 <div className="months-grid" id="months-grid" />
               </div>
             </section>
+            <div className="section-divider" aria-hidden="true"><span className="section-divider-icon" /></div>
 
             {/* Days of the Week */}
             <section className="days-section">
@@ -1479,6 +1506,7 @@ export default function TimeSystem() {
                 <div className="days-grid" id="days-grid" />
               </div>
             </section>
+            <div className="section-divider" aria-hidden="true"><span className="section-divider-icon" /></div>
 
             {/* Time Zones */}
             <section className="tz-section">
@@ -1492,6 +1520,7 @@ export default function TimeSystem() {
                 </div>
               </div>
             </section>
+            <div className="section-divider" aria-hidden="true"><span className="section-divider-icon" /></div>
 
             {/* Eras Reference */}
             <section className="eras-section">
@@ -1527,6 +1556,7 @@ export default function TimeSystem() {
                 </div>
               </div>
             </section>
+            <div className="section-divider" aria-hidden="true"><span className="section-divider-icon" /></div>
 
             {/* Special Event */}
             <section className="eclipse-section">
