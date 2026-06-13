@@ -57,7 +57,7 @@ export default function CreaturesOfTheWorld() {
       {/* Hetranian Dragons */}
       <section className="mb-12">
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Category I</p>
-        <h2 className="font-display text-base text-[#f2ebeb] mb-4">Hetranian Dragons</h2>
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-4">Hetranian Dragons</h2>
         <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-8">
           Dragons. Who wouldn't like that?! Their size can vary from small to large. You can find these creatures anywhere on Varleqe or the rest of the world. Their most common sightings are near some ruins. There are three types of Dragon species.
         </p>
@@ -133,7 +133,7 @@ export default function CreaturesOfTheWorld() {
       {/* Beast Creatures */}
       <section className="mb-12">
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Category II</p>
-        <h2 className="font-display text-base text-[#f2ebeb] mb-8">Beast Creatures</h2>
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-8">Beast Creatures</h2>
         <div className="space-y-6">
 
           <div className="border-l-2 border-[#2e2b26] pl-5">
@@ -186,7 +186,7 @@ export default function CreaturesOfTheWorld() {
       {/* Dangerous Creatures */}
       <section className="mb-12">
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Category III</p>
-        <h2 className="font-display text-base text-[#f2ebeb] mb-8">Dangerous Creatures</h2>
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-8">Dangerous Creatures</h2>
         <div className="space-y-6">
 
           <div className="border-l-2 border-[#2e2b26] pl-5">
@@ -235,7 +235,7 @@ export default function CreaturesOfTheWorld() {
       {/* Wildcard Entries */}
       <section className="mb-12">
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Category IV</p>
-        <h2 className="font-display text-base text-[#f2ebeb] mb-8">Wildcard Entries</h2>
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-8">Wildcard Entries</h2>
         <div className="space-y-6">
 
           <div className="border-l-2 border-[#2e2b26] pl-5">
