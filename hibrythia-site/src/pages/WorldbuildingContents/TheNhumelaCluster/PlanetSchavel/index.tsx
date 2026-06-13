@@ -21,7 +21,7 @@ export default function PlanetSchavel() {
 
         {/* Section 1 */}
         <section>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-5">The Fourth and First Planet from The Sun</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-5">The Fourth and First Planet from The Sun</h2>
           <div className="space-y-4">
             <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
               This planet orbits vertically within the Goldilocks Zone the same as Planet Hetra, albeit on a different axis.
@@ -42,7 +42,7 @@ export default function PlanetSchavel() {
 
         {/* Section 2 — Inhabitants */}
         <section>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-5">Inhabitants</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-5">Inhabitants</h2>
           <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
             This planet already has inhabitants, some from Planet Hetra. Since space exploration is already possible, transportation between Hetra and Schavel is possible. Since Space Travel is already normalized in this world, it made it possible for Hetranians to emigrate to Schavel. There is a huge lag between Schavel and Hetra's time system because it would take at least two days to get adjusted there. <span className="text-[#c9a84c] italic">"Schavelia-Hetrans"</span> is a term for people who live on Schavel.
           </p>
@@ -52,7 +52,7 @@ export default function PlanetSchavel() {
 
         {/* Section 3 — Specifications */}
         <section>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-5">Specifications</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-5">Specifications</h2>
           <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-6">It is the same size as Hetra — and a near identical system.</p>
           <div className="border border-[#2e2b26] rounded-sm bg-[#0f0d0c] px-5 py-5 space-y-2">
             {[
@@ -109,7 +109,7 @@ export default function PlanetSchavel() {
 
         {/* Section 4 — Magic & History */}
         <section>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-5">Magic &amp; History</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-5">Magic &amp; History</h2>
           <div className="space-y-4 mb-8">
             <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
               Emigrants from Planet Hetra stem way back from the First Space Age in Hetra's year of 2000. Technology became so advanced that Schavel was literally founded in that year. There was already animal life in Schavel in that year, so it made it a lot more easier for the first few Hetranians to visit that planet.
