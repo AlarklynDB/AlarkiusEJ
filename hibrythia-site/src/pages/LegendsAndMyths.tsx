@@ -51,7 +51,7 @@ export default function LegendsAndMyths() {
           <section key={section.label}>
             {/* Section header */}
             <div className="mb-6">
-              <h2 className="font-display text-xl text-[#f2ebeb] mb-2">
+              <h2 className="font-display text-lg text-[#f2ebeb] mb-2">
                 {section.label}
               </h2>
               <p className="font-body text-[11px] text-[#4a4844] leading-relaxed">
