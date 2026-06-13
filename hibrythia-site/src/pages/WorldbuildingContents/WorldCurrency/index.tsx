@@ -19,7 +19,7 @@ export default function WorldCurrency() {
             Within our world and stories, currency is mentioned and is an important factor for everything that plays in here. Here on this page, there will be info about what our bills are, what coins the world uses, and also, their design!
           </p>
           <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-3">
-            Within our worldbuilding, the currency has two types. Bills and Coins. In this fictional world, Bills &amp; Dollars are called hetrylx. Coins that uses cents are called Hetryl(s).
+            Within our worldbuilding, the currency has two types. Bills and Coins. In this fictional world, Bills &amp; Dollars are called Hetrix. Coins that uses cents are called Hetryl(s).
           </p>
           <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
             The Net Value of the entire world as of the year 2245 skyrockets up into the septillions. The estimated net worth (and value) is around ~250 septillion because of mass production, scientific breakthroughs, advanced technology, and more. This is due to all the mass markets and brands located on{' '}
@@ -74,7 +74,7 @@ export default function WorldCurrency() {
           {/* Bills table */}
           <h3 className="font-display text-sm text-[#f2ebeb] mb-3">Bills — Hetrylx (Ħ)</h3>
           <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-4">
-            If one USD Dollar is $1, then this means that Ħ3 hetrylx = USD $1
+            If one USD Dollar is $1, then this means that Ħ3 Hetrix = USD $1
           </p>
           <div className="border border-[#2e2b26] rounded-sm overflow-hidden mb-8">
             <div className="grid grid-cols-2 border-b border-[#2e2b26] bg-[#0f0d0c] px-5 py-2">
@@ -87,7 +87,7 @@ export default function WorldCurrency() {
               ['Ħ15',  '$10 USD'],
               ['Ħ35',  '$20 USD'],
               ['Ħ55',  '$50 USD'],
-              ['Ħ75',  'Custom hetrylx'],
+              ['Ħ75',  'Custom Hetrix'],
               ['Ħ150', '$100 USD'],
             ].map(([hx, usd]) => (
               <div key={hx} className="grid grid-cols-2 border-b border-[#1e1c1a] last:border-0 px-5 py-3 bg-[#0f0d0c] hover:bg-[#151210] transition-colors">
