@@ -12,7 +12,7 @@ export default function PastModernDinosaurs() {
       </div>
 
       <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">IV. Equation of Life › Creatures of The World</p>
-      <h1 className="font-display text-2xl md:text-3xl text-[#f2ebeb] mb-6">Past & Modern Day Dinosaurs</h1>
+      <h1 className="font-display text-xl md:text-2xl text-[#f2ebeb] mb-6">Past & Modern Day Dinosaurs</h1>
 
       <div className="space-y-12">
 
@@ -174,13 +174,13 @@ export default function PastModernDinosaurs() {
 
         {/* Bottom nav */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <Link to="/world/databases/CreaturesOfTheWorld" className="border border-[#2e2b26] hover:border-[#c9a84c]/40 bg-[#0f0d0c] hover:bg-[#151210] rounded-sm px-5 py-4 transition-colors flex flex-col gap-1">
-            <span className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">← Back to Index</span>
-            <span className="font-display text-sm text-[#f2ebeb]">Creatures of the World</span>
-          </Link>
-          <Link to="/world/databases/CreaturesOfTheWorld/DeerDragons" className="border border-[#2e2b26] hover:border-[#c9a84c]/40 bg-[#0f0d0c] hover:bg-[#151210] rounded-sm px-5 py-4 transition-colors flex flex-col gap-1 items-end text-right">
+          <Link to="/world/databases/CreaturesOfTheWorld/DeerDragons" className="border border-[#2e2b26] hover:border-[#c9a84c]/40 bg-[#0f0d0c] hover:bg-[#151210] rounded-sm px-5 py-4 transition-colors flex flex-col gap-1">
             <span className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">← Prev Entry</span>
             <span className="font-display text-sm text-[#f2ebeb]">Deer Dragons — Deeragons</span>
+          </Link>
+          <Link to="/world/databases/CreaturesOfTheWorld" className="border border-[#2e2b26] hover:border-[#c9a84c]/40 bg-[#0f0d0c] hover:bg-[#151210] rounded-sm px-5 py-4 transition-colors flex flex-col gap-1 items-end text-right">
+            <span className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">Back to Index →</span>
+            <span className="font-display text-sm text-[#f2ebeb]">Creatures of the World</span>
           </Link>
         </div>
       </div>
