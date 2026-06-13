@@ -11,6 +11,16 @@ import TheNhumelaCluster from '@/pages/WorldbuildingContents/TheNhumelaCluster';
 import PlanetSchavel from '@/pages/WorldbuildingContents/TheNhumelaCluster/PlanetSchavel';
 import SchavelianCalendar from '@/pages/WorldbuildingContents/TheNhumelaCluster/PlanetSchavel/TheSchavelianCalendar';
 import OurPlanetHetra from '@/pages/WorldbuildingContents/OurPlanetHetra';
+import TheNhuemynDB from '@/pages/WorldbuildingContents/TheNhuemynDB';
+import CreaturesOfTheWorld from '@/pages/WorldbuildingContents/CreaturesOfTheWorld';
+import BeastHierarchyKingdom from '@/pages/WorldbuildingContents/CreaturesOfTheWorld/BeastHierarchyKingdom';
+import TheDregalosaurus from '@/pages/WorldbuildingContents/CreaturesOfTheWorld/TheDregalosaurus';
+import DemonCreatures from '@/pages/WorldbuildingContents/CreaturesOfTheWorld/DemonCreatures';
+import KillerRabbits from '@/pages/WorldbuildingContents/CreaturesOfTheWorld/KillerRabbits';
+import HetraDirectWolves from '@/pages/WorldbuildingContents/CreaturesOfTheWorld/HetraDirectWolves';
+import Flimpies from '@/pages/WorldbuildingContents/CreaturesOfTheWorld/Flimpies';
+import DeerDragons from '@/pages/WorldbuildingContents/CreaturesOfTheWorld/DeerDragons';
+import PastModernDinosaurs from '@/pages/WorldbuildingContents/CreaturesOfTheWorld/PastModernDinosaurs';
 import LocalesAndSights from '@/pages/LocalesAndSights';
 import MetaWorldbuilding from '@/pages/MetaWorldbuilding';
 import OurCharacters from '@/pages/OurCharacters';
@@ -66,6 +76,16 @@ export default function App() {
           <Route path="world/databases/TheNhumelaCluster/PlanetSchavel" element={<PageTransition><PlanetSchavel /></PageTransition>} />
           <Route path="world/databases/TheNhumelaCluster/PlanetSchavel/SchavelianCalendar" element={<PageTransition><SchavelianCalendar /></PageTransition>} />
           <Route path="world/databases/OurPlanetHetra" element={<PageTransition><OurPlanetHetra /></PageTransition>} />
+          <Route path="world/databases/TheNhuemynDB" element={<PageTransition><TheNhuemynDB /></PageTransition>} />
+          <Route path="world/databases/CreaturesOfTheWorld" element={<PageTransition><CreaturesOfTheWorld /></PageTransition>} />
+          <Route path="world/databases/CreaturesOfTheWorld/BeastHierarchyKingdom" element={<PageTransition><BeastHierarchyKingdom /></PageTransition>} />
+          <Route path="world/databases/CreaturesOfTheWorld/TheDregalosaurus" element={<PageTransition><TheDregalosaurus /></PageTransition>} />
+          <Route path="world/databases/CreaturesOfTheWorld/DemonCreatures" element={<PageTransition><DemonCreatures /></PageTransition>} />
+          <Route path="world/databases/CreaturesOfTheWorld/KillerRabbits" element={<PageTransition><KillerRabbits /></PageTransition>} />
+          <Route path="world/databases/CreaturesOfTheWorld/HetraDirectWolves" element={<PageTransition><HetraDirectWolves /></PageTransition>} />
+          <Route path="world/databases/CreaturesOfTheWorld/Flimpies" element={<PageTransition><Flimpies /></PageTransition>} />
+          <Route path="world/databases/CreaturesOfTheWorld/DeerDragons" element={<PageTransition><DeerDragons /></PageTransition>} />
+          <Route path="world/databases/CreaturesOfTheWorld/PastModernDinosaurs" element={<PageTransition><PastModernDinosaurs /></PageTransition>} />
           <Route path="world/locales" element={<PageTransition><LocalesAndSights /></PageTransition>} />
           <Route path="world/meta" element={<PageTransition><MetaWorldbuilding /></PageTransition>} />
           <Route path="characters" element={<PageTransition><OurCharacters /></PageTransition>} />
