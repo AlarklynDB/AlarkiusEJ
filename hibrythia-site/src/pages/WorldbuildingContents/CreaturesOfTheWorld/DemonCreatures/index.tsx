@@ -14,7 +14,7 @@ export default function DemonCreatures() {
 
       {/* Hero */}
       <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">IV. Equation of Life › Creatures of The World</p>
-      <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-6">Demon Creatures</h1>
+      <h1 className="font-display text-2xl md:text-3xl text-[#f2ebeb] mb-6">Demon Creatures</h1>
 
       <div className="space-y-12">
 
@@ -33,7 +33,7 @@ export default function DemonCreatures() {
         {/* Demon Beings */}
         <section>
           <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">The Ten Types</p>
-          <h2 className="font-display text-xl text-[#f2ebeb] mb-6">Demon Beings</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-6">Demon Beings</h2>
           <div className="space-y-5">
 
             {[
@@ -81,7 +81,7 @@ export default function DemonCreatures() {
               },
             ].map(({ name, note, desc }) => (
               <div key={name} className="border-l-2 border-[#2e2b26] pl-5">
-                <h3 className="font-display text-lg text-[#f2ebeb] mb-1">{name}</h3>
+                <h3 className="font-display text-base text-[#f2ebeb] mb-1">{name}</h3>
                 {note && <p className="font-body text-xs text-[#7a746e] italic mb-2">({note})</p>}
                 <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">{desc}</p>
               </div>
@@ -97,7 +97,7 @@ export default function DemonCreatures() {
         {/* Demon Culture */}
         <section>
           <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Society</p>
-          <h2 className="font-display text-xl text-[#f2ebeb] mb-6">Demon Culture</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-6">Demon Culture</h2>
           <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-4">
             The Demon Race is one of the most misunderstood — and most underestimated — cultures on Planet Hetra. Where other races might see power and assume danger, those who look closer find a people defined by beauty, knowledge, and a deep capacity for emotional understanding. Demons are not frowned upon by the world at large. Other cultures regard them with respectful autonomy, recognizing them as beings who see past surface-level rumors and stereotypes with remarkable clarity.
           </p>
@@ -109,12 +109,12 @@ export default function DemonCreatures() {
 
             {/* Cultural Dishes */}
             <div>
-              <h3 className="font-display text-lg text-[#f2ebeb] mb-4">Cultural Dishes</h3>
+              <h3 className="font-display text-base text-[#f2ebeb] mb-4">Cultural Dishes</h3>
               <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-5">
                 Food is one of the quieter but more telling expressions of demon culture. Where other races develop cuisine around abundance or trade, demon cooking tends to emerge from necessity, magic, and personal craft — dishes that are difficult to replicate outside of demon hands because their preparation often requires an active use of demonic energy as much as it does heat or technique.
               </p>
               <div className="border border-[#2e2b26] rounded-sm bg-[#0f0d0c] px-5 py-5">
-                <h4 className="font-display text-base text-[#f2ebeb] mb-3">Dàema Énchil Curry</h4>
+                <h4 className="font-display text-sm text-[#f2ebeb] mb-3">Dàema Énchil Curry</h4>
                 <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-3">
                   One of the most well-known dishes made by Lesser Demons, Dàema Énchil Curry is a slow-prepared curry with roots in the culinary traditions of demon communities that lived across Varleqe and its surrounding territories. It is not a simple meal — most of its preparation processes require magic to complete correctly, and the full recipe is typically passed down within demon communities rather than recorded formally.
                 </p>
@@ -129,7 +129,7 @@ export default function DemonCreatures() {
 
             {/* Identity */}
             <div>
-              <h3 className="font-display text-lg text-[#f2ebeb] mb-3">Identity & Social Standing</h3>
+              <h3 className="font-display text-base text-[#f2ebeb] mb-3">Identity & Social Standing</h3>
               <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
                 Despite being classified as Rank 1, No. 2 in the Beast Hierarchy Kingdom — just below The Dregalosaurus Zaratan — demons carry themselves with a dignity that extends well beyond combat. Their cultural identity is rooted in the understanding that power alone does not make a race worthy of respect. What earns that respect is the way they treat others: with patience, autonomy, and a willingness to look beyond what is said on the surface.
               </p>
@@ -140,7 +140,7 @@ export default function DemonCreatures() {
 
             {/* Varnæn */}
             <div>
-              <h3 className="font-display text-lg text-[#f2ebeb] mb-3">The Varnæn Dialect — Language as Cultural Identity</h3>
+              <h3 className="font-display text-base text-[#f2ebeb] mb-3">The Varnæn Dialect — Language as Cultural Identity</h3>
               <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-3">
                 The spoken language of demon culture is Varnæn, the Demonic dialect of ancient Ghrenglish. Its tone is harsh, clipped, and guttural — built for declarations, curses, abyssal rituals, and dark sorcery. Verbs carry endings like -nuhl, -aem, and -farg, and the dialect is heavy with glottal breaks and sounds like "sk," "dr," "gh," and "kh."
               </p>
@@ -154,7 +154,7 @@ export default function DemonCreatures() {
 
             {/* Chant of Beasts */}
             <div>
-              <h3 className="font-display text-lg text-[#f2ebeb] mb-3">The Chant of Beasts — A Cultural Anthem</h3>
+              <h3 className="font-display text-base text-[#f2ebeb] mb-3">The Chant of Beasts — A Cultural Anthem</h3>
               <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-3">
                 Perhaps the most iconic expression of demon culture is "Þa Hræven'þa Býest" — The Chant of Beasts. Originally sung by demons in the Varnæn dialect, the chant is not about dominance or war. It is about courage, self-esteem, and emotional resilience — about refusing to let destruction breach the heart.
               </p>
@@ -168,7 +168,7 @@ export default function DemonCreatures() {
 
             {/* Yhursian Church */}
             <div>
-              <h3 className="font-display text-lg text-[#f2ebeb] mb-3">The Yhursian Demon Church — Sacred Architecture & Diplomacy</h3>
+              <h3 className="font-display text-base text-[#f2ebeb] mb-3">The Yhursian Demon Church — Sacred Architecture & Diplomacy</h3>
               <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-3">
                 On the supercontinent of Varleqe, built into ancient ruins rather than constructed anew, stands the Yhursian Demon Church — the only Architect church ever built for a non-human race. Its builder, Yhursa, chose to honor rather than replace the ruins that demons already called home. The result is a structure that grows from its surroundings rather than standing apart from them.
               </p>
@@ -182,7 +182,7 @@ export default function DemonCreatures() {
 
             {/* Sub-classifications */}
             <div>
-              <h3 className="font-display text-lg text-[#f2ebeb] mb-3">Sub-Classifications Within Demon Society</h3>
+              <h3 className="font-display text-base text-[#f2ebeb] mb-3">Sub-Classifications Within Demon Society</h3>
               <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
                 Demon society is not monolithic. Within its broader culture exist distinct sub-classifications documented in the{' '}
                 <Link to="/world/databases/TheNhuemynDB" className="text-[#c9a84c] hover:underline">Nhuemyn DB</Link>
@@ -195,7 +195,7 @@ export default function DemonCreatures() {
 
             {/* Varleqe */}
             <div>
-              <h3 className="font-display text-lg text-[#f2ebeb] mb-3">Varleqe — The Cultural Homeland</h3>
+              <h3 className="font-display text-base text-[#f2ebeb] mb-3">Varleqe — The Cultural Homeland</h3>
               <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
                 The majority of demon culture finds its home on Varleqe, a supercontinent of ruins, lush river lands, and scorched territorial zones. Human settlement has largely declined or collapsed here, leaving the land primarily to demons, direwolves, and beasts. Demons have a deep, ancestral relationship with Varleqe's ancient structures — living in and around them, treating them as home territory in a way that is cultural as much as it is practical. For those who know where to look, Varleqe is not a wasteland. It is a homeland.
               </p>
@@ -209,7 +209,7 @@ export default function DemonCreatures() {
         {/* Life Cycle */}
         <section>
           <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Biology</p>
-          <h2 className="font-display text-xl text-[#f2ebeb] mb-6">The Demon Life Cycle</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-6">The Demon Life Cycle</h2>
           <div className="space-y-4">
             <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
               Each Demon Creature in every different subrace will age slowly after 23 years. At the age of 23 is when demons get their abilities and powers after undergoing a process called Demonization. Demonization happens when every cell in a demon body becomes unstable due to the changing effects of black blood cells. The unstable cells turn into Demon Core Cells, which each develop their own unique abilities and powers. After this process is done, the aging factor is slowed down during that 23rd year. In a dormant section of a demon brain, those powers and abilities become a part of their survivability. They are powerful to their own accord. All Demons have two hearts.
@@ -221,7 +221,7 @@ export default function DemonCreatures() {
 
           {/* Formula */}
           <div className="border border-[#2e2b26] rounded-sm bg-[#0f0d0c] px-5 py-5 mt-6 space-y-3">
-            <h3 className="font-display text-base text-[#f2ebeb] mb-3">The Formula</h3>
+            <h3 className="font-display text-sm text-[#f2ebeb] mb-3">The Formula</h3>
             <p className="font-body text-xs text-[#c9a84c] font-mono">( apparent age - 23 ) * 975 / 23 = overall real age - 23</p>
             <p className="font-body text-xs text-[#7a746e] italic">(biological age)</p>
             <div className="border-t border-[#2e2b26] pt-3 mt-3">
@@ -236,7 +236,7 @@ export default function DemonCreatures() {
 
           {/* Quick Death */}
           <div className="mt-6">
-            <h3 className="font-display text-lg text-[#f2ebeb] mb-3">The Quick Death</h3>
+            <h3 className="font-display text-base text-[#f2ebeb] mb-3">The Quick Death</h3>
             <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-3">
               Demons die a horrible death, even if it means the exception of getting themselves killed by external factors. 8,999 is their oldest age until they die off into the age of 9,000. All demon abilities and powers deteriorate their health in a span of one year, which causes them to die by the hands of too much power.
             </p>
@@ -252,11 +252,11 @@ export default function DemonCreatures() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <Link to="/world/databases/CreaturesOfTheWorld/TheDregalosaurus" className="border border-[#2e2b26] hover:border-[#c9a84c]/40 bg-[#0f0d0c] hover:bg-[#151210] rounded-sm px-5 py-4 transition-colors flex flex-col gap-1">
             <span className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">← Prev Entry</span>
-            <span className="font-display text-base text-[#f2ebeb]">The Dregalosaurus</span>
+            <span className="font-display text-sm text-[#f2ebeb]">The Dregalosaurus</span>
           </Link>
           <Link to="/world/databases/CreaturesOfTheWorld/KillerRabbits" className="border border-[#2e2b26] hover:border-[#c9a84c]/40 bg-[#0f0d0c] hover:bg-[#151210] rounded-sm px-5 py-4 transition-colors flex flex-col gap-1 items-end text-right">
             <span className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">Next Entry →</span>
-            <span className="font-display text-base text-[#f2ebeb]">Killer Rabbits</span>
+            <span className="font-display text-sm text-[#f2ebeb]">Killer Rabbits</span>
           </Link>
         </div>
 
