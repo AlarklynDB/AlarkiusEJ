@@ -38,7 +38,7 @@ export default function LegendsAndMyths() {
       <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
         Chronicles, Stories, &amp; Fabled Myths
       </p>
-      <h1 className="font-display text-4xl md:text-5xl text-[#f2ebeb] mb-4">
+      <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-4">
         Legends &amp; Myths
       </h1>
       <p className="font-body text-sm text-[#7a746e] leading-relaxed mb-16 max-w-[560px]">
