@@ -173,7 +173,7 @@ export default function CreaturesOfTheWorld() {
           </div>
 
           <div className="border-l-2 border-[#2e2b26] pl-5">
-            <h3 className="font-display text-lg text-[#f2ebeb] mb-2">Hetraniaen Werecats</h3>
+            <h3 className="font-display text-lg text-[#f2ebeb] mb-2">Hetranian Werecats</h3>
             <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
               Hetraniaen Werecats are cousins of Catwolfs under a similar appearance. Instead, they have features of a vampire, sharp teeth, sharp eyes, and a fur-like coat structure. Werecats only come out at night, and they hate the sunlight. Legend has it that the first werecat got its vampire-like features from its master in the ancient past, who was trying to combine his own genetic code with a Catrelwulf. To much avail, the master successfully turned one of the Catrelwulfs into a Werecat. However, the werecat became hostile to its master and left.
             </p>
