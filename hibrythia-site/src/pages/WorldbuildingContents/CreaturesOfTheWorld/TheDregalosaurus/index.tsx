@@ -95,12 +95,14 @@ export default function TheDregalosaurus() {
         <div className="border-t border-[#1e1c1a]" />
 
         {/* Bottom nav */}
-        <div className="pt-4">
-          <Link
-            to="/world/databases/CreaturesOfTheWorld"
-            className="inline-flex items-center gap-2 font-body text-xs text-[#7a746e] hover:text-[#c9a84c] transition-colors"
-          >
-            ← Back to Creatures of The World
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <Link to="/world/databases/CreaturesOfTheWorld/BeastHierarchyKingdom" className="border border-[#2e2b26] hover:border-[#c9a84c]/40 bg-[#0f0d0c] hover:bg-[#151210] rounded-sm px-5 py-4 transition-colors flex flex-col gap-1">
+            <span className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">← Prev Entry</span>
+            <span className="font-display text-base text-[#f2ebeb]">Beast Hierarchy Kingdom</span>
+          </Link>
+          <Link to="/world/databases/CreaturesOfTheWorld/DemonCreatures" className="border border-[#2e2b26] hover:border-[#c9a84c]/40 bg-[#0f0d0c] hover:bg-[#151210] rounded-sm px-5 py-4 transition-colors flex flex-col gap-1 items-end text-right">
+            <span className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">Next Entry →</span>
+            <span className="font-display text-base text-[#f2ebeb]">Demon Creatures</span>
           </Link>
         </div>
 
