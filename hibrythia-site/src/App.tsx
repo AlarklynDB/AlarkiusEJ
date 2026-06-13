@@ -36,6 +36,7 @@ import Vol0EP6 from '@/pages/Bookshelf/Vol0HTHGOE/EP6';
 import HetraStandardSystems from '@/pages/WorldbuildingContents/HetraStandardSystems';
 import WorldCurrency from '@/pages/WorldbuildingContents/WorldCurrency';
 import GeoscienceOfHetra from '@/pages/WorldbuildingContents/GeoscienceOfHetra';
+import MagicDatabase from '@/pages/WorldbuildingContents/MagicDatabase';
 import TimeSystem from '@/pages/TimeSystem';
 import NotFound from '@/pages/NotFound';
 
@@ -82,6 +83,7 @@ export default function App() {
           <Route path="world/databases/HetraStandardSystems" element={<PageTransition><HetraStandardSystems /></PageTransition>} />
           <Route path="world/databases/WorldCurrency" element={<PageTransition><WorldCurrency /></PageTransition>} />
           <Route path="world/databases/GeoscienceOfHetra" element={<PageTransition><GeoscienceOfHetra /></PageTransition>} />
+          <Route path="world/databases/MagicDatabase" element={<PageTransition><MagicDatabase /></PageTransition>} />
           <Route path="world/databases/TheNhuemynDB" element={<PageTransition><TheNhuemynDB /></PageTransition>} />
           <Route path="world/databases/CreaturesOfTheWorld" element={<PageTransition><CreaturesOfTheWorld /></PageTransition>} />
           <Route path="world/databases/CreaturesOfTheWorld/BeastHierarchyKingdom" element={<PageTransition><BeastHierarchyKingdom /></PageTransition>} />
