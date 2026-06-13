@@ -137,17 +137,17 @@ export default function CreaturesOfTheWorld() {
         <div className="space-y-6">
 
           <div className="border-l-2 border-[#2e2b26] pl-5">
-            <h3 className="font-display text-lg text-[#f2ebeb] mb-2">Hetraniean Catwolfs</h3>
+            <h3 className="font-display text-lg text-[#f2ebeb] mb-2">Hetranian Catwolfs</h3>
             <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
-              Hetraniean Catwolfs are a genetic species of the ancient Catrelwulfs (In the past, there used to be a population of 500 Catrelwulfs). However, before the extinction of the Catrelwulf, it has blessed its genetic inheritance to future generations of what we call, Catwolfs. Catwolfs nowadays have all 50/50 appearance of a cat and wolf combined, though they can look entirely different because of how fast they adapt to their surroundings.
+              Hetranian Catwolfs are a genetic species of the ancient Catrelwulfs (In the past, there used to be a population of 500 Catrelwulfs). However, before the extinction of the Catrelwulf, it has blessed its genetic inheritance to future generations of what we call, Catwolfs. Catwolfs nowadays have all 50/50 appearance of a cat and wolf combined, though they can look entirely different because of how fast they adapt to their surroundings.
             </p>
           </div>
 
           <div className="border-l-2 border-[#2e2b26] pl-5">
-            <h3 className="font-display text-lg text-[#f2ebeb] mb-2">Hetraniean Direwolves</h3>
+            <h3 className="font-display text-lg text-[#f2ebeb] mb-2">Hetranian Direwolves</h3>
             <Link to="/world/databases/CreaturesOfTheWorld/HetraDirectWolves" className="font-body text-xs text-[#c9a84c] hover:underline block mb-3">[click here to view design art!]</Link>
             <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-4">
-              Hetraniean Direwolves are beast creatures, better known as "beasts." They are regional direwolves (some native to the continent of Varleqe) and they come in two separate species. These are a part of the Beast Kingdom.
+              Hetranian Direwolves are beast creatures, better known as "beasts." They are regional direwolves (some native to the continent of Varleqe) and they come in two separate species. These are a part of the Beast Kingdom.
             </p>
             <div className="space-y-4">
               <div>
@@ -166,7 +166,7 @@ export default function CreaturesOfTheWorld() {
           </div>
 
           <div className="border-l-2 border-[#2e2b26] pl-5">
-            <h3 className="font-display text-lg text-[#f2ebeb] mb-2">Hetraniean Werewolves</h3>
+            <h3 className="font-display text-lg text-[#f2ebeb] mb-2">Hetranian Werewolves</h3>
             <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
               Hetranian Werewolves are a completely different species from direwolves. Werewolves are anamorphic humanoid creatures that can change their appearance slightly to resemble an average wolf. These creatures are both bipedal and quadruped. They can run at insane speeds and jump to high elevations. These werewolves are hostile towards humans, but not other beasts.
             </p>
@@ -190,9 +190,9 @@ export default function CreaturesOfTheWorld() {
         <div className="space-y-6">
 
           <div className="border-l-2 border-[#2e2b26] pl-5">
-            <h3 className="font-display text-lg text-[#f2ebeb] mb-2">Hetraniean Kromocidilians</h3>
+            <h3 className="font-display text-lg text-[#f2ebeb] mb-2">Hetranian Kromocidilians</h3>
             <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-3">
-              Hetraniean Kromocidilian are a combination of Komodo Dragons and Crocodiles. Kromocidilians can live both on land and water, and are considered one of the seas' most ferocious creatures. Kromocidilians can't always keep their mouths shut since they like to lure in prey and snack on them like a feast. Kromocidilians are also masters of disguise. This is because their skin pigments can blend in with their surroundings at a fast rate. They can come in many species.
+              Hetranian Kromocidilian are a combination of Komodo Dragons and Crocodiles. Kromocidilians can live both on land and water, and are considered one of the seas' most ferocious creatures. Kromocidilians can't always keep their mouths shut since they like to lure in prey and snack on them like a feast. Kromocidilians are also masters of disguise. This is because their skin pigments can blend in with their surroundings at a fast rate. They can come in many species.
             </p>
             <ul className="space-y-1">
               {['Desertland Kromocidilians', 'Mountainland Kromocidilians', 'Oceanfloor Kromocidilians'].map(s => (
@@ -202,9 +202,9 @@ export default function CreaturesOfTheWorld() {
           </div>
 
           <div className="border-l-2 border-[#2e2b26] pl-5">
-            <h3 className="font-display text-lg text-[#f2ebeb] mb-2">Hetraniean Jaglaegers</h3>
+            <h3 className="font-display text-lg text-[#f2ebeb] mb-2">Hetranian Jaglaegers</h3>
             <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-3">
-              Hetraniean Jaglaegers are a mixture of Jaguars and Eagles. These Jaglaegers have the head of an eagle and legs and tails of a jaguar with a sharp yellow piercing gaze. They can both run on ground and fly in the air. Jaglaegers can come in regional variants and their fur colors are diverse. Their diet consists of both plants and meat.
+              Hetranian Jaglaegers are a mixture of Jaguars and Eagles. These Jaglaegers have the head of an eagle and legs and tails of a jaguar with a sharp yellow piercing gaze. They can both run on ground and fly in the air. Jaglaegers can come in regional variants and their fur colors are diverse. Their diet consists of both plants and meat.
             </p>
             <p className="font-body text-xs text-[#7a746e] mb-2">Jaglaegers come in two species:</p>
             <ul className="space-y-1">
@@ -292,16 +292,16 @@ export default function CreaturesOfTheWorld() {
           </div>
 
           <div className="border-l-2 border-[#2e2b26] pl-5">
-            <h3 className="font-display text-lg text-[#f2ebeb] mb-2">Hetraniean Pyroleos</h3>
+            <h3 className="font-display text-lg text-[#f2ebeb] mb-2">Hetranian Pyroleos</h3>
             <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
-              Hetraniean Pyroleos are Fire Lions that are only exclusive to Varleqe. They are insanely dangerous and are impossible to touch. This is because their fur is heat-based sensitive to their surroundings and that they are constantly active. Pyroleos make it easy to survive in the Winter. Some places in Varleqe can reach below -0 degrees (C/F) and this doesn't even affect Pyroleos because their manes are basically a humongous fireplace.
+              Hetranian Pyroleos are Fire Lions that are only exclusive to Varleqe. They are insanely dangerous and are impossible to touch. This is because their fur is heat-based sensitive to their surroundings and that they are constantly active. Pyroleos make it easy to survive in the Winter. Some places in Varleqe can reach below -0 degrees (C/F) and this doesn't even affect Pyroleos because their manes are basically a humongous fireplace.
             </p>
           </div>
 
           <div className="border-l-2 border-[#2e2b26] pl-5">
-            <h3 className="font-display text-lg text-[#f2ebeb] mb-2">Hetraniean Cranklaenkeys</h3>
+            <h3 className="font-display text-lg text-[#f2ebeb] mb-2">Hetranian Cranklaenkeys</h3>
             <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
-              Hetraniean Cranklaenkeys are crane-like monkeys. They are bipedal creatures, with arms as wings and their feathers as their fingers, with a fully functional tail of a monkey. Cranklaenkeys are avian and land animals, and they sometimes hang out in forests on the continent of Norrane. However, they are super loud and annoying. These annoying creatures also go by a different title, as "Rosemaries."
+              Hetranian Cranklaenkeys are crane-like monkeys. They are bipedal creatures, with arms as wings and their feathers as their fingers, with a fully functional tail of a monkey. Cranklaenkeys are avian and land animals, and they sometimes hang out in forests on the continent of Norrane. However, they are super loud and annoying. These annoying creatures also go by a different title, as "Rosemaries."
             </p>
           </div>
 
