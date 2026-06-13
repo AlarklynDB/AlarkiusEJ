@@ -12,7 +12,7 @@ export default function Flimpies() {
       </div>
 
       <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">IV. Equation of Life › Creatures of The World</p>
-      <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-2">Flimpies</h1>
+      <h1 className="font-display text-2xl md:text-3xl text-[#f2ebeb] mb-2">Flimpies</h1>
       <p className="font-body text-sm text-[#7a746e] italic mb-8">Ghost Bunnies</p>
 
       <div className="w-full aspect-video bg-[#1a1714] border border-[#2e2b26] rounded-sm flex items-center justify-center mb-12">
@@ -23,7 +23,7 @@ export default function Flimpies() {
 
         <section>
           <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Overview</p>
-          <h2 className="font-display text-xl text-[#f2ebeb] mb-4">What are Flimpies?</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-4">What are Flimpies?</h2>
           <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-4">
             Flimpies are airborne ghost rabbits (or bunnies) that are common everywhere. They are the ghosts of cursed rabbits that were a result of a genetic mutation back in the old days on The Continent of Norrane. (Those cursed rabbits were a ticking time bomb). Despite being ghosts, they can be visible during the daytime, and can phase through objects at ease. Their appearance is quite loving and they mean no harm. Their colors vary throughout the world!
           </p>
@@ -33,7 +33,7 @@ export default function Flimpies() {
 
           <div className="border border-[#2e2b26] rounded-sm bg-[#0f0d0c] px-5 py-5 space-y-4">
             <div>
-              <h3 className="font-display text-base text-[#f2ebeb] mb-2">Reproducing and Interbreeding</h3>
+              <h3 className="font-display text-sm text-[#f2ebeb] mb-2">Reproducing and Interbreeding</h3>
               <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-3">
                 Flimpies can interbreed because they are genderless. Since their DNA from the past was unstable, the result of the modern Flimpie DNA are now overridden with their ghost-like properties. This preserves all genetic DNA except for their personality, nature, and color.
               </p>
@@ -57,7 +57,7 @@ export default function Flimpies() {
           </div>
 
           <div className="mt-5 border-l-2 border-[#2e2b26] pl-5">
-            <h3 className="font-display text-base text-[#f2ebeb] mb-2">Habits</h3>
+            <h3 className="font-display text-sm text-[#f2ebeb] mb-2">Habits</h3>
             <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
               All wild Flimpies are clean freaks. The slightest inch of getting dirty, they will clean away instantly.
             </p>
@@ -70,7 +70,7 @@ export default function Flimpies() {
           <div className="w-full aspect-video bg-[#1a1714] border border-[#2e2b26] rounded-sm flex items-center justify-center mb-8">
             <p className="font-body text-[10px] tracking-widest uppercase text-[#2e2b26]">[ Flimpies — Ghost Rabbit Uncurled Tail Image Placeholder ]</p>
           </div>
-          <h2 className="font-display text-xl text-[#f2ebeb] mb-4">Appearance</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-4">Appearance</h2>
           <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-4">
             They have a very round and puffy body, no arms or legs. They have two ghost-like tendrils that extend from their cloud-based body. Flimpies are around the size of a 2-ply roll & an average coffee mug.
           </p>
@@ -98,7 +98,7 @@ export default function Flimpies() {
 
         <section>
           <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Abilities</p>
-          <h2 className="font-display text-xl text-[#f2ebeb] mb-6">Creature Abilities</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-6">Creature Abilities</h2>
           <div className="space-y-4">
             {[
               ['Electrokinesis','Electricity Manipulation.'],
@@ -108,7 +108,7 @@ export default function Flimpies() {
               ['Adaptability','Flimpies are quick to adapt to new surroundings, because by nature, they are intelligent creatures.'],
             ].map(([name,desc])=>(
               <div key={name} className="border-l-2 border-[#2e2b26] pl-5">
-                <p className="font-display text-base text-[#f2ebeb] mb-1">{name}</p>
+                <p className="font-display text-sm text-[#f2ebeb] mb-1">{name}</p>
                 <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">{desc}</p>
               </div>
             ))}
@@ -118,7 +118,7 @@ export default function Flimpies() {
         <div className="border-t border-[#1e1c1a]" />
 
         <section>
-          <h2 className="font-display text-xl text-[#f2ebeb] mb-4">Common Wild Locations</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-4">Common Wild Locations</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {['Norrane, Outskirt Mountains','Eulerich, Oelen Plains','Varleqe, Greenside Hills','Varleqe, Ribbonfelt'].map(loc=>(
               <p key={loc} className="font-body text-sm text-[#c8c2ba]">— {loc}</p>
@@ -132,11 +132,11 @@ export default function Flimpies() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <Link to="/world/databases/CreaturesOfTheWorld/HetraDirectWolves" className="border border-[#2e2b26] hover:border-[#c9a84c]/40 bg-[#0f0d0c] hover:bg-[#151210] rounded-sm px-5 py-4 transition-colors flex flex-col gap-1">
             <span className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">← Prev Entry</span>
-            <span className="font-display text-base text-[#f2ebeb]">Hetranian Direwolves</span>
+            <span className="font-display text-sm text-[#f2ebeb]">Hetranian Direwolves</span>
           </Link>
           <Link to="/world/databases/CreaturesOfTheWorld/DeerDragons" className="border border-[#2e2b26] hover:border-[#c9a84c]/40 bg-[#0f0d0c] hover:bg-[#151210] rounded-sm px-5 py-4 transition-colors flex flex-col gap-1 items-end text-right">
             <span className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">Next Entry →</span>
-            <span className="font-display text-base text-[#f2ebeb]">Deer Dragons — Deeragons</span>
+            <span className="font-display text-sm text-[#f2ebeb]">Deer Dragons — Deeragons</span>
           </Link>
         </div>
       </div>
