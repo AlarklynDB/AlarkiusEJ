@@ -14,7 +14,7 @@ export default function TheDregalosaurus() {
 
       {/* Hero */}
       <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">IV. Equation of Life › Creatures of The World</p>
-      <h1 className="font-display text-2xl md:text-3xl text-[#f2ebeb] mb-2">The Dregalosaurus</h1>
+      <h1 className="font-display text-xl md:text-2xl text-[#f2ebeb] mb-2">The Dregalosaurus</h1>
       <p className="font-body text-sm text-[#7a746e] italic mb-8">Beast Hierarchy Kingdom — Rank 1, No. 1</p>
 
       {/* Image placeholder */}
