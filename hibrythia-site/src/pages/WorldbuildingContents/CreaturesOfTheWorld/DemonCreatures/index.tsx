@@ -14,7 +14,7 @@ export default function DemonCreatures() {
 
       {/* Hero */}
       <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">IV. Equation of Life › Creatures of The World</p>
-      <h1 className="font-display text-2xl md:text-3xl text-[#f2ebeb] mb-6">Demon Creatures</h1>
+      <h1 className="font-display text-xl md:text-2xl text-[#f2ebeb] mb-6">Demon Creatures</h1>
 
       <div className="space-y-12">
 
