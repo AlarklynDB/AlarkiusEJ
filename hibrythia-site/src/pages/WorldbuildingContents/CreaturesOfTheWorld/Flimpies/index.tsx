@@ -12,7 +12,7 @@ export default function Flimpies() {
       </div>
 
       <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">IV. Equation of Life › Creatures of The World</p>
-      <h1 className="font-display text-2xl md:text-3xl text-[#f2ebeb] mb-2">Flimpies</h1>
+      <h1 className="font-display text-xl md:text-2xl text-[#f2ebeb] mb-2">Flimpies</h1>
       <p className="font-body text-sm text-[#7a746e] italic mb-8">Ghost Bunnies</p>
 
       <div className="w-full aspect-video bg-[#1a1714] border border-[#2e2b26] rounded-sm flex items-center justify-center mb-12">
