@@ -27,7 +27,7 @@ export default function TheNhumelaCluster() {
 
         {/* Section 1 */}
         <section>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-4">Solar System / Galaxy — Where are we?</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-4">Solar System / Galaxy — Where are we?</h2>
           <div className="space-y-4">
             <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
               Outside the solar system exists a galaxy where all the stories reside in. It is called, <span className="text-[#c9a84c] italic">"Anadeya's Eye,"</span> where every plot takes place. Anadeya's Eye is shaped as an eye that has a spiraling effect. Now you may begin to ask and wonder, <span className="text-[#c9a84c] italic">"Where is Planet Hetra?"</span>
@@ -42,7 +42,7 @@ export default function TheNhumelaCluster() {
 
         {/* Section 2 */}
         <section>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-6">Terminology and Space Objects</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-6">Terminology and Space Objects</h2>
           <div className="space-y-6">
             <div className="border-l-2 border-[#c9a84c]/30 pl-5">
               <h3 className="font-display text-base text-[#f2ebeb] mb-2">Goldilock Zone</h3>
@@ -63,7 +63,7 @@ export default function TheNhumelaCluster() {
 
         {/* Section 3 — Aqualivia Sun */}
         <section>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-4">The Aqualivia Sun</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-4">The Aqualivia Sun</h2>
 
           {/* Sun image placeholder */}
           <div className="w-full aspect-video bg-[#1a1714] border border-[#2e2b26] rounded-sm flex items-center justify-center mb-8">
@@ -111,7 +111,7 @@ export default function TheNhumelaCluster() {
 
         {/* Section 4 — Planets */}
         <section>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-8">Other Planets in the Nhumela Cluster</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-8">Other Planets in the Nhumela Cluster</h2>
           <div className="space-y-8">
 
             <div className="border border-[#2e2b26] rounded-sm bg-[#0f0d0c] px-5 py-5">
