@@ -14,7 +14,7 @@ export default function BeastHierarchyKingdom() {
 
       {/* Hero */}
       <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">IV. Equation of Life › Creatures of The World</p>
-      <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-6">Beast Hierarchy Kingdom</h1>
+      <h1 className="font-display text-2xl md:text-3xl text-[#f2ebeb] mb-6">Beast Hierarchy Kingdom</h1>
 
       <div className="space-y-12">
 
@@ -33,12 +33,12 @@ export default function BeastHierarchyKingdom() {
         {/* Rank 1 */}
         <section>
           <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Rankings</p>
-          <h2 className="font-display text-xl text-[#f2ebeb] mb-6">Rank 1</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-6">Rank 1</h2>
           <div className="space-y-6">
 
             <div className="border border-[#2e2b26] rounded-sm bg-[#0f0d0c] px-5 py-5">
               <p className="font-body text-[10px] tracking-widest uppercase text-[#7a746e] mb-2">No. 1</p>
-              <h3 className="font-display text-lg text-[#f2ebeb] mb-3">
+              <h3 className="font-display text-base text-[#f2ebeb] mb-3">
                 <Link to="/world/databases/CreaturesOfTheWorld/TheDregalosaurus" className="hover:text-[#c9a84c] transition-colors">The Dregalosaurus Zaratan</Link>
               </h3>
               <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
@@ -48,7 +48,7 @@ export default function BeastHierarchyKingdom() {
 
             <div className="border border-[#2e2b26] rounded-sm bg-[#0f0d0c] px-5 py-5">
               <p className="font-body text-[10px] tracking-widest uppercase text-[#7a746e] mb-2">No. 2</p>
-              <h3 className="font-display text-lg text-[#f2ebeb] mb-3">
+              <h3 className="font-display text-base text-[#f2ebeb] mb-3">
                 <Link to="/world/databases/CreaturesOfTheWorld/DemonCreatures" className="hover:text-[#c9a84c] transition-colors">Demons</Link>
               </h3>
               <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
@@ -63,12 +63,12 @@ export default function BeastHierarchyKingdom() {
 
         {/* Rank 2 */}
         <section>
-          <h2 className="font-display text-xl text-[#f2ebeb] mb-6">Rank 2</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-6">Rank 2</h2>
           <div className="space-y-6">
 
             <div className="border border-[#2e2b26] rounded-sm bg-[#0f0d0c] px-5 py-5">
               <p className="font-body text-[10px] tracking-widest uppercase text-[#7a746e] mb-2">No. 1</p>
-              <h3 className="font-display text-lg text-[#f2ebeb] mb-3">
+              <h3 className="font-display text-base text-[#f2ebeb] mb-3">
                 <Link to="/world/databases/CreaturesOfTheWorld/KillerRabbits" className="hover:text-[#c9a84c] transition-colors">Were-Rabbits / Killer Rabbits</Link>
               </h3>
               <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-4">
@@ -89,7 +89,7 @@ export default function BeastHierarchyKingdom() {
 
             <div className="border border-[#2e2b26] rounded-sm bg-[#0f0d0c] px-5 py-5">
               <p className="font-body text-[10px] tracking-widest uppercase text-[#7a746e] mb-2">No. 2</p>
-              <h3 className="font-display text-lg text-[#f2ebeb] mb-3">
+              <h3 className="font-display text-base text-[#f2ebeb] mb-3">
                 <Link to="/world/databases/CreaturesOfTheWorld/HetraDirectWolves" className="hover:text-[#c9a84c] transition-colors">Hetranian Direwolves</Link>
               </h3>
               <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-4">
@@ -97,7 +97,7 @@ export default function BeastHierarchyKingdom() {
               </p>
               <div className="space-y-4 mt-4">
                 <div>
-                  <h4 className="font-display text-base text-[#f2ebeb] mb-2">Wulfwing Direwolves</h4>
+                  <h4 className="font-display text-sm text-[#f2ebeb] mb-2">Wulfwing Direwolves</h4>
                   <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-3">
                     Wulfwing Direwolves are the size of a SUV-car. They have a stout and tank build, with a fluffy appearance. They have a single horn that sticks out of their head (center upper forehead from the eyes) and they have sharp orange eyes. Their fur color can range from shades of gray, white, black, and blue, and they have diamond-shape patterns as their eyebrows. These patterns can also appear on their tails. Wulfwings are gentle and powerful. Their jaw force is super strong and can lift up to 20 units of force. Wulfwings are slightly larger than Coppercrests.
                   </p>
@@ -106,7 +106,7 @@ export default function BeastHierarchyKingdom() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-display text-base text-[#f2ebeb] mb-2">Coppercrest Direwolves</h4>
+                  <h4 className="font-display text-sm text-[#f2ebeb] mb-2">Coppercrest Direwolves</h4>
                   <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-3">
                     Coppercrest Direwolves have one distinct feature that differs from Wulfwings. They have a copper-plating armor body that consists of, "copper" that is surrounded by green-tinted fur. This copper-plating are actually their skin, which is built to withstand massive blows. They have blue eyes, the polar opposite of orange. Coppercrest Direwolves can be found everywhere. These beasts are powerhouses because of their skin, and some are tamed by Eulerieans in Eulerich for combat and military purposes. They are smaller in size than Wulfwings.
                   </p>
@@ -124,9 +124,9 @@ export default function BeastHierarchyKingdom() {
 
         {/* Rank 3 */}
         <section>
-          <h2 className="font-display text-xl text-[#f2ebeb] mb-6">Rank 3</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-6">Rank 3</h2>
           <div className="border border-[#2e2b26] rounded-sm bg-[#0f0d0c] px-5 py-5">
-            <h3 className="font-display text-lg text-[#f2ebeb] mb-3">Stygian Batragons</h3>
+            <h3 className="font-display text-base text-[#f2ebeb] mb-3">Stygian Batragons</h3>
             <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
               Fearsome Stygian Dragons from The Stygian Realm. They're a bat-dragon fusion and their power triumphs just below Rank 1 and 2. Some of these Batragons can talk. Some have an intelligent mind of a scholar.
             </p>
@@ -140,7 +140,7 @@ export default function BeastHierarchyKingdom() {
           <div />
           <Link to="/world/databases/CreaturesOfTheWorld/TheDregalosaurus" className="border border-[#2e2b26] hover:border-[#c9a84c]/40 bg-[#0f0d0c] hover:bg-[#151210] rounded-sm px-5 py-4 transition-colors flex flex-col gap-1 items-end text-right">
             <span className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">Next Entry →</span>
-            <span className="font-display text-base text-[#f2ebeb]">The Dregalosaurus</span>
+            <span className="font-display text-sm text-[#f2ebeb]">The Dregalosaurus</span>
           </Link>
         </div>
 
