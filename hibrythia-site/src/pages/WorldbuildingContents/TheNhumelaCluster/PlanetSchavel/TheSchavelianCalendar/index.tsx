@@ -74,7 +74,7 @@ export default function SchavelianCalendar() {
 
         {/* Overview */}
         <section>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-5">Schavel's Calendar</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-5">Schavel's Calendar</h2>
           <div className="space-y-4">
             <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
               540 Days in a year on Schavel might seem like a stretch, but it is a perfect getaway vacation and emigration between Schavel and Hetra. The Calendar system here is fairly lax, because when this planet was discovered, it was already teeming with life.
@@ -98,7 +98,7 @@ export default function SchavelianCalendar() {
 
         {/* At-a-glance */}
         <section>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-5">The Schavelian Calendar</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-5">The Schavelian Calendar</h2>
           <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-6">
             The Months in this calendar are divided into seasons. Visually on the Calendar, these are all grouped into ONE visual hierarchy. The start of each season is labeled on the calendar as:
           </p>
@@ -120,7 +120,7 @@ export default function SchavelianCalendar() {
 
         {/* Full season breakdown */}
         <section>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-8">Full Season Breakdown</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-8">Full Season Breakdown</h2>
           <div className="space-y-8">
             {SEASONS.map((season) => (
               <div key={season.name} className="border border-[#2e2b26] rounded-sm bg-[#0f0d0c] overflow-hidden">
