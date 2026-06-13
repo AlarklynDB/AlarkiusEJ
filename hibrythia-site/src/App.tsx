@@ -7,6 +7,10 @@ import LegendsAndMyths from '@/pages/LegendsAndMyths';
 import OurWorldbuilding from '@/pages/OurWorldbuilding';
 import WorldbuildingContents from '@/pages/WorldbuildingContents';
 import CalendarAndTime from '@/pages/WorldbuildingContents/CalendarAndTime';
+import TheNhumelaCluster from '@/pages/WorldbuildingContents/TheNhumelaCluster';
+import PlanetSchavel from '@/pages/WorldbuildingContents/TheNhumelaCluster/PlanetSchavel';
+import SchavelianCalendar from '@/pages/WorldbuildingContents/TheNhumelaCluster/PlanetSchavel/TheSchavelianCalendar';
+import OurPlanetHetra from '@/pages/WorldbuildingContents/OurPlanetHetra';
 import LocalesAndSights from '@/pages/LocalesAndSights';
 import MetaWorldbuilding from '@/pages/MetaWorldbuilding';
 import OurCharacters from '@/pages/OurCharacters';
@@ -58,6 +62,10 @@ export default function App() {
           <Route path="world" element={<PageTransition><OurWorldbuilding /></PageTransition>} />
           <Route path="world/databases" element={<PageTransition><WorldbuildingContents /></PageTransition>} />
           <Route path="world/databases/CalendarAndTime" element={<PageTransition><CalendarAndTime /></PageTransition>} />
+          <Route path="world/databases/TheNhumelaCluster" element={<PageTransition><TheNhumelaCluster /></PageTransition>} />
+          <Route path="world/databases/TheNhumelaCluster/PlanetSchavel" element={<PageTransition><PlanetSchavel /></PageTransition>} />
+          <Route path="world/databases/TheNhumelaCluster/PlanetSchavel/SchavelianCalendar" element={<PageTransition><SchavelianCalendar /></PageTransition>} />
+          <Route path="world/databases/OurPlanetHetra" element={<PageTransition><OurPlanetHetra /></PageTransition>} />
           <Route path="world/locales" element={<PageTransition><LocalesAndSights /></PageTransition>} />
           <Route path="world/meta" element={<PageTransition><MetaWorldbuilding /></PageTransition>} />
           <Route path="characters" element={<PageTransition><OurCharacters /></PageTransition>} />
