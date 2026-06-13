@@ -38,6 +38,7 @@ import WorldCurrency from '@/pages/WorldbuildingContents/WorldCurrency';
 import GeoscienceOfHetra from '@/pages/WorldbuildingContents/GeoscienceOfHetra';
 import MagicDatabase from '@/pages/WorldbuildingContents/MagicDatabase';
 import HibrythianReligions from '@/pages/WorldbuildingContents/HibrythianReligions';
+import TerminologyLexicon from '@/pages/WorldbuildingContents/TerminologyLexicon';
 import TimeSystem from '@/pages/TimeSystem';
 import NotFound from '@/pages/NotFound';
 
@@ -86,6 +87,7 @@ export default function App() {
           <Route path="world/databases/GeoscienceOfHetra" element={<PageTransition><GeoscienceOfHetra /></PageTransition>} />
           <Route path="world/databases/MagicDatabase" element={<PageTransition><MagicDatabase /></PageTransition>} />
           <Route path="world/databases/HibrythianReligions" element={<PageTransition><HibrythianReligions /></PageTransition>} />
+          <Route path="world/databases/TerminologyLexicon" element={<PageTransition><TerminologyLexicon /></PageTransition>} />
           <Route path="world/databases/TheNhuemynDB" element={<PageTransition><TheNhuemynDB /></PageTransition>} />
           <Route path="world/databases/CreaturesOfTheWorld" element={<PageTransition><CreaturesOfTheWorld /></PageTransition>} />
           <Route path="world/databases/CreaturesOfTheWorld/BeastHierarchyKingdom" element={<PageTransition><BeastHierarchyKingdom /></PageTransition>} />
