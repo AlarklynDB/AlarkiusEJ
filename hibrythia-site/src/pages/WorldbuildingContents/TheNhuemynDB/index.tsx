@@ -29,7 +29,7 @@ export default function TheNhuemynDB() {
 
         {/* Terminology */}
         <section>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-5">Terminology</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-5">Terminology</h2>
           <div className="border border-[#2e2b26] rounded-sm bg-[#0f0d0c] px-5 py-5 mb-6">
             <p className="font-display text-sm text-[#f2ebeb] mb-1">Nhuemyns</p>
             <p className="font-body text-xs text-[#7a746e] italic mb-4">Scientific Name: Nheuma Sapherius</p>
@@ -44,7 +44,7 @@ export default function TheNhuemynDB() {
         {/* 14 Races */}
         <section>
           <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Classification</p>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-2">What kinds of Nhuemyns are there?</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-2">What kinds of Nhuemyns are there?</h2>
           <p className="font-body text-sm text-[#7a746e] italic mb-8">Quite frankly, with so many human-like appearances around the world, there are 14 races that fall under this category.</p>
 
           <div className="space-y-8">
