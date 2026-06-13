@@ -38,8 +38,8 @@ const SECTIONS = [
     description: 'The systems, sciences, and frameworks that keep the world of Hetra running.',
     pages: [
       {
-        to: '/world/databases/WorldMetrics',
-        label: 'World Metrics',
+        to: '/world/databases/HetraStandardSystems',
+        label: 'Hetra's Standard Systems',
         description: 'Measurements, units, and standards used in the Hibrythian world.',
       },
       {
