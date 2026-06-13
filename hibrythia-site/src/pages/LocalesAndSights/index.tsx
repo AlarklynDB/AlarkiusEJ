@@ -184,7 +184,7 @@ export default function LocalesAndSights() {
       <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
         Locations &amp; Geography
       </p>
-      <h1 className="font-display text-4xl md:text-5xl text-[#f2ebeb] mb-4">
+      <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-4">
         Locales &amp; Sights
       </h1>
       <p className="font-body text-sm text-[#7a746e] leading-relaxed mb-16 max-w-[560px]">
