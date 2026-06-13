@@ -24,7 +24,7 @@ export default function OurPlanetHetra() {
 
         {/* Section 1 — Planet Hetra */}
         <section>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-5">Planet Hetra</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-5">Planet Hetra</h2>
           <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844] mb-4">Solar System / Galaxy — Where are we?</p>
           <div className="space-y-4">
             <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
@@ -46,7 +46,7 @@ export default function OurPlanetHetra() {
 
         {/* Section 2 — Comparison to Earth */}
         <section>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-5">Comparison to Earth</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-5">Comparison to Earth</h2>
 
           {/* Comparison image placeholder */}
           <div className="w-full aspect-video bg-[#1a1714] border border-[#2e2b26] rounded-sm flex items-center justify-center mb-8">
@@ -81,7 +81,7 @@ export default function OurPlanetHetra() {
 
         {/* Section 3 — Zohl's Perspective */}
         <section>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-5">Zohl's Perspective of Hetra</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-5">Zohl's Perspective of Hetra</h2>
           <div className="space-y-4">
             <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
               During the process of Early Hetra when Zohl made it, he had placed a Divine Runic Spell that helps regulate Planet Hetra from becoming an oblete spheroid. This Runic Spell helps regulate and balance the natural order of a perfect sphere. But what does this spell regulate? Here's what it does and why Zohl made Planet Hetra a spheroid. Zohl doesn't really care much about physics and scientific numbers. He just creates based off of vibes alone.
@@ -107,7 +107,7 @@ export default function OurPlanetHetra() {
 
         {/* Section 4 — Goldilocks Zone */}
         <section>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-4">Goldilock Zone</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-4">Goldilock Zone</h2>
           <p className="font-body text-sm text-[#c8c2ba] leading-[1.85]">
             The habitable zone is the area around a star where it is not too hot and not too cold for liquid water to exist on the surface of surrounding planets. This distance from the Sun is called the habitable zone, or the Goldilocks zone.
           </p>
@@ -117,7 +117,7 @@ export default function OurPlanetHetra() {
 
         {/* Section 5 — World Seasons */}
         <section>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-5">World Seasons</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-5">World Seasons</h2>
           <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-6">
             The seasons in this world closely resemble the counterpart of Earth, however, they are given their own unique names.
           </p>
@@ -140,7 +140,7 @@ export default function OurPlanetHetra() {
 
         {/* Section 6 — Calendar & Year */}
         <section>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-5">Calendar and Year Representation</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-5">Calendar and Year Representation</h2>
           <p className="font-body text-sm text-[#c8c2ba] leading-[1.85] mb-6">
             Interpretation of what AD and BC is, including custom month names for this world! There is also a new era range!
           </p>
@@ -178,7 +178,7 @@ export default function OurPlanetHetra() {
 
         {/* Section 7 — Symbolisms */}
         <section>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-6">Symbolisms on Hetra</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-6">Symbolisms on Hetra</h2>
           <div className="space-y-8">
             <div className="border-l-2 border-[#c9a84c]/30 pl-5">
               <h3 className="font-display text-base text-[#f2ebeb] mb-3">Erbgeroger Flower</h3>
@@ -199,7 +199,7 @@ export default function OurPlanetHetra() {
 
         {/* Section 8 — The Moons */}
         <section>
-          <h2 className="font-display text-base text-[#f2ebeb] mb-6">The Moons</h2>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-6">The Moons</h2>
           <div className="space-y-6">
             <div className="border border-[#2e2b26] rounded-sm bg-[#0f0d0c] px-5 py-5">
               <h3 className="font-display text-base text-[#f2ebeb] mb-3">Anzeya</h3>
