@@ -306,7 +306,7 @@ export default function EconomyOfPlanetHetra() {
             { desc: "Shortened X misprint",                                              val: "Ħ35k" },
             { desc: "Bronze Hetryl w/ no indent or bevel + capital T",                  val: "Ħ45k" },
             { desc: "Gold Hetryl w/ smooth sides and no K",                              val: "Ħ54k" },
-            { desc: "Waxed Copper Hetryl mixed with bronze w/ misspelled "Hetry"",    val: "Ħ75k" },
+            { desc: "Waxed Copper Hetryl mixed with bronze w/ misspelled 'Hetry'",    val: "Ħ75k" },
             { desc: "Super old misprinted coins",                                        val: "Ħ45k – Ħ90k" },
           ].map((item, i) => (
             <div key={i} className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm px-4 py-3 flex justify-between items-center">
