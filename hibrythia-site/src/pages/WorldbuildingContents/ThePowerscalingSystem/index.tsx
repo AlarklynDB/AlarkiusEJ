@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import LorePageLayout from '@/components/LorePageLayout';
 
 // Rank color map
 const rankColors: Record<string, string> = {
@@ -75,7 +74,6 @@ function RankTier({ rank, label, description, tiers, note }: RankTierProps) {
 
 export default function ThePowerscalingSystem() {
   return (
-    <LorePageLayout>
     <div className="min-h-screen bg-[#100908] text-[#c8c2ba] px-6 py-12 max-w-4xl mx-auto">
 
       {/* Breadcrumb */}
@@ -222,6 +220,5 @@ export default function ThePowerscalingSystem() {
       </div>
 
     </div>
-  </LorePageLayout>
   );
 }
