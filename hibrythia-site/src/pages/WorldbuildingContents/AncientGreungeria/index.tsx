@@ -17,7 +17,6 @@ type SongSection = {
 // ─── Song component ────────────────────────────────────────────────────────────
 function SongCard({ song }: { song: SongSection }) {
   return (
-    <LorePageLayout>
     <div className="border border-[#2e2b26] rounded-sm bg-[#0f0d0c] p-6 space-y-6">
       <div>
         <h3 className="font-display text-lg text-[#f2ebeb] mb-1">{song.title}</h3>
@@ -67,6 +66,7 @@ function SongCard({ song }: { song: SongSection }) {
 // ─── Main page ─────────────────────────────────────────────────────────────────
 export default function AncientGreungeria() {
   return (
+    <LorePageLayout>
     <div className="max-w-[960px] mx-auto px-6 py-16 space-y-16">
 
       {/* Breadcrumb */}
