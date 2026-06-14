@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
-import LorePageLayout from '@/components/LorePageLayout';
 
 export default function EconomyOfPlanetHetra() {
   return (
-    <LorePageLayout>
     <div className="min-h-screen bg-[#100908] text-[#c8c2ba] px-6 py-12 max-w-4xl mx-auto">
 
       {/* Breadcrumb */}
@@ -345,6 +343,5 @@ export default function EconomyOfPlanetHetra() {
       </div>
 
     </div>
-  </LorePageLayout>
   );
 }
