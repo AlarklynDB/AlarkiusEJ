@@ -25,7 +25,6 @@ interface RankTierProps {
 function RankTier({ rank, label, description, tiers, note }: RankTierProps) {
   const color = rankColors[rank] ?? '#c8c2ba';
   return (
-    <LorePageLayout>
     <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-6 mb-6 hover:border-[#c9a84c]/40 hover:bg-[#151210] transition-colors">
       {/* Rank badge + label */}
       <div className="flex items-center gap-3 mb-3">
@@ -76,6 +75,7 @@ function RankTier({ rank, label, description, tiers, note }: RankTierProps) {
 
 export default function ThePowerscalingSystem() {
   return (
+    <LorePageLayout>
     <div className="min-h-screen bg-[#100908] text-[#c8c2ba] px-6 py-12 max-w-4xl mx-auto">
 
       {/* Breadcrumb */}
