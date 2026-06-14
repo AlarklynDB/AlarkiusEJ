@@ -18,7 +18,7 @@ function PropBlock({ title, items }: { title: string; items: string[] }) {
 
 export default function TechnologyTransitSystems() {
   return (
-    <div className="min-h-screen bg-[#100908] text-[#c8c2ba] px-6 py-12 max-w-4xl mx-auto">
+    <div className="min-h-screen bg-[#100908] text-[#c8c2ba] px-6 py-12 max-w-[960px] mx-auto">
 
       {/* Breadcrumb */}
       <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844] mb-8">
