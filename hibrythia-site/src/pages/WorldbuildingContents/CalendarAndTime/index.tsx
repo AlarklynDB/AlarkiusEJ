@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import LorePageLayout from '@/components/LorePageLayout';
 
 const months = [
   { name: "The Month of Viviambel",  num: "1st",  days: 31,  note: "" },
@@ -53,7 +52,6 @@ const timezones = [
 
 export default function CalendarAndTime() {
   return (
-    <LorePageLayout>
     <div className="min-h-screen bg-[#100908] text-[#c8c2ba] px-6 py-12 max-w-4xl mx-auto">
 
       {/* Breadcrumb */}
@@ -612,6 +610,5 @@ export default function CalendarAndTime() {
       </div>
 
     </div>
-  </LorePageLayout>
   );
 }
