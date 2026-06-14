@@ -91,6 +91,7 @@ Embedding `"word"` inside a `"..."` string breaks parsing.
 ### 4. General rule
 > **Any JS string literal (inside `''` or `""`) that contains quotes, apostrophes, or colons in unusual positions must be double-checked before pushing.**
 > When in doubt — use Python to write the file instead of bash heredocs to avoid shell escaping chaos.
+
 > If you see basic grammar error structures or minor spelling mistakes (not custom words) - fix it!
 
 ---
