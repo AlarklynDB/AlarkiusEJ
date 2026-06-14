@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
+import LorePageLayout from '@/components/LorePageLayout';
 
 export default function TerminologyLexicon() {
   return (
+    <LorePageLayout>
     <div className="min-h-screen bg-[#100908] text-[#c8c2ba] px-6 py-12 max-w-4xl mx-auto">
 
       {/* Breadcrumb */}
@@ -33,7 +35,7 @@ export default function TerminologyLexicon() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           Places &amp; Services
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-6">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-6" id="places-amp-services">
           Places &amp; Services
         </h2>
 
@@ -50,7 +52,7 @@ export default function TerminologyLexicon() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           Creatures &amp; Species
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-6">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-6" id="creatures-amp-species">
           Creatures &amp; Species
         </h2>
 
@@ -97,7 +99,7 @@ export default function TerminologyLexicon() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           Economy &amp; Currency
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-6">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-6" id="economy-amp-currency">
           Economy &amp; Currency
         </h2>
 
@@ -121,7 +123,7 @@ export default function TerminologyLexicon() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           Technology &amp; Fuel
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-6">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-6" id="technology-amp-fuel">
           Technology &amp; Fuel
         </h2>
 
@@ -145,7 +147,7 @@ export default function TerminologyLexicon() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           Time &amp; Calendar
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-6">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-6" id="time-amp-calendar">
           Time &amp; Calendar
         </h2>
 
@@ -162,7 +164,7 @@ export default function TerminologyLexicon() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           Phenomena &amp; Conditions
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-6">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-6" id="phenomena-amp-conditions">
           Phenomena &amp; Conditions
         </h2>
 
@@ -179,7 +181,7 @@ export default function TerminologyLexicon() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           Language &amp; Phrases
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-6">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-6" id="language-amp-phrases">
           Language &amp; Phrases
         </h2>
 
@@ -232,5 +234,6 @@ export default function TerminologyLexicon() {
       </div>
 
     </div>
+  </LorePageLayout>
   );
 }
