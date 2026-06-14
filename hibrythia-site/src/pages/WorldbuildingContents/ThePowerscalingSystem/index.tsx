@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import LorePageLayout from '@/components/LorePageLayout';
 
 // Rank color map
 const rankColors: Record<string, string> = {
@@ -24,6 +25,7 @@ interface RankTierProps {
 function RankTier({ rank, label, description, tiers, note }: RankTierProps) {
   const color = rankColors[rank] ?? '#c8c2ba';
   return (
+    <LorePageLayout>
     <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-6 mb-6 hover:border-[#c9a84c]/40 hover:bg-[#151210] transition-colors">
       {/* Rank badge + label */}
       <div className="flex items-center gap-3 mb-3">
@@ -100,7 +102,7 @@ export default function ThePowerscalingSystem() {
       <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
         Power Scaling System
       </p>
-      <h2 className="font-display text-lg text-[#f2ebeb] mb-8">
+      <h2 className="font-display text-lg text-[#f2ebeb] mb-8" id="power-scaling-system">
         Power Scaling System
       </h2>
 
@@ -220,5 +222,6 @@ export default function ThePowerscalingSystem() {
       </div>
 
     </div>
+  </LorePageLayout>
   );
 }
