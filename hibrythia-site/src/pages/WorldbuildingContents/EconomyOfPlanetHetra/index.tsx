@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
+import LorePageLayout from '@/components/LorePageLayout';
 
 export default function EconomyOfPlanetHetra() {
   return (
+    <LorePageLayout>
     <div className="min-h-screen bg-[#100908] text-[#c8c2ba] px-6 py-12 max-w-4xl mx-auto">
 
       {/* Breadcrumb */}
@@ -31,7 +33,7 @@ export default function EconomyOfPlanetHetra() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           Currency System
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-4">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-4" id="the-currency-system-hetrix-amp-hetryl">
           The Currency System — Hetrix &amp; Hetryl
         </h2>
         <p className="font-body text-sm text-[#c8c2ba] mb-8">
@@ -155,7 +157,7 @@ export default function EconomyOfPlanetHetra() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           Economic Scale
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-4">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-4" id="world-net-worth-amp-economic-scale">
           World Net Worth &amp; Economic Scale
         </h2>
 
@@ -177,7 +179,7 @@ export default function EconomyOfPlanetHetra() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           Regional Economies
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-6">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-6" id="regional-economies-amp-wages">
           Regional Economies &amp; Wages
         </h2>
         <p className="font-body text-sm text-[#c8c2ba] mb-6">
@@ -244,7 +246,7 @@ export default function EconomyOfPlanetHetra() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           Secondary Economy
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-4">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-4" id="the-skypeak-obelisk-a-secondary-economy">
           The Skypeak Obelisk — A Secondary Economy
         </h2>
         <p className="font-body text-sm text-[#c8c2ba] mb-4">
@@ -272,7 +274,7 @@ export default function EconomyOfPlanetHetra() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           Monetary Symbolism
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-4">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-4" id="the-erbgeroger-flower-amp-monetary-symbolism">
           The Erbgeroger Flower &amp; Monetary Symbolism
         </h2>
         <p className="font-body text-sm text-[#c8c2ba] mb-4">
@@ -290,7 +292,7 @@ export default function EconomyOfPlanetHetra() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           Collector&apos;s Market
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-6">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-6" id="rare-currency-amp-collectoraposs-market">
           Rare Currency &amp; Collector&apos;s Market
         </h2>
 
@@ -343,5 +345,6 @@ export default function EconomyOfPlanetHetra() {
       </div>
 
     </div>
+  </LorePageLayout>
   );
 }
