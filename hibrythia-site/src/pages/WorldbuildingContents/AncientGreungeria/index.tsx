@@ -195,9 +195,7 @@ export default function AncientGreungeria() {
           <SongCard song={{
             title: "Raeya's Lullaby — A Heart Forged From Fire",
             subtitle: "Aeh Hæart Forgéd from Fýrræ",
-            credits: "Original Lyrics: Alarkius Elvya Jay
-Instrumentation: Alarkius Elvya Jay
-Lyricist: Alarkius Elvya Jay | All Rights Reserved",
+            credits: "Original Lyrics: Alarkius Elvya Jay\nInstrumentation: Alarkius Elvya Jay\nLyricist: Alarkius Elvya Jay | All Rights Reserved",
             tone: "A slow-paced, peaceful style epic lullaby sung by a single female voice. The melody is soft, elegant, and airy, with a reverberatory presence that feels gentle and kind. Each feminine phrase lingers at the end with an airy delay and pause, creating an ethereal, atmosphere. The voice is delicate, soaring, and elegantly high.",
             instruments: "Harps, Woodwinds, Oboe Percussion, Japanese Koto, Nyckelharpa, Vibraphone, Marimba",
             mp3Placeholder: true,
@@ -280,9 +278,7 @@ Lyricist: Alarkius Elvya Jay | All Rights Reserved",
           <SongCard song={{
             title: "The Anthem of Healing and Peace — The Sylphrelm",
             subtitle: "Ánthema øf Hæalínæ æn Peác",
-            credits: "Original Lyrics: Alarkius Elvya Jay
-Instrumentation: Alarkius Elvya Jay
-Lyricist: Alarkius Elvya Jay | All Rights Reserved",
+            credits: "Original Lyrics: Alarkius Elvya Jay\nInstrumentation: Alarkius Elvya Jay\nLyricist: Alarkius Elvya Jay | All Rights Reserved",
             tone: "A slow-paced, peaceful style Japanese epic theme sung by a single female voice. The melody is soft, elegant, and airy, with a reverberatory presence that feels gentle and kind. Each feminine phrase lingers at the end with an airy delay and pause, creating an ethereal, choir-like atmosphere. The voice is delicate, soaring, and elegantly high.",
             instruments: "Harps, Woodwinds, Oboe, Irish Flute, Cello, Percussion, Japanese Koto, Mandolin, Nylon Guitar, Nyckelharpa, Vibraphone, Strings, Marimba",
             mp3Placeholder: true,
@@ -390,11 +386,9 @@ Lyricist: Alarkius Elvya Jay | All Rights Reserved",
       <section className="space-y-6">
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c]">Songs Sung with Varnæn Dialect (Demonic Ghrenglish)</p>
         <SongCard song={{
-          title: '\u201cThe Chant of Beasts\u201d',
+          title: "\u201cThe Chant of Beasts\u201d",
           subtitle: "Þa Hræven'þa Býest",
-          credits: "Original Lyrics: Alarkius Elvya Jay
-Instrumentation: Alarkius Elvya Jay
-Lyricist: Alarkius Elvya Jay | All Rights Reserved",
+          credits: "Original Lyrics: Alarkius Elvya Jay\nInstrumentation: Alarkius Elvya Jay\nLyricist: Alarkius Elvya Jay | All Rights Reserved",
           tone: "A powerful, primal ancient fantasy chant with raw, guttural female vocals — fierce, rising into battle-cry shouts. Empowering, with driving rhythm and dark, echoing reverb that feels ancient and otherworldly. Heavy, ritualistic instrumentation: deep drums, staccato strings, tribal percussion. Set in a beautiful vicious time. Feels mountainous and raw. Played near the beautiful mountains. Vocal Style: Fierce, raw, guttural lows with soaring, aggressive highs. Strong vibrato on sustained notes.",
           instruments: "Heavy Taiko Drums, War Drums, Djembe, Frame Drums, Deep Bass Drums, Low Strings (Cellos, Double Bass), Distorted Electric Guitars (for texture), Horns (deep brass), Tribal Percussion, Shakuhachi (Japanese bamboo flute for eerie moments), Chains/Industrial Sounds (for atmosphere).",
           mp3Placeholder: true,
