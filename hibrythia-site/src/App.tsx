@@ -40,6 +40,7 @@ import MagicDatabase from '@/pages/WorldbuildingContents/MagicDatabase';
 import HibrythianReligions from '@/pages/WorldbuildingContents/HibrythianReligions';
 import TerminologyLexicon from '@/pages/WorldbuildingContents/TerminologyLexicon';
 import ThePowerscalingSystem from '@/pages/WorldbuildingContents/ThePowerscalingSystem';
+import WeatherClimateSeasons from '@/pages/WorldbuildingContents/WeatherClimateSeasons';
 import TimeSystem from '@/pages/TimeSystem';
 import NotFound from '@/pages/NotFound';
 
@@ -90,6 +91,7 @@ export default function App() {
           <Route path="world/databases/HibrythianReligions" element={<PageTransition><HibrythianReligions /></PageTransition>} />
           <Route path="world/databases/TerminologyLexicon" element={<PageTransition><TerminologyLexicon /></PageTransition>} />
           <Route path="world/databases/ThePowerscalingSystem" element={<PageTransition><ThePowerscalingSystem /></PageTransition>} />
+          <Route path="world/databases/WeatherClimateSeasons" element={<PageTransition><WeatherClimateSeasons /></PageTransition>} />
           <Route path="world/databases/TheNhuemynDB" element={<PageTransition><TheNhuemynDB /></PageTransition>} />
           <Route path="world/databases/CreaturesOfTheWorld" element={<PageTransition><CreaturesOfTheWorld /></PageTransition>} />
           <Route path="world/databases/CreaturesOfTheWorld/BeastHierarchyKingdom" element={<PageTransition><BeastHierarchyKingdom /></PageTransition>} />
