@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
+import LorePageLayout from '@/components/LorePageLayout';
 
 function PropBlock({ title, items }: { title: string; items: string[] }) {
   return (
+    <LorePageLayout>
     <div className="mb-4">
       <p className="font-body text-[10px] tracking-widest uppercase text-[#7a746e] mb-2">{title}</p>
       <ul className="space-y-1">
@@ -40,7 +42,7 @@ export default function TechnologyTransitSystems() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           History
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-4">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-4" id="the-great-tech-era-of-1565-ad">
           The Great Tech Era of 1565 AD
         </h2>
         <p className="font-body text-sm text-[#c8c2ba] mb-3">
@@ -88,7 +90,7 @@ export default function TechnologyTransitSystems() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           Timeline
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-2">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-2" id="technology-timeline">
           Technology Timeline
         </h2>
         <p className="font-body text-sm text-[#7a746e] italic mb-6">
@@ -137,7 +139,7 @@ export default function TechnologyTransitSystems() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           Device Standards
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-4">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-4" id="ingress-protection-resistant-systems">
           Ingress Protection Resistant Systems
         </h2>
         <p className="font-body text-sm text-[#c8c2ba] mb-6">
@@ -193,7 +195,7 @@ export default function TechnologyTransitSystems() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           Transportation
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-4">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-4" id="transportation-of-modern-planet-hetra">
           Transportation of Modern Planet Hetra
         </h2>
         <p className="font-body text-sm text-[#c8c2ba] mb-3">
@@ -236,7 +238,7 @@ export default function TechnologyTransitSystems() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           Air &amp; Sky Transit
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-4">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-4" id="air-amp-sky-transportation">
           Air &amp; Sky Transportation
         </h2>
         <p className="font-body text-sm text-[#c8c2ba] mb-3">
@@ -293,7 +295,7 @@ export default function TechnologyTransitSystems() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           Ocean Transit
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-4">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-4" id="ocean-transit-systems">
           Ocean Transit Systems
         </h2>
         <p className="font-body text-sm text-[#c8c2ba] mb-3">
@@ -354,5 +356,6 @@ export default function TechnologyTransitSystems() {
       </div>
 
     </div>
+  </LorePageLayout>
   );
 }
