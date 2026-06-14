@@ -244,16 +244,6 @@ export default function CalendarAndTime() {
           </table>
         </div>
 
-        {/* Interactive calendar link */}
-        <div className="mt-6 bg-[#0f0d0c] border border-[#c9a84c]/20 rounded-sm p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <p className="font-body text-sm text-[#c8c2ba]">Want to explore the interactive calendar?</p>
-          <Link
-            to="/32-16TimeSystem"
-            className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] hover:underline shrink-0"
-          >
-            View the Calendar →
-          </Link>
-        </div>
       </section>
 
       <div className="border-t border-[#2e2b26] mb-10" />
@@ -416,12 +406,18 @@ export default function CalendarAndTime() {
       </section>
 
       {/* Back nav */}
-      <div className="border-t border-[#2e2b26] pt-8 mt-4">
+      <div className="border-t border-[#2e2b26] pt-8 mt-4 flex items-center justify-between">
         <Link
           to="/world/databases"
           className="inline-flex items-center gap-2 font-body text-[10px] tracking-widest uppercase text-[#4a4844] hover:text-[#c9a84c] transition-colors"
         >
           ← Back to World Databases
+        </Link>
+        <Link
+          to="/32-16TimeSystem"
+          className="inline-flex items-center gap-2 font-body text-[10px] tracking-widest uppercase text-[#c9a84c] hover:underline transition-colors"
+        >
+          View Interactive Calendar →
         </Link>
       </div>
 
