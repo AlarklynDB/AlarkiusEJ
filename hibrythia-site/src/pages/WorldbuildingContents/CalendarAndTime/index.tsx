@@ -105,7 +105,7 @@ export default function CalendarAndTime() {
           <p className="font-body text-sm text-[#c8c2ba] pl-4 border-l border-[#c9a84c]/40">
             <span className="text-[#f2ebeb] font-semibold">Hetra's second moon, Zenya.</span> Zenya works with the main moon it orbits, <span className="text-[#f2ebeb] font-semibold">Anzeya</span>, which controls the tides. While that happens, Zenya — the satellite moon — controls the time, day, and length of the year.
           </p>
-          <p className="font-body text-sm text-[#c9a84c] italic mt-3">32 hours a day, with great daylight, less night hours, but a longer year of 444 days!</p>
+          <p className="font-body text-sm text-[#c9a84c] italic mt-3">32 hours a day, with great daylight (19 hours), less night hours (13 hours), but a longer year of 444 days!</p>
         </div>
       </section>
 
