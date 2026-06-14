@@ -44,7 +44,7 @@ export default function TechnologyTransitSystems() {
           The Great Tech Era of 1565 AD
         </h2>
         <p className="font-body text-sm text-[#c8c2ba] mb-3">
-          Before the advances of technology of 1565 AD, people used to walk long miles because it was regarded as a healthy way of exercise, through the help of horses, Buffalosaurus Ants, and of the sort. But even with the huge time frame of 32 hours, walking or transportation via Beast Creatures wasn&apos;t enough. In fact, it wasn&apos;t efficient at it&apos;s max, even with the help of tame beasts.
+          Before the advances of technology of 1565 AD, people used to walk long miles because it was regarded as a healthy way of exercise, through the help of horses, Buffalosaurus Ants, and of the sort. But even with the huge time frame of 32 hours, walking or transportation via Beast Creatures wasn&apos;t enough. In fact, it wasn&apos;t efficient it&apos;s max, even with the help of tame beasts.
         </p>
         <p className="font-body text-sm text-[#c8c2ba] mb-3">
           The lands are vast and large, and taking trip to different areas, especially on the continents of Rynel and Varleqe — would take too long of a time. The technology before 1565 was at it&apos;s own absolute peak, using steam engines and steam punk technology. That Era was known as the <span className="text-[#f2ebeb] font-semibold">Steampunk Era</span>, which lasted from 3 AD - 1500 AD.
@@ -88,9 +88,13 @@ export default function TechnologyTransitSystems() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           Timeline
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-6">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-2">
           Technology Timeline
         </h2>
+        <p className="font-body text-sm text-[#7a746e] italic mb-6">
+          This is a Technology Timeline that is borrowed from the{" "}
+          <Link to="/world/databases/CalendarAndTime" className="text-[#c9a84c] hover:underline">Calendar System</Link>.
+        </p>
 
         <div className="space-y-4">
           {[
