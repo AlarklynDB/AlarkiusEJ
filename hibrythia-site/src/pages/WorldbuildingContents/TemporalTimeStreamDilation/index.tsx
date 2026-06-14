@@ -336,6 +336,16 @@ export default function TemporalTimeStreamDilation() {
 
       <div className="w-full h-px bg-[#c9a84c]/20" aria-hidden="true" />
 
+      {/* Bottom nav */}
+      <div className="flex flex-wrap gap-4 items-center justify-between pt-2">
+        <Link
+          to="/world/databases"
+          className="font-body text-[10px] tracking-widest uppercase text-[#4a4844] hover:text-[#c9a84c] transition-colors"
+        >
+          ← Back to World Databases
+        </Link>
+      </div>
+
     </div>
   );
 }
