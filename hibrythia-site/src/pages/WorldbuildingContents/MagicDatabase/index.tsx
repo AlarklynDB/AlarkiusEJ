@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export default function MagicDatabase() {
   return (
     <div className="min-h-screen bg-[#100908]">
-      <div className="max-w-[860px] mx-auto px-6 py-20 space-y-12">
+      <div className="max-w-[960px] mx-auto px-6 py-20 space-y-12">
 
         {/* Breadcrumb */}
         <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">
