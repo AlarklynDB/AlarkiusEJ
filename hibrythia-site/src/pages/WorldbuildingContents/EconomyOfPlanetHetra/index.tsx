@@ -19,7 +19,7 @@ export default function EconomyOfPlanetHetra() {
 
       {/* Intro callout */}
       <div className="bg-[#0f0d0c] border-l-2 border-[#c9a84c] pl-5 pr-4 py-4 mb-10">
-        <p className="font-body text-sm text-[#c8c2ba]">
+        <p className="font-body text-base text-[#c8c2ba]">
           <span className="text-[#f2ebeb] font-semibold">The Economy of Planet Hetra</span> is one of the most expansive and complex systems in the known world. Powered by a unified currency, a thriving multi-continental trade network, and a net worth that has skyrocketed into the <span className="text-[#f2ebeb] font-semibold">~250 octillion</span> Hetrix range as of the year <span className="text-[#f2ebeb] font-semibold">2245</span>, Hetra&apos;s economy is a living, breathing force behind every story, adventure, and transaction in The Hibrythian Saga.
         </p>
       </div>
@@ -132,7 +132,7 @@ export default function EconomyOfPlanetHetra() {
           ].map((c, i) => (
             <div key={i} className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm px-4 py-3 flex gap-3">
               <span className="font-display text-base text-[#c9a84c] shrink-0 w-24">{c.name}</span>
-              <span className="font-body text-sm text-[#c8c2ba]">{c.comp}</span>
+              <span className="font-body text-base text-[#c8c2ba]">{c.comp}</span>
             </div>
           ))}
         </div>
@@ -160,12 +160,12 @@ export default function EconomyOfPlanetHetra() {
         </h2>
 
         <div className="bg-[#0f0d0c] border-l-2 border-[#7a746e] pl-5 pr-4 py-4 mb-6">
-          <p className="font-body text-sm text-[#c8c2ba]">
+          <p className="font-body text-base text-[#c8c2ba]">
             As of the year <span className="text-[#f2ebeb] font-semibold">2245</span>, the estimated net worth of Planet Hetra is approximately <span className="text-[#f2ebeb] font-semibold">~250 Nonillion Hetrix.</span> This staggering figure is the result of centuries of mass production, scientific breakthroughs, advanced technology, and the combined economic output of all continents — chiefly <span className="text-[#f2ebeb] font-semibold">Rynel</span>, <span className="text-[#f2ebeb] font-semibold">Lynneria</span>, and <span className="text-[#f2ebeb] font-semibold">Eulerich</span>.
           </p>
         </div>
 
-        <p className="font-body text-sm text-[#c8c2ba]">
+        <p className="font-body text-base text-[#c8c2ba]">
           This scale isn&apos;t just a number — it reflects a world that has grown from ancient kingdoms into a globally connected, semi-modernized civilization. Mass markets, global brands, and interplanetary-level ambitions (see: <span className="text-[#f2ebeb] font-semibold">HetraSEAP</span>) all fuel this astronomical figure.
         </p>
       </section>
@@ -199,8 +199,8 @@ export default function EconomyOfPlanetHetra() {
             <p><span className="font-body text-[10px] tracking-widest uppercase text-[#7a746e] mr-2">Founded by</span><span className="text-[#c8c2ba]">Philstra Rhys</span></p>
           </div>
           <div className="mt-3 pt-3 border-t border-[#2e2b26] space-y-1 text-sm">
-            <p className="font-body text-sm text-[#c8c2ba]">Philstra Rhys is the world&apos;s first Multi-Quintillionaire, with a worth of 35 Quintillion.</p>
-            <p className="font-body text-sm text-[#c8c2ba]">HetraSEAP is backed by Philstra and has a worth around 25 quintillion Hetrix.</p>
+            <p className="font-body text-base text-[#c8c2ba]">Philstra Rhys is the world&apos;s first Multi-Quintillionaire, with a worth of 35 Quintillion.</p>
+            <p className="font-body text-base text-[#c8c2ba]">HetraSEAP is backed by Philstra and has a worth around 25 quintillion Hetrix.</p>
           </div>
         </div>
 
@@ -255,12 +255,12 @@ export default function EconomyOfPlanetHetra() {
         </p>
 
         <div className="bg-[#0f0d0c] border-l-2 border-[#6ab4e0] pl-5 pr-4 py-4 mb-4">
-          <p className="font-body text-sm text-[#c8c2ba]">
+          <p className="font-body text-base text-[#c8c2ba]">
             System coins earned inside the Skypeak Obelisk can be <span className="text-[#f2ebeb] font-semibold">converted into real-world Hetrix</span> at coin-conversion shops located on every floor near the entrance. This creates a direct pipeline between the Obelisk&apos;s internal economy and the broader global market.
           </p>
         </div>
 
-        <p className="font-body text-sm text-[#c8c2ba]">
+        <p className="font-body text-base text-[#c8c2ba]">
           The Obelisk can hold up to <span className="text-[#f2ebeb] font-semibold">2.3 million individuals</span> at one time, making it one of the most economically active single locations on the planet. The Worth of this attraction goes up to <span className="text-[#f2ebeb] font-semibold">60 Trillion Hetrix</span>.
         </p>
       </section>
@@ -278,7 +278,7 @@ export default function EconomyOfPlanetHetra() {
         <p className="font-body text-sm text-[#c8c2ba] mb-4">
           No discussion of Hetra&apos;s economy is complete without mentioning the <span className="text-[#f2ebeb] font-semibold">Erbgeroger Flower</span> — the sacred mountain flower of Rynel that is the world symbol for <span className="text-[#f2ebeb] font-semibold">Unity</span>.
         </p>
-        <p className="font-body text-sm text-[#c8c2ba]">
+        <p className="font-body text-base text-[#c8c2ba]">
           Its likeness is engraved on <span className="text-[#f2ebeb] font-semibold">every Hetrix bill in circulation.</span> This means that from the smallest Ħ3 purchase to a Ħ150 transaction, the Erbgeroger Flower passes through every hand, wallet, and market stall on the planet. It&apos;s not just symbolism — it&apos;s an intentional design choice embedded into Hetra&apos;s economy to remind every individual that <span className="text-[#c9a84c] italic">trade, prosperity, and wealth are things to be shared, not hoarded.</span>
         </p>
       </section>
@@ -310,7 +310,7 @@ export default function EconomyOfPlanetHetra() {
             { desc: "Super old misprinted coins",                                        val: "Ħ45k – Ħ90k" },
           ].map((item, i) => (
             <div key={i} className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm px-4 py-3 flex justify-between items-center">
-              <span className="font-body text-sm text-[#c8c2ba]">{item.desc}</span>
+              <span className="font-body text-base text-[#c8c2ba]">{item.desc}</span>
               <span className="font-display text-base text-[#c9a84c] shrink-0 ml-4">{item.val}</span>
             </div>
           ))}
@@ -325,7 +325,7 @@ export default function EconomyOfPlanetHetra() {
             { desc: "Blank misprints (only Ħ symbol + Erbgeroger Flower) — rarest of all", val: "Ħ750k" },
           ].map((item, i) => (
             <div key={i} className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm px-4 py-3 flex justify-between items-center">
-              <span className="font-body text-sm text-[#c8c2ba]">{item.desc}</span>
+              <span className="font-body text-base text-[#c8c2ba]">{item.desc}</span>
               <span className="font-display text-base text-[#c9a84c] shrink-0 ml-4">{item.val}</span>
             </div>
           ))}
