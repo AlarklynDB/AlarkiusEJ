@@ -1,6 +1,6 @@
 # Hibrythia Site — Important Typography Conventions
 > IMPORTANT Reference file for consistent heading sizes across all lore pages. Should be read first before populating Lore!
-> Last updated: June 13 2026 - 4:09 AM
+> Last updated: June 14 2026 - 3:06 AM
 
 ---
 
@@ -45,8 +45,58 @@
 
 ---
 
+## ⚠️ Build Error Rules — READ BEFORE WRITING TSX
+
+These are recurring TypeScript/JSX build traps that WILL break Cloudflare deploys.
+
+### 1. Apostrophes in JS string literals
+Single-quoted strings containing `'s`, `n't`, `'re`, etc. break the TypeScript parser.
+
+```tsx
+// ❌ BREAKS BUILD
+{ label: 'Hetra's Standard Systems' }
+
+// ✅ SAFE — use double quotes
+{ label: "Hetra's Standard Systems" }
+
+// ✅ SAFE — escape in JSX text (not in JS strings)
+<p>Hetra&apos;s Standard Systems</p>
+```
+
+### 2. Missing object key names in JS arrays / objects
+A value without its key name causes a TS1005 `':'` expected error.
+
+```tsx
+// ❌ BREAKS BUILD — 'time:' key is missing
+{ label: "Afternoons", "14:00 – 20:00 PM", desc: "..." }
+
+// ✅ SAFE — all keys named explicitly
+{ label: "Afternoons", time: "14:00 – 20:00 PM", desc: "..." }
+```
+
+### 3. Unescaped double quotes inside double-quoted strings
+Embedding `"word"` inside a `"..."` string breaks parsing.
+
+```tsx
+// ❌ BREAKS BUILD
+{ desc: "The misspelled "Hetry" coin" }
+
+// ✅ SAFE — use single quotes for inner
+{ desc: "The misspelled 'Hetry' coin" }
+
+// ✅ ALSO SAFE — escape with backslash
+{ desc: "The misspelled \"Hetry\" coin" }
+```
+
+### 4. General rule
+> **Any JS string literal (inside `''` or `""`) that contains quotes, apostrophes, or colons in unusual positions must be double-checked before pushing.**
+> When in doubt — use Python to write the file instead of bash heredocs to avoid shell escaping chaos.
+
+---
+
 ## Notes
 - Gold (#c9a84c) is for quotes/dramatic text only — never section headers.
 - MP3 files on Nhuemyn DB are ignored for now.
 - Images use a placeholder div until the author adds them manually.
 - Do not add lore to character/world pages until explicitly asked.
+- README.md files are hands-off unless explicitly requested.
