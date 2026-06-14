@@ -120,7 +120,7 @@ export default function WeatherClimateSeasons() {
       {/* ── A Strange Phenomenon ── */}
       <section className="mb-12">
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
-          Phenomenon
+          Phenomenons
         </p>
         <h2 className="font-display text-lg text-[#f2ebeb] mb-4">
           A Strange Phenomenon
