@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import LorePageLayout from '@/components/LorePageLayout';
 
 function PropBlock({ title, items }: { title: string; items: string[] }) {
   return (
@@ -19,7 +18,6 @@ function PropBlock({ title, items }: { title: string; items: string[] }) {
 
 export default function TechnologyTransitSystems() {
   return (
-    <LorePageLayout>
     <div className="min-h-screen bg-[#100908] text-[#c8c2ba] px-6 py-12 max-w-4xl mx-auto">
 
       {/* Breadcrumb */}
@@ -356,6 +354,5 @@ export default function TechnologyTransitSystems() {
       </div>
 
     </div>
-  </LorePageLayout>
   );
 }
