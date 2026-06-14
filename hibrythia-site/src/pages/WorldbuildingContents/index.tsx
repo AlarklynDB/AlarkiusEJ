@@ -43,7 +43,7 @@ const SECTIONS = [
         description: 'Measurements, units, and standards used in the Hibrythian world.',
       },
       {
-        to: '/world/databases/WorldCurrency',
+        to: '/world/databases/EconomyOfPlanetHetra',
         label: 'World Currency',
         description: 'The economic systems, currencies (including Ħ Hetrix), and trade across Hetra.',
       },
