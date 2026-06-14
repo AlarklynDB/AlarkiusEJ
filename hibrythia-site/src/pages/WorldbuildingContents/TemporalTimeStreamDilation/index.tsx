@@ -32,7 +32,6 @@ export default function TemporalTimeStreamDilation() {
       </nav>
 
       {/* Gold rule */}
-      <div className="w-full h-px bg-[#c9a84c]/30" aria-hidden="true" />
 
       {/* Header */}
       <div className="space-y-3">
