@@ -13,42 +13,40 @@ function LoreSideNav({ items, activeId }: { items: NavItem[]; activeId: string }
   if (items.length < 4) return null;
 
   return (
-    <nav
-      className="hidden xl:flex flex-col gap-0.5 fixed top-24 right-5 w-48 z-40 max-h-[calc(100vh-7rem)] overflow-y-auto"
-      aria-label="Page sections"
-    >
-      <p className="font-body text-[9px] tracking-widest uppercase text-[#4a4844] mb-2 px-2">
-        On this page
-      </p>
-      {items.map((item) => {
-        const isActive = activeId === item.id;
-        return (
-          <a
-            key={item.id}
-            href={`#${item.id}`}
-            onClick={(e) => {
-              e.preventDefault();
-              const el = document.getElementById(item.id);
-              if (el) {
-                const NAVBAR_HEIGHT = 72;
-                const top = el.getBoundingClientRect().top + window.scrollY - NAVBAR_HEIGHT;
-                window.scrollTo({ top, behavior: 'smooth' });
-              }
-            }}
-            className="font-body text-[11px] px-2 py-1.5 rounded-sm transition-all duration-150 leading-snug truncate"
-            style={{
-              color: isActive ? '#c9a84c' : '#4a4844',
-              background: isActive ? 'rgba(201,168,76,0.07)' : 'transparent',
-              borderLeft: isActive ? '2px solid #c9a84c' : '2px solid transparent',
-              fontWeight: isActive ? 500 : 400,
-            }}
-            title={item.label}
-          >
-            {item.label}
-          </a>
-        );
-      })}
-    </nav>
+    <aside className="hidden xl:block w-44 shrink-0">
+      <div className="sticky top-24 flex flex-col gap-0.5 max-h-[calc(100vh-7rem)] overflow-y-auto pr-1">
+        <p className="font-body text-[9px] tracking-widest uppercase text-[#4a4844] mb-2 px-2">
+          On this page
+        </p>
+        {items.map((item) => {
+          const isActive = activeId === item.id;
+          return (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById(item.id);
+                if (el) {
+                  const top = el.getBoundingClientRect().top + window.scrollY - 72;
+                  window.scrollTo({ top, behavior: 'smooth' });
+                }
+              }}
+              className="font-body text-[11px] px-2 py-1.5 rounded-sm transition-all duration-150 leading-snug truncate"
+              style={{
+                color: isActive ? '#c9a84c' : '#4a4844',
+                background: isActive ? 'rgba(201,168,76,0.07)' : 'transparent',
+                borderLeft: isActive ? '2px solid #c9a84c' : '2px solid transparent',
+                fontWeight: isActive ? 500 : 400,
+              }}
+              title={item.label}
+            >
+              {item.label}
+            </a>
+          );
+        })}
+      </div>
+    </aside>
   );
 }
 
@@ -104,11 +102,11 @@ export default function LorePageLayout({ children }: LorePageLayoutProps) {
   }, [navItems]);
 
   return (
-    <>
-      <LoreSideNav items={navItems} activeId={activeId} />
-      <div ref={containerRef} className="xl:pr-52">
+    <div className="flex gap-8 items-start justify-center w-full">
+      <div ref={containerRef} className="flex-1 min-w-0">
         {children}
       </div>
-    </>
+      <LoreSideNav items={navItems} activeId={activeId} />
+    </div>
   );
 }
