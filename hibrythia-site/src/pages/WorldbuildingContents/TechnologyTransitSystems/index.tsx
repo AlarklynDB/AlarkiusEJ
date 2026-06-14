@@ -3,7 +3,6 @@ import LorePageLayout from '@/components/LorePageLayout';
 
 function PropBlock({ title, items }: { title: string; items: string[] }) {
   return (
-    <LorePageLayout>
     <div className="mb-4">
       <p className="font-body text-[10px] tracking-widest uppercase text-[#7a746e] mb-2">{title}</p>
       <ul className="space-y-1">
@@ -20,6 +19,7 @@ function PropBlock({ title, items }: { title: string; items: string[] }) {
 
 export default function TechnologyTransitSystems() {
   return (
+    <LorePageLayout>
     <div className="min-h-screen bg-[#100908] text-[#c8c2ba] px-6 py-12 max-w-4xl mx-auto">
 
       {/* Breadcrumb */}
@@ -238,7 +238,7 @@ export default function TechnologyTransitSystems() {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">
           Air &amp; Sky Transit
         </p>
-        <h2 className="font-display text-lg text-[#f2ebeb] mb-4" id="air-amp-sky-transportation">
+        <h2 className="font-display text-lg text-[#f2ebeb] mb-4" id="air-sky-transportation">
           Air &amp; Sky Transportation
         </h2>
         <p className="font-body text-sm text-[#c8c2ba] mb-3">
