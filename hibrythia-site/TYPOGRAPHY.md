@@ -1,6 +1,21 @@
 # Hibrythia Site — Important Typography Conventions
 > IMPORTANT Reference file for consistent heading sizes across all lore pages. Should be read first before populating Lore!
-> Last updated: June 14 2026 - 3:06 AM
+> Last updated: June 14 2026 - 4:51 PM
+
+---
+
+## Body Width
+
+| Convention Name | Tailwind Class              | Usage                              |
+|-----------------|-----------------------------|------------------------------------|
+| BodyWidth960    | max-w-[960px] mx-auto px-6  | Outer wrapper on every lore page   |
+
+```tsx
+// BodyWidth960 — Standard Lore Page Wrapper
+<div className="max-w-[960px] mx-auto px-6 py-20 space-y-16">
+```
+
+> All lore pages under /world/databases must use BodyWidth960. Do not use max-w-4xl, max-w-[760px], max-w-[860px], or any other width variant.
 
 ---
 
@@ -45,54 +60,51 @@
 
 ---
 
-## ⚠️ Build Error Rules — READ BEFORE WRITING TSX
+## Build Error Rules — READ BEFORE WRITING TSX
 
 These are recurring TypeScript/JSX build traps that WILL break Cloudflare deploys.
 
 ### 1. Apostrophes in JS string literals
-Single-quoted strings containing `'s`, `n't`, `'re`, etc. break the TypeScript parser.
+Single-quoted strings containing apostrophes break the TypeScript parser.
 
 ```tsx
-// ❌ BREAKS BUILD
-{ label: 'Hetra's Standard Systems' }
+// BREAKS BUILD
+{ label: 'Hetra’s Standard Systems' }
 
-// ✅ SAFE — use double quotes
+// SAFE — use double quotes
 { label: "Hetra's Standard Systems" }
 
-// ✅ SAFE — escape in JSX text (not in JS strings)
+// SAFE — escape in JSX text nodes (not in JS strings)
 <p>Hetra&apos;s Standard Systems</p>
 ```
 
 ### 2. Missing object key names in JS arrays / objects
-A value without its key name causes a TS1005 `':'` expected error.
+A value without its key name causes a TS1005 ':' expected error.
 
 ```tsx
-// ❌ BREAKS BUILD — 'time:' key is missing
+// BREAKS BUILD — 'time:' key is missing
 { label: "Afternoons", "14:00 – 20:00 PM", desc: "..." }
 
-// ✅ SAFE — all keys named explicitly
+// SAFE — all keys named explicitly
 { label: "Afternoons", time: "14:00 – 20:00 PM", desc: "..." }
 ```
 
 ### 3. Unescaped double quotes inside double-quoted strings
-Embedding `"word"` inside a `"..."` string breaks parsing.
+Embedding "word" inside a "..." string breaks parsing.
 
 ```tsx
-// ❌ BREAKS BUILD
+// BREAKS BUILD
 { desc: "The misspelled "Hetry" coin" }
 
-// ✅ SAFE — use single quotes for inner
+// SAFE — use single quotes for inner
 { desc: "The misspelled 'Hetry' coin" }
-
-// ✅ ALSO SAFE — escape with backslash
-{ desc: "The misspelled \"Hetry\" coin" }
 ```
 
 ### 4. General rule
-> **Any JS string literal (inside `''` or `""`) that contains quotes, apostrophes, or colons in unusual positions must be double-checked before pushing.**
-> When in doubt — use Python to write the file instead of bash heredocs to avoid shell escaping chaos.
+Any JS string literal that contains quotes, apostrophes, or colons in unusual positions must be double-checked before pushing.
+When in doubt — use Python to write the file instead of bash heredocs to avoid shell escaping chaos.
 
-> If you see basic grammar error structures or minor spelling mistakes (not custom words) - fix it!
+If you see basic grammar error structures or minor spelling mistakes (not custom words) - fix it!
 
 ---
 
