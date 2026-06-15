@@ -250,6 +250,90 @@ export default function GeoscienceOfHetra() {
           </div>
         </section>
 
+
+        <div className="border-t border-[#1e1c1a]" />
+
+        {/* ── TYPES OF WOOD ── */}
+        <section>
+          <h2 className="font-display text-lg text-[#f2ebeb] mb-8">Types of Wood</h2>
+
+          {/* Norrane Hardwood Trees */}
+          <div className="border border-[#2e2b26] hover:border-[#c9a84c]/40 bg-[#0f0d0c] hover:bg-[#151210] rounded-sm px-6 py-6 transition-colors mb-6">
+            <h3 className="font-display text-sm text-[#f2ebeb] mb-4">Norrane Hardwood Trees</h3>
+            <p className="font-body text-base text-[#c8c2ba] leading-relaxed mb-4">
+              Norrane Hardwood Trees are a species of tree <strong className="text-[#f2ebeb]">native to the continent of Norrane</strong>, known predominantly for their exceptional durability and density. The wood of these trees is remarkably resistant &mdash; famously, even the powerful Witch <strong className="text-[#f2ebeb]">Elena</strong> was unable to cut or repair the Tree of Elenia due to how hard its hardwood was.
+            </p>
+            <p className="font-body text-base text-[#c8c2ba] leading-relaxed mb-5">
+              Norrane Hardwood Trees grow in large numbers across Norrane and serve as one of the continent&apos;s most valuable natural resources. They are a defining feature of the continent&apos;s landscape and economy.
+            </p>
+
+            <h4 className="font-display text-base text-[#f2ebeb] mb-2">Notable Uses</h4>
+            <ul className="space-y-2 mb-5">
+              {[
+                "As a raw structural material, Norrane Hardwood appears as one of the three core components of the Oakgnar Grand Tree — alongside a Hexicule Core and Stonewood.",
+                "When combined with Lyecerium crystals, Norrane Hardwood Trees can be processed into Hardwood-Lucid Metal — an engineered alloy that is as hard as diamond and as dense as tungsten.",
+              ].map((item, i) => (
+                <li key={i} className="flex gap-3">
+                  <span className="text-[#c9a84c] mt-[3px]">—</span>
+                  <p className="font-body text-base text-[#c8c2ba] leading-relaxed">{item}</p>
+                </li>
+              ))}
+            </ul>
+
+            <blockquote className="border-l-2 border-[#c9a84c]/40 pl-4">
+              <p className="font-body text-sm text-[#7a746e] leading-[1.85] italic">
+                The <strong className="text-[#c8c2ba]">Tree of Elenia</strong> is the most famous individual specimen of a Norrane Hardwood Tree, distinguished by its magical orb and sentient nature &mdash; a trait no other Norrane Hardwood Tree possesses.
+              </p>
+            </blockquote>
+          </div>
+
+          {/* Hardwood-Lucid Metal */}
+          <div className="border border-[#2e2b26] hover:border-[#c9a84c]/40 bg-[#0f0d0c] hover:bg-[#151210] rounded-sm px-6 py-6 transition-colors mb-6">
+            <h3 className="font-display text-sm text-[#f2ebeb] mb-4">Hardwood-Lucid Metal</h3>
+            <p className="font-body text-base text-[#c8c2ba] leading-relaxed mb-5">
+              Hardwood-Lucid Metal (also called <strong className="text-[#f2ebeb]">Hardwood Lucid Metal</strong>) is an <strong className="text-[#f2ebeb]">engineered alloy</strong> created by combining <strong className="text-[#f2ebeb]">Norrane Hardwood Trees</strong> with <strong className="text-[#f2ebeb]">Lyecerium crystals</strong>. It was first discovered and developed during <strong className="text-[#f2ebeb]">The Great Technological Era of 1565 AD</strong>, and quickly became one of Hetra&apos;s most sought-after industrial materials.
+            </p>
+
+            <h4 className="font-display text-base text-[#f2ebeb] mb-2">Properties</h4>
+            <ul className="space-y-2 mb-5">
+              {[
+                "Hardness comparable to diamond",
+                "Density comparable to tungsten",
+                "Non-corrosive — does not rust",
+                "Completely waterproof",
+                "Classed as a wood-type metal, found sourced from Norrane's cave systems",
+              ].map((item, i) => (
+                <li key={i} className="flex gap-3">
+                  <span className="text-[#c9a84c] mt-[3px]">—</span>
+                  <p className="font-body text-base text-[#c8c2ba] leading-relaxed">{item}</p>
+                </li>
+              ))}
+            </ul>
+
+            <h4 className="font-display text-base text-[#f2ebeb] mb-2">Known Applications</h4>
+            <ul className="space-y-2">
+              {[
+                "The structural frame of The Skypeak Obelisk in Grelladore, Nharvenile — described as indestructible",
+                "The UOTA magnetic suspension rails that run along the ocean floor, powering the hover mechanics of the Underwater Ocean Train Aquasubs",
+                "Widely used in metal buildings across Hetra's modern infrastructure since the Technomagical Era",
+              ].map((item, i) => (
+                <li key={i} className="flex gap-3">
+                  <span className="text-[#c9a84c] mt-[3px]">—</span>
+                  <p className="font-body text-base text-[#c8c2ba] leading-relaxed">{item}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Stonewood */}
+          <div className="border border-[#2e2b26] hover:border-[#c9a84c]/40 bg-[#0f0d0c] hover:bg-[#151210] rounded-sm px-6 py-6 transition-colors">
+            <h3 className="font-display text-sm text-[#f2ebeb] mb-4">Stonewood</h3>
+            <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
+              A type of petrified wood native to Rynel itself. Unlike actual petrified wood, Stonewood is very hard, but at the right given circumstances, it can become flexible but also soft &mdash; due to the properties of Lyecerium and Hetranium crystals combined. This type of stonewood doesn&apos;t break as easily. Often used in construction applications.
+            </p>
+          </div>
+        </section>
+
       {/* Bottom nav */}
       <div className="mt-16 pt-8 border-t border-[#2e2b26] flex items-start justify-between">
         <Link to="/world/databases" className="group flex flex-col text-left border border-[#2e2b26] rounded-sm px-4 py-3 bg-[#131210] hover:border-[#c9a84c]/40 hover:bg-[#1a1814] transition-all duration-200 inline-flex w-fit">
