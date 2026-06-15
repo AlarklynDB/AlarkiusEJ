@@ -114,11 +114,11 @@ export default function AncientGreungeria() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="border border-[#2e2b26] bg-[#0f0d0c] rounded-sm p-4 space-y-1">
             <p className="font-display text-base text-[#f2ebeb]">Grhenglish</p>
-            <p className="font-body text-sm text-[#c8c2ba]">More for those who can&apos;t sound the R before the H.</p>
+            <p className="font-body text-base text-[#c8c2ba]">More for those who can&apos;t sound the R before the H.</p>
           </div>
           <div className="border border-[#2e2b26] bg-[#0f0d0c] rounded-sm p-4 space-y-1">
             <p className="font-display text-base text-[#f2ebeb]">Ghrenglish</p>
-            <p className="font-body text-sm text-[#c8c2ba]">Easier for those well versed in H before R — this one is more common nowadays. The "H" is silent in this.</p>
+            <p className="font-body text-base text-[#c8c2ba]">Easier for those well versed in H before R — this one is more common nowadays. The "H" is silent in this.</p>
           </div>
         </div>
       </section>
