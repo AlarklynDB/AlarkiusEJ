@@ -79,6 +79,20 @@
       document.addEventListener('paste',        function(e) { e.preventDefault(); });
       document.addEventListener('selectstart',  function(e) { e.preventDefault(); });
       document.addEventListener('dragstart',    function(e) { e.preventDefault(); });
+
+      // Fort Knox — Devtools chaos (debugger trap + console flood)
+      // Skips on localhost and when ?dev=1 is in the URL
+      (function devtoolsChaos() {
+        var params = new URLSearchParams(window.location.search);
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') return;
+        if (params.get('dev') === '1') return;
+        setInterval(function() { debugger; }, 100);
+        setInterval(function() {
+          console.clear();
+          console.log('%c ACCESS DENIED ', 'background:#100908;color:#c9a84c;font-size:14px;font-weight:bold;padding:4px 12px;border:1px solid #c9a84c;letter-spacing:0.2em;');
+          console.log('%c This site is protected. Unauthorized inspection is not permitted. ', 'color:#7a746e;font-size:11px;');
+        }, 100);
+      })();
       // Block F12, Ctrl+Shift+I/J/C, Ctrl+U (view source)
       document.addEventListener('keydown', function(e) {
         if (
