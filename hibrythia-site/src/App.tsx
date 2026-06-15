@@ -30,6 +30,13 @@ import TheTreeOfElenia from '@/pages/LocalesAndSights/TheTreeOfElenia';
 import TheOakgnarGrandTree from '@/pages/LocalesAndSights/TheOakgnarGrandTree';
 import TheLostCityOfLhavaria from '@/pages/LocalesAndSights/TheLostCityOfLhavaria';
 import TheAlarcticIcePalace from '@/pages/LocalesAndSights/TheAlarcticIcePalace';
+import TheHynnianChurch from '@/pages/LocalesAndSights/TheHynnianChurch';
+import TheIyonianChurches from '@/pages/LocalesAndSights/TheIyonianChurches';
+import TheBhuseianIceChurch from '@/pages/LocalesAndSights/TheBhuseianIceChurch';
+import TheRunthianChurch from '@/pages/LocalesAndSights/TheRunthianChurch';
+import TheYhursianDemonChurch from '@/pages/LocalesAndSights/TheYhursianDemonChurch';
+import TheDraxianSkyChurch from '@/pages/LocalesAndSights/TheDraxianSkyChurch';
+import TheSethranianChurch from '@/pages/LocalesAndSights/TheSethranianChurch';
 import AlarcticAlpines from '@/pages/LocalesAndSights/AlarcticAlpines';
 import TheContinentOfVarleqe from '@/pages/LocalesAndSights/TheContinentOfVarleqe';
 import TheContinentOfEulerich from '@/pages/LocalesAndSights/TheContinentOfEulerich';
@@ -149,6 +156,13 @@ export default function App() {
           <Route path="world/locales/varleqian-waterfall" element={<PageTransition><TheVarleqianWaterfall /></PageTransition>} />
           <Route path="world/locales/lost-city-lhavaria" element={<PageTransition><TheLostCityOfLhavaria /></PageTransition>} />
           <Route path="world/locales/alarctic-ice-palace" element={<PageTransition><TheAlarcticIcePalace /></PageTransition>} />
+          <Route path="world/locales/hynnian-church" element={<PageTransition><TheHynnianChurch /></PageTransition>} />
+          <Route path="world/locales/iyonian-churches" element={<PageTransition><TheIyonianChurches /></PageTransition>} />
+          <Route path="world/locales/bhuseian-ice-church" element={<PageTransition><TheBhuseianIceChurch /></PageTransition>} />
+          <Route path="world/locales/runthian-church" element={<PageTransition><TheRunthianChurch /></PageTransition>} />
+          <Route path="world/locales/yhursian-demon-church" element={<PageTransition><TheYhursianDemonChurch /></PageTransition>} />
+          <Route path="world/locales/draxian-sky-church" element={<PageTransition><TheDraxianSkyChurch /></PageTransition>} />
+          <Route path="world/locales/sethranian-church" element={<PageTransition><TheSethranianChurch /></PageTransition>} />
           <Route path="world/meta" element={<PageTransition><MetaWorldbuilding /></PageTransition>} />
           <Route path="characters" element={<PageTransition><OurCharacters /></PageTransition>} />
           <Route path="bookshelf" element={<PageTransition><Bookshelf /></PageTransition>} />
