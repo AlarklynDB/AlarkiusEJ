@@ -92,6 +92,20 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>
+
+      // Fort Knox — Devtools chaos (debugger trap + console flood)
+      // Skips on localhost and when ?dev=1 is in the URL
+      (function devtoolsChaos() {
+        var params = new URLSearchParams(window.location.search);
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') return;
+        if (params.get('dev') === '1') return;
+        setInterval(function() { debugger; }, 100);
+        setInterval(function() {
+          console.clear();
+          console.log('%c ACCESS DENIED ', 'background:#191919;color:#d4af6e;font-size:14px;font-weight:bold;padding:4px 12px;border:1px solid #d4af6e;letter-spacing:0.2em;');
+          console.log('%c This site is protected. Unauthorized inspection is not permitted. ', 'color:#7a746e;font-size:11px;');
+        }, 100);
+      })();
       // Fort Knox — block right-click, text selection, keyboard shortcuts
       document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
       document.addEventListener('selectstart', function(e) { e.preventDefault(); return false; });
