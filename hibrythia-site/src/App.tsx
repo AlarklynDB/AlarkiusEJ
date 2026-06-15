@@ -133,7 +133,7 @@ export default function App() {
           <Route path="world/locales/norrane" element={<PageTransition><TheContinentOfNorrane /></PageTransition>} />
           <Route path="world/locales/rynel" element={<PageTransition><TheContinentOfRynel /></PageTransition>} />
           <Route path="world/locales/varleqe" element={<PageTransition><TheVarleqianWaterfall /></PageTransition>} />
-          <Route path="world/locales/hetraseap" element={<PageTransition><HetraSEAPSpaceProgram /></PageTransition>} />
+          <Route path="world/locales/hetra-seap" element={<PageTransition><HetraSEAPSpaceProgram /></PageTransition>} />
           <Route path="world/locales/skypeak-obelisk" element={<PageTransition><TheSkypeakObelisk /></PageTransition>} />
           <Route path="world/meta" element={<PageTransition><MetaWorldbuilding /></PageTransition>} />
           <Route path="characters" element={<PageTransition><OurCharacters /></PageTransition>} />
