@@ -140,11 +140,11 @@ export default function TheRunthianChurch() {
 
         {/* Bottom Nav */}
         <div className="flex items-start justify-between pt-8 border-t border-[#2e2b26] mt-16">
-          <Link to="/world/locales" className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-[#2e2b26] bg-[#1a1714] hover:border-[#c9a84c]/40 hover:bg-[#1f1c18] transition-all duration-200 max-w-[45%]">
+          <Link to="/world/locales/bhuseian-ice-church" className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-[#2e2b26] bg-[#1a1714] hover:border-[#c9a84c]/40 hover:bg-[#1f1c18] transition-all duration-200 max-w-[45%]">
             <span className="text-[#c9a84c] text-lg">←</span>
             <div>
               <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-0.5">Back</p>
-              <p className="font-display text-sm text-[#f2ebeb]">Locales &amp; Sights</p>
+              <p className="font-display text-sm text-[#f2ebeb]">The Bhuseian Ice Church</p>
             </div>
           </Link>
           <Link to="/world/locales/yhursian-demon-church" className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-[#2e2b26] bg-[#1a1714] hover:border-[#c9a84c]/40 hover:bg-[#1f1c18] transition-all duration-200 max-w-[45%] text-right">
@@ -159,3 +159,4 @@ export default function TheRunthianChurch() {
     </div>
   );
 }
+
