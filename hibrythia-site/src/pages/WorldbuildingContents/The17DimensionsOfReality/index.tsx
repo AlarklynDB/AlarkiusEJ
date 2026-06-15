@@ -210,7 +210,7 @@ export default function The17DimensionsOfReality() {
       </section>
 
       {/* Bottom nav */}
-      <div className="mt-16 pt-8 border-t border-[#2e2b26] flex gap-4 flex-wrap">
+      <div className="mt-16 pt-8 border-t border-[#2e2b26] flex items-start justify-between">
         <Link to="/world/databases" className="group flex flex-col text-left border border-[#2e2b26] rounded-sm px-4 py-3 bg-[#131210] hover:border-[#c9a84c]/40 hover:bg-[#1a1814] transition-all duration-200 inline-flex w-fit">
           <span className="font-body text-[9px] tracking-widest uppercase text-[#4a4844] mb-1">← Back</span>
           <span className="font-display text-xs text-[#f2ebeb] group-hover:text-[#c9a84c] transition-colors">Databases &amp; Systems</span>
