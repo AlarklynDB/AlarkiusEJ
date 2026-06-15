@@ -6,7 +6,7 @@ function PropBlock({ title, items }: { title: string; items: string[] }) {
       <p className="font-body text-[10px] tracking-widest uppercase text-[#7a746e] mb-2">{title}</p>
       <ul className="space-y-1">
         {items.map((item, i) => (
-          <li key={i} className="flex gap-2 font-body text-sm text-[#c8c2ba]">
+          <li key={i} className="flex gap-2 font-body text-base text-[#c8c2ba]">
             <span className="text-[#c9a84c] shrink-0">—</span>
             <span>{item}</span>
           </li>
@@ -124,7 +124,7 @@ export default function TechnologyTransitSystems() {
                 <h3 className="font-display text-sm text-[#f2ebeb]">{item.era}</h3>
                 <span className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c]">{item.date}</span>
               </div>
-              <p className="font-body text-sm text-[#c8c2ba]">{item.desc}</p>
+              <p className="font-body text-base text-[#c8c2ba]">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -167,7 +167,7 @@ export default function TechnologyTransitSystems() {
                 <span className="font-display text-base text-[#c9a84c]">{item.code}</span>
                 <p className="font-body text-[10px] tracking-widest uppercase text-[#7a746e] mt-0.5">{item.label}</p>
               </div>
-              <p className="font-body text-sm text-[#c8c2ba]">{item.desc}</p>
+              <p className="font-body text-base text-[#c8c2ba]">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -180,7 +180,7 @@ export default function TechnologyTransitSystems() {
         <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-4">
           <span className="font-display text-base text-[#c9a84c]">IAS-M101</span>
           <p className="font-body text-[10px] tracking-widest uppercase text-[#7a746e] mb-2">Ingress Adaptation Magic 101</p>
-          <p className="font-body text-sm text-[#c8c2ba]">
+          <p className="font-body text-base text-[#c8c2ba]">
             IA-M101 is implemented in most technology that requires or uses hexicules as batteries or energy. This is also what allows the supernatural security to function in most devices like phones or computers. Tired of typing your password? Just use a magical ability to unlock your device!
           </p>
         </div>
@@ -220,7 +220,7 @@ export default function TechnologyTransitSystems() {
               "Country of Riverchnaut: Eldreule and Kharphan",
               "Country of Nharvenile: Ironbark, Grelladore, and Quentyn City Harbor",
             ].map((city, i) => (
-              <li key={i} className="flex gap-2 font-body text-sm text-[#c8c2ba]">
+              <li key={i} className="flex gap-2 font-body text-base text-[#c8c2ba]">
                 <span className="text-[#c9a84c]">—</span>
                 <span>{city}</span>
               </li>
@@ -248,7 +248,7 @@ export default function TechnologyTransitSystems() {
             "Jets use Lhureanium.",
             "HetraSEAP rockets and ships use Lhureanium for fuel, along with hyper drive use.",
           ].map((item, i) => (
-            <li key={i} className="flex gap-2 font-body text-sm text-[#c8c2ba]">
+            <li key={i} className="flex gap-2 font-body text-base text-[#c8c2ba]">
               <span className="text-[#c9a84c]">—</span>
               <span>{item}</span>
             </li>
@@ -267,7 +267,7 @@ export default function TechnologyTransitSystems() {
               <h4 className="font-display text-base text-[#f2ebeb]">Aerotrain Imports Express</h4>
               <span className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c]">ATI-Express</span>
             </div>
-            <p className="font-body text-sm text-[#c8c2ba]">
+            <p className="font-body text-base text-[#c8c2ba]">
               The longest Aerotrain Express and the official train for exporting and importing goods from different regions. It departs from ATI-Express Station in New Rynels on the continent of Rynel — a megalopolis city. <span className="text-[#f2ebeb]">35 cabin units.</span>
             </p>
           </div>
@@ -279,7 +279,7 @@ export default function TechnologyTransitSystems() {
             <p className="font-body text-sm text-[#c8c2ba] mb-3">
               The number one lead air transportation for vacations, tourism, and more. Uses the same energy method as ATI-Express. <span className="text-[#f2ebeb]">25 cabins</span>, making a stunning impression in the skies. Departs from New Rynels. Getting to different places around the world takes at most two hours because of how fast H.A.L.E goes.
             </p>
-            <p className="font-body text-sm text-[#c8c2ba]">
+            <p className="font-body text-base text-[#c8c2ba]">
               There are a total of <span className="text-[#f2ebeb] font-semibold">6 HAL-Express Lines</span>, each with their own dedicated route.
             </p>
           </div>
@@ -316,7 +316,7 @@ export default function TechnologyTransitSystems() {
           <p className="font-body text-[10px] tracking-widest uppercase text-[#7a746e] mb-3">Passenger Lines</p>
           <div className="space-y-1">
             {["UOTA-Express 1", "UOTA-Express 2", "UOTA-Express 3", "UOTA-Express 4"].map((line, i) => (
-              <div key={i} className="flex gap-2 font-body text-sm text-[#c8c2ba]">
+              <div key={i} className="flex gap-2 font-body text-base text-[#c8c2ba]">
                 <span className="text-[#c9a84c]">—</span>
                 <span className="text-[#f2ebeb] font-semibold">{line}</span>
               </div>
@@ -337,7 +337,7 @@ export default function TechnologyTransitSystems() {
         </p>
         <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-4">
           <h4 className="font-display text-base text-[#f2ebeb] mb-2">Built with the Same Materials</h4>
-          <p className="font-body text-sm text-[#c8c2ba]">
+          <p className="font-body text-base text-[#c8c2ba]">
             These expresses, along with UOTA-Shipment, are built with the same materials as the UOTA-Rails. NO amount of water will breach the crevices or lines. It is completely safe, and also a smooth user experience underwater.
           </p>
         </div>
