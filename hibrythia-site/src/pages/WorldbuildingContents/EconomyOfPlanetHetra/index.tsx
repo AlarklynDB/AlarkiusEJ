@@ -166,7 +166,7 @@ export default function EconomyOfPlanetHetra() {
         </div>
 
         <p className="font-body text-base text-[#c8c2ba]">
-          This scale isn&apos;t just a number — it reflects a world that has grown from ancient kingdoms into a globally connected, semi-modernized civilization. Mass markets, global brands, and interplanetary-level ambitions (see: <span className="text-[#f2ebeb] font-semibold">HetraSEAP</span>) all fuel this astronomical figure.
+          This scale isn&apos;t just a number — it reflects a world that has grown from ancient kingdoms into a globally connected, semi-modernized civilization. Mass markets, global brands, and interplanetary-level ambitions (see: <span className="text-[#f2ebeb] font-semibold">HetraSEAP</span>) all fuel this astronomical figure. Healthcare is free here, which includes emergencies, dentistry, and other medical professions&mdash;which is simply because magic is prominent here in this world.
         </p>
       </section>
 
