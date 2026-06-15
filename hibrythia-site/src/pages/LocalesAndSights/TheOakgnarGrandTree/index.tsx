@@ -159,14 +159,21 @@ export default function TheOakgnarGrandTree() {
 
         <div className="w-full h-px bg-[#c9a84c]/30 my-12" />
 
-        <div className="flex items-start justify-between">
-          <Link to="/world/locales" className="group block p-4 border border-[#2e2b26] hover:border-[#c9a84c]/40 bg-[#0f0d0c] hover:bg-[#151210] rounded-sm transition-all duration-200 max-w-[220px]">
-            <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844] mb-1 group-hover:text-[#c9a84c]/60 transition-colors">&larr; Back</p>
-            <p className="font-display text-base text-[#f2ebeb]">Locales &amp; Sights</p>
+        {/* Bottom Nav */}
+        <div className="flex items-start justify-between pt-8 border-t border-[#2e2b26] mt-16">
+          <Link to="/world/locales" className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-[#2e2b26] bg-[#1a1714] hover:border-[#c9a84c]/40 hover:bg-[#1f1c18] transition-all duration-200 max-w-[45%]">
+            <span className="text-[#c9a84c] text-lg">←</span>
+            <div>
+              <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-0.5">Back</p>
+              <p className="font-display text-sm text-[#f2ebeb]">Locales & Sights</p>
+            </div>
           </Link>
-          <Link to="/world/locales/varleqian-waterfall" className="group block p-4 border border-[#2e2b26] hover:border-[#c9a84c]/40 bg-[#0f0d0c] hover:bg-[#151210] rounded-sm transition-all duration-200 max-w-[220px] text-right">
-            <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844] mb-1 group-hover:text-[#c9a84c]/60 transition-colors">Next &rarr;</p>
-            <p className="font-display text-base text-[#f2ebeb]">The Varleqian Waterfall</p>
+          <Link to="/world/locales/varleqian-waterfall" className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-[#2e2b26] bg-[#1a1714] hover:border-[#c9a84c]/40 hover:bg-[#1f1c18] transition-all duration-200 max-w-[45%] text-right">
+            <div>
+              <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-0.5">Next</p>
+              <p className="font-display text-sm text-[#f2ebeb]">The Varleqian Waterfall</p>
+            </div>
+            <span className="text-[#c9a84c] text-lg">→</span>
           </Link>
         </div>
 
@@ -174,3 +181,4 @@ export default function TheOakgnarGrandTree() {
     </div>
   );
 }
+
