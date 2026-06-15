@@ -280,6 +280,9 @@ export default {
 
     const newHeaders = new Headers(transformed.headers);
     newHeaders.set("content-type", "text/html; charset=UTF-8");
+    // Allow same-origin iframes (e.g. Vivaldi web panels) while blocking third-party embeds
+    newHeaders.set("X-Frame-Options", "SAMEORIGIN");
+    newHeaders.set("Content-Security-Policy", "frame-ancestors 'self'");
 
     return new Response(transformed.body, {
       status: transformed.status,
