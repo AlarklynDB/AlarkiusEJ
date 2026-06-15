@@ -161,7 +161,8 @@ export default function EconomyOfPlanetHetra() {
 
         <div className="bg-[#0f0d0c] border-l-2 border-[#7a746e] pl-5 pr-4 py-4 mb-6">
           <p className="font-body text-base text-[#c8c2ba]">
-            As of the year <span className="text-[#f2ebeb] font-semibold">2245</span>, the estimated net worth of Planet Hetra is approximately <span className="text-[#f2ebeb] font-semibold">~250 Nonillion Hetrix.</span> This staggering figure is the result of centuries of mass production, scientific breakthroughs, advanced technology, and the combined economic output of all continents — chiefly <span className="text-[#f2ebeb] font-semibold">Rynel</span>, <span className="text-[#f2ebeb] font-semibold">Lynneria</span>, and <span className="text-[#f2ebeb] font-semibold">Eulerich</span>.
+            As of the year <span className="text-[#f2ebeb] font-semibold">2245</span>, the estimated net worth of Planet Hetra is approximately <span className="text-[#f2ebeb] font-semibold">~250 Octillion 
+          Hetrix.</span> This staggering figure is the result of centuries of mass production, scientific breakthroughs, advanced technology, and the combined economic output of all continents — chiefly <span className="text-[#f2ebeb] font-semibold">Rynel</span>, <span className="text-[#f2ebeb] font-semibold">Lynneria</span>, and <span className="text-[#f2ebeb] font-semibold">Eulerich</span>.
           </p>
         </div>
 
