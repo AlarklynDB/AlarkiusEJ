@@ -101,7 +101,8 @@
         if (
           e.key === 'F12' ||
           (e.ctrlKey && e.shiftKey && ['I','i','J','j','C','c','K','k'].includes(e.key)) ||
-          (e.ctrlKey && ['u','U'].includes(e.key))
+          (e.ctrlKey && ['u','U'].includes(e.key)) ||
+          (e.ctrlKey && ['p','P'].includes(e.key)) // Block print
         ) { e.preventDefault(); e.stopPropagation(); return false; }
       });
     </script>
