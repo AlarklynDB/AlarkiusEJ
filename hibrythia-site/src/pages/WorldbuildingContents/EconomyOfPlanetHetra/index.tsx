@@ -199,7 +199,7 @@ export default function EconomyOfPlanetHetra() {
             <p><span className="font-body text-[10px] tracking-widest uppercase text-[#7a746e] mr-2">Founded by</span><span className="text-[#c8c2ba]">Philstra Rhys</span></p>
           </div>
           <div className="mt-3 pt-3 border-t border-[#2e2b26] space-y-1 text-sm">
-            <p className="font-body text-base text-[#c8c2ba]">Philstra Rhys is the world&apos;s first Multi-Quintillionaire, with a worth of 35 Quintillion.</p>
+            <p className="font-body text-base text-[#c8c2ba]">Philstra Rhys is the world&apos;s first Multi-Quintillionaire, with a worth of 55 Sextillion.</p>
             <p className="font-body text-base text-[#c8c2ba]">HetraSEAP is backed by Philstra and has a worth around 25 quintillion Hetrix.</p>
           </div>
         </div>
@@ -211,12 +211,15 @@ export default function EconomyOfPlanetHetra() {
             <span className="font-body text-[10px] tracking-widest uppercase text-[#7a746e]">— Eulerich</span>
           </div>
           <p className="font-body text-sm text-[#c8c2ba] mb-4">
-            <span className="text-[#f2ebeb] font-semibold">Eulanis</span>, the major city of the Eulan Kingdom, sits within the Sandstone Mountains and operates as the center for all <span className="text-[#f2ebeb] font-semibold">trading posts, marketplaces, and fine goods</span> — many at very high prices.
+            <span className="text-[#f2ebeb] font-semibold">Eulanis</span>, the major city of the Eulan Kingdom, sits within the Sandstone Mountains and operates as the center for all <span className="text-[#f2ebeb] font-semibold">trading posts, marketplaces, and fine goods</span> — many at very high prices. Eulanis is founded by the Briehale Monarchs.
           </p>
           <div className="space-y-1 text-sm">
             <p><span className="font-body text-[10px] tracking-widest uppercase text-[#7a746e] mr-2">Average Wage</span><span className="text-[#f2ebeb]">Ħ22.45 Hetrix (~$16.32 USD)</span></p>
             <p><span className="font-body text-[10px] tracking-widest uppercase text-[#7a746e] mr-2">Key Industries</span><span className="text-[#c8c2ba]">Trading, Fine Goods, Governance</span></p>
             <p><span className="font-body text-[10px] tracking-widest uppercase text-[#7a746e] mr-2">Notable</span><span className="text-[#c8c2ba]">High job availability — employers continue hiring even during layoffs or vacations</span></p>
+          </div>
+          <div className="mt-3 pt-3 border-t border-[#2e2b26]">
+            <p className="font-body text-base text-[#c8c2ba]">King Briehale and Queen Anika Briehale&apos;s total worth sits at roughly 650 quadrillion Hetrix.</p>
           </div>
         </div>
 
@@ -229,10 +232,16 @@ export default function EconomyOfPlanetHetra() {
           <p className="font-body text-sm text-[#c8c2ba] mb-4">
             <span className="text-[#f2ebeb] font-semibold">Oelenis</span> is Hetra&apos;s premier mining hub, responsible for the global supply of minerals, ores, and rocks. Its ports ship off to the Alarctic Frost for rare <span className="text-[#f2ebeb] font-semibold">Alarctic Ore</span> research.
           </p>
+          <p className="font-body text-sm text-[#c8c2ba] mb-4">
+            Oelenis is founded by King Gorvich Eckhart and Queen Fahlia Eckhart. Fahlia Eckhart married into Eckhart&apos;s family side, taking his name. Her sister is Queen Anika Briehale.
+          </p>
           <div className="space-y-1 text-sm">
             <p><span className="font-body text-[10px] tracking-widest uppercase text-[#7a746e] mr-2">Average Wage</span><span className="text-[#f2ebeb]">Ħ20.65 Hetrix (~$14.75 USD)</span></p>
             <p><span className="font-body text-[10px] tracking-widest uppercase text-[#7a746e] mr-2">Key Industries</span><span className="text-[#c8c2ba]">Carpentry, Smithing, Cartography, Oceanography</span></p>
             <p><span className="font-body text-[10px] tracking-widest uppercase text-[#7a746e] mr-2">Notable</span><span className="text-[#c8c2ba]">The Rockseige Chasm connects all cave systems across Eulerich</span></p>
+          </div>
+          <div className="mt-3 pt-3 border-t border-[#2e2b26]">
+            <p className="font-body text-base text-[#c8c2ba]">The Eckhart&apos;s worth notably stands around 550 quadrillion Hetrix, just 100 short of the Briehale&apos;s.</p>
           </div>
         </div>
       </section>
