@@ -115,20 +115,25 @@ export default function TheContinentOfEulerich() {
             There is said to be some hidden knowledge about how the massive supercontinent, Varleqe, was founded. Some speculated there once used to be a huge hidden library that contains massive knowledge about the Planet Hetra. However, these are just theories. Orehriel Ruins have a lot of monsters now, so trying to seek knowledge is impossible. Orehriel Ruins is also a place where many different kinds of ores and rocks reside. A great place for adventurers and collectors.
           </p>
         </div>
-      </div>
-
-      {/* Bottom nav */}
-      <div className="mt-16 pt-8 border-t border-[#2e2b26] flex items-start justify-between">
-        <Link to="/world/locales" className="group flex flex-col text-left border border-[#2e2b26] rounded-sm px-4 py-3 bg-[#131210] hover:border-[#c9a84c]/40 hover:bg-[#1a1814] transition-all duration-200 inline-flex w-fit">
-          <span className="font-body text-[9px] tracking-widest uppercase text-[#4a4844] mb-1">← Back</span>
-          <span className="font-display text-xs text-[#f2ebeb] group-hover:text-[#c9a84c] transition-colors">Locales &amp; Sights</span>
-        </Link>
-        <Link to="/world/locales/hetrania" className="group flex flex-col text-left border border-[#2e2b26] rounded-sm px-4 py-3 bg-[#131210] hover:border-[#c9a84c]/40 hover:bg-[#1a1814] transition-all duration-200 inline-flex w-fit">
-          <span className="font-body text-[9px] tracking-widest uppercase text-[#4a4844] mb-1">Next →</span>
-          <span className="font-display text-xs text-[#f2ebeb] group-hover:text-[#c9a84c] transition-colors">The Sky Continent of Hetrania</span>
-        </Link>
+      </div>        {/* Bottom Nav */}
+        <div className="flex items-start justify-between pt-8 border-t border-[#2e2b26] mt-16">
+                  <Link to="/world/locales" className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-[#2e2b26] bg-[#1a1714] hover:border-[#c9a84c]/40 hover:bg-[#1f1c18] transition-all duration-200 max-w-[45%]">
+            <span className="text-[#c9a84c] text-lg">←</span>
+            <div>
+              <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-0.5">Back</p>
+              <p className="font-display text-sm text-[#f2ebeb]">Locales &amp; Sights</p>
+            </div>
+          </Link>
+                  <Link to="/world/locales/hetrania" className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-[#2e2b26] bg-[#1a1714] hover:border-[#c9a84c]/40 hover:bg-[#1f1c18] transition-all duration-200 max-w-[45%] text-right">
+            <div>
+              <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-0.5">Next</p>
+              <p className="font-display text-sm text-[#f2ebeb]">The Sky Continent of Hetrania</p>
+            </div>
+            <span className="text-[#c9a84c] text-lg">→</span>
+          </Link>
       </div>
 
     </div>
   );
 }
+
