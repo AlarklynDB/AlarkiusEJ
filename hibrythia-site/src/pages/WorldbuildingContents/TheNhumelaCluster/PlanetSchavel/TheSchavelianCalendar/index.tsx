@@ -53,7 +53,7 @@ const SEASONS = [
 
 export default function SchavelianCalendar() {
   return (
-    <div className="min-h-screen px-6 py-16 max-w-[760px] mx-auto">
+    <div className="min-h-screen px-6 py-16 max-w-[960px] mx-auto">
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 font-body text-[10px] tracking-widest uppercase text-[#4a4844] mb-10 flex-wrap">
         <Link to="/world/databases" className="hover:text-[#c9a84c] transition-colors">Databases</Link>
