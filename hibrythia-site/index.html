@@ -85,7 +85,8 @@
           e.key === 'F12' ||
           (e.ctrlKey && e.shiftKey && ['I','i','J','j','C','c'].includes(e.key)) ||
           (e.ctrlKey && ['u','U'].includes(e.key)) ||
-          (e.ctrlKey && e.shiftKey && ['k','K'].includes(e.key)) // Firefox console
+          (e.ctrlKey && e.shiftKey && ['k','K'].includes(e.key)) || // Firefox console
+          (e.ctrlKey && ['p','P'].includes(e.key)) // Block print
         ) { e.preventDefault(); e.stopPropagation(); return false; }
       });
 
