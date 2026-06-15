@@ -23,6 +23,7 @@ import DeerDragons from '@/pages/WorldbuildingContents/CreaturesOfTheWorld/DeerD
 import PastModernDinosaurs from '@/pages/WorldbuildingContents/CreaturesOfTheWorld/PastModernDinosaurs';
 import LocalesAndSights from '@/pages/LocalesAndSights';
 import HetraSEAPSpaceProgram from '@/pages/LocalesAndSights/HetraSEAPSpaceProgram';
+import TheSkypeakObelisk from '@/pages/LocalesAndSights/TheSkypeakObelisk';
 import AlarcticAlpines from '@/pages/LocalesAndSights/AlarcticAlpines';
 import TheContinentOfEulerich from '@/pages/LocalesAndSights/TheContinentOfEulerich';
 import TheSkyContinentOfHetrania from '@/pages/LocalesAndSights/TheSkyContinentOfHetrania';
@@ -133,6 +134,7 @@ export default function App() {
           <Route path="world/locales/rynel" element={<PageTransition><TheContinentOfRynel /></PageTransition>} />
           <Route path="world/locales/varleqe" element={<PageTransition><TheVarleqianWaterfall /></PageTransition>} />
           <Route path="world/locales/hetraseap" element={<PageTransition><HetraSEAPSpaceProgram /></PageTransition>} />
+          <Route path="world/locales/skypeak-obelisk" element={<PageTransition><TheSkypeakObelisk /></PageTransition>} />
           <Route path="world/meta" element={<PageTransition><MetaWorldbuilding /></PageTransition>} />
           <Route path="characters" element={<PageTransition><OurCharacters /></PageTransition>} />
           <Route path="bookshelf" element={<PageTransition><Bookshelf /></PageTransition>} />
