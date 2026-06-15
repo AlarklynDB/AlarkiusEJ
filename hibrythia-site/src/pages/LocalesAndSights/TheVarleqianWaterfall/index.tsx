@@ -148,6 +148,10 @@ export default function TheVarleqianWaterfall() {
             <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844] mb-1 group-hover:text-[#c9a84c]/60 transition-colors">&larr; Back</p>
             <p className="font-display text-base text-[#f2ebeb]">Locales &amp; Sights</p>
           </Link>
+          <Link to="/world/locales/lost-city-lhavaria" className="group block p-4 border border-[#2e2b26] hover:border-[#c9a84c]/40 bg-[#0f0d0c] hover:bg-[#151210] rounded-sm transition-all duration-200 max-w-[220px] text-right">
+            <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844] mb-1 group-hover:text-[#c9a84c]/60 transition-colors">Next &rarr;</p>
+            <p className="font-display text-base text-[#f2ebeb]">The Lost City of Lhavaria</p>
+          </Link>
         </div>
 
       </div>
