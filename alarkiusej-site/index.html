@@ -92,6 +92,16 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>
+      // Block F12, Ctrl+Shift+I/J/C, Ctrl+U (view source), Ctrl+Shift+K (Firefox console)
+      document.addEventListener('keydown', function(e) {
+        if (
+          e.key === 'F12' ||
+          (e.ctrlKey && e.shiftKey && ['I','i','J','j','C','c','K','k'].includes(e.key)) ||
+          (e.ctrlKey && ['u','U'].includes(e.key))
+        ) { e.preventDefault(); e.stopPropagation(); return false; }
+      });
+    </script>
+    <script>
       document.getElementById('splash').addEventListener('animationend', function(e) {
         if (e.animationName === 'splashFade') this.remove();
       });
