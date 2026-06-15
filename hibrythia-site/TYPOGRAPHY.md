@@ -17,6 +17,8 @@
 
 > All lore pages under /world/databases must use BodyWidth960. Do not use max-w-4xl, max-w-[760px], max-w-[860px], or any other width variant.
 
+> this also includes subpages within pages
+
 ---
 
 ## Body Text Size
