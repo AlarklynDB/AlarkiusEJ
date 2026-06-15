@@ -593,20 +593,20 @@ export default function CalendarAndTime() {
 
       </section>
 
-      {/* Back nav */}
-      <div className="border-t border-[#2e2b26] pt-8 mt-4 flex items-center justify-between">
-        <Link
-          to="/world/databases"
-          className="inline-flex items-center gap-2 font-body text-[10px] tracking-widest uppercase text-[#4a4844] hover:text-[#c9a84c] transition-colors"
-        >
-          ← Back to World Databases
+      {/* Bottom nav */}
+      <div className="mt-16 pt-8 border-t border-[#2e2b26] flex gap-4 flex-wrap">
+        <Link to="/world/databases" className="group flex flex-col text-left border border-[#2e2b26] rounded-sm px-4 py-3 bg-[#131210] hover:border-[#c9a84c]/40 hover:bg-[#1a1814] transition-all duration-200 inline-flex w-fit">
+          <span className="font-body text-[9px] tracking-widest uppercase text-[#4a4844] mb-1">← Back</span>
+          <span className="font-display text-xs text-[#f2ebeb] group-hover:text-[#c9a84c] transition-colors">Databases &amp; Systems</span>
         </Link>
-        <Link
-          to="/32-16TimeSystem"
-          className="inline-flex items-center gap-2 font-body text-[10px] tracking-widest uppercase text-[#c9a84c] hover:underline transition-colors"
-        >
-          View Interactive Calendar →
+        <Link to="/world/databases/AncientGreungeria" className="group flex flex-col text-left border border-[#2e2b26] rounded-sm px-4 py-3 bg-[#131210] hover:border-[#c9a84c]/40 hover:bg-[#1a1814] transition-all duration-200 inline-flex w-fit">
+          <span className="font-body text-[9px] tracking-widest uppercase text-[#4a4844] mb-1">Next →</span>
+          <span className="font-display text-xs text-[#f2ebeb] group-hover:text-[#c9a84c] transition-colors">Ancient Greungeria</span>
         </Link>
+        <a href="/32-16TimeSystem" className="group flex flex-col text-left border border-[#2e2b26] rounded-sm px-4 py-3 bg-[#131210] hover:border-[#c9a84c]/40 hover:bg-[#1a1814] transition-all duration-200 inline-flex w-fit">
+          <span className="font-body text-[9px] tracking-widest uppercase text-[#4a4844] mb-1">Interactive</span>
+          <span className="font-display text-xs text-[#f2ebeb] group-hover:text-[#c9a84c] transition-colors">View Calendar →</span>
+        </a>
       </div>
 
     </div>
