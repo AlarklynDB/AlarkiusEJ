@@ -333,8 +333,6 @@ export default function TemporalTimeStreamDilation() {
         <p className="font-body text-sm text-[#c9a84c]">Welcome Aboard.</p>
       </div>
 
-      <div className="w-full h-px bg-[#c9a84c]/20" aria-hidden="true" />
-
       {/* Bottom nav */}
       <div className="mt-16 pt-8 border-t border-[#2e2b26] flex gap-4 flex-wrap">
         <Link to="/world/databases" className="group flex flex-col text-left border border-[#2e2b26] rounded-sm px-4 py-3 bg-[#131210] hover:border-[#c9a84c]/40 hover:bg-[#1a1814] transition-all duration-200 inline-flex w-fit">
