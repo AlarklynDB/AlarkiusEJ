@@ -28,19 +28,20 @@ const PERSON_NODE = {
   description:
     "Alarkius Elvya Jay, also known as AlarkiusEJ, is the author of The Hibrythian Saga and creator of the Naiseikai Universe.",
   sameAs: [
-    "https://www.youtube.com/@AlarkiusEJ",
-    "https://www.youtube.com/@AlarkiusJay",
-    "https://www.youtube.com/@TheHibrythianSaga",
-    "https://www.reddit.com/user/OfficialAlarkiusJay",
-    "https://www.reddit.com/r/ShizukanaKarasuNinja/",
-    "https://www.reddit.com/r/HibrydsCUniverse/",
-    "https://www.linkedin.com/in/alarkiusej/",
-    "https://github.com/AlarkiusJay",
-    "https://github.com/TheAlarklynZone",
-    "https://modrinth.com/user/AlariaEJ",
-    "https://www.barnesandnoble.com/s/alarkius-elvya-jay",
-    "https://www.thehibrythiansaga.com/",
-    "https://www.naiseikaiuniverse.com/"
+          "https://www.youtube.com/@AlarkiusEJ",
+          "https://www.youtube.com/@AlarkiusJay",
+          "https://www.youtube.com/@TheHibrythianSaga",
+          "https://www.reddit.com/user/OfficialAlarkiusJay",
+          "https://www.reddit.com/r/ShizukanaKarasuNinja/",
+          "https://www.reddit.com/r/HibrydsCUniverse/",
+          "https://www.linkedin.com/in/alarkiusej/",
+          "https://github.com/AlarkiusJay",
+          "https://github.com/TheAlarklynZone",
+          "https://www.thehibrythiansaga.com/",
+          "https://www.naiseikaiuniverse.com/",
+          "https://www.barnesandnoble.com/search?q=Alarkius%20Elvya%20Jay&contributorName=alarkius-elvya-jay",
+          "https://www.barnesandnoble.com/search?attributes.mfield_bnb__seriesTitle=The%20Hibrythian%20Saga",
+          "https://www.barnesandnoble.com/search?attributes.mfield_bnb__seriesTitle=The%20Naiseikai%20Universe",
   ]
 };
 
