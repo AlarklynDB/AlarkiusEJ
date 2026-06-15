@@ -332,18 +332,22 @@ export default function GeoscienceOfHetra() {
               A type of petrified wood native to Rynel itself. Unlike actual petrified wood, Stonewood is very hard, but at the right given circumstances, it can become flexible but also soft &mdash; due to the properties of Lyecerium and Hetranium crystals combined. This type of stonewood doesn&apos;t break as easily. Often used in construction applications.
             </p>
           </div>
-        </section>
-
-      {/* Bottom nav */}
-      <div className="mt-16 pt-8 border-t border-[#2e2b26] flex items-start justify-between">
-        <Link to="/world/databases" className="group flex flex-col text-left border border-[#2e2b26] rounded-sm px-4 py-3 bg-[#131210] hover:border-[#c9a84c]/40 hover:bg-[#1a1814] transition-all duration-200 inline-flex w-fit">
-          <span className="font-body text-[9px] tracking-widest uppercase text-[#4a4844] mb-1">← Back</span>
-          <span className="font-display text-xs text-[#f2ebeb] group-hover:text-[#c9a84c] transition-colors">Databases &amp; Systems</span>
-        </Link>
-        <Link to="/world/databases/MagicDatabase" className="group flex flex-col text-left border border-[#2e2b26] rounded-sm px-4 py-3 bg-[#131210] hover:border-[#c9a84c]/40 hover:bg-[#1a1814] transition-all duration-200 inline-flex w-fit">
-          <span className="font-body text-[9px] tracking-widest uppercase text-[#4a4844] mb-1">Next →</span>
-          <span className="font-display text-xs text-[#f2ebeb] group-hover:text-[#c9a84c] transition-colors">Magic Database</span>
-        </Link>
+        </section>        {/* Bottom Nav */}
+        <div className="flex items-start justify-between pt-8 border-t border-[#2e2b26] mt-16">
+                  <Link to="/world/databases" className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-[#2e2b26] bg-[#1a1714] hover:border-[#c9a84c]/40 hover:bg-[#1f1c18] transition-all duration-200 max-w-[45%]">
+            <span className="text-[#c9a84c] text-lg">←</span>
+            <div>
+              <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-0.5">Back</p>
+              <p className="font-display text-sm text-[#f2ebeb]">Databases &amp; Systems</p>
+            </div>
+          </Link>
+                  <Link to="/world/databases/MagicDatabase" className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-[#2e2b26] bg-[#1a1714] hover:border-[#c9a84c]/40 hover:bg-[#1f1c18] transition-all duration-200 max-w-[45%] text-right">
+            <div>
+              <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-0.5">Next</p>
+              <p className="font-display text-sm text-[#f2ebeb]">Magic Database</p>
+            </div>
+            <span className="text-[#c9a84c] text-lg">→</span>
+          </Link>
       </div>
 
       </div>
