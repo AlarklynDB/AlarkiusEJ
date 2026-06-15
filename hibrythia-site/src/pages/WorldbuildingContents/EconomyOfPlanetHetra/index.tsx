@@ -199,7 +199,7 @@ export default function EconomyOfPlanetHetra() {
             <p><span className="font-body text-[10px] tracking-widest uppercase text-[#7a746e] mr-2">Founded by</span><span className="text-[#c8c2ba]">Philstra Rhys</span></p>
           </div>
           <div className="mt-3 pt-3 border-t border-[#2e2b26] space-y-1 text-sm">
-            <p className="font-body text-base text-[#c8c2ba]">Philstra Rhys is the world&apos;s first Multi-Quintillionaire, with a worth of 55 Sextillion.</p>
+            <p className="font-body text-base text-[#c8c2ba]">Philstra Rhys is the world&apos;s first Multi-Sextillionaire, with a worth of 55 Sextillion.</p>
             <p className="font-body text-base text-[#c8c2ba]">HetraSEAP is backed by Philstra and has a worth around 25 quintillion Hetrix.</p>
           </div>
         </div>
