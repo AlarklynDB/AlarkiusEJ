@@ -37,7 +37,7 @@ export default function TemporalTimeStreamDilation() {
       <div className="space-y-3">
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c]">I. The Cosmic Foundation</p>
         <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb]">&#128336; Temporal Time Stream Dilation | TTSD</h1>
-        <p className="font-body text-sm text-[#7a746e]">A Mechanic for Temporal Displacement</p>
+        <p className="font-body text-base text-[#7a746e]">A Mechanic for Temporal Displacement</p>
       </div>
 
       {/* Intro quote */}
@@ -57,7 +57,7 @@ export default function TemporalTimeStreamDilation() {
         <h2 className="font-display text-lg text-[#f2ebeb]">Temporal Time Stream Dilation</h2>
 
         <blockquote className="border-l-2 border-[#2e2b26] pl-5 my-4">
-          <p className="font-body text-sm text-[#c8c2ba] italic">If you travel at light speed, you experience time slower. And if you&apos;re an Alien traveling to Earth, you&apos;ll be seeing the past. The age of either the Dinosaurs or early proto-life.</p>
+          <p className="font-body text-base text-[#c8c2ba] italic">If you travel at light speed, you experience time slower. And if you&apos;re an Alien traveling to Earth, you&apos;ll be seeing the past. The age of either the Dinosaurs or early proto-life.</p>
         </blockquote>
 
         <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
@@ -85,7 +85,7 @@ export default function TemporalTimeStreamDilation() {
           ].map((item, i) => (
             <div key={i} className="flex gap-3 items-start">
               <span className="text-[#c9a84c] font-display text-sm mt-0.5">&mdash;</span>
-              <p className="font-body text-sm text-[#c8c2ba] leading-relaxed">{item}</p>
+              <p className="font-body text-base text-[#c8c2ba] leading-relaxed">{item}</p>
             </div>
           ))}
         </div>
@@ -110,7 +110,7 @@ export default function TemporalTimeStreamDilation() {
           ].map((item, i) => (
             <div key={i} className="flex gap-3 items-start">
               <span className="text-[#c9a84c] font-display text-sm mt-0.5">&mdash;</span>
-              <p className="font-body text-sm text-[#c8c2ba] leading-relaxed">{item}</p>
+              <p className="font-body text-base text-[#c8c2ba] leading-relaxed">{item}</p>
             </div>
           ))}
         </div>
@@ -136,7 +136,7 @@ export default function TemporalTimeStreamDilation() {
           ].map((item, i) => (
             <div key={i} className="flex gap-3 items-start">
               <span className="text-[#c9a84c] font-display text-sm mt-0.5">&mdash;</span>
-              <p className="font-body text-sm text-[#c8c2ba] leading-relaxed">{item}</p>
+              <p className="font-body text-base text-[#c8c2ba] leading-relaxed">{item}</p>
             </div>
           ))}
         </div>
@@ -161,7 +161,7 @@ export default function TemporalTimeStreamDilation() {
             ].map((item, i) => (
               <div key={i} className="flex gap-3 items-start">
                 <span className="text-[#c9a84c] font-display text-sm mt-0.5">&mdash;</span>
-                <p className="font-body text-sm text-[#c8c2ba] leading-relaxed">{item}</p>
+                <p className="font-body text-base text-[#c8c2ba] leading-relaxed">{item}</p>
               </div>
             ))}
           </div>
@@ -176,7 +176,7 @@ export default function TemporalTimeStreamDilation() {
           {comparisonTable.map((row, i) => (
             <div key={i} className="grid grid-cols-2 px-4 py-3 border-b border-[#1a1714] last:border-0 hover:bg-[#151210] transition-colors">
               <p className="font-body text-sm text-[#f2ebeb]">{row.condition}</p>
-              <p className="font-body text-sm text-[#c8c2ba]">{row.result}</p>
+              <p className="font-body text-base text-[#c8c2ba]">{row.result}</p>
             </div>
           ))}
         </div>
@@ -194,10 +194,10 @@ export default function TemporalTimeStreamDilation() {
         {/* Without TTSD */}
         <div className="space-y-4">
           <h3 className="font-display text-sm text-[#f2ebeb]">What Outsiders See Without TTSD</h3>
-          <p className="font-body text-sm text-[#c8c2ba] leading-relaxed">
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
             An Outsider approaching Hetra without TTSD active will be absorbed into the planet&apos;s <span className="text-[#f2ebeb] font-medium">Ancient Temporal Energy (ATEL)</span> field. What they perceive and physically encounter is not the Hetra of 2245 &mdash; it is the Hetra of the <span className="text-[#f2ebeb] font-medium">Greungerian Era</span>, the age before the continental split.
           </p>
-          <p className="font-body text-sm text-[#7a746e]">This means:</p>
+          <p className="font-body text-base text-[#7a746e]">This means:</p>
           <div className="border border-[#2e2b26] bg-[#0f0d0c] rounded-sm p-5 space-y-3">
             {[
               "The Father Continent, Greungeria, still intact and whole \u2014 one massive landmass dominating the planet\u2019s surface",
@@ -208,7 +208,7 @@ export default function TemporalTimeStreamDilation() {
             ].map((item, i) => (
               <div key={i} className="flex gap-3 items-start">
                 <span className="text-[#c9a84c] font-display text-sm mt-0.5">&mdash;</span>
-                <p className="font-body text-sm text-[#c8c2ba] leading-relaxed">{item}</p>
+                <p className="font-body text-base text-[#c8c2ba] leading-relaxed">{item}</p>
               </div>
             ))}
           </div>
@@ -218,7 +218,7 @@ export default function TemporalTimeStreamDilation() {
         {/* Timeline table */}
         <div className="space-y-4">
           <h3 className="font-display text-sm text-[#f2ebeb]">Hetra&apos;s Temporal Timeline &mdash; ATEL vs MTEL Mapped</h3>
-          <p className="font-body text-sm text-[#c8c2ba] leading-relaxed">Hetra&apos;s full timeline places the ATE and MTE divide in context:</p>
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed">Hetra&apos;s full timeline places the ATE and MTE divide in context:</p>
           <div className="border border-[#2e2b26] rounded-sm overflow-hidden">
             <div className="grid grid-cols-4 bg-[#0f0d0c] border-b border-[#2e2b26] px-4 py-2.5">
               {["Era", "Range", "Energy Layer", "What It Represents"].map((h, i) => (
@@ -228,9 +228,9 @@ export default function TemporalTimeStreamDilation() {
             {hetraTimeline.map((row, i) => (
               <div key={i} className="grid grid-cols-4 px-4 py-3 border-b border-[#1a1714] last:border-0 hover:bg-[#151210] transition-colors gap-2">
                 <p className="font-body text-sm text-[#f2ebeb]">{row.era}</p>
-                <p className="font-body text-sm text-[#c8c2ba]">{row.range}</p>
+                <p className="font-body text-base text-[#c8c2ba]">{row.range}</p>
                 <p className="font-body text-sm text-[#c9a84c]">{row.layer}</p>
-                <p className="font-body text-sm text-[#7a746e]">{row.desc}</p>
+                <p className="font-body text-base text-[#7a746e]">{row.desc}</p>
               </div>
             ))}
           </div>
@@ -250,10 +250,10 @@ export default function TemporalTimeStreamDilation() {
         {/* Year 0 in History */}
         <div className="space-y-4">
           <h3 className="font-display text-sm text-[#f2ebeb]">Year 0 in Hetranian History</h3>
-          <p className="font-body text-sm text-[#c8c2ba] leading-relaxed">
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
             Year 0 is not just a temporal mechanic &mdash; it exists as a <span className="text-[#f2ebeb] font-medium">recognized marker in Hetra&apos;s own calendar system.</span> The 32/16 Hour Time System and the Hetranian Calendar both acknowledge Year 0 as the fixed point between Oldendaye and Aftendaye.
           </p>
-          <p className="font-body text-sm text-[#c8c2ba] leading-relaxed">
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
             In TTSD terms, Year 0 is the <span className="text-[#f2ebeb] font-medium">Suppressor</span> &mdash; the influx point where Ancient Temporal Energy is converted into Modern Temporal Energy. In calendar terms, it is the breath between two eras. Both definitions are correct. Both describe the same cosmic reality from different angles.
           </p>
           <blockquote className="border-l-2 border-[#c9a84c] pl-5">
@@ -264,7 +264,7 @@ export default function TemporalTimeStreamDilation() {
         {/* Ancient Greungeria — ATEL Default */}
         <div className="space-y-4">
           <h3 className="font-display text-sm text-[#f2ebeb]">Ancient Greungeria &mdash; The ATEL Default State</h3>
-          <p className="font-body text-sm text-[#c8c2ba] leading-relaxed">
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
             For any Outsider without TTSD arriving at Hetra, <span className="text-[#f2ebeb] font-medium">Ancient Greungeria is what they land in.</span> This is the age the planet&apos;s ATE preserves and projects.
           </p>
           <p className="font-body text-xs text-[#7a746e] uppercase tracking-widest">Key features of the ATEL-locked Greungerian Hetra:</p>
@@ -278,7 +278,7 @@ export default function TemporalTimeStreamDilation() {
             ].map((item, i) => (
               <div key={i} className="flex gap-3 items-start">
                 <span className="text-[#c9a84c] font-display text-sm mt-0.5">&mdash;</span>
-                <p className="font-body text-sm text-[#c8c2ba] leading-relaxed">{item}</p>
+                <p className="font-body text-base text-[#c8c2ba] leading-relaxed">{item}</p>
               </div>
             ))}
           </div>
@@ -288,7 +288,7 @@ export default function TemporalTimeStreamDilation() {
         {/* What TTSD Aligns You To */}
         <div className="space-y-4">
           <h3 className="font-display text-sm text-[#f2ebeb]">What TTSD Aligns You To &mdash; Modern Hetra (2245 AD)</h3>
-          <p className="font-body text-sm text-[#c8c2ba] leading-relaxed">
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
             With TTSD active, an Outsider is brought into alignment with the <span className="text-[#f2ebeb] font-medium">current MTE layer</span> &mdash; the Hetra of 2245 Aftendaye:
           </p>
           <div className="border border-[#2e2b26] bg-[#0f0d0c] rounded-sm p-5 space-y-3">
@@ -301,7 +301,7 @@ export default function TemporalTimeStreamDilation() {
             ].map((item, i) => (
               <div key={i} className="flex gap-3 items-start">
                 <span className="text-[#c9a84c] font-display text-sm mt-0.5">&mdash;</span>
-                <p className="font-body text-sm text-[#c8c2ba] leading-relaxed">{item}</p>
+                <p className="font-body text-base text-[#c8c2ba] leading-relaxed">{item}</p>
               </div>
             ))}
           </div>
@@ -321,7 +321,7 @@ export default function TemporalTimeStreamDilation() {
           {quickRef.map((row, i) => (
             <div key={i} className="grid grid-cols-2 px-4 py-3 border-b border-[#1a1714] last:border-0 hover:bg-[#151210] transition-colors gap-4">
               <p className="font-body text-sm text-[#c9a84c] font-medium">{row.term}</p>
-              <p className="font-body text-sm text-[#c8c2ba]">{row.def}</p>
+              <p className="font-body text-base text-[#c8c2ba]">{row.def}</p>
             </div>
           ))}
         </div>
