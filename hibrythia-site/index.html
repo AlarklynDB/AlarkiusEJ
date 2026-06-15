@@ -89,7 +89,9 @@
         ) { e.preventDefault(); e.stopPropagation(); return false; }
       });
       // Detect devtools open via window size diff
+      // Skip if running inside an iframe/web panel (e.g. Vivaldi) — size diff is expected there
       (function devtoolsBlock() {
+        if (window.self !== window.top) return; // inside iframe — skip
         var threshold = 160;
         function check() {
           if (window.outerWidth - window.innerWidth > threshold ||
