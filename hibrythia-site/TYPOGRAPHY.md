@@ -19,6 +19,24 @@
 
 ---
 
+## Body Text Size
+
+| Convention Name | Tailwind Class                           | Usage                                      |
+|-----------------|------------------------------------------|--------------------------------------------|
+| BodyTextBase    | font-body text-base text-[#c8c2ba] leading-relaxed | Reading paragraphs (all lore pages) |
+
+```tsx
+// BodyTextBase — Standard Reading Paragraph
+<p className="font-body text-base text-[#c8c2ba] leading-relaxed">...</p>
+
+// Muted variant (secondary info)
+<p className="font-body text-base text-[#7a746e] leading-relaxed">...</p>
+```
+
+> Use `text-base` for ALL reading body paragraphs. `text-sm` is only for table cells, card labels, list items inside cards, and sub-detail text. `text-xs` is only for breadcrumbs, section labels, and timestamps. Never use `text-sm` for standalone reading paragraphs.
+
+---
+
 ## Heading Size Scale
 
 | Convention Name  | Tailwind Class          | HTML Tag | Usage                        |
