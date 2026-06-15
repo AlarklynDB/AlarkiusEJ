@@ -51,15 +51,15 @@ export default function WeatherClimateSeasons() {
         <div className="space-y-3 mb-6">
           <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-4">
             <h4 className="font-display text-base text-[#f2ebeb] mb-1">Helphranite</h4>
-            <p className="font-body text-sm text-[#c8c2ba]">A play on word for Fahrenheits.</p>
+            <p className="font-body text-base text-[#c8c2ba]">A play on word for Fahrenheits.</p>
           </div>
           <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-4">
             <h4 className="font-display text-base text-[#f2ebeb] mb-1">Helphieus</h4>
-            <p className="font-body text-sm text-[#c8c2ba]">Also a play on word for Celsius.</p>
+            <p className="font-body text-base text-[#c8c2ba]">Also a play on word for Celsius.</p>
           </div>
           <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-4">
             <h4 className="font-display text-base text-[#f2ebeb] mb-1">Nullfrost</h4>
-            <p className="font-body text-sm text-[#c8c2ba]">A new metric for this world, inspired by Kelvin.</p>
+            <p className="font-body text-base text-[#c8c2ba]">A new metric for this world, inspired by Kelvin.</p>
           </div>
         </div>
 
@@ -71,7 +71,7 @@ export default function WeatherClimateSeasons() {
           </p>
         </div>
 
-        <p className="font-body text-sm text-[#c8c2ba]">
+        <p className="font-body text-base text-[#c8c2ba]">
           Planet Hetra&apos;s Moderate temperature is at <span className="text-[#f2ebeb] font-semibold">35°HL</span>, or <span className="text-[#f2ebeb] font-semibold">75°HF</span>, which makes it easy for life to sustain.
         </p>
       </section>
@@ -94,23 +94,23 @@ export default function WeatherClimateSeasons() {
         <div className="space-y-3">
           <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-4 flex flex-col sm:flex-row sm:items-center gap-2">
             <h4 className="font-display text-base text-[#f2ebeb] shrink-0 w-48">Pink Spring</h4>
-            <p className="font-body text-sm text-[#c8c2ba]">Starts on Viviambel 1st and ends on Escael 31st.</p>
+            <p className="font-body text-base text-[#c8c2ba]">Starts on Viviambel 1st and ends on Escael 31st.</p>
           </div>
           <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-4 flex flex-col sm:flex-row sm:items-center gap-2">
             <h4 className="font-display text-base text-[#f2ebeb] shrink-0 w-48">Calderia&apos;s Heat <span className="font-body text-[10px] tracking-widest uppercase text-[#7a746e]">(Summer)</span></h4>
-            <p className="font-body text-sm text-[#c8c2ba]">Starts on Zestia 1st and ends on the 26th of Zestia.</p>
+            <p className="font-body text-base text-[#c8c2ba]">Starts on Zestia 1st and ends on the 26th of Zestia.</p>
           </div>
           <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-4 flex flex-col sm:flex-row sm:items-center gap-2">
             <h4 className="font-display text-base text-[#f2ebeb] shrink-0 w-48">Aburhalle <span className="font-body text-[10px] tracking-widest uppercase text-[#7a746e]">(Fall)</span></h4>
-            <p className="font-body text-sm text-[#c8c2ba]">Starts on the 27th of Zestia and ends on Elhmber 26th.</p>
+            <p className="font-body text-base text-[#c8c2ba]">Starts on the 27th of Zestia and ends on Elhmber 26th.</p>
           </div>
           <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-4 flex flex-col sm:flex-row sm:items-center gap-2">
             <h4 className="font-display text-base text-[#f2ebeb] shrink-0 w-48">Wintervahle</h4>
-            <p className="font-body text-sm text-[#c8c2ba]">Starts on Mhulumber 1st and ends on Griselmber 39th.</p>
+            <p className="font-body text-base text-[#c8c2ba]">Starts on Mhulumber 1st and ends on Griselmber 39th.</p>
           </div>
           <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-4 flex flex-col sm:flex-row sm:items-center gap-2">
             <h4 className="font-display text-base text-[#f2ebeb] shrink-0 w-48">Dibeus Vitae Eve</h4>
-            <p className="font-body text-sm text-[#c8c2ba]">Starts on Griselmber 40th, leads into the last month, and ends on Dibeus Vitae 7th.</p>
+            <p className="font-body text-base text-[#c8c2ba]">Starts on Griselmber 40th, leads into the last month, and ends on Dibeus Vitae 7th.</p>
           </div>
         </div>
       </section>
@@ -125,7 +125,7 @@ export default function WeatherClimateSeasons() {
         <h2 className="font-display text-lg text-[#f2ebeb] mb-4" id="a-strange-phenomenon">
           A Strange Phenomenon
         </h2>
-        <p className="font-body text-sm text-[#c8c2ba]">
+        <p className="font-body text-base text-[#c8c2ba]">
           Planet Hetra emits a strange pink glow in the air when there are a lot of hexicules clustered beneath its rocky surface. This isn&apos;t harmful to life itself. Rather, it&apos;s what causes random storms and hexicule showers. Scientists have dubbed this strange element as{" "}
           <span className="text-[#f2ebeb] font-semibold">Oxygen-Hexatide-3</span> or,{" "}
           <span className="text-[#f2ebeb] font-semibold">oHx3</span>.
@@ -157,19 +157,19 @@ export default function WeatherClimateSeasons() {
           <div className="space-y-3 pl-5">
             <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-4">
               <h4 className="font-display text-base text-[#f2ebeb] mb-1">The Alarctic Stream</h4>
-              <p className="font-body text-sm text-[#c8c2ba]">This current descends from both the nooks of the north pole and crosses around the world, where it branches off into many different cold currents.</p>
+              <p className="font-body text-base text-[#c8c2ba]">This current descends from both the nooks of the north pole and crosses around the world, where it branches off into many different cold currents.</p>
             </div>
             <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-4">
               <h4 className="font-display text-base text-[#f2ebeb] mb-1">The Rigid Cold Currents</h4>
-              <p className="font-body text-sm text-[#c8c2ba]">A glacial current birthed the Rigid Cold Currents deep trenches. It snakes along the continent of Rynel&apos;s western coast and slides under Hetrania like a slithering serpent.</p>
+              <p className="font-body text-base text-[#c8c2ba]">A glacial current birthed the Rigid Cold Currents deep trenches. It snakes along the continent of Rynel&apos;s western coast and slides under Hetrania like a slithering serpent.</p>
             </div>
             <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-4">
               <h4 className="font-display text-base text-[#f2ebeb] mb-1">The Rigid Spiral</h4>
-              <p className="font-body text-sm text-[#c8c2ba]">A rare cold gyre that spirals inwards and outwards between Eulerich, Hexphos Island, The Alarctic Frost, Norrane, and Rynel. A lot of ocean storms happen here.</p>
+              <p className="font-body text-base text-[#c8c2ba]">A rare cold gyre that spirals inwards and outwards between Eulerich, Hexphos Island, The Alarctic Frost, Norrane, and Rynel. A lot of ocean storms happen here.</p>
             </div>
             <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-4">
               <h4 className="font-display text-base text-[#f2ebeb] mb-1">The Southern Straight</h4>
-              <p className="font-body text-sm text-[#c8c2ba]">Right below the Alarctic Frost, this straight current does a huge straight loop in the southern pole. It is said the currents here are the coldest.</p>
+              <p className="font-body text-base text-[#c8c2ba]">Right below the Alarctic Frost, this straight current does a huge straight loop in the southern pole. It is said the currents here are the coldest.</p>
             </div>
           </div>
         </div>
@@ -183,23 +183,23 @@ export default function WeatherClimateSeasons() {
           <div className="space-y-3 pl-5">
             <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-4">
               <h4 className="font-display text-base text-[#f2ebeb] mb-1">The Gulf Stream of Varleqe</h4>
-              <p className="font-body text-sm text-[#c8c2ba]">A tropical current belt of warmth looping around the Gulf of Varleqe, from the east of Eulerich to Varleqe (around the planet). This also feeds into the Lynnerian Sea between Varleqe and Lynneria.</p>
+              <p className="font-body text-base text-[#c8c2ba]">A tropical current belt of warmth looping around the Gulf of Varleqe, from the east of Eulerich to Varleqe (around the planet). This also feeds into the Lynnerian Sea between Varleqe and Lynneria.</p>
             </div>
             <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-4">
               <h4 className="font-display text-base text-[#f2ebeb] mb-1">The Rynnelia Current</h4>
-              <p className="font-body text-sm text-[#c8c2ba]">A snake-like current that mixes into the Rigid Cold Currents that also wraps around that continent.</p>
+              <p className="font-body text-base text-[#c8c2ba]">A snake-like current that mixes into the Rigid Cold Currents that also wraps around that continent.</p>
             </div>
             <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-4">
               <h4 className="font-display text-base text-[#f2ebeb] mb-1">The Norrane Belt</h4>
-              <p className="font-body text-sm text-[#c8c2ba]">The warm currents here help regulate the temperature of the continent of Norrane.</p>
+              <p className="font-body text-base text-[#c8c2ba]">The warm currents here help regulate the temperature of the continent of Norrane.</p>
             </div>
             <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-4">
               <h4 className="font-display text-base text-[#f2ebeb] mb-1">The Eulerian Surge</h4>
-              <p className="font-body text-sm text-[#c8c2ba]">A three-style warm current of water that shoots eastward to Varleqe (from the west of that continent) before it continues onwards.</p>
+              <p className="font-body text-base text-[#c8c2ba]">A three-style warm current of water that shoots eastward to Varleqe (from the west of that continent) before it continues onwards.</p>
             </div>
             <div className="bg-[#0f0d0c] border border-[#2e2b26] rounded-sm p-4">
               <h4 className="font-display text-base text-[#f2ebeb] mb-1">The Southern Alpine Lift</h4>
-              <p className="font-body text-sm text-[#c8c2ba]">A current that spirals between Lynneria, Rynel, and the Alarctic Alpines.</p>
+              <p className="font-body text-base text-[#c8c2ba]">A current that spirals between Lynneria, Rynel, and the Alarctic Alpines.</p>
             </div>
           </div>
         </div>
