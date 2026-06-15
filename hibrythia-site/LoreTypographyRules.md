@@ -1,5 +1,5 @@
 # Hibrythia Site — Important Typography Conventions
-> IMPORTANT Reference file for consistent heading sizes across all lore pages. Should be read first before populating Lore!
+> IMPORTANT Reference file for consistent heading sizes, body paragraph sizes across all lore pages.
 > Last updated: June 14 2026 - 4:51 PM
 
 ---
