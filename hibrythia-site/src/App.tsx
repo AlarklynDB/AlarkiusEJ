@@ -48,6 +48,7 @@ import TheContinentOfNorrane from '@/pages/LocalesAndSights/TheContinentOfNorran
 import TheContinentOfRynel from '@/pages/LocalesAndSights/TheContinentOfRynel';
 import TheVarleqianWaterfall from '@/pages/LocalesAndSights/TheVarleqianWaterfall';
 import MetaWorldbuilding from '@/pages/MetaWorldbuilding';
+import TheSigilOfHibrythia from '@/pages/MetaWorldbuilding/TheSigilOfHibrythia';
 import CharacterProfiles from '@/pages/CharacterProfiles';
 import PhilstraRhys from '@/pages/CharacterProfiles/PhilstraRhys';
 import Bookshelf from '@/pages/Bookshelf';
@@ -169,6 +170,7 @@ export default function App() {
           <Route path="world/locales/draxian-sky-church" element={<PageTransition><TheDraxianSkyChurch /></PageTransition>} />
           <Route path="world/locales/sethranian-church" element={<PageTransition><TheSethranianChurch /></PageTransition>} />
           <Route path="world/meta" element={<PageTransition><MetaWorldbuilding /></PageTransition>} />
+          <Route path="world/meta/sigil" element={<PageTransition><TheSigilOfHibrythia /></PageTransition>} />
           <Route path="characters" element={<PageTransition><CharacterProfiles /></PageTransition>} />
           <Route path="characters/PhilstraRhys" element={<PageTransition><PhilstraRhys /></PageTransition>} />
           <Route path="bookshelf" element={<PageTransition><Bookshelf /></PageTransition>} />
@@ -187,6 +189,7 @@ export default function App() {
     </>
   );
 }
+
 
 
 
