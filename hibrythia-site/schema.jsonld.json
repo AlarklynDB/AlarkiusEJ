@@ -62,7 +62,7 @@
         "@id": "https://www.alarkiusej.com/#brand"
       },
       {
-        "@type": "BookSeries",
+        "@type": "CreativeWorkSeries",
         "@id": "https://www.thehibrythiansaga.com/#series",
         "name": "The Hibrythian Saga",
         "url": "https://www.thehibrythiansaga.com/",
