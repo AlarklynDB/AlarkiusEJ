@@ -10,14 +10,14 @@ const REALMS = [
     number: "I",
     name: "The Divine Realm",
     subtitle: "The First Realm of Hibrytheia",
-    to: "/world/meta/sigil/divine-realm",
+    to: "/world/meta/TheSigilOfHibrythia/divine-realm",
     body: "The Divine Realm is a metaphysical plane of existence that wraps around the Space-Time Continuum before the Continuity Frame (The Edge of Reality). This realm governs all systems, including planets, stars, and realms. What makes this unique is that the \"Gods\" in this world are called Lhumerials. Lhumerials are omnipotent, omniscient, omnipresent, and omnibenevolent. Lhumerials are 10-Dimensional Creatures.",
   },
   {
     number: "II",
     name: "The Sylphrelm",
     subtitle: "The Second Realm of Hibrytheia — The Cloud Abode",
-    to: "/world/meta/sigil/sylphrelm",
+    to: "/world/meta/TheSigilOfHibrythia/sylphrelm",
     body: "The Sylphrelm, known as The Cloud Abode, is a mystical realm on the northern outskirts of space that was created by one of The Spirits of Creation, Nahfia, whom was hand selected by Zohl and Vivianya. The realm itself is a very large, planetary-like body, home to many mystical beings, aside from Sylphs and Air Spirits. To get to the Cloud Abode, you\'ll need help from a Mystic Dryad that can connect with beings that live in the Abode. You\'ll be able to traverse to this realm via The Rainbow Funnel, with the help of a Dryad.",
   },
   {
@@ -32,28 +32,28 @@ const REALMS = [
     number: "IV",
     name: "The Stygian Realm",
     subtitle: "The Fourth Realm of Hibrytheia — Stygirelm",
-    to: "/world/meta/sigil/stygian-realm",
+    to: "/world/meta/TheSigilOfHibrythia/stygian-realm",
     body: "The Stygian Realm is the fourth realm that lies beyond Midtheltra and Sylphrelm. The darkness within this realm absorbs everything except for one light source. It is home to a lot of dark dwellers and critters, including Batragons, who can access this realm with their abilities.",
   },
   {
     number: "V",
     name: "The Extreulux Realm",
     subtitle: "The Fifth Realm of Hibrytheia — The Space-Time Continuum",
-    to: "/world/meta/sigil/extreulux-realm",
+    to: "/world/meta/TheSigilOfHibrythia/extreulux-realm",
     body: "The Extreulux Realm is also known as the Space-Time Continuum. It is the rounded border that surrounds space, but also operates with it. It is invisible to the naked eye. The Extreulux Realm binds the fabric of space and time together, as the two co-exist with one another. Raw Time Energy is an energy that helps regulate the great unknown (space) and it sometimes causes Time Vortexes — hurricanes of time that are unstable. These Time Vortexes act as a portal to Ellhumhellm for unknown reasons, and all of them take place in The Dark Zone, where the Stygian Realm lurks. This realm works together with The Divine Realm, since there are Spirits who use its power to create time-system structures for developing universes.",
   },
   {
     number: "VI",
     name: "Ellhumhellm",
     subtitle: "The Sixth Realm of Hibrytheia — Hell, The Land of the Woeful",
-    to: "/world/meta/sigil/ellhumhellm",
+    to: "/world/meta/TheSigilOfHibrythia/ellhumhellm",
     body: "Instead of being a bright, flaming red interpretation of Hell, Ellhumhellm is a cold and somber place with hues of blue and black — the sad version of the Hell known on Earth and through its biblical interpretations. In this place, there are no beings, no creatures, and no rulers. Aeonia, The Omnibound Spirit of Time, created this realm so that it can receive evil doers or those who commit grave atrocities or sins. Time distorts in this realm: it reverses, goes to negative time, and becomes hyperactive exponentially. When an individual comes here, their appearance becomes distorted and alternates from a baby to an elder, quickly. Everyone experiences this and when they scream in pain, the sound becomes nullified. They must endure the experience of their own guilt repeatedly. The realm itself has scattered lands of debris and craters caused by objects interacting with Time Vortexes.",
   },
   {
     number: "∞",
     name: "Illusia",
     subtitle: "The Hidden Realm of Hibrytheia — The Plane of Dreams",
-    to: "/world/meta/sigil/illusia",
+    to: "/world/meta/TheSigilOfHibrythia/illusia",
     body: "Illusia is a hidden, metaphysical realm powered by dreams and curiosity, existing as a subspace fold within the Outerbounds and believed to be a key to unlocking the Multiverse. Though monks once attempted to reach it through Astralverging, the realm rejected them due to their prophetic nature, and imposed the curse of psychometry on those who got too close. To truly enter Illusia, one must become a \"Blank Slate\" — a soul of total emotional and spiritual emptiness — a state so impossible that only one being in all existence has achieved it: Hunter Noxx.",
   },
 ];
@@ -78,7 +78,7 @@ export default function TheSigilOfHibrythia() {
           Hibrytheia, The Sigil of Life
         </h1>
         <p className="font-body text-base text-[#c8c2ba] leading-relaxed max-w-[680px]">
-          Hibrytheia, otherwise known as The Sigil of Life (or The World Sigil), is an energy field that connects and supports The Six Realms in the Hibryoverse Continuity. The entire Crest of Life is contained inside the Continuity Frame — a frame that prevents Continuity Traversal to the other Primes.
+          Hibrythieon, otherwise known as The Sigil of Life (or The World Sigil), is an energy field that connects and supports The Six Realms in the Hibryoverse Continuity. The entire Crest of Life is contained inside the Continuity Frame — a frame that prevents Continuity Traversal to the other Primes.
         </p>
       </div>
 
