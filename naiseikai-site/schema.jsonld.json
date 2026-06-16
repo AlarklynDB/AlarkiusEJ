@@ -61,7 +61,7 @@
         "@id": "https://www.alarkiusej.com/#brand"
       },
       {
-        "@type": "BookSeries",
+        "@type": "CreativeWorkSeries",
         "@id": "https://www.thehibrythiansaga.com/#series",
         "name": "The Hibrythian Saga",
         "url": "https://www.thehibrythiansaga.com/",
@@ -79,6 +79,17 @@
         "about":     { "@id": "https://www.thehibrythiansaga.com/#series" },
         "creator":   { "@id": "https://www.alarkiusej.com/#author" },
         "publisher": { "@id": "https://www.alarkiusej.com/#brand" }
+      }
+      {
+        "@type": "Book",
+        "@id": "https://www.thehibrythiansaga.com/#book-0",
+        "name": "Hibryds, The Hibrythian Genesis of Everything",
+        "bookEdition": "First Edition",
+        "isbn": "9798994097687",
+        "numberOfPages": 50,
+        "inSeries": { "@id": "https://www.thehibrythiansaga.com/#series" },
+        "author": { "@id": "https://www.alarkiusej.com/#author" },
+        "url": "https://www.thehibrythiansaga.com/bookshelf/vol0"
       }
     ]
   },
@@ -113,6 +124,17 @@
         "about":     { "@id": "https://www.naiseikaiuniverse.com/#series" },
         "creator":   { "@id": "https://www.alarkiusej.com/#author" },
         "publisher": { "@id": "https://www.alarkiusej.com/#brand" }
+      }
+      {
+        "@type": "Book",
+        "@id": "https://www.naiseikaiuniverse.com/#book-1",
+        "name": "The Quiet Crow & The Ninja (Shizukana Karasu to Ninja)",
+        "bookEdition": "First Edition", "Collector's Edition",
+        "isbn": "9798994097656", "9798994097656",
+        "numberOfPages": 294,
+        "inSeries": { "@id": "https://www.naiseikaiuniverse.com/#series" },
+        "author": { "@id": "https://www.alarkiusej.com/#author" },
+        "url": "https://www.naiseikaiuniverse.com/titles/KarasuToNinja-TQCTN"
       }
     ]
   }
