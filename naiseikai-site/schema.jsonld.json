@@ -1,4 +1,4 @@
-{
+  {
   "_note": "Backup of all JSON-LD schemas used in the alaria-aurelia Cloudflare Worker. Last updated: 2026-06-11.",
 
   "author_schema": {
@@ -22,6 +22,7 @@
           "https://www.linkedin.com/in/alarkiusej/",
           "https://github.com/AlarkiusJay",
           "https://github.com/TheAlarklynZone",
+          "https://github.com/AlarklynDB",          
           "https://www.thehibrythiansaga.com/",
           "https://www.naiseikaiuniverse.com/",
           "https://www.barnesandnoble.com/search?q=Alarkius%20Elvya%20Jay&contributorName=alarkius-elvya-jay",
@@ -30,12 +31,36 @@
         ]
       },
       {
+      "@type": "ProfilePage",
+      "@id": "https://www.alarkiusej.com/#profilepage",
+      "url": "https://www.alarkiusej.com/",
+      "name": "Alarkius Elvya Jay — Official Author Website",
+      "description": "The official profile and author page of Alarkius Elvya Jay, creator of The Hibrythian Saga and The Naiseikai Universe.",
+      "mainEntity": { "@id": "https://www.alarkiusej.com/#author" },
+      "about": { "@id": "https://www.alarkiusej.com/#author" },
+      "creator": { "@id": "https://www.alarkiusej.com/#author" },
+      "publisher": { "@id": "https://www.alarkiusej.com/#brand" },
+      "dateModified": "2026-06-16"
+      }
+      {
         "@type": "Organization",
         "@id": "https://www.alarkiusej.com/#brand",
         "name": "AlarkiusEJ",
         "url": "https://www.alarkiusej.com/",
         "founder": { "@id": "https://www.alarkiusej.com/#author" }
       },
+      {
+      "@type": "MusicAlbum",
+      "@id": "https://www.alarkiusej.com/#album-1",
+      "name": "Alarkius Elvya Jay",
+      "url": "https://www.youtube.com/@AlarkiusJay",
+      "description": "AlarkiusEJ's Music, but on YouTube.",
+      "byArtist": { "@id": "https://www.alarkiusej.com/#author" },
+      "datePublished": "",
+      "numTracks": ,
+      "genre": ["Original Sound Tracks", "Orchestral", "Film"],
+      "inAlbum": null
+      }  
       {
         "@type": "WebSite",
         "@id": "https://www.alarkiusej.com/#website",
@@ -71,6 +96,18 @@
         "publisher": { "@id": "https://www.alarkiusej.com/#brand" }
       },
       {
+      "@type": "MusicAlbum",
+      "@id": "https://www.alarkiusej.com/#album-2",
+      "name": "Alarkius Elvya Jay",
+      "url": "https://www.youtube.com/@TheHibrythianSaga",
+      "description": "AlarkiusEJ's Music, but on YouTube, for The Hibrythian Saga.",
+      "byArtist": { "@id": "https://www.alarkiusej.com/#author" },
+      "datePublished": "",
+      "numTracks": ,
+      "genre": ["Original Sound Tracks", "Orchestral", "Film" , "Book Music"],
+      "inAlbum": null
+      }  
+      {
         "@type": "WebSite",
         "@id": "https://www.thehibrythiansaga.com/#website",
         "url": "https://www.thehibrythiansaga.com/",
@@ -90,6 +127,17 @@
         "inSeries": { "@id": "https://www.thehibrythiansaga.com/#series" },
         "author": { "@id": "https://www.alarkiusej.com/#author" },
         "url": "https://www.thehibrythiansaga.com/bookshelf/vol0"
+      }
+      {
+        "@type": "Book",
+        "@id": "https://www.thehibrythiansaga.com/#book-1",
+        "name": "Hibryds - A Grand Voyage",
+        "bookEdition": "First Edition", "Hardcover",
+        "isbn": "9798994097663", "9798994097670",
+        "numberOfPages": 542,
+        "inSeries": { "@id": "https://www.thehibrythiansaga.com/#series" },
+        "author": { "@id": "https://www.alarkiusej.com/#author" },
+        "url": "https://www.barnesandnoble.com/search?attributes.mfield_bnb__seriesTitle=The%20Hibrythian%20Saga"
       }
     ]
   },
