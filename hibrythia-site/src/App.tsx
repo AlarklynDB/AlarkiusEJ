@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import PWADevTools from '@/components/PWADevTools';
 import Layout from '@/components/Layout';
 import Home from '@/pages/Home';
-import LegendsAndMyths from '@/pages/LegendsAndMyths';
+import LegendsAndMyths from '@/pages/LegendsAndMyths/index';
 import TheMidwinterFestival from '@/pages/LegendsAndMyths/TheMidwinterFestival';
 import TheLoreOfHexphosIsland from '@/pages/LegendsAndMyths/TheLoreOfHexphosIsland';
 import OurWorldbuilding from '@/pages/OurWorldbuilding';
@@ -48,7 +48,7 @@ import TheContinentOfNorrane from '@/pages/LocalesAndSights/TheContinentOfNorran
 import TheContinentOfRynel from '@/pages/LocalesAndSights/TheContinentOfRynel';
 import TheVarleqianWaterfall from '@/pages/LocalesAndSights/TheVarleqianWaterfall';
 import MetaWorldbuilding from '@/pages/MetaWorldbuilding';
-import OurCharacters from '@/pages/OurCharacters';
+import CharacterProfiles from '@/pages/CharacterProfiles';
 import Bookshelf from '@/pages/Bookshelf';
 import Vol0HTHGOE from '@/pages/Bookshelf/Vol0HTHGOE';
 import Vol0EP0 from '@/pages/Bookshelf/Vol0HTHGOE/EP0';
@@ -168,7 +168,7 @@ export default function App() {
           <Route path="world/locales/draxian-sky-church" element={<PageTransition><TheDraxianSkyChurch /></PageTransition>} />
           <Route path="world/locales/sethranian-church" element={<PageTransition><TheSethranianChurch /></PageTransition>} />
           <Route path="world/meta" element={<PageTransition><MetaWorldbuilding /></PageTransition>} />
-          <Route path="characters" element={<PageTransition><OurCharacters /></PageTransition>} />
+          <Route path="characters" element={<PageTransition><CharacterProfiles /></PageTransition>} />
           <Route path="bookshelf" element={<PageTransition><Bookshelf /></PageTransition>} />
           <Route path="bookshelf/vol0" element={<PageTransition><Vol0HTHGOE /></PageTransition>} />
           <Route path="bookshelf/vol0/ep0" element={<PageTransition><Vol0EP0 /></PageTransition>} />
@@ -185,4 +185,5 @@ export default function App() {
     </>
   );
 }
+
 
