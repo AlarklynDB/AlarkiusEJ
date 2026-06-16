@@ -1,6 +1,6 @@
 // ============================================================
-// Author Schema Worker for AlarkiusEJ
-// Domain: alarkiusej.com
+// Author Schema Worker for AlarkiusEJ and his sub sites
+// Domain: alarkiusej.com , thehibrythiansaga.com , naiseikaiuniverse.com
 // Injects structured data (JSON-LD) + favicon into HTML responses
 // ============================================================
 
