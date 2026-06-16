@@ -42,12 +42,13 @@ const SECTIONS = [
     ],
   },
   {
-    title: 'Support Characters',
+    title: 'Background Characters',
     description: 'Allies, companions, and figures who shape the world around our main cast.',
     characters: [
       { to: '/characters/TheSpiritWardens',   label: 'The Spirit Wardens' },
       { to: '/characters/LeonTheEulerianOwl', label: 'Leon, Eulerian Owl' },
       { to: '/characters/AviaRemyls',         label: 'Avia Remyls' },
+      { to: '/characters/PhilstraRhys',        label: 'Philstra Rhys' },
       { to: '/characters/SkullZakar',         label: 'Skull Zakar' },
     ],
   },
@@ -107,3 +108,4 @@ export default function CharacterProfiles() {
     </div>
   );
 }
+
