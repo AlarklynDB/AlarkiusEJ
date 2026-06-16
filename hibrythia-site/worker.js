@@ -1,6 +1,6 @@
 // ============================================================
-// Hanako-Reina — Author Schema Worker for NaiseikaiUniverse
-// Domain: alarkiusej.com & naiseikaiuniverse.com
+// Author Schema Worker for AlarkiusEJ and his sub sites
+// Domain: alarkiusej.com , thehibrythiansaga.com , naiseikaiuniverse.com
 // Injects structured data (JSON-LD) + favicon into HTML responses
 // ============================================================
 
