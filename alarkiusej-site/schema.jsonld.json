@@ -50,6 +50,18 @@
         "founder": { "@id": "https://www.alarkiusej.com/#author" }
       },
       {
+      "@type": "MusicAlbum",
+      "@id": "https://www.alarkiusej.com/#album-1",
+      "name": "Alarkius Elvya Jay",
+      "url": "https://www.youtube.com/@AlarkiusJay",
+      "description": "AlarkiusEJ's Music, but on YouTube.",
+      "byArtist": { "@id": "https://www.alarkiusej.com/#author" },
+      "datePublished": "",
+      "numTracks": ,
+      "genre": ["Original Sound Tracks", "Orchestral", "Film"],
+      "inAlbum": null
+      }  
+      {
         "@type": "WebSite",
         "@id": "https://www.alarkiusej.com/#website",
         "url": "https://www.alarkiusej.com/",
