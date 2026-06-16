@@ -4,6 +4,8 @@ import PWADevTools from '@/components/PWADevTools';
 import Layout from '@/components/Layout';
 import Home from '@/pages/Home';
 import LegendsAndMyths from '@/pages/LegendsAndMyths';
+import TheMidwinterFestival from '@/pages/lore/TheMidwinterFestival';
+import TheLoreOfHexphosIsland from '@/pages/lore/TheLoreOfHexphosIsland';
 import OurWorldbuilding from '@/pages/OurWorldbuilding';
 import WorldbuildingContents from '@/pages/WorldbuildingContents';
 import CalendarAndTime from '@/pages/WorldbuildingContents/CalendarAndTime';
@@ -107,6 +109,8 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<PageTransition><Home /></PageTransition>} />
           <Route path="lore" element={<PageTransition><LegendsAndMyths /></PageTransition>} />
+          <Route path="lore/midwinter-festival" element={<PageTransition><TheMidwinterFestival /></PageTransition>} />
+          <Route path="lore/hexphos-island" element={<PageTransition><TheLoreOfHexphosIsland /></PageTransition>} />
           <Route path="world" element={<PageTransition><OurWorldbuilding /></PageTransition>} />
           <Route path="world/databases" element={<PageTransition><WorldbuildingContents /></PageTransition>} />
           <Route path="world/databases/CalendarAndTime" element={<PageTransition><CalendarAndTime /></PageTransition>} />
@@ -181,3 +185,4 @@ export default function App() {
     </>
   );
 }
+
