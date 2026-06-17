@@ -177,12 +177,12 @@ export default function App() {
           <Route path="world/locales/sethranian-church" element={<PageTransition><TheSethranianChurch /></PageTransition>} />
           <Route path="world/meta" element={<PageTransition><MetaWorldbuilding /></PageTransition>} />
           <Route path="world/meta/TheSigilOfHibrythia" element={<PageTransition><TheSigilOfHibrythia /></PageTransition>} />
-          <Route path="world/meta/TheSigilOfHibrythia/TheDivineRealm" element={<PageTransition><TheDivineRealm /></PageTransition>} />
-          <Route path="world/meta/TheSigilOfHibrythia/TheSylphrelm" element={<PageTransition><TheSylphrelm /></PageTransition>} />
-          <Route path="world/meta/TheSigilOfHibrythia/TheStygianRealm" element={<PageTransition><TheStygianRealm /></PageTransition>} />
-          <Route path="world/meta/TheSigilOfHibrythia/TheExtreuluxRealm" element={<PageTransition><TheExtreuluxRealm /></PageTransition>} />
-          <Route path="world/meta/TheSigilOfHibrythia/Ellhumhellm" element={<PageTransition><Ellhumhellm /></PageTransition>} />
-          <Route path="world/meta/TheSigilOfHibrythia/IllusiaThePlaneOfDreams" element={<PageTransition><IllusiaThePlaneOfDreams /></PageTransition>} />
+          <Route path="world/meta/TheSigilOfHibrythia/divine-realm" element={<PageTransition><TheDivineRealm /></PageTransition>} />
+          <Route path="world/meta/TheSigilOfHibrythia/sylphrelm" element={<PageTransition><TheSylphrelm /></PageTransition>} />
+          <Route path="world/meta/TheSigilOfHibrythia/stygian-realm" element={<PageTransition><TheStygianRealm /></PageTransition>} />
+          <Route path="world/meta/TheSigilOfHibrythia/extreulux-realm" element={<PageTransition><TheExtreuluxRealm /></PageTransition>} />
+          <Route path="world/meta/TheSigilOfHibrythia/ellhumhellm" element={<PageTransition><Ellhumhellm /></PageTransition>} />
+          <Route path="world/meta/TheSigilOfHibrythia/illusia" element={<PageTransition><IllusiaThePlaneOfDreams /></PageTransition>} />
           <Route path="characters" element={<PageTransition><CharacterProfiles /></PageTransition>} />
           <Route path="characters/PhilstraRhys" element={<PageTransition><PhilstraRhys /></PageTransition>} />
           <Route path="bookshelf" element={<PageTransition><Bookshelf /></PageTransition>} />
