@@ -15,17 +15,6 @@ function SectionHeading({ children, id }: { children: React.ReactNode; id?: stri
   );
 }
 
-function SubHeading({ children, id }: { children: React.ReactNode; id?: string }) {
-  return (
-    <h3
-      id={id}
-      className="font-semibold text-lg mt-6 mb-2"
-      style={{ color: ACCENT }}
-    >
-      {children}
-    </h3>
-  );
-}
 
 interface DoctrineCardProps {
   number: string;
