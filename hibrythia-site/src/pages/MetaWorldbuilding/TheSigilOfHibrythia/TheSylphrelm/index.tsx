@@ -213,7 +213,7 @@ export default function TheSylphrelm() {
             <tbody className="divide-y divide-[#2e2b26]">
               {[
                 { feature: "Overall silhouette", sylph: "Elongates upward, splits into Upper Lick and Lower Lick (two hook-ended extensions).", elf: "Tapers in a clean, outward point." },
-                { feature: "Tip geometry", sylph: "Visible break in the outline where the two licks separate — a "double-tip" feel.", elf: "One continuous edge to the tip." },
+                { feature: "Tip geometry", sylph: "Visible break in the outline where the two licks separate — a 'double-tip' feel.", elf: "One continuous edge to the tip." },
                 { feature: "Sensitivity focus", sylph: "Specialized through Crebritas Euripus (Frequency Channel) running through both licks.", elf: "Standard fantasy-sharp hearing." },
               ].map((row) => (
                 <tr key={row.feature}>
