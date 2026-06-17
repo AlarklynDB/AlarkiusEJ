@@ -322,7 +322,7 @@ export default function TheDivineRealm() {
           </div>
         </Link>
         <Link
-          to="/world/meta/TheSigilOfHibrythia/TheSylphrelm"
+          to="/world/meta/TheSigilOfHibrythia/sylphrelm"
           className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-[#2e2b26] bg-[#1a1714] hover:border-[#c9a84c]/40 hover:bg-[#1f1c18] transition-all duration-200 max-w-[45%] text-right"
         >
           <div>
