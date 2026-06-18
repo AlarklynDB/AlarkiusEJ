@@ -2,6 +2,8 @@
 > IMPORTANT Reference file for consistent heading sizes, body paragraph sizes across all lore pages.
 > Last updated: June 15 2026
 
+**Everything must be consistent!!!**
+
 ---
 
 ## Body Width
