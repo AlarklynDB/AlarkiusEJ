@@ -6,9 +6,10 @@ export default function EphelTheMoonbel() {
 
       {/* ── Header ── */}
       <div>
-        <p className="font-display text-sm text-[#c9a84c] uppercase tracking-widest mb-2">
-          The Hibrythian Saga &mdash; Antagonist
-        </p>
+        <Link to="/characters" className="font-body text-[10px] tracking-widest uppercase text-[#4a4844] hover:text-[#c9a84c] transition-colors duration-200 inline-block mb-6">
+          &#8592; Back to Characters
+        </Link>
+        <p className="font-body text-xs tracking-[0.25em] text-[#c9a84c] uppercase mb-3">Antagonists</p>
         <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-6">
           Ephel The Moonbel
         </h1>
