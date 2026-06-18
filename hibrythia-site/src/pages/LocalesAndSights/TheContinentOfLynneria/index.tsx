@@ -4,18 +4,21 @@ export default function TheContinentOfLynneria() {
   return (
     <div className="max-w-[960px] mx-auto px-6 py-20 space-y-16">
 
-      {/* Breadcrumb */}
-      <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">
-        Locales &amp; Sights / The Continent of Lynneria
-      </p>
+      
 
-      {/* Hero */}
-      <div className="space-y-4">
-        <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Locales &amp; Sights</p>
-        <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-4">The Continent of Lynneria</h1>
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
-          The continent of Lynneria, a place north of Hetrania and east of Varleqe.
+      <div>  {/* Breadcrumb */}
+        <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">
+          Locales &amp; Sights / The Continent of Lynneria
         </p>
+
+        {/* Hero */}
+        <div className="space-y-4">
+          <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Locales &amp; Sights</p>
+          <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-4">The Continent of Lynneria</h1>
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
+            The continent of Lynneria, a place north of Hetrania and east of Varleqe.
+          </p>
+        </div>
       </div>
 
       {/* Image placeholder */}
