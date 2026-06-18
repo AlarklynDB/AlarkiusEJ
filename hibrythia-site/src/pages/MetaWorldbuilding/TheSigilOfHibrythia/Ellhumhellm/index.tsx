@@ -4,31 +4,34 @@ export default function Ellhumhellm() {
   return (
     <div className="max-w-[960px] mx-auto px-6 py-20 space-y-16">
 
-      {/* Breadcrumb */}
-      <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider">
-        <Link to="/world/meta" className="hover:text-[#c9a84c] transition-colors">Meta Worldbuilding</Link>
-        {" / "}
-        <Link to="/world/meta/TheSigilOfHibrythia" className="hover:text-[#c9a84c] transition-colors">The Sigil of Hibrytheia</Link>
-        {" / "}
-        <span className="text-[#c9a84c]">Ellhumhellm</span>
-      </p>
+      
 
-      {/* Hero */}
-      <div>
-        <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-6">Ellhumhellm</h1>
-        <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-6">Hell — The Last of the Six Realms of Hibrytheia</p>
+      <div>  {/* Breadcrumb */}
+        <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider">
+          <Link to="/world/meta" className="hover:text-[#c9a84c] transition-colors">Meta Worldbuilding</Link>
+          {" / "}
+          <Link to="/world/meta/TheSigilOfHibrythia" className="hover:text-[#c9a84c] transition-colors">The Sigil of Hibrytheia</Link>
+          {" / "}
+          <span className="text-[#c9a84c]">Ellhumhellm</span>
+        </p>
 
-        {/* Image Placeholder */}
-        <div className="w-full aspect-video bg-[#1a1714] border border-[#2e2b26] rounded-xl flex items-center justify-center mb-8">
-          <p className="font-display text-sm text-[#4a4844]">[ Ellhumhellm Official Art — Author to add ]</p>
+        {/* Hero */}
+        <div>
+          <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-6">Ellhumhellm</h1>
+          <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-6">Hell — The Last of the Six Realms of Hibrytheia</p>
+
+          {/* Image Placeholder */}
+          <div className="w-full aspect-video bg-[#1a1714] border border-[#2e2b26] rounded-xl flex items-center justify-center mb-8">
+            <p className="font-display text-sm text-[#4a4844]">[ Ellhumhellm Official Art — Author to add ]</p>
+          </div>
+
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
+            Instead of being a bright, flaming red interpretation of Hell, Ellhumhellm is a cold and somber place, with hues of blue and black. Ellhumhellm is the sad version of the Hell that is known on Earth (and through its biblical interpretations).
+          </p>
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
+            In this place, there are no beings, no creatures, and no rulers. Aeonia, The Spirit of Time, made this place to be a receiver of bad souls. This is a realm that felt excess and sad to rival that of the Divine Realm, though no activity created it.
+          </p>
         </div>
-
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
-          Instead of being a bright, flaming red interpretation of Hell, Ellhumhellm is a cold and somber place, with hues of blue and black. Ellhumhellm is the sad version of the Hell that is known on Earth (and through its biblical interpretations).
-        </p>
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
-          In this place, there are no beings, no creatures, and no rulers. Aeonia, The Spirit of Time, made this place to be a receiver of bad souls. This is a realm that felt excess and sad to rival that of the Divine Realm, though no activity created it.
-        </p>
       </div>
 
       {/* Landscape */}
