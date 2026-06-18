@@ -4,25 +4,28 @@ export default function IllusiaThePlaneOfDreams() {
   return (
     <div className="max-w-[960px] mx-auto px-6 py-20 space-y-16">
 
-      {/* Breadcrumb */}
-      <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider">
-        <Link to="/world/meta" className="hover:text-[#c9a84c] transition-colors">Meta Worldbuilding</Link>
-        {" / "}
-        <Link to="/world/meta/TheSigilOfHibrythia" className="hover:text-[#c9a84c] transition-colors">The Sigil of Hibrytheia</Link>
-        {" / "}
-        <span className="text-[#c9a84c]">Illusia — The Plane of Dreams</span>
-      </p>
+      
 
-      {/* Hero */}
-      <div>
-        <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-6">Illusia — The Dream Realm</h1>
-        <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-6">The Mysterious Hidden Realm of Hibrytheia</p>
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
-          Early days and ancient years on Hetra, historians and astrologists of that time discovered that dreams are a dimensional plane. A plane that holds the possibility of different universes, parallel realities, and potentially, the existence of the Multiverse. Dreams in this world are one of the prime keys to unlocking the gates of the Multiverse, but the primitive technology at that time was inefficient. And even to this day, it is still impossible.
+      <div>  {/* Breadcrumb */}
+        <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider">
+          <Link to="/world/meta" className="hover:text-[#c9a84c] transition-colors">Meta Worldbuilding</Link>
+          {" / "}
+          <Link to="/world/meta/TheSigilOfHibrythia" className="hover:text-[#c9a84c] transition-colors">The Sigil of Hibrytheia</Link>
+          {" / "}
+          <span className="text-[#c9a84c]">Illusia — The Plane of Dreams</span>
         </p>
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
-          The astrologists of that time had their spiritual awareness, for most of them were monks. They used their affinity and power to try to lucid-dream and walk into the potential infinite possibilities of the Dream Dimension, but failed to do so because of a strange barrier. This realm is one of the keys to unlock The Multiverse.
-        </p>
+
+        {/* Hero */}
+        <div>
+          <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-6">Illusia — The Dream Realm</h1>
+          <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-6">The Mysterious Hidden Realm of Hibrytheia</p>
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
+            Early days and ancient years on Hetra, historians and astrologists of that time discovered that dreams are a dimensional plane. A plane that holds the possibility of different universes, parallel realities, and potentially, the existence of the Multiverse. Dreams in this world are one of the prime keys to unlocking the gates of the Multiverse, but the primitive technology at that time was inefficient. And even to this day, it is still impossible.
+          </p>
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
+            The astrologists of that time had their spiritual awareness, for most of them were monks. They used their affinity and power to try to lucid-dream and walk into the potential infinite possibilities of the Dream Dimension, but failed to do so because of a strange barrier. This realm is one of the keys to unlock The Multiverse.
+          </p>
+        </div>
       </div>
 
       {/* What It Is */}
