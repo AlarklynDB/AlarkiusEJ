@@ -83,7 +83,7 @@ export default function RunerusTheEarlywulf() {
           <h3 className="font-display text-sm text-[#f2ebeb] mb-3">The Earlywulf, Runerus</h3>
           <p className="font-display text-base text-[#f2ebeb] mb-2">The Singular Forefather</p>
           <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
-            Long before the Direwolf races walked the lands of Planet Hetra, there was one. A <strong className="text-[#f2ebeb]">singular entity</strong>, fearsome, divine, ancient. He is called the <strong className="text-[#f2ebeb]">Earlywulf</strong>, and his name is <strong className="text-[#f2ebeb]">Runerus</strong>.
+            Long before the Direwolf races walked the lands of Planet Hetra, there was a <strong className="text-[#f2ebeb]">singular entity</strong>, fearsome, divine, ancient. He is called the <strong className="text-[#f2ebeb]">Earlywulf</strong>, and his name is <strong className="text-[#f2ebeb]">Runerus</strong>.
           </p>
           <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
             Runerus is an <strong className="text-[#f2ebeb]">Ancient Spirit</strong> of enormous presence and power. He is not a creature of the mortal world; he is the <em>source</em> of an entire beast lineage, the progenitor from whom all Direwolves descend. His voice is said to sound like the engine of a tractor combined with a lion's growl, heavy, rumbling, commanding, yet unmistakably intelligent and warm toward those he deems worthy.
