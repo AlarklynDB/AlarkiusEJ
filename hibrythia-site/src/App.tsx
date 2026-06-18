@@ -75,6 +75,7 @@ import AeoniaTheSpiritOfTime from '@/pages/CharacterProfiles/AeoniaTheSpiritOfTi
 import MorhvTheSpiritOfDeath from '@/pages/CharacterProfiles/MorhvTheSpiritOfDeath';
 import RunerusTheEarlywulf from '@/pages/CharacterProfiles/RunerusTheEarlywulf';
 import AuroraRimaeaOfLife from '@/pages/CharacterProfiles/AuroraRimaeaOfLife';
+import TheSpiritWardens from '@/pages/CharacterProfiles/TheSpiritWardens';
 import Bookshelf from '@/pages/Bookshelf';
 import Vol0HTHGOE from '@/pages/Bookshelf/Vol0HTHGOE';
 import Vol0EP0 from '@/pages/Bookshelf/Vol0HTHGOE/EP0';
@@ -221,6 +222,7 @@ export default function App() {
           <Route path="characters/MorhvTheSpiritOfDeath" element={<PageTransition><MorhvTheSpiritOfDeath /></PageTransition>} />
           <Route path="characters/RunerusTheEarlywulf" element={<PageTransition><RunerusTheEarlywulf /></PageTransition>} />
           <Route path="characters/AuroraRimaeaOfLife" element={<PageTransition><AuroraRimaeaOfLife /></PageTransition>} />
+          <Route path="characters/TheSpiritWardens" element={<PageTransition><TheSpiritWardens /></PageTransition>} />
           <Route path="bookshelf" element={<PageTransition><Bookshelf /></PageTransition>} />
           <Route path="bookshelf/vol0" element={<PageTransition><Vol0HTHGOE /></PageTransition>} />
           <Route path="bookshelf/vol0/ep0" element={<PageTransition><Vol0EP0 /></PageTransition>} />
