@@ -206,5 +206,37 @@ Before wiring any new route in App.tsx:
 // CORRECT (matches live)
 <Route path="world/meta/TheSigilOfHibrythia/divine-realm" .../>
 ```
+---
 
+## Breadcrumb Navigation
 
+> **Rule**: `/breadcrumb` links **must always appear at the very top of the page body, before the page title (H1)** — inside the BodyWidth960 wrapper.
+
+Every character profile page and lore subpage must include a breadcrumb block at the top. The breadcrumb comes first, then the category label, then the H1.
+
+### Structure (copy-paste ready)
+
+```tsx
+{/* Breadcrumb */}
+<div>
+  <Link
+    to="/characters"
+    className="font-body text-[10px] tracking-widest uppercase text-[#4a4844] hover:text-[#c9a84c] transition-colors duration-200 inline-block mb-6"
+  >
+    &#8592; Back to Characters
+  </Link>
+  <p className="font-body text-xs tracking-[0.25em] text-[#c9a84c] uppercase mb-3">
+    Category Label (e.g. Antagonists, Main Protagonists, Locales &amp; Sights)
+  </p>
+  <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-6">Page Title</h1>
+</div>
+```
+
+### Rules
+- The `← Back to [Section]` link uses `text-[#4a4844]` (very muted) and turns gold on hover.
+- The category label uses `text-[#c9a84c] uppercase tracking-[0.25em] text-xs` — same gold small-caps style used throughout.
+- The category label text must match the section the page belongs to:
+  - Character pages → `Main Protagonists`, `Antagonists`, `Supporting Cast`, etc.
+  - Lore subpages → match the parent section name (e.g. `Locales & Sights`, `Meta Worldbuilding`)
+- **No standalone gold `<hr>` or divider between the breadcrumb and the H1.**
+- The breadcrumb `to=` link points to the parent index page (e.g. `/characters`, `/world/locales`).
