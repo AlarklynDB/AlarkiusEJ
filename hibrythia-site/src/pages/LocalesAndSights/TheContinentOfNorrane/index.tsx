@@ -4,18 +4,21 @@ export default function TheContinentOfNorrane() {
   return (
     <div className="max-w-[960px] mx-auto px-6 py-20 space-y-16">
 
-      {/* Breadcrumb */}
-      <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">
-        Locales &amp; Sights / The Continent of Norrane
-      </p>
+      
 
-      {/* Hero */}
-      <div className="space-y-4">
-        <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Locales &amp; Sights</p>
-        <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-4">The Continent of Norrane</h1>
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
-          In the past for the continent of Norrane, there used to be massive gem-storms that contained huge traces of Hexicules. Though after many centuries and millennia, these storms have decreased. Here are the places in Norrane that suffered from hexicules and the wild forestation growth. There are mountain islands that surround this continent and they are enveloped in fog. Getting here is risky.
+      <div>  {/* Breadcrumb */}
+        <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">
+          Locales &amp; Sights / The Continent of Norrane
         </p>
+
+        {/* Hero */}
+        <div className="space-y-4">
+          <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Locales &amp; Sights</p>
+          <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-4">The Continent of Norrane</h1>
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
+            In the past for the continent of Norrane, there used to be massive gem-storms that contained huge traces of Hexicules. Though after many centuries and millennia, these storms have decreased. Here are the places in Norrane that suffered from hexicules and the wild forestation growth. There are mountain islands that surround this continent and they are enveloped in fog. Getting here is risky.
+          </p>
+        </div>
       </div>
 
       {/* Image placeholder */}
