@@ -4,18 +4,21 @@ export default function TheContinentOfRynel() {
   return (
     <div className="max-w-[960px] mx-auto px-6 py-20 space-y-16">
 
-      {/* Breadcrumb */}
-      <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">
-        Locales &amp; Sights / The Continent of Rynel
-      </p>
+      
 
-      {/* Hero */}
-      <div className="space-y-4">
-        <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Locales &amp; Sights</p>
-        <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-4">The Continent of Rynel</h1>
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
-          The continent of Rynel, west Varleqe, Hetrania, and Lynneria, is smack-dab center of the globe (not literally). Rynel is another continent much like Norrane. Instead of operating on a large hexicule crystal, Rynel operates on the Oakgnar Grand Tree, which is considered to be the biggest and tallest tree in the whole world. There are a total of six locations on this continent, four being Oakgnar&apos;s towns, one ruin, and one city.
+      <div>  {/* Breadcrumb */}
+        <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">
+          Locales &amp; Sights / The Continent of Rynel
         </p>
+
+        {/* Hero */}
+        <div className="space-y-4">
+          <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Locales &amp; Sights</p>
+          <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-4">The Continent of Rynel</h1>
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
+            The continent of Rynel, west Varleqe, Hetrania, and Lynneria, is smack-dab center of the globe (not literally). Rynel is another continent much like Norrane. Instead of operating on a large hexicule crystal, Rynel operates on the Oakgnar Grand Tree, which is considered to be the biggest and tallest tree in the whole world. There are a total of six locations on this continent, four being Oakgnar&apos;s towns, one ruin, and one city.
+          </p>
+        </div>
       </div>
 
       {/* Image placeholder */}
