@@ -242,3 +242,46 @@ Every character profile page and lore subpage must include a breadcrumb block at
   - Lore subpages → match the parent section name (e.g. `Locales & Sights`, `Meta Worldbuilding`)
 - **No standalone gold `<hr>` or divider between the breadcrumb and the H1.**
 - The breadcrumb `to=` link points to the parent index page (e.g. `/characters`, `/world/locales`).
+---
+
+## What to Avoid — Breadcrumb Spacing Trap
+
+> **Never place a breadcrumb (or any `<Link>`, `<p>`, `<nav>`) as a direct child of the `space-y-16` outer wrapper.**
+
+The outer lore page wrapper uses `space-y-16`, which adds `4rem` of vertical gap between every direct child element. If the breadcrumb is a standalone direct child, it creates a massive visual gap between the breadcrumb and the page title below it.
+
+### The wrong pattern (broken)
+```tsx
+// ❌ BROKEN — breadcrumb is a direct child of space-y-16
+<div className="max-w-[960px] mx-auto px-6 py-20 space-y-16">
+
+  {/* Breadcrumb */}
+  <p className="font-body text-[10px] ...">Locales &amp; Sights / Page Title</p>   {/* ← HUGE GAP after this */}
+
+  {/* Hero */}
+  <div className="space-y-4">
+    <h1>Page Title</h1>
+  </div>
+```
+
+### The correct pattern (fixed)
+```tsx
+// ✅ CORRECT — breadcrumb + title wrapped together in one div
+<div className="max-w-[960px] mx-auto px-6 py-20 space-y-16">
+
+  {/* Breadcrumb + Title */}
+  <div>
+    <Link to="/world/locales" className="font-body text-[10px] tracking-widest uppercase text-[#4a4844] hover:text-[#c9a84c] transition-colors duration-200 inline-block mb-6">
+      &#8592; Back to Locales &amp; Sights
+    </Link>
+    <p className="font-body text-xs tracking-[0.25em] text-[#c9a84c] uppercase mb-3">Category Label</p>
+    <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-6">Page Title</h1>
+  </div>
+
+  {/* rest of sections */}
+```
+
+### Rule summary
+- The breadcrumb link, category label, and H1 **must always be inside the same `<div>`** — never separated.
+- This single `<div>` is one unit and counts as one child of `space-y-16`.
+- `space-y-16` spacing only applies between major content sections (Hero, Origin, Powers, Relationships, etc.) — not between breadcrumb and title.
