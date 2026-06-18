@@ -4,37 +4,40 @@ export default function TheDivineRealm() {
   return (
     <div className="max-w-[960px] mx-auto px-6 py-20 space-y-16">
 
-      {/* Breadcrumb */}
-      <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider">
-        <Link to="/world/meta" className="hover:text-[#c9a84c] transition-colors">Meta Worldbuilding</Link>
-        {" / "}
-        <Link to="/world/meta/TheSigilOfHibrythia" className="hover:text-[#c9a84c] transition-colors">The Sigil of Hibrytheia</Link>
-        {" / "}
-        <span className="text-[#c9a84c]">The Divine Realm</span>
-      </p>
+      
 
-      {/* Hero */}
-      <div>
-        <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-6">The Divine Realm</h1>
-        <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-6">The First Realm of Hibrytheia</p>
+      <div>  {/* Breadcrumb */}
+        <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider">
+          <Link to="/world/meta" className="hover:text-[#c9a84c] transition-colors">Meta Worldbuilding</Link>
+          {" / "}
+          <Link to="/world/meta/TheSigilOfHibrythia" className="hover:text-[#c9a84c] transition-colors">The Sigil of Hibrytheia</Link>
+          {" / "}
+          <span className="text-[#c9a84c]">The Divine Realm</span>
+        </p>
 
-        {/* Image Placeholder */}
-        <div className="w-full aspect-video bg-[#1a1714] border border-[#2e2b26] rounded-xl flex items-center justify-center mb-8">
-          <p className="font-display text-sm text-[#4a4844]">[ Official Design Image — Author to add ]</p>
+        {/* Hero */}
+        <div>
+          <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-6">The Divine Realm</h1>
+          <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-6">The First Realm of Hibrytheia</p>
+
+          {/* Image Placeholder */}
+          <div className="w-full aspect-video bg-[#1a1714] border border-[#2e2b26] rounded-xl flex items-center justify-center mb-8">
+            <p className="font-display text-sm text-[#4a4844]">[ Official Design Image — Author to add ]</p>
+          </div>
+
+          <p className="font-body text-base text-[#c9a84c] leading-relaxed italic mb-6">
+            "You are brought into a vast, golden realm. It has faint-yellow skies, white clouds, and the ground, white and golden. It was a scene of peace, healing, and divinity as your senses of pain and sadness disappear."
+          </p>
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
+            The Divine Realm is above all realms, including the constructs the universe of what we know of: Time, Space, Matter, and Reality. This realm governs all systems, including planets, stars, and realms. What makes this most unique is that the "Gods" in this world are called Lhumerials. Lhumerials are omnipotent, omniscient, omnipresent, and omnibenevolent. Lhumerials are 10-Dimensional Creatures.
+          </p>
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
+            The Divine Realm was manifested by King Nhavah, a Lhumerian. King Nhavah is one of them! King Nhavah takes on the form of a Stellar Zaratan and is a very powerful being. Stellar Zaratans are divine creatures and they are very wise.
+          </p>
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
+            The Divine Realm is not a still force. It constantly moves 24/7, even though the sense of time does not exist in the DR. Night-time here doesn't exist as sleep is not needed. You won't feel tired at all!
+          </p>
         </div>
-
-        <p className="font-body text-base text-[#c9a84c] leading-relaxed italic mb-6">
-          "You are brought into a vast, golden realm. It has faint-yellow skies, white clouds, and the ground, white and golden. It was a scene of peace, healing, and divinity as your senses of pain and sadness disappear."
-        </p>
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
-          The Divine Realm is above all realms, including the constructs the universe of what we know of: Time, Space, Matter, and Reality. This realm governs all systems, including planets, stars, and realms. What makes this most unique is that the "Gods" in this world are called Lhumerials. Lhumerials are omnipotent, omniscient, omnipresent, and omnibenevolent. Lhumerials are 10-Dimensional Creatures.
-        </p>
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
-          The Divine Realm was manifested by King Nhavah, a Lhumerian. King Nhavah is one of them! King Nhavah takes on the form of a Stellar Zaratan and is a very powerful being. Stellar Zaratans are divine creatures and they are very wise.
-        </p>
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
-          The Divine Realm is not a still force. It constantly moves 24/7, even though the sense of time does not exist in the DR. Night-time here doesn't exist as sleep is not needed. You won't feel tired at all!
-        </p>
       </div>
 
       {/* Terminology */}
