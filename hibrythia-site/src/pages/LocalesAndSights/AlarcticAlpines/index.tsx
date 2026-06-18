@@ -4,18 +4,21 @@ export default function AlarcticAlpines() {
   return (
     <div className="max-w-[960px] mx-auto px-6 py-20 space-y-16">
 
-      {/* Breadcrumb */}
-      <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">
-        Locales &amp; Sights / Alarctic Alpines
-      </p>
+      
 
-      {/* Hero */}
-      <div className="space-y-4">
-        <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Locales &amp; Sights</p>
-        <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-4">The North Pole, Alarctic Alpines</h1>
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
-          The Alarctic Alpines is a north pole continent that stretches around Planet Hetra&apos;s northern hemisphere and almost takes up most of the planet&apos;s oceanic space. Up here in the Alpines, there are many snow storms and blizzards. There are also recurring hailstorms with their ice balls being as massive as a basketball. Many alarctic creatures live here, with there being Pangolin Polar Bears which can survive the recurring storms. It&apos;s possible to live here. The Alarctic Alpines is also a place where Seapertant Dragons call home.
+      <div>  {/* Breadcrumb */}
+        <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">
+          Locales &amp; Sights / Alarctic Alpines
         </p>
+
+        {/* Hero */}
+        <div className="space-y-4">
+          <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Locales &amp; Sights</p>
+          <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-4">The North Pole, Alarctic Alpines</h1>
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
+            The Alarctic Alpines is a north pole continent that stretches around Planet Hetra&apos;s northern hemisphere and almost takes up most of the planet&apos;s oceanic space. Up here in the Alpines, there are many snow storms and blizzards. There are also recurring hailstorms with their ice balls being as massive as a basketball. Many alarctic creatures live here, with there being Pangolin Polar Bears which can survive the recurring storms. It&apos;s possible to live here. The Alarctic Alpines is also a place where Seapertant Dragons call home.
+          </p>
+        </div>
       </div>
 
       {/* Image placeholder */}
