@@ -4,21 +4,24 @@ export default function HetraSEAPSpaceProgram() {
   return (
     <div className="max-w-[960px] mx-auto px-6 py-20 space-y-16">
 
-      {/* Breadcrumb */}
-      <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">
-        Locales &amp; Sights / HetraS.E.A.P Space Program
-      </p>
+      
 
-      {/* Hero */}
-      <div className="space-y-4">
-        <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Locales &amp; Sights</p>
-        <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-4">HetraS.E.A.P &mdash; Space Program</h1>
+      <div>  {/* Breadcrumb */}
+        <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">
+          Locales &amp; Sights / HetraS.E.A.P Space Program
+        </p>
 
-        {/* Callout */}
-        <div className="border border-[#2e2b26] rounded-sm px-5 py-4 bg-[#0f0d0c]">
-          <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
-            <span className="font-display text-[#f2ebeb]">The Hetranian Space Exploration &amp; Aeronautics Program</span> is Hetra&apos;s premier government-funded space agency dedicated to the exploration, study, and colonization of the Nhumela Cluster and beyond.
-          </p>
+        {/* Hero */}
+        <div className="space-y-4">
+          <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Locales &amp; Sights</p>
+          <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-4">HetraS.E.A.P &mdash; Space Program</h1>
+
+          {/* Callout */}
+          <div className="border border-[#2e2b26] rounded-sm px-5 py-4 bg-[#0f0d0c]">
+            <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
+              <span className="font-display text-[#f2ebeb]">The Hetranian Space Exploration &amp; Aeronautics Program</span> is Hetra&apos;s premier government-funded space agency dedicated to the exploration, study, and colonization of the Nhumela Cluster and beyond.
+            </p>
+          </div>
         </div>
       </div>
 
