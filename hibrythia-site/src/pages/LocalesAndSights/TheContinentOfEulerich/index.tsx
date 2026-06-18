@@ -4,18 +4,21 @@ export default function TheContinentOfEulerich() {
   return (
     <div className="max-w-[960px] mx-auto px-6 py-20 space-y-16">
 
-      {/* Breadcrumb */}
-      <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">
-        Locales &amp; Sights / The Continent of Eulerich
-      </p>
+      
 
-      {/* Hero */}
-      <div className="space-y-4">
-        <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Locales &amp; Sights</p>
-        <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-4">The Continent of Eulerich</h1>
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
-          Eulerich is a supercontinent east of Varleqe, Hetrania, Lynneria, and Norrane. Eulerich is home to the Eulerians, a race that is highly intelligent in ancient technology and ancient magic. Eulerich will only be mentioned in the first novel of the series, but the arc will come later in the series! You can check out the map here!
+      <div>  {/* Breadcrumb */}
+        <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">
+          Locales &amp; Sights / The Continent of Eulerich
         </p>
+
+        {/* Hero */}
+        <div className="space-y-4">
+          <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-3">Locales &amp; Sights</p>
+          <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-4">The Continent of Eulerich</h1>
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
+            Eulerich is a supercontinent east of Varleqe, Hetrania, Lynneria, and Norrane. Eulerich is home to the Eulerians, a race that is highly intelligent in ancient technology and ancient magic. Eulerich will only be mentioned in the first novel of the series, but the arc will come later in the series! You can check out the map here!
+          </p>
+        </div>
       </div>
 
       {/* Image placeholder */}
