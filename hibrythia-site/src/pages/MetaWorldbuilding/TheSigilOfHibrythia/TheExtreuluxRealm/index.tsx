@@ -4,38 +4,41 @@ export default function TheExtreuluxRealm() {
   return (
     <div className="max-w-[960px] mx-auto px-6 py-20 space-y-16">
 
-      {/* Breadcrumb */}
-      <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider">
-        <Link to="/world/meta" className="hover:text-[#c9a84c] transition-colors">Meta Worldbuilding</Link>
-        {" / "}
-        <Link to="/world/meta/TheSigilOfHibrythia" className="hover:text-[#c9a84c] transition-colors">The Sigil of Hibrytheia</Link>
-        {" / "}
-        <span className="text-[#c9a84c]">The Extreulux Realm</span>
-      </p>
+      
 
-      {/* Hero */}
-      <div>
-        <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-6">The Extreulux Realm</h1>
-        <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-6">The Space-Time Continuum — The Fifth Realm of Hibrytheia</p>
+      <div>  {/* Breadcrumb */}
+        <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider">
+          <Link to="/world/meta" className="hover:text-[#c9a84c] transition-colors">Meta Worldbuilding</Link>
+          {" / "}
+          <Link to="/world/meta/TheSigilOfHibrythia" className="hover:text-[#c9a84c] transition-colors">The Sigil of Hibrytheia</Link>
+          {" / "}
+          <span className="text-[#c9a84c]">The Extreulux Realm</span>
+        </p>
 
-        <div className="flex flex-wrap gap-2 mb-6">
-          {["The Great Unknown", "The Vast Cosmos", "The Fabric of Space", "The Realm of Infinite Void", "The Space-Time Continuum"].map((name) => (
-            <span key={name} className="font-display text-xs text-[#c9a84c] px-3 py-1.5 rounded-lg border border-[#c9a84c]/30 bg-[#c9a84c]/5">{name}</span>
-          ))}
+        {/* Hero */}
+        <div>
+          <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-6">The Extreulux Realm</h1>
+          <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-6">The Space-Time Continuum — The Fifth Realm of Hibrytheia</p>
+
+          <div className="flex flex-wrap gap-2 mb-6">
+            {["The Great Unknown", "The Vast Cosmos", "The Fabric of Space", "The Realm of Infinite Void", "The Space-Time Continuum"].map((name) => (
+              <span key={name} className="font-display text-xs text-[#c9a84c] px-3 py-1.5 rounded-lg border border-[#c9a84c]/30 bg-[#c9a84c]/5">{name}</span>
+            ))}
+          </div>
+
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
+            The Extreulux Realm goes by many names. The most popular name it also symbolizes is <span className="text-[#f2ebeb] italic">The Space-Time Continuum</span>. This is a realm that binds everything together, as it is just... space, itself. This realm is an energy-like field that binds all the realms in one place, with the exception of Ellhumhellm.
+          </p>
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
+            The Extreulux Realm works together with the Divine Realm, since it lends its power for the Spirits who create matter, space, and time. Only the King from the Divine Realm can access the Extreulux Realm and communicate with it.
+          </p>
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
+            However, even as it is dubbed as The Space-Time Continuum, The Extreulux Realm is not just a part of it — it is also its own realm that resides within space. It is a duality realm, that has its own subspace dimension that exists within it.
+          </p>
+          <p className="font-body text-sm text-[#7a746e] leading-relaxed mt-4 italic">
+            Think of it like The TVA from Marvel, but it helps regulate the space-time continuum and the multiverse within the Realm of Hibrytheia.
+          </p>
         </div>
-
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
-          The Extreulux Realm goes by many names. The most popular name it also symbolizes is <span className="text-[#f2ebeb] italic">The Space-Time Continuum</span>. This is a realm that binds everything together, as it is just... space, itself. This realm is an energy-like field that binds all the realms in one place, with the exception of Ellhumhellm.
-        </p>
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
-          The Extreulux Realm works together with the Divine Realm, since it lends its power for the Spirits who create matter, space, and time. Only the King from the Divine Realm can access the Extreulux Realm and communicate with it.
-        </p>
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
-          However, even as it is dubbed as The Space-Time Continuum, The Extreulux Realm is not just a part of it — it is also its own realm that resides within space. It is a duality realm, that has its own subspace dimension that exists within it.
-        </p>
-        <p className="font-body text-sm text-[#7a746e] leading-relaxed mt-4 italic">
-          Think of it like The TVA from Marvel, but it helps regulate the space-time continuum and the multiverse within the Realm of Hibrytheia.
-        </p>
       </div>
 
       {/* Beings */}
