@@ -278,7 +278,7 @@ export default function AloriaCloudwave() {
           </div>
         </Link>
         <Link
-          to="/characters/nahfia-alphraey"
+          to="/characters/NahfiaAlphraey"
           className="group flex items-center justify-end gap-3 bg-[#1a1714] border border-[#2e2b26] hover:border-[#c9a84c]/40 rounded-xl px-5 py-4 transition-colors max-w-[45%] text-right"
         >
           <div>
