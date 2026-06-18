@@ -4,32 +4,35 @@ export default function TheMultiverseOfMultitudes() {
   return (
     <div className="max-w-[960px] mx-auto px-6 py-20 space-y-16">
 
-      {/* Breadcrumb */}
-      <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider">
-        <Link to="/world/meta" className="hover:text-[#c9a84c] transition-colors">Meta Worldbuilding</Link>
-        {" / "}
-        <span className="text-[#c9a84c]">The Multiverse of Multitudes</span>
-      </p>
+      
 
-      {/* Hero */}
-      <div>
-        <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-6">The Multiverse of Multitudes</h1>
+      <div>  {/* Breadcrumb */}
+        <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider">
+          <Link to="/world/meta" className="hover:text-[#c9a84c] transition-colors">Meta Worldbuilding</Link>
+          {" / "}
+          <span className="text-[#c9a84c]">The Multiverse of Multitudes</span>
+        </p>
 
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
-          Hello!~ My name is <span className="text-[#f2ebeb]">Aeonia</span>, The Spirit of Time. Here, I will guide you through the vast concepts of The Multiverse within this series!
-        </p>
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
-          The first mention of the Multiverse is also in our World introduction, along in the first book of the series in <span className="text-[#c9a84c] italic">EP 0 "Before Time"</span>, where it explains the introduction of the Multiverse. The Multiverse, better known as "many-verse"; many-worlds, etc — is a concept of Alternate Universes that share a universal ranking system. Whether be parallel realities, alternate realities, different worlds or mirrored worlds, these concepts come into one thing: proof of the multiverse.
-        </p>
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
-          There are varieties of universes, as they are created through Ehckol Events. Ehckol Events are actions done by a chain of events that lead from one thing to another. An event with different possible outcomes gives rise to different universes, one for each outcome.
-        </p>
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
-          Some universes can take place in different periods and times, whether it be the ancient past, medieval times, a science-futuristic world, or a world set in apocalyptic times. This is because each universe has their own rules of how time passes in them.
-        </p>
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
-          As for me, I am the one who helps create multiversal timelines and functions for each planet. I am also the one to develop the idea of The Outerbounds, which can be read below.
-        </p>
+        {/* Hero */}
+        <div>
+          <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-6">The Multiverse of Multitudes</h1>
+
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
+            Hello!~ My name is <span className="text-[#f2ebeb]">Aeonia</span>, The Spirit of Time. Here, I will guide you through the vast concepts of The Multiverse within this series!
+          </p>
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
+            The first mention of the Multiverse is also in our World introduction, along in the first book of the series in <span className="text-[#c9a84c] italic">EP 0 "Before Time"</span>, where it explains the introduction of the Multiverse. The Multiverse, better known as "many-verse"; many-worlds, etc — is a concept of Alternate Universes that share a universal ranking system. Whether be parallel realities, alternate realities, different worlds or mirrored worlds, these concepts come into one thing: proof of the multiverse.
+          </p>
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
+            There are varieties of universes, as they are created through Ehckol Events. Ehckol Events are actions done by a chain of events that lead from one thing to another. An event with different possible outcomes gives rise to different universes, one for each outcome.
+          </p>
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
+            Some universes can take place in different periods and times, whether it be the ancient past, medieval times, a science-futuristic world, or a world set in apocalyptic times. This is because each universe has their own rules of how time passes in them.
+          </p>
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
+            As for me, I am the one who helps create multiversal timelines and functions for each planet. I am also the one to develop the idea of The Outerbounds, which can be read below.
+          </p>
+        </div>
       </div>
 
       {/* Terminology */}
