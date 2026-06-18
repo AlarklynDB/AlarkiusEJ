@@ -4,25 +4,28 @@ export default function TheStygianRealm() {
   return (
     <div className="max-w-[960px] mx-auto px-6 py-20 space-y-16">
 
-      {/* Breadcrumb */}
-      <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider">
-        <Link to="/world/meta" className="hover:text-[#c9a84c] transition-colors">Meta Worldbuilding</Link>
-        {" / "}
-        <Link to="/world/meta/TheSigilOfHibrythia" className="hover:text-[#c9a84c] transition-colors">The Sigil of Hibrytheia</Link>
-        {" / "}
-        <span className="text-[#c9a84c]">The Stygian Realm</span>
-      </p>
+      
 
-      {/* Hero */}
-      <div>
-        <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-6">The Stygian Realm</h1>
-        <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-6">The Fourth Realm of Hibrytheia</p>
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
-          The Stygian Realm is the fourth realm that lies beyond Midtheltra and Sylphrelm. Since this realm is pitch black, no light can be seen entering or escaping, for the darkness within absorbs everything except for one light source. This land is ruled by creatures of the dark. There are rocky terrain and a void of limitless dark energy. It is also very cold in this place as it survives off of cool and dark energy.
+      <div>  {/* Breadcrumb */}
+        <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider">
+          <Link to="/world/meta" className="hover:text-[#c9a84c] transition-colors">Meta Worldbuilding</Link>
+          {" / "}
+          <Link to="/world/meta/TheSigilOfHibrythia" className="hover:text-[#c9a84c] transition-colors">The Sigil of Hibrytheia</Link>
+          {" / "}
+          <span className="text-[#c9a84c]">The Stygian Realm</span>
         </p>
-        <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
-          This realm stands before the Extreulux Realm, which is the space-time continuum. It is a subdivision realm from Ellhumhellm, as it can also act as a gate to that place. It is located in the Dark Zone, a region in space.
-        </p>
+
+        {/* Hero */}
+        <div>
+          <h1 className="font-display text-3xl md:text-4xl text-[#f2ebeb] mb-6">The Stygian Realm</h1>
+          <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-6">The Fourth Realm of Hibrytheia</p>
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
+            The Stygian Realm is the fourth realm that lies beyond Midtheltra and Sylphrelm. Since this realm is pitch black, no light can be seen entering or escaping, for the darkness within absorbs everything except for one light source. This land is ruled by creatures of the dark. There are rocky terrain and a void of limitless dark energy. It is also very cold in this place as it survives off of cool and dark energy.
+          </p>
+          <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-4">
+            This realm stands before the Extreulux Realm, which is the space-time continuum. It is a subdivision realm from Ellhumhellm, as it can also act as a gate to that place. It is located in the Dark Zone, a region in space.
+          </p>
+        </div>
       </div>
 
       {/* Land of Darkness */}
