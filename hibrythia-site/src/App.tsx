@@ -79,6 +79,12 @@ import TheSpiritWardens from '@/pages/CharacterProfiles/TheSpiritWardens';
 import LeonTheEulerianOwl from '@/pages/CharacterProfiles/LeonTheEulerianOwl';
 import AviaRemyls from '@/pages/CharacterProfiles/AviaRemyls';
 import SkullZakar from '@/pages/CharacterProfiles/SkullZakar';
+import Multimedia from '@/pages/Multimedia';
+import MultimediaTimeSystem from '@/pages/Multimedia/32-16TimeSystem';
+import InteractiveMap from '@/pages/Multimedia/InteractiveMap';
+import PlanetHetraInteractive from '@/pages/Multimedia/PlanetHetraInteractive';
+import PlanetHetraInteractiveCities from '@/pages/Multimedia/PlanetHetraInteractive/PlanetHetraInteractiveCities';
+import PlanetSchavelInteractive from '@/pages/Multimedia/PlanetSchavelInteractive';
 import Season1AJourneyAwaits from '@/pages/Bookshelf/Season1AJourneyAwaits';
 import Vol1AGrandVoyage from '@/pages/Bookshelf/Season1AJourneyAwaits/Vol1AGrandVoyage';
 import Season1Vol2TBD from '@/pages/Bookshelf/Season1AJourneyAwaits/Vol2TBD';
@@ -133,7 +139,6 @@ import ChantOfBeasts from '@/pages/WorldbuildingContents/AncientGreungeria/Chant
 import TemporalTimeStreamDilation from '@/pages/WorldbuildingContents/TemporalTimeStreamDilation';
 import TheNaturalLawOfSpaceTime from '@/pages/WorldbuildingContents/TheNaturalLawOfSpaceTime';
 import The17DimensionsOfReality from '@/pages/WorldbuildingContents/The17DimensionsOfReality';
-import TimeSystem from '@/pages/TimeSystem';
 import NotFound from '@/pages/NotFound';
 
 function PageTransition({ children }: { children: React.ReactNode }) {
@@ -298,7 +303,12 @@ export default function App() {
           <Route path="bookshelf/season3/vol7" element={<PageTransition><Season3Vol7TBD /></PageTransition>} />
           <Route path="bookshelf/season3/vol8" element={<PageTransition><Season3Vol8TBD /></PageTransition>} />
           <Route path="bookshelf/season3/vol9" element={<PageTransition><Season3Vol9TBD /></PageTransition>} />
-          <Route path="32-16TimeSystem" element={<PageTransition><TimeSystem /></PageTransition>} />
+          <Route path="multimedia" element={<PageTransition><Multimedia /></PageTransition>} />
+          <Route path="multimedia/32-16TimeSystem" element={<PageTransition><MultimediaTimeSystem /></PageTransition>} />
+          <Route path="multimedia/InteractiveMap" element={<PageTransition><InteractiveMap /></PageTransition>} />
+          <Route path="multimedia/PlanetHetraInteractive" element={<PageTransition><PlanetHetraInteractive /></PageTransition>} />
+          <Route path="multimedia/PlanetHetraInteractive/cities" element={<PageTransition><PlanetHetraInteractiveCities /></PageTransition>} />
+          <Route path="multimedia/PlanetSchavelInteractive" element={<PageTransition><PlanetSchavelInteractive /></PageTransition>} />
           <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
         </Route>
       </Routes>
