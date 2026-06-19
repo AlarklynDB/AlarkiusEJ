@@ -78,6 +78,7 @@ import AuroraRimaeaOfLife from '@/pages/CharacterProfiles/AuroraRimaeaOfLife';
 import TheSpiritWardens from '@/pages/CharacterProfiles/TheSpiritWardens';
 import LeonTheEulerianOwl from '@/pages/CharacterProfiles/LeonTheEulerianOwl';
 import AviaRemyls from '@/pages/CharacterProfiles/AviaRemyls';
+import SkullZakar from '@/pages/CharacterProfiles/SkullZakar';
 import Bookshelf from '@/pages/Bookshelf';
 import Vol0HTHGOE from '@/pages/Bookshelf/Vol0HTHGOE';
 import Vol0EP0 from '@/pages/Bookshelf/Vol0HTHGOE/EP0';
@@ -227,6 +228,7 @@ export default function App() {
           <Route path="characters/TheSpiritWardens" element={<PageTransition><TheSpiritWardens /></PageTransition>} />
           <Route path="characters/LeonTheEulerianOwl" element={<PageTransition><LeonTheEulerianOwl /></PageTransition>} />
           <Route path="characters/AviaRemyls" element={<PageTransition><AviaRemyls /></PageTransition>} />
+          <Route path="characters/SkullZakar" element={<PageTransition><SkullZakar /></PageTransition>} />
           <Route path="bookshelf" element={<PageTransition><Bookshelf /></PageTransition>} />
           <Route path="bookshelf/vol0" element={<PageTransition><Vol0HTHGOE /></PageTransition>} />
           <Route path="bookshelf/vol0/ep0" element={<PageTransition><Vol0EP0 /></PageTransition>} />
@@ -243,9 +245,3 @@ export default function App() {
     </>
   );
 }
-
-
-
-
-
-
