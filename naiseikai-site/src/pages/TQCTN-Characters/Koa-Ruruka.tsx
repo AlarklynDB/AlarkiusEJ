@@ -126,14 +126,14 @@ function KoaRurukaTab() {
       <div>
         <h3 className="font-serif text-lg text-text mb-4">The Story</h3>
         <div className="space-y-3 text-sm text-text-muted leading-relaxed">
-          <p>Koa Ruruka, she comes from a wealthy ninja heritage, but was stripped of it after her family found out she had preferences for women. Despite her outgoing and laidback personality, she never cared of her heritage because it didn't matter to her. She wanted to live a diligent life so that she can earn her own income even without inheriting it from her clan, not just her parents. Ruruka always held her guard up.</p>
-          <p>One day, coming home from work, she found a girl crying next to a play structure in a park, where she commutes daily. She asks if she was okay but she wasn't. Getting her name, she was known as Hanako Reina, a girl who had lost a life that meant everything. Hanako tells her story to Koa, and she felt deeply moved, wanting to care for her. So, she offers her to stay at her place.</p>
+          <p>Koa Ruruka, she comes from a wealthy ninja heritage, but was stripped of it after her family found out she had preferences for women. Despite her outgoing and laidback personality, she never cared of her heritage because it didn't matter to her. She wanted to live a life to work diligently to earn her own income even without inheriting it from her parents. Ruruka always has her guard up.</p>
+          <p>One day, coming home from work, she found a girl crying next to a play structure in a park, where she commutes daily. She asks if she was okay but she wasn't. Getting her name, she was known as Hanako Reina, a girl who had lost a life that meant everything. Hanako told her story to Koa, and she felt deeply moved, wanting to care for her. So, she offers her to stay at her place.</p>
           <p>Ruruka acted like a motherly figure to Hanako when they started living together as room-mates, but as time passed, Hanako had grown to like Koa, and confessed her feelings to her.</p>
-          <p>Hanako states that she only saw her as a daughter, someone who had no one else to care for. But Hanako ignores that remark and wants to stay with Koa.</p>
+          <p>Ruruka states that she only saw her as a daughter, someone who had no one else to care for. But Hanako ignores that remark and wanted to stay with her. Because deep down, Hanako knew—she knew that Ruruka can't keep hiding behind her emotions.</p>
           <blockquote className="border-l-2 border-[#d49fff]/40 pl-4 italic">"I would risk anything to be by your side, Ruruka-san" Hanako says to her.</blockquote>
-          <p>However, her feelings to Hanako changed one day, as Hanako presented a necklace she made herself to Ruruka. It had completely broke her high guard and she cried in Hanako's arms, unable to comprehend the feelings she had for her. The present was an ice snowflake, with both of their names etched in it. Ruruka wore it, but all she could do was weep. Eventually, she spoke of the elephant in the room, telling Hanako that her feelings towards her was mixed, including herself, apologizing even. Hanako, however, accepts it, but her feelings for Ruruka still stayed the same.</p>
-          <p>Ruruka asks Hanako out on her birthday, and they started dating.</p>
-          <p>This bold move from Hanako was enough to break Ruruka into tears.</p>
+          <p>However, her feelings to Hanako changed one day, as she presented a necklace she made herself to Ruruka (on Ruruka's birthday). It had completely broke her high guard and she cried in her arms, unable to comprehend the feelings she had for her. The present was an ice snowflake necklace, with both of their names etched in it. Ruruka wore it, but all she could do was weep. Eventually, she spoke of the elephant in the room, telling Hanako that her feelings towards her was mixed, including herself, apologizing even. Hanako accepted her apology because her feelings for Ruruka still stayed the same. In fact, Hanako's feelings evolved along side with Ruruka right at that moment.</p>
+          <p>Ruruka asked Hanako out on her birthday, and they started dating.</p>
+          <p>This bold move from Hanako was enough to tear Ruruka's walls down.</p>
         </div>
       </div>
 
@@ -200,8 +200,16 @@ function KoaRurukaTab() {
         <IdentityBlock icon="🤕" title="The Hidden Self - 2">
           <p>The deeper root of her guarded nature comes from a tragedy she carries alone. When Ruruka was still training as a ninja, she went on a mission with her parents—a "take your kid to work day" that went horribly wrong. She carelessly unsealed a cursed coffin containing dangerous spirits. The spirits corrupted her parents, took control of their bodies, and forced them to impale themselves on a sharp wooden fence. Ruruka witnessed it all.</p>
           <p>The clan blamed her for their deaths and imprisoned her for two years before placing her with a host family. But grief turned to obsession. She broke into the Clan Archive Building, stole a forbidden tome said to revive the dead, and used it on her parents' graves. The spell went wrong—her parents returned as twisted homunculi, and the tome cursed her with 400 years of slowed aging. She never wanted immortality. She just wanted them back.</p>
-          <p>The clan discovered what she'd done and imprisoned her for four more years. She had broken four laws: defying Ujuukyō's teachings by turning her back on honoring death, attempting forbidden revival, and later—though unrelated to this incident—killing yokai during the YARC destruction (a YHCA violation). But the final reason for her exile wasn't any of these infractions.</p>
-          <p>Being lesbian was why the Koa Clan cast her out. They taught that only relationships between men and women were sacred, though Ujuukyō and the NYAQ say otherwise. Not all Ninja Clans hold these beliefs, but hers did. This is why Ruruka built walls around her heart—why she struggles with vulnerability, why guardedness became her armor, and why loyalty means everything to her now.</p>
+          <p>The clan discovered what she'd done and imprisoned her because she:</p>
+          <ul className="list-disc list-inside space-y-1 ml-2">
+            <li>Defied Ujuukyō's teachings (religion of Neo-Japan) by turning her back on it.</li>
+            <li>Defied the sacred act of honoring death by trying to revive her dead parents.</li>
+          </ul>
+          <p className="mt-2">But the final reason for her exile wasn't any of these infractions.</p>
+          <ul className="list-disc list-inside ml-2">
+            <li>It was being lesbian.</li>
+          </ul>
+          <p className="mt-2">And why the Koa Clan cast her out. They taught that only relationships between men and women are sacred….though Ujuukyō and the NYAQ said otherwise. Not all Ninja Clans hold these beliefs, but hers did. This is why Ruruka built walls around her heart—why she struggles with vulnerability, why guardedness became her armor, and why loyalty means everything to her now.</p>
         </IdentityBlock>
       </div>
 
@@ -295,11 +303,13 @@ function KoaRurukaTab() {
         <div className="space-y-4 text-sm text-text-muted">
           <div className="callout">
             <p className="font-mono text-xs text-text-faint mb-2">─────⊰ First Name Breakdown - Koa 琥空:</p>
+            <p className="font-mono text-[10px] text-text-faint mb-1">Hiragana: コア/こあ</p>
             <p className="font-mono">琥 = Amber</p>
             <p className="font-mono">空 = Sky</p>
           </div>
           <div className="callout">
             <p className="font-mono text-xs text-text-faint mb-2">─────⊰ Last Name Breakdown - Ruruka 瑠月</p>
+            <p className="font-mono text-[10px] text-text-faint mb-1">Hiragana: るるか</p>
             <p className="font-mono">瑠 = Lapis, lapis lazuli</p>
             <p className="font-mono">月 = Moon, month</p>
           </div>
