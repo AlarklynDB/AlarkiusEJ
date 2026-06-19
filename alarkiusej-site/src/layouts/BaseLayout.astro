@@ -118,7 +118,25 @@ const canonical = new URL(path, 'https://alarkiusej.com').href
         from { opacity: 1; }
         to   { opacity: 0; pointer-events: none; }
       }
+      /* Once-per-tab: skip splash entirely on internal navigation */
+      html.splash-seen #splash { display: none !important; }
     </style>
+
+    <!-- Splash gate: run before paint so the splash never flashes on internal nav.
+         Shows once per tab session; reload / hard-reload re-triggers it. -->
+    <script is:inline>
+      (function () {
+        try {
+          var nav = performance.getEntriesByType('navigation')[0];
+          var isReload = nav ? nav.type === 'reload'
+                             : (performance.navigation && performance.navigation.type === 1);
+          if (isReload) sessionStorage.removeItem('splashSeen');
+          if (sessionStorage.getItem('splashSeen') === '1') {
+            document.documentElement.classList.add('splash-seen');
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
 
   <body>
@@ -166,14 +184,17 @@ const canonical = new URL(path, 'https://alarkiusej.com').href
       });
     </script>
 
-    <!-- Remove splash after fade -->
+    <!-- Remove splash after fade + mark this tab session as having seen it -->
     <script is:inline>
-      var splash = document.getElementById('splash');
-      if (splash) {
-        splash.addEventListener('animationend', function (e) {
-          if (e.animationName === 'splashFade') this.remove();
-        });
-      }
+      (function () {
+        try { sessionStorage.setItem('splashSeen', '1'); } catch (e) {}
+        var splash = document.getElementById('splash');
+        if (splash) {
+          splash.addEventListener('animationend', function (e) {
+            if (e.animationName === 'splashFade') this.remove();
+          });
+        }
+      })();
     </script>
   </body>
 </html>
