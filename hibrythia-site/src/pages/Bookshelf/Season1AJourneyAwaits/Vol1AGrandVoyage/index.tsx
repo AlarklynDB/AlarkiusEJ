@@ -119,7 +119,7 @@ export default function Vol1AGrandVoyage() {
         <div className="space-y-4">
           <h3 className="font-display text-sm text-[#f2ebeb] mb-3">The Book&#39;s Blurb</h3>
           <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844] mb-4">
-            The Return of Eienel
+            The Entity of Doubt
           </p>
           <p className="font-body text-base text-[#c8c2ba] leading-relaxed">
             After the devastating events of Kydel&#39;s rampage during his battle with Rachnaea, he&#39;s left questioning everything&#8212;his powers, his worth, and his place among his friends. Nearly consumed by self-doubt, his emotions lashed out where he didn&#39;t mean to. Yet even as he helps Zohl see that imperfection is part of being human, a far greater threat looms&#8230;
