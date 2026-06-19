@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Manifesto from '../components/pages/Manifesto'
+---
+
+<BaseLayout
+  title={"Manifesto | AlarkiusEJ"}
+  description={"The creative philosophy and guiding principles behind AlarkiusEJ's worlds and works."}
+  path={"/manifesto"}
+>
+  <Manifesto client:load />
+</BaseLayout>

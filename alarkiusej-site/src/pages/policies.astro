@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Policies from '../components/pages/Policies'
+---
+
+<BaseLayout
+  title={"Policies | AlarkiusEJ"}
+  description={"Usage, content, and copyright policies for AlarkiusEJ's author library and worldbuilding works."}
+  path={"/policies"}
+>
+  <Policies client:load />
+</BaseLayout>

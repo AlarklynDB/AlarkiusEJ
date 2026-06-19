@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from '../lib/router'
 
 const socials = [
   { label: 'Support me on Ko-Fi', href: 'https://ko-fi.com/alarkiusej' },

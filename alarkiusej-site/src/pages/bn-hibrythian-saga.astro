@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import BnHibrythianSaga from '../components/pages/BnHibrythianSaga'
+---
+
+<BaseLayout
+  title={"The Hibrythian Saga on Barnes & Noble | AlarkiusEJ"}
+  description={"Browse The Hibrythian Saga series by Alarkius Elvya Jay on Barnes & Noble."}
+  path={"/bn-hibrythian-saga"}
+>
+  <BnHibrythianSaga client:load />
+</BaseLayout>

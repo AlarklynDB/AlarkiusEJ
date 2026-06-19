@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import BnNaiseikaiUniverse from '../components/pages/BnNaiseikaiUniverse'
+---
+
+<BaseLayout
+  title={"The Naiseikai Universe on Barnes & Noble | AlarkiusEJ"}
+  description={"Browse The Naiseikai Universe series by Alarkius Elvya Jay on Barnes & Noble."}
+  path={"/bn-naiseikai-universe"}
+>
+  <BnNaiseikaiUniverse client:load />
+</BaseLayout>

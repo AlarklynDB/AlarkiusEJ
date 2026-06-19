@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import FindMyBooks from '../components/pages/FindMyBooks'
+---
+
+<BaseLayout
+  title={"Buy My Books | AlarkiusEJ"}
+  description={"Find and purchase books from The Hibrythian Saga and The Naiseikai Universe by Alarkius Elvya Jay."}
+  path={"/find-my-books"}
+>
+  <FindMyBooks client:load />
+</BaseLayout>

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from '../../lib/router'
 
 const skills = [
   'Traditional & Digital Drawing',

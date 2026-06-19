@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Music from '../components/pages/Music'
+---
+
+<BaseLayout
+  title={"Music & Commissions | AlarkiusEJ"}
+  description={"Orchestral soundtracks and piano compositions by Alarkius Elvya Jay. Commissions open across multiple tiers."}
+  path={"/music"}
+>
+  <Music client:load />
+</BaseLayout>

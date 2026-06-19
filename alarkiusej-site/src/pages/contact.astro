@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Contact from '../components/pages/Contact'
+---
+
+<BaseLayout
+  title={"Contact | AlarkiusEJ"}
+  description={"Get in touch with Alarkius Elvya Jay for commissions, collaborations, and inquiries."}
+  path={"/contact"}
+>
+  <Contact client:load />
+</BaseLayout>

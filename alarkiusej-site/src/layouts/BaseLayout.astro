@@ -1,19 +1,51 @@
+---
+// ============================================================
+// BaseLayout — the shared HTML shell for every page.
+// Replaces index.html (head/GA/OG/splash/Fort Knox) AND the
+// App.tsx layout (Navbar + Footer + PWADevTools).
+//
+// Per-page props let each route set its own <title> + description
+// + canonical URL, so crawlers get unique, real metadata per page.
+// ============================================================
+import '../index.css'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import PWADevTools from '../components/PWADevTools'
+
+interface Props {
+  title?: string
+  description?: string
+  /** Path of this page, e.g. "/about" — used for the canonical URL + og:url */
+  path?: string
+  image?: string
+}
+
+const {
+  title = 'AlarkiusEJ | Official Author Library & Portfolio',
+  description = 'AlarkiusEJ — Author, Worldbuilder & Composer. Creator of The Hibrythian Saga and The Naiseikai Universe.',
+  path = '/',
+  image = 'https://i.ibb.co/cjsLnRW/alarkiusej-banner.png',
+} = Astro.props
+
+const canonical = new URL(path, 'https://alarkiusej.com').href
+---
+
 <!doctype html>
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0P68EM2X5"></script>
-    <script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-Q0P68EM2X5');
     </script>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="AlarkiusEJ — Author, Worldbuilder & Composer. Creator of The Hibrythian Saga and The Naiseikai Universe." />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -29,29 +61,33 @@
     <meta name="theme-color" content="#191919" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="AlarkiusEJ | Author Library & Portfolio" />
-    <meta property="og:description" content="Alarkius Elvya Jay's Author Library & Portfolio - Where All Worlds, Projects, and Works go!" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://alarkiusej.com" />
-    <meta property="og:image" content="https://i.ibb.co/cjsLnRW/alarkiusej-banner.png" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="AlarkiusEJ — Author Library & Portfolio" />
-    <meta property="og:site_name" content="https://AlarkiusEJ.com" />
+    <meta property="og:site_name" content="AlarkiusEJ.com" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="AlarkiusEJ | Author Library & Portfolio" />
-    <meta name="twitter:description" content="Alarkius Elvya Jay's Author Library & Portfolio - Where All Worlds, Projects, and Works go!" />
-    <meta name="twitter:image" content="https://i.ibb.co/cjsLnRW/alarkiusej-banner.png" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
     <meta name="twitter:image:alt" content="AlarkiusEJ — Author Library & Portfolio" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
-    <title>AlarkiusEJ | Official Author Library & Portfolio</title>
-    <!-- Splash screen: dark overlay, fades out after 1.5s -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+
+    <!-- Splash screen: dark overlay, fades out -->
     <style>
       html, body { background-color: #191919; margin: 0; padding: 0; }
       #splash {
@@ -84,47 +120,60 @@
       }
     </style>
   </head>
+
   <body>
     <!-- Splash overlay -->
     <div id="splash" aria-hidden="true">
       <span id="splash-logo">Alarkius Elvya Jay</span>
     </div>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    <script>
 
-      // Fort Knox — Devtools chaos (debugger trap + console flood)
-      // Skips on localhost and when ?dev=1 is in the URL
+    <!-- App shell (was App.tsx). Navbar/Footer hydrate for interactivity. -->
+    <PWADevTools client:load />
+    <div class="min-h-screen flex flex-col bg-ink">
+      <Navbar client:load />
+      <main class="flex-1">
+        <slot />
+      </main>
+      <Footer client:load />
+    </div>
+
+    <!-- Fort Knox — Devtools chaos (debugger trap + console flood) -->
+    <script is:inline>
       (function devtoolsChaos() {
         var params = new URLSearchParams(window.location.search);
         if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') return;
         if (params.get('dev') === '1') return;
-        setInterval(function() { debugger; }, 100);
-        setInterval(function() {
+        setInterval(function () { debugger; }, 100);
+        setInterval(function () {
           console.clear();
           console.log('%c ACCESS DENIED ', 'background:#191919;color:#d4af6e;font-size:14px;font-weight:bold;padding:4px 12px;border:1px solid #d4af6e;letter-spacing:0.2em;');
           console.log('%c This site is protected. Unauthorized inspection is not permitted. ', 'color:#7a746e;font-size:11px;');
           console.log('%c I AM IN YOUR WALLS. DON\'T YOU DARE. OR FACE THE WRATH OF MY CHARACTERS ', 'color:#d4af6e;font-size:11px;font-style:italic;');
         }, 100);
       })();
+
       // Fort Knox — block right-click, text selection, keyboard shortcuts
-      document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
-      document.addEventListener('selectstart', function(e) { e.preventDefault(); return false; });
-      document.addEventListener('dragstart',   function(e) { e.preventDefault(); return false; });
-      // Block F12, Ctrl+Shift+I/J/C, Ctrl+U (view source), Ctrl+Shift+K (Firefox console)
-      document.addEventListener('keydown', function(e) {
+      document.addEventListener('contextmenu', function (e) { e.preventDefault(); return false; });
+      document.addEventListener('selectstart', function (e) { e.preventDefault(); return false; });
+      document.addEventListener('dragstart', function (e) { e.preventDefault(); return false; });
+      document.addEventListener('keydown', function (e) {
         if (
           e.key === 'F12' ||
           (e.ctrlKey && e.shiftKey && ['I','i','J','j','C','c','K','k'].includes(e.key)) ||
           (e.ctrlKey && ['u','U'].includes(e.key)) ||
-          (e.ctrlKey && ['p','P'].includes(e.key)) // Block print
+          (e.ctrlKey && ['p','P'].includes(e.key))
         ) { e.preventDefault(); e.stopPropagation(); return false; }
       });
     </script>
-    <script>
-      document.getElementById('splash').addEventListener('animationend', function(e) {
-        if (e.animationName === 'splashFade') this.remove();
-      });
+
+    <!-- Remove splash after fade -->
+    <script is:inline>
+      var splash = document.getElementById('splash');
+      if (splash) {
+        splash.addEventListener('animationend', function (e) {
+          if (e.animationName === 'splashFade') this.remove();
+        });
+      }
     </script>
   </body>
 </html>

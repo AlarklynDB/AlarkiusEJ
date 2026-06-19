@@ -1,0 +1,14 @@
+# build output
+dist/
+
+# dependencies
+node_modules/
+
+# generated Astro cache & types
+.astro/
+
+# logs / env
+*.log
+.env
+.env.production
+.DS_Store

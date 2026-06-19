@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import About from '../components/pages/About'
+---
+
+<BaseLayout
+  title={"About | AlarkiusEJ"}
+  description={"Get to know Alarkius Elvya Jay (AlarkiusEJ) — author, composer, and worldbuilder behind The Hibrythian Saga and The Naiseikai Universe."}
+  path={"/about"}
+>
+  <About client:load />
+</BaseLayout>

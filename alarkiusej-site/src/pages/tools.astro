@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Tools from '../components/pages/Tools'
+---
+
+<BaseLayout
+  title={"Tools & Apps | AlarkiusEJ"}
+  description={"Indie tools and apps built by AlarkiusEJ, including Quillosofi and more."}
+  path={"/tools"}
+>
+  <Tools client:load />
+</BaseLayout>
