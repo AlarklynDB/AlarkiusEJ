@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config'
 import react from '@astrojs/react'
 import tailwind from '@astrojs/tailwind'
+import sitemap from '@astrojs/sitemap'
 import { fileURLToPath } from 'node:url'
 import { VitePWA } from 'vite-plugin-pwa'
 
@@ -17,6 +18,8 @@ export default defineConfig({
     // applyBaseStyles:false — we already load Tailwind via src/index.css,
     // so let Astro skip injecting its own base sheet.
     tailwind({ applyBaseStyles: false }),
+    // Auto-generates sitemap-index.xml + sitemap-0.xml from `site` + routes.
+    sitemap(),
   ],
 
   vite: {

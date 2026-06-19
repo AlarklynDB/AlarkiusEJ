@@ -58,4 +58,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://alarkiusej.com/sitemap.xml
+Sitemap: https://alarkiusej.com/sitemap-index.xml
