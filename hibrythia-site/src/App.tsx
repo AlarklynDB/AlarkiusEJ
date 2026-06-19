@@ -79,6 +79,36 @@ import TheSpiritWardens from '@/pages/CharacterProfiles/TheSpiritWardens';
 import LeonTheEulerianOwl from '@/pages/CharacterProfiles/LeonTheEulerianOwl';
 import AviaRemyls from '@/pages/CharacterProfiles/AviaRemyls';
 import SkullZakar from '@/pages/CharacterProfiles/SkullZakar';
+import Season1AJourneyAwaits from '@/pages/Bookshelf/Season1AJourneyAwaits';
+import Vol1AGrandVoyage from '@/pages/Bookshelf/Season1AJourneyAwaits/Vol1AGrandVoyage';
+import Season1Vol2TBD from '@/pages/Bookshelf/Season1AJourneyAwaits/Vol2TBD';
+import Season1Vol3TBD from '@/pages/Bookshelf/Season1AJourneyAwaits/Vol3TBD';
+import Season1Vol4TBD from '@/pages/Bookshelf/Season1AJourneyAwaits/Vol4TBD';
+import Season1Vol5TBD from '@/pages/Bookshelf/Season1AJourneyAwaits/Vol5TBD';
+import Season1Vol6TBD from '@/pages/Bookshelf/Season1AJourneyAwaits/Vol6TBD';
+import Season1Vol7TBD from '@/pages/Bookshelf/Season1AJourneyAwaits/Vol7TBD';
+import Season1Vol8TBD from '@/pages/Bookshelf/Season1AJourneyAwaits/Vol8TBD';
+import Season1Vol9TBD from '@/pages/Bookshelf/Season1AJourneyAwaits/Vol9TBD';
+import Season2ToBeDetermined from '@/pages/Bookshelf/Season2ToBeDetermined';
+import Season2Vol1TBD from '@/pages/Bookshelf/Season2ToBeDetermined/Vol1TBD';
+import Season2Vol2TBD from '@/pages/Bookshelf/Season2ToBeDetermined/Vol2TBD';
+import Season2Vol3TBD from '@/pages/Bookshelf/Season2ToBeDetermined/Vol3TBD';
+import Season2Vol4TBD from '@/pages/Bookshelf/Season2ToBeDetermined/Vol4TBD';
+import Season2Vol5TBD from '@/pages/Bookshelf/Season2ToBeDetermined/Vol5TBD';
+import Season2Vol6TBD from '@/pages/Bookshelf/Season2ToBeDetermined/Vol6TBD';
+import Season2Vol7TBD from '@/pages/Bookshelf/Season2ToBeDetermined/Vol7TBD';
+import Season2Vol8TBD from '@/pages/Bookshelf/Season2ToBeDetermined/Vol8TBD';
+import Season2Vol9TBD from '@/pages/Bookshelf/Season2ToBeDetermined/Vol9TBD';
+import Season3ToBeDetermined from '@/pages/Bookshelf/Season3ToBeDetermined';
+import Season3Vol1TBD from '@/pages/Bookshelf/Season3ToBeDetermined/Vol1TBD';
+import Season3Vol2TBD from '@/pages/Bookshelf/Season3ToBeDetermined/Vol2TBD';
+import Season3Vol3TBD from '@/pages/Bookshelf/Season3ToBeDetermined/Vol3TBD';
+import Season3Vol4TBD from '@/pages/Bookshelf/Season3ToBeDetermined/Vol4TBD';
+import Season3Vol5TBD from '@/pages/Bookshelf/Season3ToBeDetermined/Vol5TBD';
+import Season3Vol6TBD from '@/pages/Bookshelf/Season3ToBeDetermined/Vol6TBD';
+import Season3Vol7TBD from '@/pages/Bookshelf/Season3ToBeDetermined/Vol7TBD';
+import Season3Vol8TBD from '@/pages/Bookshelf/Season3ToBeDetermined/Vol8TBD';
+import Season3Vol9TBD from '@/pages/Bookshelf/Season3ToBeDetermined/Vol9TBD';
 import Bookshelf from '@/pages/Bookshelf';
 import Vol0HTHGOE from '@/pages/Bookshelf/Vol0HTHGOE';
 import Vol0EP0 from '@/pages/Bookshelf/Vol0HTHGOE/EP0';
@@ -238,6 +268,36 @@ export default function App() {
           <Route path="bookshelf/vol0/ep4" element={<PageTransition><Vol0EP4 /></PageTransition>} />
           <Route path="bookshelf/vol0/ep5" element={<PageTransition><Vol0EP5 /></PageTransition>} />
           <Route path="bookshelf/vol0/ep6" element={<PageTransition><Vol0EP6 /></PageTransition>} />
+          <Route path="bookshelf/season1" element={<PageTransition><Season1AJourneyAwaits /></PageTransition>} />
+          <Route path="bookshelf/season1/vol1" element={<PageTransition><Vol1AGrandVoyage /></PageTransition>} />
+          <Route path="bookshelf/season1/vol2" element={<PageTransition><Season1Vol2TBD /></PageTransition>} />
+          <Route path="bookshelf/season1/vol3" element={<PageTransition><Season1Vol3TBD /></PageTransition>} />
+          <Route path="bookshelf/season1/vol4" element={<PageTransition><Season1Vol4TBD /></PageTransition>} />
+          <Route path="bookshelf/season1/vol5" element={<PageTransition><Season1Vol5TBD /></PageTransition>} />
+          <Route path="bookshelf/season1/vol6" element={<PageTransition><Season1Vol6TBD /></PageTransition>} />
+          <Route path="bookshelf/season1/vol7" element={<PageTransition><Season1Vol7TBD /></PageTransition>} />
+          <Route path="bookshelf/season1/vol8" element={<PageTransition><Season1Vol8TBD /></PageTransition>} />
+          <Route path="bookshelf/season1/vol9" element={<PageTransition><Season1Vol9TBD /></PageTransition>} />
+          <Route path="bookshelf/season2" element={<PageTransition><Season2ToBeDetermined /></PageTransition>} />
+          <Route path="bookshelf/season2/vol1" element={<PageTransition><Season2Vol1TBD /></PageTransition>} />
+          <Route path="bookshelf/season2/vol2" element={<PageTransition><Season2Vol2TBD /></PageTransition>} />
+          <Route path="bookshelf/season2/vol3" element={<PageTransition><Season2Vol3TBD /></PageTransition>} />
+          <Route path="bookshelf/season2/vol4" element={<PageTransition><Season2Vol4TBD /></PageTransition>} />
+          <Route path="bookshelf/season2/vol5" element={<PageTransition><Season2Vol5TBD /></PageTransition>} />
+          <Route path="bookshelf/season2/vol6" element={<PageTransition><Season2Vol6TBD /></PageTransition>} />
+          <Route path="bookshelf/season2/vol7" element={<PageTransition><Season2Vol7TBD /></PageTransition>} />
+          <Route path="bookshelf/season2/vol8" element={<PageTransition><Season2Vol8TBD /></PageTransition>} />
+          <Route path="bookshelf/season2/vol9" element={<PageTransition><Season2Vol9TBD /></PageTransition>} />
+          <Route path="bookshelf/season3" element={<PageTransition><Season3ToBeDetermined /></PageTransition>} />
+          <Route path="bookshelf/season3/vol1" element={<PageTransition><Season3Vol1TBD /></PageTransition>} />
+          <Route path="bookshelf/season3/vol2" element={<PageTransition><Season3Vol2TBD /></PageTransition>} />
+          <Route path="bookshelf/season3/vol3" element={<PageTransition><Season3Vol3TBD /></PageTransition>} />
+          <Route path="bookshelf/season3/vol4" element={<PageTransition><Season3Vol4TBD /></PageTransition>} />
+          <Route path="bookshelf/season3/vol5" element={<PageTransition><Season3Vol5TBD /></PageTransition>} />
+          <Route path="bookshelf/season3/vol6" element={<PageTransition><Season3Vol6TBD /></PageTransition>} />
+          <Route path="bookshelf/season3/vol7" element={<PageTransition><Season3Vol7TBD /></PageTransition>} />
+          <Route path="bookshelf/season3/vol8" element={<PageTransition><Season3Vol8TBD /></PageTransition>} />
+          <Route path="bookshelf/season3/vol9" element={<PageTransition><Season3Vol9TBD /></PageTransition>} />
           <Route path="32-16TimeSystem" element={<PageTransition><TimeSystem /></PageTransition>} />
           <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
         </Route>
