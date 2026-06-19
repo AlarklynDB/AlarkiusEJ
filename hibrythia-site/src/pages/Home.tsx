@@ -80,12 +80,7 @@ export default function Home() {
           >
             Check out our Bookshelf
           </Link>
-          <Link
-            to="/32-16TimeSystem"
-            className="font-body text-xs tracking-widest uppercase px-4 py-2 border border-[#c9a84c]/30 text-[#c9a84c] rounded-sm hover:bg-[#c9a84c]/8 hover:border-[#c9a84c]/60 transition-all duration-[180ms]"
-          >
-            Check Out our Interactive Time System!
-          </Link>
+
         </div>
         <p className="font-body text-xs text-[#4a4844] mt-5 leading-relaxed">
           All references here that relate to our Books, Worldbuilding, or Quotes, are coded in:{' '}
