@@ -5,6 +5,44 @@
 /* ──────────────────────────────────────────────────────────────
    FONTS
 ────────────────────────────────────────────────────────────── */
+
+/*
+  Yu Gothic UI — applied to CJK Unified Ideographs (kanji, kana).
+  Yu Gothic UI ships on Windows 8.1+. On macOS/Linux it falls back
+  to Hiragino Sans → Noto Sans JP → system CJK fonts.
+*/
+@font-face {
+  font-family: 'YuGothicCJK';
+  src: local('Yu Gothic UI Regular'),
+       local('Yu Gothic UI'),
+       local('YuGothic-Regular'),
+       local('Yu Gothic');
+  font-weight: normal;
+  font-style: normal;
+  /* Target CJK Unified Ideographs + Hiragana + Katakana + CJK Extensions */
+  unicode-range:
+    U+3000-303F,   /* CJK Symbols and Punctuation */
+    U+3040-309F,   /* Hiragana */
+    U+30A0-30FF,   /* Katakana */
+    U+4E00-9FFF,   /* CJK Unified Ideographs */
+    U+F900-FAFF,   /* CJK Compatibility Ideographs */
+    U+FF00-FFEF;   /* Halfwidth and Fullwidth Forms */
+}
+@font-face {
+  font-family: 'YuGothicCJK';
+  src: local('Hiragino Sans W3'),
+       local('Hiragino Kaku Gothic ProN'),
+       local('Noto Sans JP');
+  font-weight: normal;
+  font-style: normal;
+  unicode-range:
+    U+3000-303F,
+    U+3040-309F,
+    U+30A0-30FF,
+    U+4E00-9FFF,
+    U+F900-FAFF,
+    U+FF00-FFEF;
+}
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -16,7 +54,7 @@
   body {
     background-color: #05050f;
     color: #e8e3f5;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'YuGothicCJK', 'Inter', system-ui, sans-serif;
     line-height: 1.8;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
