@@ -6,4 +6,6 @@ compatibility_flags = ["nodejs_compat"]
 [assets]
 directory = "./dist"
 binding = "ASSETS"
-not_found_handling = "single-page-application"
+# Astro is an MPA now (not a React Router SPA). Serve the real 404 page for
+# unmatched assets; the worker turns dead HTML navigations into a 301 -> "/".
+not_found_handling = "404-page"

@@ -208,23 +208,25 @@ export default {
     const url = new URL(request.url);
     const hostname = url.hostname;
 
-    // Fetch asset — on any error (e.g. hard refresh cache-busting headers),
-    // fall back to serving the SPA root (index.html) so React Router handles it.
+    // Fetch the matching static asset from the Astro build.
     let response;
     try {
       response = await env.ASSETS.fetch(request);
     } catch (_) {
-      // Fallback: serve root SPA shell
-      const fallbackReq = new Request(new URL("/", url).toString(), request);
-      response = await env.ASSETS.fetch(fallbackReq);
+      response = await env.ASSETS.fetch(
+        new Request(new URL("/404.html", url).toString(), request)
+      );
     }
 
-    // If asset fetch returned a non-2xx for a navigation request, serve root
-    if (!response.ok) {
+    // Dead path: if an HTML navigation resolves to a 404 (e.g. legacy Notion
+    // links like /Pok-monNEXUS-...?pvs=21 left over from the pre-GitHub era),
+    // send a permanent redirect to the homepage instead of serving a 200 shell.
+    // 301 tells search engines the old URL is gone and de-indexes it.
+    if (response.status === 404) {
       const accept = request.headers.get("accept") || "";
-      if (accept.includes("text/html")) {
-        const fallbackReq = new Request(new URL("/", url).toString(), request);
-        response = await env.ASSETS.fetch(fallbackReq);
+      const isHtmlNav = request.method === "GET" && accept.includes("text/html");
+      if (isHtmlNav && url.pathname !== "/") {
+        return Response.redirect(new URL("/", url).toString(), 301);
       }
     }
 
