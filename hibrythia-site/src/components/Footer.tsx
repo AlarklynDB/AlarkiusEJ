@@ -9,7 +9,15 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto px-5 flex flex-col items-center gap-5">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 w-full">
           <p className="font-body text-[0.6rem] text-[#4a4844] tracking-wider uppercase">
-            © {new Date().getFullYear()} The Hibrythian Saga · Alarkius Elvya Jay
+            © {new Date().getFullYear()} The Hibrythian Saga ·{' '}
+            <a
+              href="https://www.alarkiusej.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#c9a84c] transition-colors duration-150"
+            >
+              Alarkius Elvya Jay
+            </a>
           </p>
           <div className="gold-rule hidden sm:block" aria-hidden="true" />
           <p className="font-body text-[0.6rem] text-[#4a4844] tracking-wider">
