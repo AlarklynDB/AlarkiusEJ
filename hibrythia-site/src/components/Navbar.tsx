@@ -54,18 +54,20 @@ export default function Navbar() {
                 </NavLink>
               </li>
             ))}
+            <li>
+              <NavLink
+                to="/community"
+                className={({ isActive }) =>
+                  [
+                    'font-body text-[0.75rem] tracking-widest uppercase px-2.5 py-1 rounded-sm transition-all duration-[180ms]',
+                    isActive ? 'text-[#c9a84c] bg-[#c9a84c]/8' : 'text-[#7a7670] hover:text-[#d8d4cc]',
+                  ].join(' ')
+                }
+              >
+                Community Hub
+              </NavLink>
+            </li>
           </ul>
-          <NavLink
-            to="/community"
-            className={({ isActive }) =>
-              [
-                'font-body text-[0.75rem] tracking-widest uppercase px-2.5 py-1 rounded-sm transition-all duration-[180ms]',
-                isActive ? 'text-[#c9a84c]' : 'text-[#7a7670] hover:text-[#c9a84c]',
-              ].join(' ')
-            }
-          >
-            Community Hub
-          </NavLink>
         </nav>
 
         {/* Mobile Hamburger */}
