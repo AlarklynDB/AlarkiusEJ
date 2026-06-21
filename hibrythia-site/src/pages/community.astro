@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import CommunityHub from '../../views/CommunityHub'
+---
+
+<BaseLayout
+  title={'Community Hub | The Hibrythian Saga'}
+  description={'A space for readers, worldbuilders, and fans of The Hibrythian Saga. Community discussions and comments.'}
+  path={'/community'}
+>
+  <CommunityHub client:load />
+</BaseLayout>
