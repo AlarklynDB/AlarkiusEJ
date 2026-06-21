@@ -40,16 +40,7 @@ export default function CommunityHub() {
         </ul>
       </div>
 
-      {/* Placeholder */}
-      <div className="px-8 py-16 rounded-xl border border-[#2e2b26] bg-[#1a1714] flex flex-col items-center gap-4 text-center">
-        <span className="text-4xl">🏛️</span>
-        <p className="font-display text-lg text-[#f2ebeb]">Community Discussion</p>
-        <p className="font-body text-sm text-[#7a746e] leading-relaxed max-w-[440px]">
-          The community hub is being set up. Check back soon — discussions, comments, and fan interactions will live here!
-        </p>
-        {/* Disqus drop-in zone */}
-        <div id="disqus_thread" className="w-full mt-4" />
-      </div>
+      {/* Comments section rendered by Astro below the React island */}
 
     </div>
   );
