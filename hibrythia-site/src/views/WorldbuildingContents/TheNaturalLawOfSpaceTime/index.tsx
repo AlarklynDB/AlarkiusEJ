@@ -216,6 +216,19 @@ export default function TheNaturalLawOfSpaceTime() {
             After the discovery of the color, the people of Hetra have named this particular sun, <span className="text-[#f2ebeb] font-medium">Aqualivia.</span>
           </p>
         </div>
+
+        {/* Card link to PassionStarFormation */}
+        <Link
+          to="/world/databases/TheNaturalLawOfSpaceTime/PassionStarFormation"
+          className="group flex items-center justify-between px-5 py-4 rounded-xl border border-[#2e2b26] bg-[#1a1714] hover:border-[#c9a84c]/40 hover:bg-[#1f1c18] transition-all duration-200"
+        >
+          <div>
+            <p className="font-body text-[9px] tracking-widest uppercase text-[#4a4844] mb-1">Deep Dive</p>
+            <p className="font-display text-sm text-[#f2ebeb]">How Passion Stars are Formed</p>
+            <p className="font-body text-xs text-[#7a746e] mt-0.5">Lyecerianite Cores, the 4 Stages, and Bio-Lyceionic Fusion</p>
+          </div>
+          <span className="text-[#c9a84c] text-lg group-hover:translate-x-1 transition-transform duration-200">→</span>
+        </Link>
       </section>
 
       {/* ── WHITE BUFFERS ── */}
@@ -450,4 +463,5 @@ export default function TheNaturalLawOfSpaceTime() {
     </div>
   );
 }
+
 
