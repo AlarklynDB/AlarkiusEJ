@@ -1,8 +1,42 @@
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  const [visible, setVisible] = React.useState(false);
+  React.useEffect(() => { requestAnimationFrame(() => setVisible(true)); }, []);
+  React.useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = ''; };
+  }, []);
+  function handleClose() { setVisible(false); setTimeout(onClose, 200); }
+  return (
+    <div
+      className="fixed inset-0 flex items-center justify-center backdrop-blur-sm pt-24 pb-12 px-10"
+      style={{ zIndex: 9999, backgroundColor: `rgba(0,0,0,${visible ? 0.92 : 0})`, transition: 'background-color 200ms ease' }}
+      onClick={handleClose}
+    >
+      <button
+        onClick={handleClose}
+        className="absolute top-16 right-4 text-white/80 hover:text-white transition-colors bg-black/60 rounded-full w-8 h-8 flex items-center justify-center text-base leading-none border border-white/20"
+        aria-label="Close"
+      >✕</button>
+      <img
+        src={src} alt={alt}
+        className="rounded-lg shadow-2xl object-contain"
+        style={{ maxWidth: '95vw', maxHeight: '95vh', opacity: visible ? 1 : 0, transform: visible ? 'scale(1)' : 'scale(0.96)', transition: 'opacity 200ms ease, transform 200ms ease' }}
+        onClick={(e) => e.stopPropagation()}
+      />
+    </div>
+  );
+}
+
 export default function TheNhumelaCluster() {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+
   return (
     <div className="min-h-screen px-6 py-16 max-w-[960px] mx-auto">
+      {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
+
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 font-body text-[10px] tracking-widest uppercase text-[#4a4844] mb-10">
         <Link to="/world/databases" className="hover:text-[#c9a84c] transition-colors">Databases</Link>
@@ -18,9 +52,19 @@ export default function TheNhumelaCluster() {
         What's the home system? This page uncovers the galactical location of the series. Our first book is located on the super-planet, Hetra, and is the very center of the Hibryds Cinematic Universe, located in a solar system called The Nhumela Cluster.
       </p>
 
-      {/* Image placeholder */}
-      <div className="w-full aspect-video bg-[#1a1714] border border-[#2e2b26] rounded-sm flex items-center justify-center mb-12">
-        <p className="font-body text-[10px] tracking-widest uppercase text-[#2e2b26]">[ The Nhumela Cluster — Image Placeholder ]</p>
+      {/* Hero image — The Nhumela Cluster */}
+      <div
+        className="w-full rounded-xl overflow-hidden border border-[#2e2b26] cursor-zoom-in group relative mb-12"
+        onClick={() => setLightbox({ src: 'https://i.ibb.co/Xrjkwm5H/The-Nhumela-Cluster.png', alt: 'The Nhumela Cluster' })}
+      >
+        <img
+          src="https://i.ibb.co/Xrjkwm5H/The-Nhumela-Cluster.png"
+          alt="The Nhumela Cluster"
+          className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+        />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 font-body text-xs text-white tracking-widest uppercase bg-black/50 px-3 py-1.5 rounded-full">Click to expand</span>
+        </div>
       </div>
 
       <div className="space-y-12">
@@ -65,9 +109,19 @@ export default function TheNhumelaCluster() {
         <section>
           <h2 className="font-display text-lg text-[#f2ebeb] mb-4">The Aqualivia Sun</h2>
 
-          {/* Sun image placeholder */}
-          <div className="w-full aspect-video bg-[#1a1714] border border-[#2e2b26] rounded-sm flex items-center justify-center mb-8">
-            <p className="font-body text-[10px] tracking-widest uppercase text-[#2e2b26]">[ Aqualivia Sun — Image Placeholder ]</p>
+          {/* Aqualivia Sun image */}
+          <div
+            className="w-full rounded-xl overflow-hidden border border-[#2e2b26] cursor-zoom-in group relative mb-8"
+            onClick={() => setLightbox({ src: 'https://i.ibb.co/ynk1C67y/Aqualivia-Sun.png', alt: 'The Aqualivia Sun' })}
+          >
+            <img
+              src="https://i.ibb.co/ynk1C67y/Aqualivia-Sun.png"
+              alt="The Aqualivia Sun"
+              className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+            />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 font-body text-xs text-white tracking-widest uppercase bg-black/50 px-3 py-1.5 rounded-full">Click to expand</span>
+            </div>
           </div>
 
           <div className="space-y-4 mb-8">
@@ -178,22 +232,24 @@ export default function TheNhumelaCluster() {
           </div>
         </section>
 
-      </div>        {/* Bottom Nav */}
-        <div className="flex items-start justify-between pt-8 border-t border-[#2e2b26] mt-16">
-                  <Link to="/world/databases" className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-[#2e2b26] bg-[#1a1714] hover:border-[#c9a84c]/40 hover:bg-[#1f1c18] transition-all duration-200 max-w-[45%]">
-            <span className="text-[#c9a84c] text-lg">←</span>
-            <div>
-              <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-0.5">Back</p>
-              <p className="font-display text-sm text-[#f2ebeb]">Databases &amp; Systems</p>
-            </div>
-          </Link>
-                  <Link to="/world/databases/OurPlanetHetra" className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-[#2e2b26] bg-[#1a1714] hover:border-[#c9a84c]/40 hover:bg-[#1f1c18] transition-all duration-200 max-w-[45%] text-right">
-            <div>
-              <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-0.5">Next</p>
-              <p className="font-display text-sm text-[#f2ebeb]">Our Planet Hetra (Midtheltra)</p>
-            </div>
-            <span className="text-[#c9a84c] text-lg">→</span>
-          </Link>
+      </div>
+
+      {/* Bottom Nav */}
+      <div className="flex items-start justify-between pt-8 border-t border-[#2e2b26] mt-16">
+        <Link to="/world/databases" className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-[#2e2b26] bg-[#1a1714] hover:border-[#c9a84c]/40 hover:bg-[#1f1c18] transition-all duration-200 max-w-[45%]">
+          <span className="text-[#c9a84c] text-lg">←</span>
+          <div>
+            <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-0.5">Back</p>
+            <p className="font-display text-sm text-[#f2ebeb]">Databases &amp; Systems</p>
+          </div>
+        </Link>
+        <Link to="/world/databases/OurPlanetHetra" className="group flex items-center gap-3 px-5 py-4 rounded-xl border border-[#2e2b26] bg-[#1a1714] hover:border-[#c9a84c]/40 hover:bg-[#1f1c18] transition-all duration-200 max-w-[45%] text-right">
+          <div>
+            <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-0.5">Next</p>
+            <p className="font-display text-sm text-[#f2ebeb]">Our Planet Hetra (Midtheltra)</p>
+          </div>
+          <span className="text-[#c9a84c] text-lg">→</span>
+        </Link>
       </div>
     </div>
   );
