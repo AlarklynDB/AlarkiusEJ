@@ -97,9 +97,16 @@ export default function AncientGreungeria() {
           <p>Thus, all the Sylphs from Hetra moved to the Sylphrelm.</p>
           <p className="text-[#7a746e] italic">More information about The Sylphrelm can be found here!</p>
         </div>
-        <div className="border border-[#2e2b26] rounded-sm bg-[#0f0d0c] p-5">
-          <p className="font-body text-[10px] tracking-widest uppercase text-[#4a4844]">[ The Sylphrelm — Page Coming Soon ]</p>
-        </div>
+        <Link
+          to="/world/meta/TheSigilOfHibrythia/sylphrelm"
+          className="group flex items-center justify-between border border-[#2e2b26] rounded-sm bg-[#0f0d0c] px-5 py-4 hover:border-[#c9a84c]/40 hover:bg-[#1a1814] transition-all duration-200"
+        >
+          <div>
+            <p className="font-body text-[9px] tracking-widest uppercase text-[#4a4844] mb-1">Meta Worldbuilding</p>
+            <p className="font-display text-sm text-[#f2ebeb]">The Sylphrelm</p>
+          </div>
+          <span className="text-[#c9a84c] text-lg group-hover:translate-x-1 transition-transform duration-200">→</span>
+        </Link>
       </section>
 
       <div className="border-t border-[#2e2b26]" />
@@ -171,4 +178,5 @@ export default function AncientGreungeria() {
     </div>
   );
 }
+
 
