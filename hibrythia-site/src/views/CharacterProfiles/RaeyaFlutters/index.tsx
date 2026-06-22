@@ -1,6 +1,29 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+      onClick={onClose}
+    >
+      <button
+        onClick={onClose}
+        className="absolute top-4 right-5 text-[#c8c2ba] hover:text-white text-2xl font-light transition-colors"
+        aria-label="Close"
+      >
+        ✕
+      </button>
+      <img
+        src={src}
+        alt={alt}
+        className="max-w-full max-h-[90vh] rounded-xl shadow-2xl object-contain"
+        onClick={(e) => e.stopPropagation()}
+      />
+    </div>
+  );
+}
+
 function PowerToggle({ title, color = '#c9a84c', children }: { title: string; color?: string; children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
   return (
@@ -31,8 +54,11 @@ function SubPower({ name, desc }: { name: string; desc: string }) {
 }
 
 export default function RaeyaFlutters() {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
   return (
     <div className="max-w-[960px] mx-auto px-6 py-20 space-y-16">
+
+      {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
 
       {/* Breadcrumb */}
       <div>
@@ -68,12 +94,18 @@ export default function RaeyaFlutters() {
       </div>
 
       {/* Image — Raeya Flutters */}
-      <div className="w-full rounded-xl overflow-hidden border border-[#2e2b26]">
+      <div
+        className="w-full rounded-xl overflow-hidden border border-[#2e2b26] cursor-zoom-in group relative"
+        onClick={() => setLightbox({ src: 'https://i.ibb.co/QvRJCqRb/Raeya-Flutters-NEW.png', alt: 'Raeya Flutters' })}
+      >
         <img
           src="https://i.ibb.co/QvRJCqRb/Raeya-Flutters-NEW.png"
           alt="Raeya Flutters"
-          className="w-full h-auto object-cover"
+          className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.02]"
         />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 font-body text-xs text-white tracking-widest uppercase bg-black/50 px-3 py-1.5 rounded-full">Click to expand</span>
+        </div>
       </div>
 
       {/* Personal Info */}
@@ -335,12 +367,18 @@ export default function RaeyaFlutters() {
       <div className="border-t border-[#2e2b26]" />
 
       {/* Image — Raeya Flutters Infernal Form */}
-      <div className="w-full rounded-xl overflow-hidden border border-[#2e2b26]">
+      <div
+        className="w-full rounded-xl overflow-hidden border border-[#2e2b26] cursor-zoom-in group relative"
+        onClick={() => setLightbox({ src: 'https://i.ibb.co/5WbJdYJG/Raeya-Flutters-Infernal-NEW.png', alt: 'Raeya Flutters — Infernal Form' })}
+      >
         <img
           src="https://i.ibb.co/5WbJdYJG/Raeya-Flutters-Infernal-NEW.png"
           alt="Raeya Flutters — Infernal Form"
-          className="w-full h-auto object-cover"
+          className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.02]"
         />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 font-body text-xs text-white tracking-widest uppercase bg-black/50 px-3 py-1.5 rounded-full">Click to expand</span>
+        </div>
       </div>
 
       {/* Appearance / Outfits */}
