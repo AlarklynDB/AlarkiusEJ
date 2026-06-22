@@ -55,7 +55,7 @@ export default function TheNhumelaCluster() {
       {/* Hero image — The Nhumela Cluster */}
       <div
         className="w-full rounded-xl overflow-hidden border border-[#2e2b26] cursor-zoom-in group relative mb-12"
-        onClick={() => setLightbox({ src: 'https://i.ibb.co/Xrjkwm5H/The-Nhumela-Cluster.png', alt: 'The Nhumela Cluster' })}
+        onClick={() => setLightbox({ src: 'https://i.ibb.co/cc53ym2g/The-Nhumela-Cluster.png', alt: 'The Nhumela Cluster' })}
       >
         <img
           src="https://i.ibb.co/Xrjkwm5H/The-Nhumela-Cluster.png"
