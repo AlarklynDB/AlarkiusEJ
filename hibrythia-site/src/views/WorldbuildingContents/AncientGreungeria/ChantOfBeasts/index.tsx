@@ -1,4 +1,83 @@
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from "react-router-dom";
+
+function AudioPlayer({ src }: { src: string }) {
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [playing, setPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [volume, setVolume] = useState(1);
+
+  function togglePlay() {
+    const a = audioRef.current;
+    if (!a) return;
+    if (playing) { a.pause(); } else { a.play(); }
+    setPlaying(!playing);
+  }
+  function handleSeek(e: React.ChangeEvent<HTMLInputElement>) {
+    const a = audioRef.current;
+    if (!a) return;
+    a.currentTime = Number(e.target.value);
+    setCurrentTime(Number(e.target.value));
+  }
+  function handleVolume(e: React.ChangeEvent<HTMLInputElement>) {
+    const v = Number(e.target.value);
+    setVolume(v);
+    if (audioRef.current) audioRef.current.volume = v;
+  }
+  function fmt(s: number) {
+    if (!s || isNaN(s)) return '0:00';
+    const m = Math.floor(s / 60);
+    const sec = Math.floor(s % 60).toString().padStart(2, '0');
+    return `${m}:${sec}`;
+  }
+  useEffect(() => {
+    const a = audioRef.current;
+    if (!a) return;
+    const onTime = () => setCurrentTime(a.currentTime);
+    const onLoad = () => setDuration(a.duration);
+    const onEnd  = () => setPlaying(false);
+    a.addEventListener('timeupdate', onTime);
+    a.addEventListener('loadedmetadata', onLoad);
+    a.addEventListener('ended', onEnd);
+    return () => {
+      a.removeEventListener('timeupdate', onTime);
+      a.removeEventListener('loadedmetadata', onLoad);
+      a.removeEventListener('ended', onEnd);
+    };
+  }, []);
+  const progress = duration ? (currentTime / duration) * 100 : 0;
+  return (
+    <div className="w-full bg-[#0f0d0c] border border-[#2e2b26] rounded-xl px-5 py-4 space-y-3">
+      <audio ref={audioRef} src={src} preload="metadata" />
+      <div className="relative w-full h-1.5 bg-[#2e2b26] rounded-full cursor-pointer">
+        <div className="absolute top-0 left-0 h-full bg-[#c9a84c] rounded-full transition-all duration-100" style={{ width: `${progress}%` }} />
+        <input type="range" min={0} max={duration || 0} step={0.1} value={currentTime} onChange={handleSeek} className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
+      </div>
+      <div className="flex items-center gap-4">
+        <button onClick={togglePlay} className="w-9 h-9 rounded-full bg-[#c9a84c] hover:bg-[#d4b05a] transition-colors flex items-center justify-center shrink-0" aria-label={playing ? 'Pause' : 'Play'}>
+          {playing ? (
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="#0f0d0c"><rect x="2" y="1" width="4" height="12" rx="1"/><rect x="8" y="1" width="4" height="12" rx="1"/></svg>
+          ) : (
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="#0f0d0c"><polygon points="2,1 13,7 2,13"/></svg>
+          )}
+        </button>
+        <span className="font-body text-[11px] text-[#7a746e] tabular-nums shrink-0">{fmt(currentTime)} / {fmt(duration)}</span>
+        <div className="flex items-center gap-2 ml-auto">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4a4844" strokeWidth="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            {volume > 0.5 && <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>}
+            {volume > 0 && <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>}
+          </svg>
+          <div className="relative w-20 h-1.5 bg-[#2e2b26] rounded-full">
+            <div className="absolute top-0 left-0 h-full bg-[#4a4844] rounded-full" style={{ width: `${volume * 100}%` }} />
+            <input type="range" min={0} max={1} step={0.01} value={volume} onChange={handleVolume} className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 type SongSection = {
@@ -10,7 +89,7 @@ type SongSection = {
   englishLyrics: string[];
   ghrenglishLyrics: string[];
   ghrenglishTitle: string;
-  mp3Placeholder?: boolean;
+  audioSrc?: string;
 };
 
 // ─── Song component ────────────────────────────────────────────────────────────
@@ -32,10 +111,11 @@ function SongCard({ song }: { song: SongSection }) {
         <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-2">Instruments</p>
         <p className="font-body text-sm text-[#c8c2ba]">{song.instruments}</p>
       </div>
-      {song.mp3Placeholder && (
-        <div className="w-full py-6 bg-[#1a1714] border border-[#2e2b26] rounded-sm flex flex-col items-center justify-center gap-2">
-          <p className="font-body text-[10px] tracking-widest uppercase text-[#2e2b26]">[ Audio — Coming Soon ]</p>
-          <p className="font-body text-xs text-[#4a4844]">MP3 placeholder — audio will be added later</p>
+      {song.audioSrc && (
+        <div className="px-0 py-0 space-y-2">
+          <p className="font-body text-[10px] tracking-widest uppercase text-[#c9a84c] mb-2">Unofficial Sample</p>
+          <AudioPlayer src={song.audioSrc} />
+          <p className="font-body text-xs text-[#4a4844] italic mt-2">Attribution: Music by SunoAI (only used as a tool, nothing else.)</p>
         </div>
       )}
       <div>
@@ -88,7 +168,7 @@ export default function ChantOfBeasts() {
         credits: "Original Lyrics: Alarkius Elvya Jay\nInstrumentation: Alarkius Elvya Jay\nLyricist: Alarkius Elvya Jay | All Rights Reserved",
         tone: "A powerful, primal ancient fantasy chant with raw, guttural female vocals — fierce, rising into battle-cry shouts. Empowering, with driving rhythm and dark, echoing reverb that feels ancient and otherworldly. Heavy, ritualistic instrumentation: deep drums, staccato strings, tribal percussion. Set in a beautiful vicious time. Feels mountainous and raw. Played near the beautiful mountains. Vocal Style: Fierce, raw, guttural lows with soaring, aggressive highs. Strong vibrato on sustained notes.",
         instruments: "Heavy Taiko Drums, War Drums, Djembe, Frame Drums, Deep Bass Drums, Low Strings (Cellos, Double Bass), Distorted Electric Guitars (for texture), Horns (deep brass), Tribal Percussion, Shakuhachi (Japanese bamboo flute for eerie moments), Chains/Industrial Sounds (for atmosphere).",
-        mp3Placeholder: true,
+        audioSrc: "/audio/The-Chant-of-Beasts.mp3",
         englishLyrics: [
           "[Short Intro]",
           "[Heavy Drums & Vocals]",
@@ -230,3 +310,4 @@ export default function ChantOfBeasts() {
     </div>
   );
 }
+
