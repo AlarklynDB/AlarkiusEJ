@@ -45,13 +45,18 @@ export default function AHeartForgedFromFire() {
         </div>
       </div>
 
-      {/* Audio Player Placeholder */}
+      {/* Audio Player */}
       <div className="px-5 py-5 rounded-xl border border-[#2e2b26] bg-[#1a1714]">
         <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider mb-3">Unofficial Sample</p>
-        <p className="font-body text-sm text-[#7a746e] leading-relaxed italic mb-4">Click here to listen to an unofficial sample of "A Heart Forged from Fire"!</p>
-        <div className="w-full rounded-lg bg-[#131210] border border-[#2e2b26] flex items-center justify-center py-6">
-          <p className="font-display text-xs text-[#4a4844] uppercase tracking-wider">[ Audio — Author to add ]</p>
-        </div>
+        <p className="font-body text-sm text-[#7a746e] leading-relaxed italic mb-4">Click to listen to an unofficial sample of "A Heart Forged from Fire"!</p>
+        <audio
+          controls
+          className="w-full rounded-lg"
+          style={{ accentColor: '#c9a84c' }}
+        >
+          <source src="/audio/A-Heart-Forged-from-Fire.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
         <p className="font-body text-xs text-[#4a4844] leading-relaxed mt-3 italic">Attribution: Music by SunoAI (only used as a tool, nothing else.)</p>
       </div>
 
@@ -230,3 +235,4 @@ export default function AHeartForgedFromFire() {
     </div>
   );
 }
+
