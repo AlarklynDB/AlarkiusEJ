@@ -29,9 +29,8 @@ function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: ()
       {/* Close button — inside the overlay, top-right corner, same z level */}
       <button
         onClick={handleClose}
-        className="absolute top-3 right-4 text-white/80 hover:text-white transition-colors bg-black/50 rounded-full w-8 h-8 flex items-center justify-center text-base leading-none"
+        className="absolute top-16 right-4 text-white/80 hover:text-white transition-colors bg-black/60 rounded-full w-8 h-8 flex items-center justify-center text-base leading-none border border-white/20"
         aria-label="Close"
-        style={{ zIndex: 10000 }}
       >
         ✕
       </button>
