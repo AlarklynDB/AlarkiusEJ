@@ -285,3 +285,68 @@ The outer lore page wrapper uses `space-y-16`, which adds `4rem` of vertical gap
 - The breadcrumb link, category label, and H1 **must always be inside the same `<div>`** — never separated.
 - This single `<div>` is one unit and counts as one child of `space-y-16`.
 - `space-y-16` spacing only applies between major content sections (Hero, Origin, Powers, Relationships, etc.) — not between breadcrumb and title.
+
+---
+
+## Art Images — Lightbox Rule
+
+> **Whenever Alaria provides an imgbb link (i.ibb.co) for character or world art, always replace the placeholder div with a clickable image that opens a fullscreen lightbox.**
+
+Never use a plain `<img>` tag alone. Every art image must be wrapped with the Lightbox pattern below.
+
+### Required steps
+1. Add a `Lightbox` component at the top of the file (before the main export)
+2. Add `const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);` inside the main component
+3. Render `{lightbox && <Lightbox ... />}` as the first child inside the BodyWidth960 wrapper
+4. Wrap every `<img>` in the clickable container below
+
+### Lightbox Component (copy-paste ready)
+
+```tsx
+function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+      onClick={onClose}
+    >
+      <button
+        onClick={onClose}
+        className="absolute top-4 right-5 text-[#c8c2ba] hover:text-white text-2xl font-light transition-colors"
+        aria-label="Close"
+      >
+        ✕
+      </button>
+      <img
+        src={src}
+        alt={alt}
+        className="max-w-full max-h-[90vh] rounded-xl shadow-2xl object-contain"
+        onClick={(e) => e.stopPropagation()}
+      />
+    </div>
+  );
+}
+```
+
+### Clickable Image Wrapper (copy-paste ready)
+
+```tsx
+<div
+  className="w-full rounded-xl overflow-hidden border border-[#2e2b26] cursor-zoom-in group relative"
+  onClick={() => setLightbox({ src: 'IMAGE_URL', alt: 'Alt Text' })}
+>
+  <img
+    src="IMAGE_URL"
+    alt="Alt Text"
+    className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+  />
+  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+    <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 font-body text-xs text-white tracking-widest uppercase bg-black/50 px-3 py-1.5 rounded-full">Click to expand</span>
+  </div>
+</div>
+```
+
+### Rules
+- Always use `h-auto object-cover` — never `aspect-video` for real art images.
+- The Lightbox overlay closes on click-outside or the ✕ button.
+- If a page has multiple images, one shared `lightbox` state handles all of them.
+- Remove the old placeholder div entirely when real art is provided. Do not keep both.
