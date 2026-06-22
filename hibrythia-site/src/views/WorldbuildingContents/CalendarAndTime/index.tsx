@@ -594,12 +594,13 @@ export default function CalendarAndTime() {
       </section>
 
       {/* ── View Calendar card ── */}
-      <div className="flex justify-end mb-6">
-        <a href="/32-16TimeSystem" className="group flex flex-col text-left border border-[#2e2b26] rounded-sm px-4 py-3 bg-[#131210] hover:border-[#c9a84c]/40 hover:bg-[#1a1814] transition-all duration-200 w-fit">
-          <span className="font-body text-[9px] tracking-widest uppercase text-[#4a4844] mb-1">Interactive</span>
-          <span className="font-display text-xs text-[#f2ebeb] group-hover:text-[#c9a84c] transition-colors">View Calendar →</span>
-        </a>
-      </div>
+      <Link to="/32-16TimeSystem" className="group flex items-center justify-between w-full border border-[#2e2b26] rounded-xl px-5 py-4 bg-[#131210] hover:border-[#c9a84c]/40 hover:bg-[#1a1814] transition-all duration-200 mb-6">
+        <div>
+          <p className="font-body text-[9px] tracking-widest uppercase text-[#4a4844] mb-1">Interactive</p>
+          <p className="font-display text-sm text-[#f2ebeb] group-hover:text-[#c9a84c] transition-colors">View Calendar</p>
+        </div>
+        <span className="text-[#c9a84c] text-lg group-hover:translate-x-1 transition-transform duration-200">→</span>
+      </Link>
 
       {/* Bottom Nav */}
         <div className="flex items-start justify-between pt-8 border-t border-[#2e2b26] mt-16">
