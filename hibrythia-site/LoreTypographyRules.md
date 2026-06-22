@@ -319,7 +319,7 @@ function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: ()
     >
       <button
         onClick={onClose}
-        className="fixed top-4 right-5 z-[201] text-white/70 hover:text-white text-3xl font-light leading-none transition-colors bg-black/40 rounded-full w-9 h-9 flex items-center justify-center"
+        className="absolute top-16 right-4 text-white/80 hover:text-white transition-colors bg-black/60 rounded-full w-8 h-8 flex items-center justify-center text-base leading-none border border-white/20"
         aria-label="Close"
       >
         ✕
