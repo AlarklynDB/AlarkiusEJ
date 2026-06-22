@@ -303,15 +303,23 @@ Never use a plain `<img>` tag alone. Every art image must be wrapped with the Li
 ### Lightbox Component (copy-paste ready)
 
 ```tsx
+import React, { useState } from 'react'; // make sure React is imported for useEffect
+
 function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  // Lock body scroll while open
+  React.useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = ''; };
+  }, []);
+
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+      className="fixed inset-0 z-[200] flex items-center justify-center bg-black/92 backdrop-blur-sm"
       onClick={onClose}
     >
       <button
         onClick={onClose}
-        className="absolute top-4 right-5 text-[#c8c2ba] hover:text-white text-2xl font-light transition-colors"
+        className="fixed top-4 right-5 z-[201] text-white/70 hover:text-white text-3xl font-light leading-none transition-colors bg-black/40 rounded-full w-9 h-9 flex items-center justify-center"
         aria-label="Close"
       >
         ✕
@@ -319,7 +327,7 @@ function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: ()
       <img
         src={src}
         alt={alt}
-        className="max-w-full max-h-[90vh] rounded-xl shadow-2xl object-contain"
+        className="max-w-[95vw] max-h-[95vh] rounded-lg shadow-2xl object-contain"
         onClick={(e) => e.stopPropagation()}
       />
     </div>
