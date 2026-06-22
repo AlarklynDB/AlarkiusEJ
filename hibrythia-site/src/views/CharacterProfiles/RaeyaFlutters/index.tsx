@@ -22,7 +22,7 @@ function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: ()
 
   return (
     <div
-      className="fixed inset-0 flex items-center justify-center backdrop-blur-sm"
+      className="fixed inset-0 flex items-center justify-center backdrop-blur-sm pt-16"
       style={{ zIndex: 9999, backgroundColor: `rgba(0,0,0,${visible ? 0.92 : 0})`, transition: 'background-color 200ms ease' }}
       onClick={handleClose}
     >
