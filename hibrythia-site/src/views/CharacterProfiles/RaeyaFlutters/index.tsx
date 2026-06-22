@@ -68,8 +68,12 @@ export default function RaeyaFlutters() {
       </div>
 
       {/* Image — Raeya Flutters */}
-      <div className="w-full aspect-video bg-[#1a1714] border border-[#2e2b26] rounded-xl flex items-center justify-center">
-        <p className="font-body text-xs text-[#4a4844] uppercase tracking-widest">Image — Raeya Flutters</p>
+      <div className="w-full rounded-xl overflow-hidden border border-[#2e2b26]">
+        <img
+          src="https://i.ibb.co/QvRJCqRb/Raeya-Flutters-NEW.png"
+          alt="Raeya Flutters"
+          className="w-full h-auto object-cover"
+        />
       </div>
 
       {/* Personal Info */}
@@ -331,8 +335,12 @@ export default function RaeyaFlutters() {
       <div className="border-t border-[#2e2b26]" />
 
       {/* Image — Raeya Flutters Infernal Form */}
-      <div className="w-full aspect-video bg-[#1a1714] border border-[#2e2b26] rounded-xl flex items-center justify-center">
-        <p className="font-body text-xs text-[#4a4844] uppercase tracking-widest">Image — Raeya Flutters (Infernal Form)</p>
+      <div className="w-full rounded-xl overflow-hidden border border-[#2e2b26]">
+        <img
+          src="https://i.ibb.co/5WbJdYJG/Raeya-Flutters-Infernal-NEW.png"
+          alt="Raeya Flutters — Infernal Form"
+          className="w-full h-auto object-cover"
+        />
       </div>
 
       {/* Appearance / Outfits */}
