@@ -1,6 +1,6 @@
 ## Art Images — Lightbox Rule
 
-> **Whenever Alaria provides an imgbb link (i.ibb.co) for character or world art, always replace the placeholder div with a clickable image that opens a fullscreen lightbox.**
+> **Whenever an imgbb link is provided (i.ibb.co) for character or world art, always replace the placeholder div with a clickable image that opens a fullscreen lightbox.**
 
 Never use a plain `<img>` tag alone. Every art image must be wrapped with the Lightbox pattern below.
 
