@@ -55,10 +55,10 @@ export default function TheNhumelaCluster() {
       {/* Hero image — The Nhumela Cluster */}
       <div
         className="w-full rounded-xl overflow-hidden border border-[#2e2b26] cursor-zoom-in group relative mb-12"
-        onClick={() => setLightbox({ src: 'https://i.ibb.co/cc53ym2g/The-Nhumela-Cluster.png', alt: 'The Nhumela Cluster' })}
+        onClick={() => setLightbox({ src: 'https://i.ibb.co/Xrjkwm5H/The-Nhumela-Cluster.png', alt: 'The Nhumela Cluster' })}
       >
         <img
-          src="https://i.ibb.co/cc53ym2g/The-Nhumela-Cluster.png"
+          src="https://i.ibb.co/Xrjkwm5H/The-Nhumela-Cluster.png"
           alt="The Nhumela Cluster"
           className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.02]"
         />
@@ -152,7 +152,7 @@ export default function TheNhumelaCluster() {
                 The Aqualivia Sun's color is very unique! It glows a very iridescent like color of sky blue, teal, with a tint of pink, orange, and red. It's very pretty. This type of sun brings better light source and moderate heat, with less radiation. This allows light on Planet Hetra to be a bit brighter than usual. But why does it look like this?
               </p>
               <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-3">
-                This is all because of one single thing: A Lyecerianite Core (which can be read below), which is a type of crystal geode. The lyceranite glows a very beautiful color of sky-blue and magenta, with a rock like shell protecting it.
+                This is all because of one single thing: A <Link to="/world/databases/TheNaturalLawOfSpaceTime/PassionStarFormation" className="text-[#c9a84c] hover:underline">Lyecerianite Core</Link> (can be read here), which is a type of crystal geode. The lyceranite glows a very beautiful color of sky-blue and magenta, with a rock like shell protecting it.
               </p>
               <p className="font-body text-base text-[#c8c2ba] leading-relaxed mt-3">
                 After the discovery of the color, the people of Hetra have named this particular sun, <span className="text-[#c9a84c]">Aqualivia</span>.
