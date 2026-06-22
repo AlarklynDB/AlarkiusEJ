@@ -2,28 +2,50 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  const [visible, setVisible] = React.useState(false);
+
+  // Fade in on mount
+  React.useEffect(() => {
+    requestAnimationFrame(() => setVisible(true));
+  }, []);
+
   // Lock body scroll while open
   React.useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => { document.body.style.overflow = ''; };
   }, []);
 
+  function handleClose() {
+    setVisible(false);
+    setTimeout(onClose, 200);
+  }
+
   return (
     <div
-      className="fixed inset-0 z-[200] flex items-center justify-center bg-black/92 backdrop-blur-sm"
-      onClick={onClose}
+      className="fixed inset-0 flex items-center justify-center backdrop-blur-sm"
+      style={{ zIndex: 9999, backgroundColor: `rgba(0,0,0,${visible ? 0.92 : 0})`, transition: 'background-color 200ms ease' }}
+      onClick={handleClose}
     >
+      {/* Close button — inside the overlay, top-right corner, same z level */}
       <button
-        onClick={onClose}
-        className="fixed top-4 right-5 z-[201] text-white/70 hover:text-white text-3xl font-light leading-none transition-colors bg-black/40 rounded-full w-9 h-9 flex items-center justify-center"
+        onClick={handleClose}
+        className="absolute top-3 right-4 text-white/80 hover:text-white transition-colors bg-black/50 rounded-full w-8 h-8 flex items-center justify-center text-base leading-none"
         aria-label="Close"
+        style={{ zIndex: 10000 }}
       >
         ✕
       </button>
       <img
         src={src}
         alt={alt}
-        className="max-w-[95vw] max-h-[95vh] rounded-lg shadow-2xl object-contain"
+        className="rounded-lg shadow-2xl object-contain"
+        style={{
+          maxWidth: '95vw',
+          maxHeight: '95vh',
+          opacity: visible ? 1 : 0,
+          transform: visible ? 'scale(1)' : 'scale(0.96)',
+          transition: 'opacity 200ms ease, transform 200ms ease',
+        }}
         onClick={(e) => e.stopPropagation()}
       />
     </div>
@@ -372,21 +394,6 @@ export default function RaeyaFlutters() {
 
       <div className="border-t border-[#2e2b26]" />
 
-      {/* Image — Raeya Flutters Infernal Form */}
-      <div
-        className="w-full rounded-xl overflow-hidden border border-[#2e2b26] cursor-zoom-in group relative"
-        onClick={() => setLightbox({ src: 'https://i.ibb.co/5WbJdYJG/Raeya-Flutters-Infernal-NEW.png', alt: 'Raeya Flutters — Infernal Form' })}
-      >
-        <img
-          src="https://i.ibb.co/5WbJdYJG/Raeya-Flutters-Infernal-NEW.png"
-          alt="Raeya Flutters — Infernal Form"
-          className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-        />
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 font-body text-xs text-white tracking-widest uppercase bg-black/50 px-3 py-1.5 rounded-full">Click to expand</span>
-        </div>
-      </div>
-
       {/* Appearance / Outfits */}
       <section className="space-y-5">
         <h2 className="font-display text-lg text-[#f2ebeb] mb-4">Appearance / Outfits</h2>
@@ -464,6 +471,21 @@ export default function RaeyaFlutters() {
               <p className="font-display text-sm text-[#c9a84c]">Anthropophobia &gt;&gt; The Fear of Rejection</p>
             </div>
             <p className="font-body text-sm text-[#c8c2ba] leading-relaxed">Raeya&apos;s childhood has been centered around these two phobias. Near her young early age (explained in Ep 7 - About Raeya), her parents were killed due to a rampage of elves. This happened so fast, her flight and response was through the fear of abandonment and rejection. This was the first time she experienced both until a kindred soul helped her out before she met Kydel.</p>
+          </div>
+        </div>
+
+        {/* Image — Raeya Flutters Infernal Form */}
+        <div
+          className="w-full rounded-xl overflow-hidden border border-[#2e2b26] cursor-zoom-in group relative"
+          onClick={() => setLightbox({ src: 'https://i.ibb.co/5WbJdYJG/Raeya-Flutters-Infernal-NEW.png', alt: 'Raeya Flutters — Infernal Form' })}
+        >
+          <img
+            src="https://i.ibb.co/5WbJdYJG/Raeya-Flutters-Infernal-NEW.png"
+            alt="Raeya Flutters — Infernal Form"
+            className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+          />
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+            <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 font-body text-xs text-white tracking-widest uppercase bg-black/50 px-3 py-1.5 rounded-full">Click to expand</span>
           </div>
         </div>
 
