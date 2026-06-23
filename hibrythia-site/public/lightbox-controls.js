@@ -56,9 +56,12 @@
     applyTransform();
   }
 
-  // ── Desktop: mouse drag ─────────────────────────────────────────────────────
+  // ── Desktop: mouse drag (left-click when zoomed, middle-click always) ────────
   function onMouseDown(e) {
-    if (!currentImg || e.button !== 0 || scale <= 1) return;
+    if (!currentImg) return;
+    const isLeft   = e.button === 0 && scale > 1;
+    const isMiddle = e.button === 1;
+    if (!isLeft && !isMiddle) return;
     isDragging = true;
     dragStartX = e.clientX - originX;
     dragStartY = e.clientY - originY;
@@ -87,7 +90,8 @@
   }
 
   function onTouchStart(e) {
-    // Always block — we handle everything ourselves
+    // Let taps on the close button through — don't preventDefault for those
+    if (closeBtn && (e.target === closeBtn || closeBtn.contains(e.target))) return;
     e.preventDefault();
     e.stopPropagation();
     if (e.touches.length === 1) {
@@ -182,8 +186,8 @@
     // Scroll zoom — listen on overlay so it fires wherever the cursor is
     overlay.addEventListener('wheel', onWheel, { passive: false });
 
-    // Mouse drag
-    img.addEventListener('mousedown', onMouseDown);
+    // Mouse drag — overlay so middle-click works anywhere in lightbox
+    overlay.addEventListener('mousedown', onMouseDown);
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mouseup',   onMouseUp);
 
@@ -200,8 +204,10 @@
       currentOverlay.removeEventListener('touchmove',  onTouchMove);
       currentOverlay.removeEventListener('touchend',   onTouchEnd);
     }
+    if (currentOverlay) {
+      currentOverlay.removeEventListener('mousedown', onMouseDown);
+    }
     if (currentImg) {
-      currentImg.removeEventListener('mousedown', onMouseDown);
       // Restore React's original transition
       currentImg.style.transition = '';
       currentImg.style.transform  = '';
