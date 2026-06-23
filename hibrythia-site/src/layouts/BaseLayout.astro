@@ -89,7 +89,7 @@ const canonical = new URL(path, 'https://www.thehibrythiansaga.com').href
     />
     <title>{title}</title>
 
-    <!-- Splash screen: dark overlay, fades out so no gray flash -->
+    <!-- Splash screen: dark overlay, fades out on hard load only -->
     <style>
       :root { color-scheme: dark; }
       html, body { background-color: #100908; margin: 0; padding: 0; }
@@ -101,8 +101,8 @@ const canonical = new URL(path, 'https://www.thehibrythiansaga.com').href
         display: flex;
         align-items: center;
         justify-content: center;
-        animation: splashFade 0.5s ease-out 1.2s forwards;
         pointer-events: none;
+        transition: opacity 0.5s ease-out;
       }
       #splash-logo {
         font-family: 'Georgia', 'Times New Roman', serif;
@@ -111,22 +111,12 @@ const canonical = new URL(path, 'https://www.thehibrythiansaga.com').href
         color: #c9a84c;
         text-transform: uppercase;
         opacity: 0;
-        animation: splashTextIn 0.6s ease-out 0.2s forwards;
+        transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+        transform: translateY(6px);
       }
-      @keyframes splashTextIn {
-        from { opacity: 0; transform: translateY(6px); }
-        to   { opacity: 1; transform: translateY(0); }
-      }
-      @keyframes splashFade {
-        from { opacity: 1; }
-        to   { opacity: 0; pointer-events: none; }
-      }
-      /* Once-per-tab: skip splash entirely on internal navigation */
-      html.splash-seen #splash { display: none !important; }
     </style>
 
-    <!-- Splash gate: run before paint so the splash never flashes on internal nav.
-         Shows once per tab session; reload / hard-reload re-triggers it. -->
+    <!-- Splash gate: JS-controlled, not CSS-animation-controlled -->
     <script is:inline>
       (function () {
         try {
@@ -134,14 +124,41 @@ const canonical = new URL(path, 'https://www.thehibrythiansaga.com').href
           var isReload = nav ? nav.type === 'reload'
                              : (performance.navigation && performance.navigation.type === 1);
           if (isReload) sessionStorage.removeItem('splashSeen');
-          if (sessionStorage.getItem('splashSeen') === '1') {
-            document.documentElement.classList.add('splash-seen');
+
+          var seen = sessionStorage.getItem('splashSeen') === '1';
+          var splash = document.getElementById('splash');
+
+          if (seen) {
+            // Already seen — hide immediately, no animation
+            if (splash) splash.style.display = 'none';
+          } else {
+            // First load — animate in, then fade out and remove
+            if (splash) {
+              var logo = splash.querySelector('#splash-logo');
+              // Animate logo in
+              requestAnimationFrame(function () {
+                if (logo) {
+                  logo.style.opacity = '1';
+                  logo.style.transform = 'translateY(0)';
+                }
+                // Fade splash out after 1.2s
+                setTimeout(function () {
+                  splash.style.opacity = '0';
+                  setTimeout(function () {
+                    splash.style.display = 'none';
+                  }, 500);
+                }, 1200);
+              });
+            }
+            try { sessionStorage.setItem('splashSeen', '1'); } catch (e) {}
           }
+
+          // On every Astro ViewTransition — always hide splash instantly
+          document.addEventListener('astro:page-load', function () {
+            var s = document.getElementById('splash');
+            if (s) s.style.display = 'none';
+          });
         } catch (e) {}
-        // On every Astro ViewTransition (not a real reload), immediately suppress splash
-        document.addEventListener('astro:before-swap', function () {
-          document.documentElement.classList.add('splash-seen');
-        });
       })();
     </script>
   </head>
@@ -208,18 +225,7 @@ const canonical = new URL(path, 'https://www.thehibrythiansaga.com').href
       });
     </script>
 
-    <!-- Remove splash after fade + mark this tab session as having seen it -->
-    <script is:inline>
-      (function () {
-        try { sessionStorage.setItem('splashSeen', '1'); } catch (e) {}
-        var splash = document.getElementById('splash');
-        if (splash) {
-          splash.addEventListener('animationend', function (e) {
-            if (e.animationName === 'splashFade') this.remove();
-          });
-        }
-      })();
-    </script>
+
     <script is:inline src="/lightbox-controls.js"></script>
     <!-- Prevent gray flash on SPA internal navigation -->
     <script is:inline>
