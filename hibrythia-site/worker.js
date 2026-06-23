@@ -14,6 +14,11 @@ const HIBRYTHIAN_SERIES_ID = "https://www.thehibrythiansaga.com/#series";
 const NAISEIKAI_SITE_ID   = "https://www.naiseikaiuniverse.com/#website";
 const NAISEIKAI_SERIES_ID = "https://www.naiseikaiuniverse.com/#series";
 
+// ═══════════════════════════════════════════════════════════
+// FOUD — per-site background color (the actual site bg)
+// ═══════════════════════════════════════════════════════════
+const BG_COLOR = "#100908";
+
 // ------------------------------------------------------------
 // Shared Nodes
 // ------------------------------------------------------------
@@ -164,9 +169,15 @@ function escapeScriptJson(value) {
     .replace(/\u2029/g, "\\u2029");
 }
 
-// ------------------------------------------------------------
-// HTMLRewriter handlers
-// ------------------------------------------------------------
+// ═══════════════════════════════════════════════════════════
+// FOUD — Anti-Flash Shield: full-viewport cover that gets
+// removed immediately by inline script. If rendering is
+// delayed, the shield stays visible and the gray flash never
+// reaches the user. Runs at the EDGE — covers ALL pages.
+// ═══════════════════════════════════════════════════════════
+
+const FOUD_HEAD_STYLE = `<style>:root{color-scheme:dark}html,body{background-color:${BG_COLOR}!important;margin:0}</style>`;
+const FOUD_BODY_SHIELD = `<div id="foud-s" style="position:fixed;inset:0;z-index:2147483647;background:${BG_COLOR};"></div><script>(function(){var d=document.getElementById('foud-s');if(d)d.remove();})();</script>`;
 
 class HeadHandler {
   constructor(schema, faviconUrl) {
@@ -175,11 +186,8 @@ class HeadHandler {
   }
 
   element(element) {
-    // Inject critical dark bg first — prevents gray flash on desktop
-    element.prepend(
-      '<style>:root{color-scheme:dark}html,body{background-color:#100908!important;margin:0}</style>',
-      { html: true }
-    );
+    // FOUD Layer 1: dark canvas in <head> (browser paints dark)
+    element.prepend(FOUD_HEAD_STYLE, { html: true });
 
     if (this.faviconUrl) {
       element.prepend(`
@@ -196,6 +204,13 @@ class HeadHandler {
         { html: true }
       );
     }
+  }
+}
+
+// FOUD Layer 2: physical viewport cover in <body>
+class BodyHandler {
+  element(element) {
+    element.prepend(FOUD_BODY_SHIELD, { html: true });
   }
 }
 
@@ -242,8 +257,10 @@ export default {
     const schema  = getSchemaByHostname(hostname);
     const favicon = getFaviconByHostname(hostname);
 
+    // FOUD: both head (canvas) + body (shield) handlers
     const transformed = new HTMLRewriter()
       .on("head", new HeadHandler(schema, favicon))
+      .on("body", new BodyHandler())
       .transform(response);
 
     const newHeaders = new Headers(transformed.headers);
