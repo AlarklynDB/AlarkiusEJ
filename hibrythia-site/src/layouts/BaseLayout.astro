@@ -38,6 +38,15 @@ const canonical = new URL(path, 'https://www.thehibrythiansaga.com').href
 <!doctype html>
 <html lang="en" class="dark" style="background:#100908">
   <head>
+    <!-- ═══════════════════════════════════════════════════════════
+         CRITICAL: FOUD defense — paint dark BEFORE anything else.
+         This <style> must remain the FIRST child of <head>.
+         ═══════════════════════════════════════════════════════════ -->
+    <style>
+      :root { color-scheme: dark; }
+      html, body { background-color: #100908; }
+    </style>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNWX9XF6JD"></script>
     <script is:inline>
@@ -88,8 +97,8 @@ const canonical = new URL(path, 'https://www.thehibrythiansaga.com').href
 
     <!-- Splash screen: dark overlay, fades out on hard load only -->
     <style>
-      :root { color-scheme: dark; }
-      html, body { background-color: #100908; margin: 0; padding: 0; }
+      /* color-scheme + body bg moved to critical <style> above */
+      html, body { margin: 0; padding: 0; }
       #splash {
         position: fixed;
         inset: 0;
@@ -159,6 +168,48 @@ const canonical = new URL(path, 'https://www.thehibrythiansaga.com').href
       })();
     </script>
 
+    <!-- ═══════════════════════════════════════════════════════════
+         NAV-FLASH-COVER: FOUD defense for SPA navigation.
+         The splash (z-index 9999) only covers hard reloads.
+         This cover (z-index 9998) briefly flashes during
+         pushState/popState route transitions to prevent a gray
+         gap while the new page content hydrates.
+         ═══════════════════════════════════════════════════════════ -->
+    <div
+      id="nav-flash-cover"
+      aria-hidden="true"
+      style="position:fixed;inset:0;z-index:9998;background-color:#100908;opacity:0;pointer-events:none;transition:opacity 120ms ease-out;"
+    ></div>
+    <script is:inline>
+      (function () {
+        var cover = document.getElementById('nav-flash-cover');
+        if (!cover) return;
+
+        function flashCover() {
+          cover.style.opacity = '1';
+          clearTimeout(cover._t);
+          cover._t = setTimeout(function () {
+            cover.style.opacity = '0';
+          }, 180);
+        }
+
+        // Back / forward button navigation
+        window.addEventListener('popstate', flashCover);
+
+        // Programmatic navigation (router.tsx pushState)
+        var _push = history.pushState;
+        history.pushState = function () {
+          flashCover();
+          return _push.apply(this, arguments);
+        };
+        var _replace = history.replaceState;
+        history.replaceState = function () {
+          flashCover();
+          return _replace.apply(this, arguments);
+        };
+      })();
+    </script>
+
     <!-- App shell (was App.tsx + Layout.tsx). Navbar/Footer hydrate. -->
     <PWADevTools client:load />
     <div class="min-h-dvh flex flex-col bg-[#100908]">
@@ -220,4 +271,3 @@ const canonical = new URL(path, 'https://www.thehibrythiansaga.com').href
 
 </body>
 </html>
-
