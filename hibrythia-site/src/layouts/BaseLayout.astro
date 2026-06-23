@@ -113,7 +113,15 @@ const canonical = new URL(path, 'https://www.thehibrythiansaga.com').href
       }
     </style>
 
-    <!-- Splash gate: JS-controlled, not CSS-animation-controlled -->
+  </head>
+
+  <body>
+    <!-- Splash overlay — pure HTML/CSS, removes itself via animation -->
+    <div id="splash" aria-hidden="true">
+      <span id="splash-logo">The Hibrythian Saga</span>
+    </div>
+
+    <!-- Splash gate: lives AFTER #splash so getElementById works immediately -->
     <script is:inline>
       (function () {
         try {
@@ -129,16 +137,14 @@ const canonical = new URL(path, 'https://www.thehibrythiansaga.com').href
             // Already seen — hide immediately, no animation
             if (splash) splash.style.display = 'none';
           } else {
-            // First load — animate in, then fade out and remove
+            // First load — animate logo in, then fade out
             if (splash) {
               var logo = splash.querySelector('#splash-logo');
-              // Animate logo in
               requestAnimationFrame(function () {
                 if (logo) {
                   logo.style.opacity = '1';
                   logo.style.transform = 'translateY(0)';
                 }
-                // Fade splash out after 1.2s
                 setTimeout(function () {
                   splash.style.opacity = '0';
                   setTimeout(function () {
@@ -149,17 +155,9 @@ const canonical = new URL(path, 'https://www.thehibrythiansaga.com').href
             }
             try { sessionStorage.setItem('splashSeen', '1'); } catch (e) {}
           }
-
         } catch (e) {}
       })();
     </script>
-  </head>
-
-  <body>
-    <!-- Splash overlay — pure HTML/CSS, removes itself via animation -->
-    <div id="splash" aria-hidden="true">
-      <span id="splash-logo">The Hibrythian Saga</span>
-    </div>
 
     <!-- App shell (was App.tsx + Layout.tsx). Navbar/Footer hydrate. -->
     <PWADevTools client:load />
