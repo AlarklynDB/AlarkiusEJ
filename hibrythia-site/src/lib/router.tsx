@@ -17,6 +17,7 @@
 // 149 page files.
 // ============================================================
 
+import { useState, useEffect } from 'react'
 import type { AnchorHTMLAttributes, ReactNode } from 'react'
 
 // ── <Link> ──────────────────────────────────────────────────
@@ -46,7 +47,7 @@ export interface ShimLocation {
   hash: string
 }
 
-export function useLocation(): ShimLocation {
+function getLocation(): ShimLocation {
   if (typeof window === 'undefined') {
     return { pathname: '/', search: '', hash: '' }
   }
@@ -55,6 +56,28 @@ export function useLocation(): ShimLocation {
     search: window.location.search,
     hash: window.location.hash,
   }
+}
+
+export function useLocation(): ShimLocation {
+  const [loc, setLoc] = useState<ShimLocation>(getLocation)
+
+  useEffect(() => {
+    function update() { setLoc(getLocation()) }
+    // fires on browser back/forward
+    window.addEventListener('popstate', update)
+    // patch pushState/replaceState so <Link> clicks also trigger update
+    const _push = history.pushState.bind(history)
+    const _replace = history.replaceState.bind(history)
+    history.pushState = function (...args) { const r = _push(...args); update(); return r }
+    history.replaceState = function (...args) { const r = _replace(...args); update(); return r }
+    return () => {
+      window.removeEventListener('popstate', update)
+      history.pushState = _push
+      history.replaceState = _replace
+    }
+  }, [])
+
+  return loc
 }
 
 // ── <NavLink> ───────────────────────────────────────────────
@@ -104,3 +127,4 @@ export function useNavigate() {
     if (typeof window !== 'undefined') window.location.assign(to)
   }
 }
+
