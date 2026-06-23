@@ -177,7 +177,7 @@ class HeadHandler {
   element(element) {
     // Inject critical dark bg first — prevents gray flash on desktop
     element.prepend(
-      '<style>html,body{background-color:#0d0b12!important;margin:0}</style>',
+      '<style>:root{color-scheme:dark}html,body{background-color:#100908!important;margin:0}</style>',
       { html: true }
     );
 
@@ -208,23 +208,31 @@ export default {
     const url = new URL(request.url);
     const hostname = url.hostname;
 
-    // Fetch asset — on any error (e.g. hard refresh cache-busting headers),
-    // fall back to serving the SPA root (index.html) so React Router handles it.
+    // Fetch asset — try the exact path first, then path/index.html, then 404.
+    // Do NOT fall back to root index.html — each route has its own built HTML file.
     let response;
     try {
       response = await env.ASSETS.fetch(request);
     } catch (_) {
-      // Fallback: serve root SPA shell
-      const fallbackReq = new Request(new URL("/", url).toString(), request);
-      response = await env.ASSETS.fetch(fallbackReq);
+      // Fetch error — try appending /index.html for directory-style routes
+      const indexReq = new Request(new URL(url.pathname.replace(/\/$/, '') + '/index.html', url).toString(), request);
+      try {
+        response = await env.ASSETS.fetch(indexReq);
+      } catch (_2) {
+        return new Response('Not Found', { status: 404 });
+      }
     }
 
-    // If asset fetch returned a non-2xx for a navigation request, serve root
+    // If asset not found, try /pathname/index.html before giving up
     if (!response.ok) {
       const accept = request.headers.get("accept") || "";
       if (accept.includes("text/html")) {
-        const fallbackReq = new Request(new URL("/", url).toString(), request);
-        response = await env.ASSETS.fetch(fallbackReq);
+        const indexReq = new Request(new URL(url.pathname.replace(/\/$/, '') + '/index.html', url).toString(), request);
+        const indexRes = await env.ASSETS.fetch(indexReq);
+        if (indexRes.ok) {
+          response = indexRes;
+        }
+        // if still not ok, let original non-ok response fall through
       }
     }
 
