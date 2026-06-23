@@ -125,6 +125,18 @@ const canonical = new URL(path, 'https://www.thehibrythiansaga.com').href
   </head>
 
   <body>
+    <!-- ═══════════════════════════════════════════════════════════
+         ANTI-FOUD SHIELD: Full-viewport cover in page bg color.
+         This <div> MUST remain the FIRST child of <body>.
+         Blocks ANY flash (white/gray) by covering the viewport
+         with #100908 before the browser paints. The inline script
+         immediately below removes it — if rendering is delayed
+         (stylesheet/hydration gap) the shield stays visible and
+         the flash never reaches the user.
+         ═══════════════════════════════════════════════════════════ -->
+    <div id="af" style="position:fixed;inset:0;z-index:2147483647;background:#100908;"></div>
+    <script is:inline>(function(){var d=document.getElementById('af');if(d)d.remove();})();</script>
+
     <!-- Splash overlay — pure HTML/CSS, removes itself via animation -->
     <div id="splash" aria-hidden="true">
       <span id="splash-logo">The Hibrythian Saga</span>
