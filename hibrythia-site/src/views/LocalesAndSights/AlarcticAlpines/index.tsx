@@ -1,4 +1,47 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
+function AlarcticAlpinesArt() {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <div
+        onClick={() => setOpen(true)}
+        className="relative group cursor-pointer w-full overflow-hidden rounded-sm border border-[#2e2b26]"
+      >
+        <img
+          src="https://i.ibb.co/N6dC5Lf0/The-Alarctic-Alpines.png"
+          alt="The Alarctic Alpines"
+          className="w-full h-auto rounded-sm transition-transform duration-300 group-hover:scale-[1.01]"
+        />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
+          <span className="opacity-0 group-hover:opacity-100 text-[#f2ebeb] text-xs tracking-widest uppercase border border-[#f2ebeb]/40 px-3 py-1 rounded-sm transition-opacity duration-300">
+            Click to expand
+          </span>
+        </div>
+      </div>
+      {open && (
+        <div
+          style={{ zIndex: 9999 }}
+          className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-start justify-center pt-24 pb-12 px-10"
+        >
+          <button
+            aria-label="Close"
+            onClick={() => setOpen(false)}
+            className="absolute top-16 right-6 text-[#f2ebeb]/70 hover:text-[#f2ebeb] text-xl font-light transition-colors"
+          >
+            &#x2715;
+          </button>
+          <img
+            src="https://i.ibb.co/N6dC5Lf0/The-Alarctic-Alpines.png"
+            alt="The Alarctic Alpines — fullscreen"
+            className="max-w-[95vw] max-h-[95vh] h-auto rounded-sm object-contain"
+          />
+        </div>
+      )}
+    </>
+  );
+}
 
 export default function AlarcticAlpines() {
   return (
@@ -21,10 +64,8 @@ export default function AlarcticAlpines() {
         </div>
       </div>
 
-      {/* Image placeholder */}
-      <div className="w-full aspect-video bg-[#1a1714] border border-[#2e2b26] rounded-sm flex items-center justify-center">
-        <p className="font-body text-[10px] tracking-widest uppercase text-[#2e2b26]">[ Alarctic Alpines — Image Placeholder ]</p>
-      </div>
+      {/* Alarctic Alpines Art */}
+      <AlarcticAlpinesArt />
 
       {/* Beautiful Landscapes */}
       <div className="space-y-4">
