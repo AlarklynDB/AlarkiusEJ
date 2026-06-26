@@ -80,6 +80,7 @@ function HaruhiAoiTab() {
             { label: 'Gender', value: 'Female' },
             { label: 'Race', value: 'Bamboo Rabbit (or Bunny)' },
             { label: 'Age', value: '26' },
+            { label: 'Height', value: '154.94 cm (5\'1")' },      
             { label: 'Birthday', value: 'July 16th, 2075' },
             { label: 'OC Date of Creation', value: '2025' },
           ].map(({ label, value }) => (
