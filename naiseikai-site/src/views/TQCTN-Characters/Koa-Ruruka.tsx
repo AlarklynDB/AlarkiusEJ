@@ -82,7 +82,7 @@ function KoaRurukaTab() {
             { label: 'Age', value: '24' },
             { label: 'Birthday', value: 'November 2nd, 2076' },
             { label: 'OC Date of Creation', value: '2025' },
-            { label: 'Height', value: '167.64 cm (5\'6")' },
+            { label: 'Height', value: '154.94 cm (5\'1")' },
           ].map(({ label, value }) => (
             <div key={label} className="bg-[rgba(255,255,255,0.03)] border border-white/10 rounded-xl p-3">
               <p className="text-[10px] font-mono text-text-faint mb-0.5">{label}</p>
