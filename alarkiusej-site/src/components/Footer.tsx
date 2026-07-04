@@ -3,9 +3,7 @@ import { Link } from '../lib/router'
 const socials = [
   { label: 'Support me on Ko-Fi', href: 'https://ko-fi.com/alarkiusej' },
   { label: 'My LinkedIn', href: 'https://www.linkedin.com/in/alarkiusej/' },
-  { label: 'My Music YouTube', href: 'https://www.youtube.com/@AlarkiusJay' },
   { label: 'My Writing YouTube', href: 'https://www.youtube.com/@AlarkiusEJ' },
-  { label: 'Hibrythian Saga YT', href: 'https://www.youtube.com/@TheHibrythianSaga' },
   { label: 'Discord', href: 'https://discord.gg/umB3p5qfE4' },
   { label: 'Reddit', href: 'https://www.reddit.com/user/OfficialAlarkiusJay/'},
   { label: 'Bluesky', href: 'https://bsky.app/profile/alarkiusjay.bsky.social' },
