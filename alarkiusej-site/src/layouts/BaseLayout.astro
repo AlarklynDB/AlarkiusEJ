@@ -1,4 +1,3 @@
----
 // ============================================================
 // BaseLayout — the shared HTML shell for every page.
 // Replaces index.html (head/GA/OG/splash/Fort Knox) AND the
@@ -86,6 +85,68 @@ const canonical = new URL(path, 'https://alarkiusej.com').href
       rel="stylesheet"
     />
     <title>{title}</title>
+
+    <!-- JSON-LD Structured Data — Author Schema -->
+    <script type="application/ld+json" is:inline>{JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://www.alarkiusej.com/#author",
+          "name": "Alarkius Elvya Jay",
+          "alternateName": ["Alarkius Elvya Jay", "AlarkiusEJ", "AJ", "KarasuEJ", "Alarkius"],
+          "url": "https://www.alarkiusej.com/",
+          "jobTitle": ["Author", "Composer", "Worldbuilder", "Artist"],
+          "description": "Alarkius Elvya Jay, also known as AlarkiusEJ, is the author of The Hibrythian Saga and creator of the Naiseikai Universe.",
+          "sameAs": [
+            "https://www.youtube.com/@AlarkiusEJ",
+            "https://www.youtube.com/@AlarkiusJay",
+            "https://www.youtube.com/@TheHibrythianSaga",
+            "https://www.reddit.com/user/OfficialAlarkiusJay",
+            "https://www.reddit.com/r/ShizukanaKarasuNinja/",
+            "https://www.reddit.com/r/HibrydsCUniverse/",
+            "https://www.linkedin.com/in/alarkiusej/",
+            "https://github.com/AlarkiusJay",
+            "https://github.com/TheAlarklynZone",
+            "https://github.com/AlarklynDB",
+            "https://www.thehibrythiansaga.com/",
+            "https://www.naiseikaiuniverse.com/",
+            "https://www.barnesandnoble.com/search?q=Alarkius%20Elvya%20Jay&contributorName=alarkius-elvya-jay",
+            "https://www.barnesandnoble.com/search?attributes.mfield_bnb__seriesTitle=The%20Hibrythian%20Saga",
+            "https://www.barnesandnoble.com/search?attributes.mfield_bnb__seriesTitle=The%20Naiseikai%20Universe"
+          ]
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://www.alarkiusej.com/#profilepage",
+          "url": "https://www.alarkiusej.com/",
+          "name": "Alarkius Elvya Jay — Official Author Website",
+          "description": "The official profile and author page of Alarkius Elvya Jay, creator of The Hibrythian Saga and The Naiseikai Universe.",
+          "mainEntity": { "@id": "https://www.alarkiusej.com/#author" },
+          "about": { "@id": "https://www.alarkiusej.com/#author" },
+          "creator": { "@id": "https://www.alarkiusej.com/#author" },
+          "publisher": { "@id": "https://www.alarkiusej.com/#brand" },
+          "dateModified": "2026-06-16"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://www.alarkiusej.com/#brand",
+          "name": "AlarkiusEJ",
+          "url": "https://www.alarkiusej.com/",
+          "founder": { "@id": "https://www.alarkiusej.com/#author" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.alarkiusej.com/#website",
+          "url": "https://www.alarkiusej.com/",
+          "name": "AlarkiusEJ",
+          "description": "Official Author Website of Alarkius Elvya Jay, featuring books, worlds, music, art, and creative projects.",
+          "about":     { "@id": "https://www.alarkiusej.com/#author" },
+          "creator":   { "@id": "https://www.alarkiusej.com/#author" },
+          "publisher": { "@id": "https://www.alarkiusej.com/#brand" }
+        }
+      ]
+    })}</script>
 
     <!-- Splash screen: dark overlay, fades out -->
     <style>
