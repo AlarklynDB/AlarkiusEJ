@@ -1,3 +1,15 @@
+---
+// ============================================================
+// BaseLayout — the shared HTML shell for every page.
+// Replaces index.html (head/GA/OG/splash/Fort Knox) AND the old
+// App.tsx + Layout.tsx shell (Navbar + grid-bg <main> + Footer +
+// PWADevTools).
+//
+// Per-page props let each of the 149 routes set its own <title>,
+// description and canonical URL — so crawlers get unique, real
+// metadata per page (the whole point of going SSG).
+// ============================================================
+
 import '../index.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
