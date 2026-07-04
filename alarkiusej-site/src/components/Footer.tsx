@@ -87,7 +87,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Alarkius Elvya Jay (AlarkiusEJ). All Rights Reserved.
           </p>
           <p className="text-xs text-text-faint">
-            All worldbuilding content is protected under copyright law.
+            All Worldbuilding Content is protected under Copyright Law.
           </p>
         </div>
       </div>
