@@ -9,6 +9,7 @@ const socials = [
   { label: 'Discord', href: 'https://discord.gg/umB3p5qfE4' },
   { label: 'Reddit', href: 'https://www.reddit.com/user/OfficialAlarkiusJay/'},
   { label: 'Bluesky', href: 'https://bsky.app/profile/alarkiusjay.bsky.social' },
+  { label: 'Cara.App', href: 'https://cara.app/alarkiusej' },
 ]
 
 const footerLinks = [
