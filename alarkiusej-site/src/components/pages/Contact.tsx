@@ -78,7 +78,8 @@ export default function Contact() {
           <p className="text-rose text-xs font-medium tracking-widest uppercase mb-3">Get in Touch</p>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-text mb-4">Contact</h1>
           <p className="text-text-muted text-lg">
-            Let's create something amazing together! Here's where you can find and reach me.
+            Let's create something amazing together! Here's where you can find and reach me. 
+            Or you can contact me via: contact@alarkiusej.com
           </p>
         </div>
 
