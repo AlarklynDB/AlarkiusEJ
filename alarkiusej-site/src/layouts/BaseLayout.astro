@@ -90,8 +90,9 @@ const canonical = new URL(path, 'https://alarkiusej.com').href
     />
     <title>{title}</title>
 
-    <!-- JSON-LD Structured Data — Author Schema -->
-    <script type="application/ld+json" is:inline>{JSON.stringify({
+    <!-- JSON-LD: Structured Data (author_schema) -->
+    <script type="application/ld+json">
+    {
       "@context": "https://schema.org",
       "@graph": [
         {
@@ -150,7 +151,8 @@ const canonical = new URL(path, 'https://alarkiusej.com').href
           "publisher": { "@id": "https://www.alarkiusej.com/#brand" }
         }
       ]
-    })}</script>
+    }
+    </script>
 
     <!-- Splash screen: dark overlay, fades out -->
     <style>
