@@ -54,4 +54,8 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://wwww.alarkiusej.com/sitemap-index.xml
+# --- Default ---
+User-agent: *
+Allow: /
+
+Sitemap: https://www.alarkiusej.com/sitemap-index.xml
