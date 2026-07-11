@@ -1,4 +1,5 @@
 import { Link } from '../../lib/router'
+import { useState, useEffect } from 'react'
 
 const skills = [
   'Traditional & Digital Drawing',
@@ -35,6 +36,205 @@ const projects = [
     accent: 'gold',
   },
 ]
+
+interface MediumPost {
+  title: string
+  link: string
+  pubDate: string
+  thumbnail: string
+  description: string
+}
+
+function MediumFeedCard() {
+  const [posts, setPosts] = useState<MediumPost[]>([])
+  const [current, setCurrent] = useState(0)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
+
+  useEffect(() => {
+    const RSS_URL = 'https://medium.com/feed/@alarkiusej'
+    const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&count=3`
+
+    fetch(API_URL)
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.status === 'ok' && data.items?.length) {
+          const mapped: MediumPost[] = data.items.slice(0, 3).map((item: any) => ({
+            title: item.title,
+            link: item.link,
+            pubDate: item.pubDate,
+            thumbnail: item.thumbnail || item.enclosure?.link || '',
+            description: item.description
+              ? item.description.replace(/<[^>]+>/g, '').slice(0, 140) + '…'
+              : '',
+          }))
+          setPosts(mapped)
+        } else {
+          setError(true)
+        }
+      })
+      .catch(() => setError(true))
+      .finally(() => setLoading(false))
+  }, [])
+
+  // Auto-rotate every 6 seconds
+  useEffect(() => {
+    if (posts.length < 2) return
+    const timer = setInterval(() => {
+      setCurrent((c) => (c + 1) % posts.length)
+    }, 6000)
+    return () => clearInterval(timer)
+  }, [posts.length])
+
+  const prev = () => setCurrent((c) => (c - 1 + posts.length) % posts.length)
+  const next = () => setCurrent((c) => (c + 1) % posts.length)
+
+  const formatDate = (dateStr: string) => {
+    try {
+      return new Date(dateStr).toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+      })
+    } catch {
+      return dateStr
+    }
+  }
+
+  return (
+    <section className="max-w-5xl mx-auto px-6 py-20">
+      <div className="p-10 bg-surface rounded-2xl border border-border">
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+          <div>
+            <p className="text-rose text-xs font-medium tracking-widest uppercase mb-1">Medium</p>
+            <h2 className="font-serif text-2xl font-semibold text-text">
+              Alarkius is on Medium!
+            </h2>
+            <p className="text-text-muted text-sm mt-1">
+              Find Writing Tips made by AlarkiusEJ!
+            </p>
+          </div>
+          <a
+            href="https://medium.com/@alarkiusej"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="self-start sm:self-auto flex items-center gap-2 px-4 py-2 bg-surface-raised border border-border text-text text-sm font-medium rounded-lg hover:border-border-light hover:bg-surface transition-colors duration-200 whitespace-nowrap"
+          >
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
+            </svg>
+            View Profile
+          </a>
+        </div>
+
+        {/* Feed */}
+        {loading && (
+          <div className="flex flex-col gap-3 animate-pulse">
+            <div className="h-5 bg-surface-raised rounded w-3/4" />
+            <div className="h-4 bg-surface-raised rounded w-1/3" />
+            <div className="h-16 bg-surface-raised rounded w-full mt-2" />
+          </div>
+        )}
+
+        {error && !loading && (
+          <div className="text-center py-6 text-text-muted text-sm">
+            <p>Couldn't load posts right now.</p>
+            <a
+              href="https://medium.com/@alarkiusej"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-rose hover:text-rose-light underline mt-1 inline-block transition-colors duration-200"
+            >
+              Visit Medium profile →
+            </a>
+          </div>
+        )}
+
+        {!loading && !error && posts.length > 0 && (
+          <>
+            {/* Post card */}
+            <div className="relative overflow-hidden">
+              {posts.map((post, idx) => (
+                <a
+                  key={post.link}
+                  href={post.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group block transition-all duration-500 ${
+                    idx === current ? 'opacity-100 translate-y-0' : 'opacity-0 absolute inset-0 translate-y-2 pointer-events-none'
+                  }`}
+                  aria-hidden={idx !== current}
+                >
+                  <div className="flex gap-5 p-5 bg-surface-raised rounded-xl border border-border hover:border-border-light hover:bg-ink-light transition-all duration-200">
+                    {post.thumbnail && (
+                      <div className="flex-shrink-0 w-24 h-20 rounded-lg overflow-hidden bg-surface border border-border">
+                        <img
+                          src={post.thumbnail}
+                          alt=""
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs text-text-faint mb-1">{formatDate(post.pubDate)}</p>
+                      <h3 className="font-serif text-base font-semibold text-text leading-snug mb-2 group-hover:text-rose-light transition-colors duration-200 line-clamp-2">
+                        {post.title}
+                      </h3>
+                      <p className="text-sm text-text-muted leading-relaxed line-clamp-2">
+                        {post.description}
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            {/* Controls */}
+            <div className="flex items-center justify-between mt-5">
+              {/* Dots */}
+              <div className="flex gap-2">
+                {posts.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrent(idx)}
+                    aria-label={`Go to post ${idx + 1}`}
+                    className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                      idx === current ? 'bg-rose w-5' : 'bg-border hover:bg-border-light'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              {/* Arrows */}
+              <div className="flex gap-2">
+                <button
+                  onClick={prev}
+                  aria-label="Previous post"
+                  className="w-8 h-8 flex items-center justify-center rounded-lg border border-border text-text-muted hover:text-text hover:border-border-light transition-all duration-200"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button
+                  onClick={next}
+                  aria-label="Next post"
+                  className="w-8 h-8 flex items-center justify-center rounded-lg border border-border text-text-muted hover:text-text hover:border-border-light transition-all duration-200"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+    </section>
+  )
+}
 
 export default function Home() {
   return (
@@ -202,33 +402,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="max-w-5xl mx-auto px-6 py-20">
-        <div className="text-center p-10 bg-surface rounded-2xl border border-border">
-          <h2 className="font-serif text-3xl font-semibold text-text mb-3">
-            Let's create something amazing together.
-          </h2>
-          <p className="text-text-muted mb-6 max-w-md mx-auto">
-            Reach out on Discord, Bluesky, or support the work on Ko-Fi.
-          </p>
-          <div className="flex flex-wrap gap-3 justify-center">
-            <a
-              href="https://discord.gg/umB3p5qfE4"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-rose text-ink text-sm font-semibold rounded-lg hover:bg-rose-light transition-colors duration-200"
-            >
-              Join Discord
-            </a>
-            <Link
-              to="/contact"
-              className="px-6 py-3 bg-surface-raised border border-border text-text text-sm font-medium rounded-lg hover:border-border-light transition-colors duration-200"
-            >
-              Contact Info
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Medium RSS Feed */}
+      <MediumFeedCard />
     </div>
   )
 }
