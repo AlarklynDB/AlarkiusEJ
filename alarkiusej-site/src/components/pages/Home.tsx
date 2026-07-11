@@ -45,6 +45,18 @@ interface MediumPost {
   description: string
 }
 
+/** Extract first <img src> from raw HTML content — Medium's thumbnail field is often empty */
+function extractThumbnail(content: string): string {
+  const match = content.match(/<img[^>]+src=["']([^"']+)["']/i)
+  return match ? match[1] : ''
+}
+
+/** Strip HTML tags and return a clean excerpt */
+function stripHtml(html: string, maxLen = 180): string {
+  const stripped = html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
+  return stripped.length > maxLen ? stripped.slice(0, maxLen) + '…' : stripped
+}
+
 function MediumFeedCard() {
   const [posts, setPosts] = useState<MediumPost[]>([])
   const [current, setCurrent] = useState(0)
@@ -53,20 +65,23 @@ function MediumFeedCard() {
 
   useEffect(() => {
     const RSS_URL = 'https://medium.com/feed/@alarkiusej'
-    const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&count=3`
+    // count=20 so future posts are picked up automatically
+    const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&count=20`
 
     fetch(API_URL)
       .then((r) => r.json())
       .then((data) => {
         if (data.status === 'ok' && data.items?.length) {
-          const mapped: MediumPost[] = data.items.slice(0, 3).map((item: any) => ({
+          const mapped: MediumPost[] = data.items.map((item: any) => ({
             title: item.title,
             link: item.link,
             pubDate: item.pubDate,
-            thumbnail: item.thumbnail || item.enclosure?.link || '',
-            description: item.description
-              ? item.description.replace(/<[^>]+>/g, '').slice(0, 140) + '…'
-              : '',
+            // Try rss2json thumbnail first, then extract from full content HTML
+            thumbnail:
+              (item.thumbnail && !item.thumbnail.includes('placeholder'))
+                ? item.thumbnail
+                : extractThumbnail(item.content || item.description || ''),
+            description: stripHtml(item.description || item.content || ''),
           }))
           setPosts(mapped)
         } else {
@@ -77,22 +92,13 @@ function MediumFeedCard() {
       .finally(() => setLoading(false))
   }, [])
 
-  // Auto-rotate every 6 seconds
-  useEffect(() => {
-    if (posts.length < 2) return
-    const timer = setInterval(() => {
-      setCurrent((c) => (c + 1) % posts.length)
-    }, 6000)
-    return () => clearInterval(timer)
-  }, [posts.length])
-
-  const prev = () => setCurrent((c) => (c - 1 + posts.length) % posts.length)
-  const next = () => setCurrent((c) => (c + 1) % posts.length)
+  const prev = () => setCurrent((c) => Math.max(0, c - 1))
+  const next = () => setCurrent((c) => Math.min(posts.length - 1, c + 1))
 
   const formatDate = (dateStr: string) => {
     try {
       return new Date(dateStr).toLocaleDateString('en-US', {
-        month: 'short',
+        month: 'long',
         day: 'numeric',
         year: 'numeric',
       })
@@ -101,11 +107,14 @@ function MediumFeedCard() {
     }
   }
 
+  const post = posts[current]
+
   return (
     <section className="max-w-5xl mx-auto px-6 py-20">
-      <div className="p-10 bg-surface rounded-2xl border border-border">
+      <div className="p-8 sm:p-10 bg-surface rounded-2xl border border-border">
+
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-8">
           <div>
             <p className="text-rose text-xs font-medium tracking-widest uppercase mb-1">Medium</p>
             <h2 className="font-serif text-2xl font-semibold text-text">
@@ -119,7 +128,7 @@ function MediumFeedCard() {
             href="https://medium.com/@alarkiusej"
             target="_blank"
             rel="noopener noreferrer"
-            className="self-start sm:self-auto flex items-center gap-2 px-4 py-2 bg-surface-raised border border-border text-text text-sm font-medium rounded-lg hover:border-border-light hover:bg-surface transition-colors duration-200 whitespace-nowrap"
+            className="self-start flex items-center gap-2 px-4 py-2 bg-surface-raised border border-border text-text text-sm font-medium rounded-lg hover:border-border-light hover:bg-ink-light transition-colors duration-200 whitespace-nowrap"
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
               <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
@@ -128,106 +137,103 @@ function MediumFeedCard() {
           </a>
         </div>
 
-        {/* Feed */}
+        {/* Skeleton */}
         {loading && (
-          <div className="flex flex-col gap-3 animate-pulse">
-            <div className="h-5 bg-surface-raised rounded w-3/4" />
-            <div className="h-4 bg-surface-raised rounded w-1/3" />
-            <div className="h-16 bg-surface-raised rounded w-full mt-2" />
+          <div className="animate-pulse">
+            <div className="w-full h-48 bg-surface-raised rounded-xl mb-5" />
+            <div className="h-5 bg-surface-raised rounded w-3/4 mb-3" />
+            <div className="h-4 bg-surface-raised rounded w-1/4 mb-4" />
+            <div className="h-4 bg-surface-raised rounded w-full mb-2" />
+            <div className="h-4 bg-surface-raised rounded w-5/6" />
           </div>
         )}
 
+        {/* Error */}
         {error && !loading && (
-          <div className="text-center py-6 text-text-muted text-sm">
-            <p>Couldn't load posts right now.</p>
+          <div className="text-center py-10 text-text-muted text-sm">
+            <p>Couldn’t load posts right now.</p>
             <a
               href="https://medium.com/@alarkiusej"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-rose hover:text-rose-light underline mt-1 inline-block transition-colors duration-200"
+              className="text-rose hover:text-rose-light underline mt-2 inline-block transition-colors duration-200"
             >
               Visit Medium profile →
             </a>
           </div>
         )}
 
-        {!loading && !error && posts.length > 0 && (
+        {/* Post display */}
+        {!loading && !error && post && (
           <>
-            {/* Post card */}
-            <div className="relative overflow-hidden">
-              {posts.map((post, idx) => (
-                <a
-                  key={post.link}
-                  href={post.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`group block transition-all duration-500 ${
-                    idx === current ? 'opacity-100 translate-y-0' : 'opacity-0 absolute inset-0 translate-y-2 pointer-events-none'
-                  }`}
-                  aria-hidden={idx !== current}
-                >
-                  <div className="flex gap-5 p-5 bg-surface-raised rounded-xl border border-border hover:border-border-light hover:bg-ink-light transition-all duration-200">
-                    {post.thumbnail && (
-                      <div className="flex-shrink-0 w-24 h-20 rounded-lg overflow-hidden bg-surface border border-border">
-                        <img
-                          src={post.thumbnail}
-                          alt=""
-                          className="w-full h-full object-cover"
-                          loading="lazy"
-                        />
-                      </div>
-                    )}
-                    <div className="flex-1 min-w-0">
-                      <p className="text-xs text-text-faint mb-1">{formatDate(post.pubDate)}</p>
-                      <h3 className="font-serif text-base font-semibold text-text leading-snug mb-2 group-hover:text-rose-light transition-colors duration-200 line-clamp-2">
-                        {post.title}
-                      </h3>
-                      <p className="text-sm text-text-muted leading-relaxed line-clamp-2">
-                        {post.description}
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
-
-            {/* Controls */}
-            <div className="flex items-center justify-between mt-5">
-              {/* Dots */}
-              <div className="flex gap-2">
-                {posts.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setCurrent(idx)}
-                    aria-label={`Go to post ${idx + 1}`}
-                    className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                      idx === current ? 'bg-rose w-5' : 'bg-border hover:bg-border-light'
-                    }`}
+            <a
+              href={post.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block"
+            >
+              {/* Thumbnail */}
+              {post.thumbnail ? (
+                <div className="w-full h-48 sm:h-56 rounded-xl overflow-hidden bg-surface-raised border border-border mb-5">
+                  <img
+                    src={post.thumbnail}
+                    alt={post.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
                   />
-                ))}
-              </div>
+                </div>
+              ) : (
+                <div className="w-full h-48 sm:h-56 rounded-xl bg-surface-raised border border-border mb-5 flex items-center justify-center">
+                  <svg className="w-10 h-10 text-text-faint" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
+                  </svg>
+                </div>
+              )}
 
-              {/* Arrows */}
-              <div className="flex gap-2">
-                <button
-                  onClick={prev}
-                  aria-label="Previous post"
-                  className="w-8 h-8 flex items-center justify-center rounded-lg border border-border text-text-muted hover:text-text hover:border-border-light transition-all duration-200"
-                >
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-                <button
-                  onClick={next}
-                  aria-label="Next post"
-                  className="w-8 h-8 flex items-center justify-center rounded-lg border border-border text-text-muted hover:text-text hover:border-border-light transition-all duration-200"
-                >
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
+              {/* Title + meta */}
+              <h3 className="font-serif text-xl font-semibold text-text leading-snug mb-2 group-hover:text-rose-light transition-colors duration-200">
+                {post.title}
+              </h3>
+              <p className="text-xs text-text-faint mb-3">{formatDate(post.pubDate)}</p>
+              <p className="text-sm text-text-muted leading-relaxed">{post.description}</p>
+
+              <div className="mt-4 flex items-center gap-1 text-xs text-rose group-hover:text-rose-light transition-colors duration-200">
+                <span>Read on Medium</span>
+                <svg className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </div>
+            </a>
+
+            {/* Navigation controls */}
+            <div className="flex items-center justify-between mt-7 pt-5 border-t border-border">
+              <button
+                onClick={prev}
+                disabled={current === 0}
+                aria-label="Previous post"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-border text-text-muted text-sm hover:text-text hover:border-border-light disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                Prev
+              </button>
+
+              <span className="text-xs text-text-faint tabular-nums">
+                {current + 1} / {posts.length}
+              </span>
+
+              <button
+                onClick={next}
+                disabled={current === posts.length - 1}
+                aria-label="Next post"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-border text-text-muted text-sm hover:text-text hover:border-border-light disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200"
+              >
+                Next
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
           </>
         )}
