@@ -190,6 +190,7 @@ const PRODUCTS = {
 } as const
 
 type Format = keyof typeof PRODUCTS
+const FORMAT_KEYS = Object.keys(PRODUCTS) as Format[]
 
 // Loads the Shopify Buy SDK once and resolves with the built client
 let shopifyClientPromise: Promise<any> | null = null
@@ -239,9 +240,14 @@ function getShopifyClient(): Promise<any> {
 
 export default function HibrydsBuyButton() {
   const [format, setFormat] = useState<Format>('soft')
-  const nodeRef = useRef<HTMLDivElement>(null)
+  const [mounted, setMounted] = useState<Record<string, boolean>>({})
+  // Each format gets its own permanent, never-wiped mount node — created once on load.
+  const nodeRefs = useRef<Record<Format, HTMLDivElement | null>>({
+    soft: null,
+    hard: null,
+  })
   const uiRef = useRef<any>(null)
-  const componentsRef = useRef<Record<string, any>>({})
+  const mountedRef = useRef<Record<string, boolean>>({})
 
   useEffect(() => {
     let cancelled = false
@@ -251,7 +257,11 @@ export default function HibrydsBuyButton() {
       ;(window as any).ShopifyBuy.UI.onReady(client).then((ui: any) => {
         if (cancelled) return
         uiRef.current = ui
-        mountFormat(format)
+        // Mount the currently selected format first for instant paint,
+        // then mount the other one quietly in the background so switching
+        // later is instant and never re-touches the DOM node.
+        mountFormatOnce(format)
+        FORMAT_KEYS.filter((k) => k !== format).forEach((k) => mountFormatOnce(k))
       })
     })
 
@@ -261,42 +271,23 @@ export default function HibrydsBuyButton() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  useEffect(() => {
-    if (uiRef.current) {
-      mountFormat(format)
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [format])
-
-  function mountFormat(fmt: Format) {
+  function mountFormatOnce(fmt: Format) {
     const ui = uiRef.current
-    if (!ui || !nodeRef.current) return
+    const node = nodeRefs.current[fmt]
+    if (!ui || !node || mountedRef.current[fmt]) return
 
-    // Clear previously mounted component (whichever format was showing)
-    Object.entries(componentsRef.current).forEach(([key, comp]) => {
-      if (key !== fmt && comp) {
-        try {
-          comp.destroy()
-        } catch {
-          // no-op
-        }
-        delete componentsRef.current[key]
-      }
-    })
-
-    if (componentsRef.current[fmt]) return // already mounted
-
-    nodeRef.current.innerHTML = ''
-    const mountNode = document.createElement('div')
-    nodeRef.current.appendChild(mountNode)
+    mountedRef.current[fmt] = true
 
     ui.createComponent('product', {
       id: PRODUCTS[fmt].id,
-      node: mountNode,
+      node,
       moneyFormat: '%24%7B%7Bamount%7D%7D',
       options: buyButtonOptions,
-    }).then((comp: any) => {
-      componentsRef.current[fmt] = comp
+    }).then(() => {
+      setMounted((prev) => ({ ...prev, [fmt]: true }))
+    }).catch(() => {
+      // Allow retry on failure instead of getting stuck "mounted" forever
+      mountedRef.current[fmt] = false
     })
   }
 
@@ -309,14 +300,12 @@ export default function HibrydsBuyButton() {
       </div>
 
       <div className="inline-flex rounded-full border border-border bg-surface p-1 mb-6">
-        {(Object.keys(PRODUCTS) as Format[]).map((key) => (
+        {FORMAT_KEYS.map((key) => (
           <button
             key={key}
             onClick={() => setFormat(key)}
             className={`px-5 py-2 text-sm font-medium rounded-full transition-colors duration-200 ${
-              format === key
-                ? 'bg-rose text-ink'
-                : 'text-text-muted hover:text-text'
+              format === key ? 'bg-rose text-ink' : 'text-text-muted hover:text-text'
             }`}
           >
             {PRODUCTS[key].label}
@@ -324,7 +313,19 @@ export default function HibrydsBuyButton() {
         ))}
       </div>
 
-      <div ref={nodeRef} />
+      {!mounted[format] && (
+        <p className="text-text-faint text-sm">Loading...</p>
+      )}
+
+      {FORMAT_KEYS.map((key) => (
+        <div
+          key={key}
+          ref={(el) => {
+            nodeRefs.current[key] = el
+          }}
+          style={{ display: format === key ? 'block' : 'none' }}
+        />
+      ))}
     </section>
   )
 }
