@@ -146,15 +146,20 @@ const NAISEIKAI_SCHEMA = {
 // Helpers
 // ------------------------------------------------------------
 
+// "store.alarkiusej.com" is a disguised alias for /bookstore — same Worker,
+// same origin, just a different front door. Treat it as alarkiusej.com for
+// schema/favicon purposes since it's the same brand.
+const STORE_HOSTNAMES = new Set(["store.alarkiusej.com", "www.store.alarkiusej.com"]);
+
 function getSchemaByHostname(hostname) {
-  if (hostname === "www.alarkiusej.com" || hostname === "alarkiusej.com") return AUTHOR_SCHEMA;
+  if (hostname === "www.alarkiusej.com" || hostname === "alarkiusej.com" || STORE_HOSTNAMES.has(hostname)) return AUTHOR_SCHEMA;
   if (hostname === "www.thehibrythiansaga.com" || hostname === "thehibrythiansaga.com") return HIBRYTHIAN_SCHEMA;
   if (hostname === "www.naiseikaiuniverse.com" || hostname === "naiseikaiuniverse.com") return NAISEIKAI_SCHEMA;
   return null;
 }
 
 function getFaviconByHostname(hostname) {
-  if (hostname === "www.alarkiusej.com" || hostname === "alarkiusej.com")
+  if (hostname === "www.alarkiusej.com" || hostname === "alarkiusej.com" || STORE_HOSTNAMES.has(hostname))
     return "https://i.ibb.co/ZRfBMVj1/alarkiusej-favicon.png";
   if (hostname === "www.naiseikaiuniverse.com" || hostname === "naiseikaiuniverse.com")
     return "https://i.ibb.co/XZWTy55s/Naiseikai-Universe-Mascot-Haruhi-3.png";
@@ -226,10 +231,20 @@ export default {
     const url = new URL(request.url);
     const hostname = url.hostname;
 
+    // "store.alarkiusej.com" is a disguised front door for /bookstore.
+    // Rewrite the fetched asset path (not a redirect) so the URL bar keeps
+    // showing store.alarkiusej.com while the actual /bookstore page renders.
+    let assetRequest = request;
+    if (STORE_HOSTNAMES.has(hostname) && url.pathname === "/") {
+      const rewritten = new URL(url.toString());
+      rewritten.pathname = "/bookstore";
+      assetRequest = new Request(rewritten.toString(), request);
+    }
+
     // Fetch the matching static asset from the Astro build.
     let response;
     try {
-      response = await env.ASSETS.fetch(request);
+      response = await env.ASSETS.fetch(assetRequest);
     } catch (_) {
       response = await env.ASSETS.fetch(
         new Request(new URL("/404.html", url).toString(), request)
