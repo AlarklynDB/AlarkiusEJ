@@ -146,10 +146,10 @@ const NAISEIKAI_SCHEMA = {
 // Helpers
 // ------------------------------------------------------------
 
-// "store.alarkiusej.com" is a disguised alias for /bookstore — same Worker,
+// "shop.alarkiusej.com" is a disguised alias for /bookstore — same Worker,
 // same origin, just a different front door. Treat it as alarkiusej.com for
 // schema/favicon purposes since it's the same brand.
-const STORE_HOSTNAMES = new Set(["store.alarkiusej.com", "www.store.alarkiusej.com"]);
+const STORE_HOSTNAMES = new Set(["shop.alarkiusej.com", "www.shop.alarkiusej.com"]);
 
 function getSchemaByHostname(hostname) {
   if (hostname === "www.alarkiusej.com" || hostname === "alarkiusej.com" || STORE_HOSTNAMES.has(hostname)) return AUTHOR_SCHEMA;
@@ -231,9 +231,9 @@ export default {
     const url = new URL(request.url);
     const hostname = url.hostname;
 
-    // "store.alarkiusej.com" is a disguised front door for /bookstore.
+    // "shop.alarkiusej.com" is a disguised front door for /bookstore.
     // Rewrite the fetched asset path (not a redirect) so the URL bar keeps
-    // showing store.alarkiusej.com while the actual /bookstore page renders.
+    // showing shop.alarkiusej.com while the actual /bookstore page renders.
     let assetRequest = request;
     if (STORE_HOSTNAMES.has(hostname) && url.pathname === "/") {
       const rewritten = new URL(url.toString());
