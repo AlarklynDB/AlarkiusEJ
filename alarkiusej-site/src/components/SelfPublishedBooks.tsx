@@ -408,6 +408,27 @@ export default function SelfPublishedBooks() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  // If the page was opened at /#books, scroll there once this section is
+  // actually on screen. Needed because Astro hydrates React after the initial
+  // HTML paint, so the browser's native hash jump can fire too early.
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    if (window.location.hash !== '#books') return
+
+    let attempts = 0
+    const interval = setInterval(() => {
+      const el = document.getElementById('books')
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        clearInterval(interval)
+      } else if (++attempts > 40) {
+        clearInterval(interval)
+      }
+    }, 100)
+
+    return () => clearInterval(interval)
+  }, [])
+
   // Waits until the SDK has actually injected content into the node.
   // Does not depend on createComponent() returning a real promise, since
   // that varies between Buy Button SDK versions.
@@ -463,7 +484,7 @@ export default function SelfPublishedBooks() {
   }
 
   return (
-    <section className="max-w-5xl mx-auto px-6 pb-20">
+    <section id="books" className="max-w-5xl mx-auto px-6 pb-20 scroll-mt-24">
       <div className="mb-10 text-center sm:text-left">
         <p className="text-rose text-xs font-medium tracking-widest uppercase mb-2">
           Self Published Books
