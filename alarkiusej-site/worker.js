@@ -237,7 +237,7 @@ export default {
     let assetRequest = request;
     if (STORE_HOSTNAMES.has(hostname) && url.pathname === "/") {
       const rewritten = new URL(url.toString());
-      rewritten.pathname = "/bookstore";
+      rewritten.pathname = "/bookstore/";
       assetRequest = new Request(rewritten.toString(), request);
     }
 
