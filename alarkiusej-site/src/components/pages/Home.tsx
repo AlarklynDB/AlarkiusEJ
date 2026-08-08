@@ -1,14 +1,5 @@
 import { Link } from '../../lib/router'
 
-const skills = [
-  'Traditional & Digital Drawing',
-  'Musician / Composer',
-  'Author / Writer',
-  'Graphic Designer',
-  'Worldbuilding',
-  'Creative Artist',
-]
-
 const projects = [
   {
     title: 'The Hibrythian Saga',
@@ -180,25 +171,6 @@ export default function Home() {
               </div>
             </Link>
           ))}
-        </div>
-      </section>
-
-      {/* Skills */}
-      <section className="border-t border-border bg-ink-light">
-        <div className="max-w-5xl mx-auto px-6 py-16">
-          <div className="flex flex-col md:flex-row gap-8 items-start md:items-center">
-            <div className="md:w-1/3">
-              <p className="text-rose text-xs font-medium tracking-widest uppercase mb-2">Craft</p>
-              <h2 className="font-serif text-2xl font-semibold text-text">Skills &amp; Mediums</h2>
-            </div>
-            <div className="md:w-2/3 flex flex-wrap gap-2">
-              {skills.map((skill) => (
-                <span key={skill} className="tag">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
     </div>
