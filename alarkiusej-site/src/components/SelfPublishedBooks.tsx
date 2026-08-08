@@ -390,9 +390,13 @@ export default function SelfPublishedBooks() {
         if (cancelled) return
         uiRef.current = ui
         // Shopify's SDK does not reliably handle overlapping createComponent()
-        // calls, so mount each book one at a time, awaiting each.
+        // calls, so mount each book one at a time, waiting for each to
+        // actually render into the DOM before starting the next.
         for (const book of BOOKS) {
           await mountBook(book.key)
+          if (cancelled) return
+          // Small breather so the SDK fully settles between mounts
+          await new Promise((r) => setTimeout(r, 250))
           if (cancelled) return
         }
       })
@@ -404,32 +408,63 @@ export default function SelfPublishedBooks() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  function mountBook(key: BookKey): Promise<void> {
+  // Waits until the SDK has actually injected content into the node.
+  // Does not depend on createComponent() returning a real promise, since
+  // that varies between Buy Button SDK versions.
+  function waitForRender(node: HTMLDivElement, timeoutMs = 10000): Promise<boolean> {
+    return new Promise((resolve) => {
+      if (node.children.length > 0) {
+        resolve(true)
+        return
+      }
+      const start = Date.now()
+      const interval = setInterval(() => {
+        if (node.children.length > 0) {
+          clearInterval(interval)
+          resolve(true)
+        } else if (Date.now() - start > timeoutMs) {
+          clearInterval(interval)
+          resolve(false)
+        }
+      }, 100)
+    })
+  }
+
+  async function mountBook(key: BookKey): Promise<void> {
     const ui = uiRef.current
     const node = nodeRefs.current[key]
     const book = BOOKS.find((b) => b.key === key)
-    if (!ui || !node || !book || mountedRef.current[key]) return Promise.resolve()
+    if (!ui || !node || !book || mountedRef.current[key]) return
 
     mountedRef.current[key] = true
 
-    return ui
-      .createComponent('product', {
-        id: book.id,
-        node,
-        moneyFormat: '%24%7B%7Bamount%7D%7D',
-        options: buyButtonOptions,
-      })
-      .then(() => {
-        setMounted((prev) => ({ ...prev, [key]: true }))
-      })
-      .catch(() => {
-        mountedRef.current[key] = false
-      })
+    try {
+      // createComponent may return a component OR a promise depending on
+      // SDK version -- Promise.resolve() safely normalises both.
+      await Promise.resolve(
+        ui.createComponent('product', {
+          id: book.id,
+          node,
+          moneyFormat: '%24%7B%7Bamount%7D%7D',
+          options: buyButtonOptions,
+        })
+      )
+    } catch {
+      // Ignore -- we verify success by watching the DOM below instead.
+    }
+
+    const rendered = await waitForRender(node)
+    if (rendered) {
+      setMounted((prev) => ({ ...prev, [key]: true }))
+    } else {
+      // Let the user retry this one
+      mountedRef.current[key] = false
+    }
   }
 
   return (
     <section className="max-w-5xl mx-auto px-6 pb-20">
-      <div className="mb-10">
+      <div className="mb-10 text-center sm:text-left">
         <p className="text-rose text-xs font-medium tracking-widest uppercase mb-2">
           Self Published Books
         </p>
@@ -447,11 +482,11 @@ export default function SelfPublishedBooks() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center lg:justify-items-start">
         {BOOKS.map((book) => (
-          <div key={book.key}>
+          <div key={book.key} className="w-full max-w-xs">
             {!mounted[book.key] && (
-              <p className="text-text-faint text-sm mb-2">
+              <p className="text-text-faint text-sm mb-2 text-center lg:text-left">
                 Loading {book.label}...{' '}
                 <button
                   onClick={() => mountBook(book.key)}
