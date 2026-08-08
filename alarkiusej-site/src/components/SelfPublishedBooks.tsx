@@ -399,6 +399,12 @@ export default function SelfPublishedBooks() {
           await new Promise((r) => setTimeout(r, 250))
           if (cancelled) return
         }
+
+        // The section grows as the cards render, so if we arrived via /#books
+        // re-settle the scroll position once everything is actually in place.
+        if (window.location.hash === '#books') {
+          scrollToBooks()
+        }
       })
     })
 
@@ -408,25 +414,52 @@ export default function SelfPublishedBooks() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // If the page was opened at /#books, scroll there once this section is
-  // actually on screen. Needed because Astro hydrates React after the initial
-  // HTML paint, so the browser's native hash jump can fire too early.
+  // Smooth-scrolls so the section lands just below the fixed navbar with a
+  // little breathing room, leaving the whole section in view.
+  function scrollToBooks() {
+    const el = document.getElementById('books')
+    if (!el) return false
+
+    // Measure the fixed navbar instead of hardcoding its height
+    const nav = document.querySelector('nav, header')
+    const navHeight = nav ? Math.round(nav.getBoundingClientRect().height) : 64
+    const breathingRoom = 20
+
+    const top = el.getBoundingClientRect().top + window.scrollY - navHeight - breathingRoom
+
+    window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' })
+    return true
+  }
+
+  // If the page was opened at /#books, scroll there once this section exists.
+  // Needed because Astro hydrates React after the initial HTML paint, so the
+  // browser's native hash jump can fire before this section is on the page.
   useEffect(() => {
     if (typeof window === 'undefined') return
     if (window.location.hash !== '#books') return
 
     let attempts = 0
     const interval = setInterval(() => {
-      const el = document.getElementById('books')
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        clearInterval(interval)
-      } else if (++attempts > 40) {
+      if (scrollToBooks() || ++attempts > 40) {
         clearInterval(interval)
       }
     }, 100)
 
     return () => clearInterval(interval)
+  }, [])
+
+  // Handle in-page #books links (and back/forward hash changes) smoothly
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    function onHashChange() {
+      if (window.location.hash === '#books') {
+        scrollToBooks()
+      }
+    }
+
+    window.addEventListener('hashchange', onHashChange)
+    return () => window.removeEventListener('hashchange', onHashChange)
   }, [])
 
   // Waits until the SDK has actually injected content into the node.
