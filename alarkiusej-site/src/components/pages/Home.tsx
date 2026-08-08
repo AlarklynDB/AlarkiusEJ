@@ -1,4 +1,5 @@
 import { Link } from '../../lib/router'
+import HibrydsBuyButton from '../HibrydsBuyButton'
 
 const projects = [
   {
@@ -173,6 +174,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* Hibryds I — Buy Button (test) */}
+      <HibrydsBuyButton />
     </div>
   )
 }
