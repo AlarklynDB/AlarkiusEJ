@@ -1,0 +1,473 @@
+import { useEffect, useRef, useState } from 'react'
+import { Link } from '../lib/router'
+
+// Shared Shopify Storefront client config
+const SHOPIFY_DOMAIN = '3ed71a-4.myshopify.com'
+const SHOPIFY_TOKEN = '5735230c53c0a7ac626a2f9ccdc10815'
+const SCRIPT_URL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js'
+
+// Site palette (matches tailwind.config.mjs)
+const C = {
+  ink: '#191919',
+  inkLight: '#1f1f1f',
+  surface: '#252525',
+  surfaceRaised: '#2e2e2e',
+  border: '#3a3a3a',
+  text: '#e8e3dc',
+  textMuted: '#9e9890',
+  textFaint: '#6b6560',
+  orange: '#ff6a00',
+  orangeHover: '#e65f00',
+}
+
+// Shared Buy Button UI options — orange buttons, dark-themed cart
+const buyButtonOptions = {
+  product: {
+    styles: {
+      product: {
+        // Each product sits in its own grid cell, so let it fill the cell
+        '@media (min-width: 601px)': {
+          'max-width': '100%',
+          'margin-left': '0',
+          'margin-bottom': '0',
+        },
+      },
+      title: {
+        'font-family': 'Crimson Text, serif',
+        'font-weight': 'normal',
+        'font-size': '15px',
+        color: C.text,
+      },
+      button: {
+        'font-family': 'Crimson Text, serif',
+        'font-size': '14px',
+        'padding-top': '15px',
+        'padding-bottom': '15px',
+        ':hover': {
+          'background-color': C.orangeHover,
+        },
+        'background-color': C.orange,
+        ':focus': {
+          'background-color': C.orangeHover,
+        },
+        'border-radius': '40px',
+        'padding-left': '21px',
+        'padding-right': '21px',
+      },
+      quantityInput: {
+        'font-size': '14px',
+        'padding-top': '15px',
+        'padding-bottom': '15px',
+      },
+      price: {
+        'font-family': 'Crimson Text, serif',
+        'font-size': '16px',
+        color: C.text,
+      },
+      compareAt: {
+        'font-family': 'Crimson Text, serif',
+        'font-size': '13.6px',
+        color: C.textMuted,
+      },
+      unitPrice: {
+        'font-family': 'Crimson Text, serif',
+        'font-size': '13.6px',
+        color: C.textMuted,
+      },
+    },
+    contents: {
+      button: false,
+      buttonWithQuantity: true,
+    },
+    text: {
+      button: 'LOCK THAT BOOK IN!',
+    },
+    googleFonts: ['Crimson Text'],
+  },
+  productSet: {
+    styles: {
+      products: {
+        '@media (min-width: 601px)': {
+          'margin-left': '0',
+        },
+      },
+    },
+  },
+  modalProduct: {
+    contents: {
+      img: false,
+      imgWithCarousel: true,
+      button: false,
+      buttonWithQuantity: true,
+    },
+    styles: {
+      product: {
+        '@media (min-width: 601px)': {
+          'max-width': '100%',
+          'margin-left': '0px',
+          'margin-bottom': '0px',
+        },
+      },
+      button: {
+        'font-family': 'Crimson Text, serif',
+        'font-size': '14px',
+        'padding-top': '15px',
+        'padding-bottom': '15px',
+        ':hover': {
+          'background-color': C.orangeHover,
+        },
+        'background-color': C.orange,
+        ':focus': {
+          'background-color': C.orangeHover,
+        },
+        'border-radius': '40px',
+        'padding-left': '21px',
+        'padding-right': '21px',
+      },
+      quantityInput: {
+        'font-size': '14px',
+        'padding-top': '15px',
+        'padding-bottom': '15px',
+      },
+      title: {
+        'font-family': 'Lora, Georgia, serif',
+        'font-weight': 'bold',
+        'font-size': '26px',
+        color: C.text,
+      },
+      price: {
+        'font-family': 'Lora, Georgia, serif',
+        'font-weight': 'normal',
+        'font-size': '18px',
+        color: C.text,
+      },
+      compareAt: {
+        'font-family': 'Lora, Georgia, serif',
+        'font-weight': 'normal',
+        'font-size': '15.3px',
+        color: C.textMuted,
+      },
+      unitPrice: {
+        'font-family': 'Lora, Georgia, serif',
+        'font-weight': 'normal',
+        'font-size': '15.3px',
+        color: C.textMuted,
+      },
+    },
+    googleFonts: ['Crimson Text'],
+    text: {
+      button: 'Add to cart',
+    },
+  },
+  modal: {
+    styles: {
+      modal: {
+        'background-color': C.inkLight,
+      },
+    },
+  },
+  option: {
+    styles: {
+      label: {
+        color: C.text,
+      },
+      select: {
+        'background-color': C.surface,
+        color: C.text,
+        border: `1px solid ${C.border}`,
+      },
+    },
+  },
+  cart: {
+    styles: {
+      cart: {
+        'background-color': C.inkLight,
+      },
+      header: {
+        'background-color': C.inkLight,
+        color: C.text,
+      },
+      title: {
+        color: C.text,
+        'font-family': 'Lora, Georgia, serif',
+      },
+      lineItems: {
+        'background-color': C.inkLight,
+      },
+      footer: {
+        'background-color': C.ink,
+        'border-top': `1px solid ${C.border}`,
+      },
+      subtotalText: {
+        color: C.textMuted,
+      },
+      subtotal: {
+        color: C.text,
+      },
+      notice: {
+        color: C.textFaint,
+      },
+      currency: {
+        color: C.text,
+      },
+      close: {
+        color: C.textMuted,
+        ':hover': {
+          color: C.text,
+        },
+      },
+      emptyCart: {
+        color: C.textMuted,
+      },
+      noteDescription: {
+        color: C.textMuted,
+      },
+      discountText: {
+        color: C.textMuted,
+      },
+      discountAmount: {
+        color: C.text,
+      },
+      button: {
+        'font-family': 'Crimson Text, serif',
+        'font-size': '14px',
+        'padding-top': '15px',
+        'padding-bottom': '15px',
+        ':hover': {
+          'background-color': C.orangeHover,
+        },
+        'background-color': C.orange,
+        ':focus': {
+          'background-color': C.orangeHover,
+        },
+        'border-radius': '40px',
+      },
+    },
+    text: {
+      total: 'Subtotal',
+      button: 'Checkout',
+    },
+    googleFonts: ['Crimson Text'],
+  },
+  lineItem: {
+    styles: {
+      lineItem: {
+        'background-color': C.inkLight,
+      },
+      title: {
+        color: C.text,
+      },
+      variantTitle: {
+        color: C.textMuted,
+      },
+      price: {
+        color: C.text,
+      },
+      fullPrice: {
+        color: C.text,
+      },
+      discount: {
+        color: C.textMuted,
+      },
+      discountIcon: {
+        fill: C.textMuted,
+      },
+      quantity: {
+        color: C.text,
+      },
+      quantityInput: {
+        color: C.text,
+        'background-color': C.surface,
+        border: `1px solid ${C.border}`,
+      },
+      quantityButton: {
+        color: C.text,
+        'background-color': C.surface,
+        border: `1px solid ${C.border}`,
+        ':hover': {
+          'background-color': C.surfaceRaised,
+        },
+      },
+      quantityIncrement: {
+        color: C.text,
+        'background-color': C.surface,
+        border: `1px solid ${C.border}`,
+      },
+      quantityDecrement: {
+        color: C.text,
+        'background-color': C.surface,
+        border: `1px solid ${C.border}`,
+      },
+    },
+  },
+  toggle: {
+    styles: {
+      toggle: {
+        'font-family': 'Crimson Text, serif',
+        'background-color': C.orange,
+        ':hover': {
+          'background-color': C.orangeHover,
+        },
+        ':focus': {
+          'background-color': C.orangeHover,
+        },
+      },
+      count: {
+        'font-size': '14px',
+      },
+    },
+    googleFonts: ['Crimson Text'],
+  },
+}
+
+// Books shown side by side (Shopify product IDs)
+const BOOKS = [
+  { key: 'soft', id: '9492713472246', label: 'Hibryds I — Softcover' },
+  { key: 'hard', id: '9492713767158', label: 'Hibryds I — Hardcover' },
+] as const
+
+type BookKey = (typeof BOOKS)[number]['key']
+
+// Loads the Shopify Buy SDK once and resolves with the built client
+let shopifyClientPromise: Promise<any> | null = null
+
+function getShopifyClient(): Promise<any> {
+  if (shopifyClientPromise) return shopifyClientPromise
+
+  shopifyClientPromise = new Promise((resolve, reject) => {
+    function buildClient() {
+      try {
+        const client = (window as any).ShopifyBuy.buildClient({
+          domain: SHOPIFY_DOMAIN,
+          storefrontAccessToken: SHOPIFY_TOKEN,
+        })
+        resolve(client)
+      } catch (err) {
+        reject(err)
+      }
+    }
+
+    if ((window as any).ShopifyBuy) {
+      if ((window as any).ShopifyBuy.UI) {
+        buildClient()
+      } else {
+        loadScript(buildClient)
+      }
+    } else {
+      loadScript(buildClient)
+    }
+
+    function loadScript(onLoad: () => void) {
+      const existing = document.querySelector(`script[src="${SCRIPT_URL}"]`)
+      if (existing) {
+        existing.addEventListener('load', onLoad)
+        return
+      }
+      const script = document.createElement('script')
+      script.async = true
+      script.src = SCRIPT_URL
+      ;(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script)
+      script.onload = onLoad
+    }
+  })
+
+  return shopifyClientPromise
+}
+
+export default function SelfPublishedBooks() {
+  const [mounted, setMounted] = useState<Record<string, boolean>>({})
+  const nodeRefs = useRef<Record<string, HTMLDivElement | null>>({})
+  const uiRef = useRef<any>(null)
+  const mountedRef = useRef<Record<string, boolean>>({})
+
+  useEffect(() => {
+    let cancelled = false
+
+    getShopifyClient().then((client) => {
+      if (cancelled) return
+      ;(window as any).ShopifyBuy.UI.onReady(client).then(async (ui: any) => {
+        if (cancelled) return
+        uiRef.current = ui
+        // Shopify's SDK does not reliably handle overlapping createComponent()
+        // calls, so mount each book one at a time, awaiting each.
+        for (const book of BOOKS) {
+          await mountBook(book.key)
+          if (cancelled) return
+        }
+      })
+    })
+
+    return () => {
+      cancelled = true
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  function mountBook(key: BookKey): Promise<void> {
+    const ui = uiRef.current
+    const node = nodeRefs.current[key]
+    const book = BOOKS.find((b) => b.key === key)
+    if (!ui || !node || !book || mountedRef.current[key]) return Promise.resolve()
+
+    mountedRef.current[key] = true
+
+    return ui
+      .createComponent('product', {
+        id: book.id,
+        node,
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: buyButtonOptions,
+      })
+      .then(() => {
+        setMounted((prev) => ({ ...prev, [key]: true }))
+      })
+      .catch(() => {
+        mountedRef.current[key] = false
+      })
+  }
+
+  return (
+    <section className="max-w-5xl mx-auto px-6 pb-20">
+      <div className="mb-10">
+        <p className="text-rose text-xs font-medium tracking-widest uppercase mb-2">
+          Self Published Books
+        </p>
+        <h2 className="font-serif text-3xl font-semibold text-text">
+          Official Author Exclusive Originals!
+        </h2>
+        <p className="text-text-muted mt-2">
+          Books from both my IPs, The Hibrythian Saga, The Naiseikai Universe.....and more...!
+        </p>
+        <p className="text-text-muted mt-1">
+          Or you can click here to view the full{' '}
+          <Link to="/bookstore" className="text-rose hover:text-rose-light underline transition-colors duration-200">
+            bookstore
+          </Link>
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+        {BOOKS.map((book) => (
+          <div key={book.key}>
+            {!mounted[book.key] && (
+              <p className="text-text-faint text-sm mb-2">
+                Loading {book.label}...{' '}
+                <button
+                  onClick={() => mountBook(book.key)}
+                  className="underline hover:text-text transition-colors"
+                >
+                  Retry
+                </button>
+              </p>
+            )}
+            <div
+              ref={(el) => {
+                nodeRefs.current[book.key] = el
+              }}
+            />
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
