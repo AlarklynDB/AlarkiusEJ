@@ -254,14 +254,20 @@ export default function HibrydsBuyButton() {
 
     getShopifyClient().then((client) => {
       if (cancelled) return
-      ;(window as any).ShopifyBuy.UI.onReady(client).then((ui: any) => {
+      ;(window as any).ShopifyBuy.UI.onReady(client).then(async (ui: any) => {
         if (cancelled) return
         uiRef.current = ui
-        // Mount the currently selected format first for instant paint,
-        // then mount the other one quietly in the background so switching
-        // later is instant and never re-touches the DOM node.
-        mountFormatOnce(format)
-        FORMAT_KEYS.filter((k) => k !== format).forEach((k) => mountFormatOnce(k))
+        // Shopify's Buy Button SDK does not reliably handle two overlapping
+        // createComponent() calls on the same ui instance -- the second one
+        // can silently stall forever. Mount the selected format first, WAIT
+        // for it to fully resolve, then mount the other one after.
+        await mountFormatOnce(format)
+        if (cancelled) return
+        const rest = FORMAT_KEYS.filter((k) => k !== format)
+        for (const k of rest) {
+          await mountFormatOnce(k)
+          if (cancelled) return
+        }
       })
     })
 
@@ -271,24 +277,27 @@ export default function HibrydsBuyButton() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  function mountFormatOnce(fmt: Format) {
+  function mountFormatOnce(fmt: Format): Promise<void> {
     const ui = uiRef.current
     const node = nodeRefs.current[fmt]
-    if (!ui || !node || mountedRef.current[fmt]) return
+    if (!ui || !node || mountedRef.current[fmt]) return Promise.resolve()
 
     mountedRef.current[fmt] = true
 
-    ui.createComponent('product', {
-      id: PRODUCTS[fmt].id,
-      node,
-      moneyFormat: '%24%7B%7Bamount%7D%7D',
-      options: buyButtonOptions,
-    }).then(() => {
-      setMounted((prev) => ({ ...prev, [fmt]: true }))
-    }).catch(() => {
-      // Allow retry on failure instead of getting stuck "mounted" forever
-      mountedRef.current[fmt] = false
-    })
+    return ui
+      .createComponent('product', {
+        id: PRODUCTS[fmt].id,
+        node,
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: buyButtonOptions,
+      })
+      .then(() => {
+        setMounted((prev) => ({ ...prev, [fmt]: true }))
+      })
+      .catch(() => {
+        // Allow retry on failure instead of getting stuck "mounted" forever
+        mountedRef.current[fmt] = false
+      })
   }
 
   return (
@@ -303,7 +312,13 @@ export default function HibrydsBuyButton() {
         {FORMAT_KEYS.map((key) => (
           <button
             key={key}
-            onClick={() => setFormat(key)}
+            onClick={() => {
+              setFormat(key)
+              // If this format never finished mounting, give it another shot.
+              if (!mountedRef.current[key]) {
+                mountFormatOnce(key)
+              }
+            }}
             className={`px-5 py-2 text-sm font-medium rounded-full transition-colors duration-200 ${
               format === key ? 'bg-rose text-ink' : 'text-text-muted hover:text-text'
             }`}
@@ -314,7 +329,15 @@ export default function HibrydsBuyButton() {
       </div>
 
       {!mounted[format] && (
-        <p className="text-text-faint text-sm">Loading...</p>
+        <p className="text-text-faint text-sm">
+          Loading...{' '}
+          <button
+            onClick={() => mountFormatOnce(format)}
+            className="underline hover:text-text transition-colors"
+          >
+            Taking a while? Click to retry.
+          </button>
+        </p>
       )}
 
       {FORMAT_KEYS.map((key) => (
