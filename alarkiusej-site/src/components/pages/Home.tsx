@@ -1,5 +1,5 @@
 import { Link } from '../../lib/router'
-import HibrydsBuyButton from '../HibrydsBuyButton'
+import SelfPublishedBooks from '../SelfPublishedBooks'
 
 const projects = [
   {
@@ -175,8 +175,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Hibryds I — Buy Button (test) */}
-      <HibrydsBuyButton />
+      {/* Self Published Books — Shopify Buy Buttons */}
+      <SelfPublishedBooks />
     </div>
   )
 }
