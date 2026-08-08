@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Bookstore from '../components/pages/Bookstore'
+---
+
+<BaseLayout
+  title={"Bookstore | AlarkiusEJ"}
+  description={"The full catalog of books from The Hibrythian Saga, The Naiseikai Universe, and more by Alarkius Elvya Jay. Coming soon."}
+  path={"/bookstore"}
+>
+  <Bookstore client:load />
+</BaseLayout>
