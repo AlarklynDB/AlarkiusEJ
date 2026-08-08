@@ -324,6 +324,7 @@ const buyButtonOptions = {
 const BOOKS = [
   { key: 'soft', id: '9492713472246', label: 'Hibryds I — Softcover' },
   { key: 'hard', id: '9492713767158', label: 'Hibryds I — Hardcover' },
+  { key: 'tqctn', id: '9492714127606', label: 'TQCTN' },
 ] as const
 
 type BookKey = (typeof BOOKS)[number]['key']
@@ -446,7 +447,7 @@ export default function SelfPublishedBooks() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {BOOKS.map((book) => (
           <div key={book.key}>
             {!mounted[book.key] && (
