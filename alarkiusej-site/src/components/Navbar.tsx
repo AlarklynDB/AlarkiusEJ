@@ -12,7 +12,6 @@ const navLinks = [
   },
   { label: 'Music', path: '/music' },
   { label: 'Tools & Apps', path: '/tools' },
-  { label: 'Buy My Books', path: '/find-my-books', newTab: true },
   {
     label: 'FAQ',
     children: [
