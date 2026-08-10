@@ -13,6 +13,9 @@ export default function Bookstore() {
         </h1>
         <p className="text-text-muted text-lg leading-relaxed">
           Every self-published title across my worlds, organized by universe.
+          This bookstore will house all my author exclusive originals, my main hub. 
+          Direct Shipping and Printing is done by Lulu Direct!
+          B&N will be my second home, native to the US.
         </p>
       </section>
 
