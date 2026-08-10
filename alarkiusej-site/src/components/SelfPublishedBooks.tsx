@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { Link } from '../lib/router'
 
 // Shared Shopify Storefront client config
@@ -320,14 +320,15 @@ const buyButtonOptions = {
   },
 }
 
-// Books shown side by side (Shopify product IDs)
-const BOOKS = [
+// All self-published books (Shopify product IDs). Each usage of
+// <SelfPublishedBooks /> picks which subset it wants to mount via `bookKeys`.
+const ALL_BOOKS = [
   { key: 'soft', id: '9492713472246', label: 'Hibryds I — Softcover' },
   { key: 'hard', id: '9492713767158', label: 'Hibryds I — Hardcover' },
   { key: 'tqctn', id: '9492714127606', label: 'TQCTN' },
 ] as const
 
-type BookKey = (typeof BOOKS)[number]['key']
+type BookKey = (typeof ALL_BOOKS)[number]['key']
 
 // Loads the Shopify Buy SDK once and resolves with the built client
 let shopifyClientPromise: Promise<any> | null = null
@@ -375,7 +376,29 @@ function getShopifyClient(): Promise<any> {
   return shopifyClientPromise
 }
 
-export default function SelfPublishedBooks() {
+interface SelfPublishedBooksProps {
+  /** Which books this instance mounts (a page can have multiple instances, each with its own subset). */
+  bookKeys: BookKey[]
+  eyebrow?: string
+  heading?: string
+  description?: ReactNode
+  /** Shows the "...view the full bookstore" link. Turn off when already on /bookstore. */
+  showBookstoreLink?: boolean
+  /** Hash anchor this section responds to / scrolls to, e.g. "books", "hibrythian-books". */
+  anchorId?: string
+}
+
+export default function SelfPublishedBooks({
+  bookKeys,
+  eyebrow = 'Self Published Books',
+  heading = 'Official Author Exclusive Originals!',
+  description = (
+    <>Books from both my IPs, The Hibrythian Saga, The Naiseikai Universe.....and more...!</>
+  ),
+  showBookstoreLink = true,
+  anchorId = 'books',
+}: SelfPublishedBooksProps) {
+  const books = ALL_BOOKS.filter((b) => bookKeys.includes(b.key))
   const [mounted, setMounted] = useState<Record<string, boolean>>({})
   const nodeRefs = useRef<Record<string, HTMLDivElement | null>>({})
   const uiRef = useRef<any>(null)
@@ -392,7 +415,7 @@ export default function SelfPublishedBooks() {
         // Shopify's SDK does not reliably handle overlapping createComponent()
         // calls, so mount each book one at a time, waiting for each to
         // actually render into the DOM before starting the next.
-        for (const book of BOOKS) {
+        for (const book of books) {
           await mountBook(book.key)
           if (cancelled) return
           // Small breather so the SDK fully settles between mounts
@@ -400,9 +423,9 @@ export default function SelfPublishedBooks() {
           if (cancelled) return
         }
 
-        // The section grows as the cards render, so if we arrived via /#books
-        // re-settle the scroll position once everything is actually in place.
-        if (window.location.hash === '#books') {
+        // The section grows as the cards render, so if we arrived via the
+        // matching hash, re-settle the scroll position once everything's in place.
+        if (window.location.hash === `#${anchorId}`) {
           scrollToBooks()
         }
       })
@@ -417,7 +440,7 @@ export default function SelfPublishedBooks() {
   // Smooth-scrolls so the section lands just below the fixed navbar with a
   // little breathing room, leaving the whole section in view.
   function scrollToBooks() {
-    const el = document.getElementById('books')
+    const el = document.getElementById(anchorId)
     if (!el) return false
 
     // Measure the fixed navbar instead of hardcoding its height
@@ -431,12 +454,12 @@ export default function SelfPublishedBooks() {
     return true
   }
 
-  // If the page was opened at /#books, scroll there once this section exists.
+  // If the page was opened at this section's hash, scroll there once it exists.
   // Needed because Astro hydrates React after the initial HTML paint, so the
   // browser's native hash jump can fire before this section is on the page.
   useEffect(() => {
     if (typeof window === 'undefined') return
-    if (window.location.hash !== '#books') return
+    if (window.location.hash !== `#${anchorId}`) return
 
     let attempts = 0
     const interval = setInterval(() => {
@@ -448,12 +471,12 @@ export default function SelfPublishedBooks() {
     return () => clearInterval(interval)
   }, [])
 
-  // Handle in-page #books links (and back/forward hash changes) smoothly
+  // Handle in-page hash links (and back/forward hash changes) smoothly
   useEffect(() => {
     if (typeof window === 'undefined') return
 
     function onHashChange() {
-      if (window.location.hash === '#books') {
+      if (window.location.hash === `#${anchorId}`) {
         scrollToBooks()
       }
     }
@@ -487,7 +510,7 @@ export default function SelfPublishedBooks() {
   async function mountBook(key: BookKey): Promise<void> {
     const ui = uiRef.current
     const node = nodeRefs.current[key]
-    const book = BOOKS.find((b) => b.key === key)
+    const book = books.find((b) => b.key === key)
     if (!ui || !node || !book || mountedRef.current[key]) return
 
     mountedRef.current[key] = true
@@ -517,27 +540,27 @@ export default function SelfPublishedBooks() {
   }
 
   return (
-    <section id="books" className="max-w-5xl mx-auto px-6 pb-20 scroll-mt-24">
+    <section id={anchorId} className="max-w-5xl mx-auto px-6 pb-20 scroll-mt-24">
       <div className="mb-10 text-center sm:text-left">
         <p className="text-rose text-xs font-medium tracking-widest uppercase mb-2">
-          Self Published Books
+          {eyebrow}
         </p>
         <h2 className="font-serif text-3xl font-semibold text-text">
-          Official Author Exclusive Originals!
+          {heading}
         </h2>
-        <p className="text-text-muted mt-2">
-          Books from both my IPs, The Hibrythian Saga, The Naiseikai Universe.....and more...!
-        </p>
-        <p className="text-text-muted mt-1">
-          Or you can click here to view the full{' '}
-          <Link to="/bookstore" className="text-rose hover:text-rose-light underline transition-colors duration-200">
-            bookstore
-          </Link>
-        </p>
+        <p className="text-text-muted mt-2">{description}</p>
+        {showBookstoreLink && (
+          <p className="text-text-muted mt-1">
+            Or you can click here to view the full{' '}
+            <Link to="/bookstore" className="text-rose hover:text-rose-light underline transition-colors duration-200">
+              bookstore
+            </Link>
+          </p>
+        )}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center lg:justify-items-start">
-        {BOOKS.map((book) => (
+      <div className="flex flex-wrap gap-10 justify-center sm:justify-start">
+        {books.map((book) => (
           <div key={book.key} className="w-full max-w-xs">
             {!mounted[book.key] && (
               <p className="text-text-faint text-sm mb-2 text-center lg:text-left">
