@@ -4,7 +4,7 @@ export default function Bookstore() {
   return (
     <div className="pt-16">
       {/* Intro */}
-      <section className="max-w-3xl mx-auto px-6 pt-20 pb-4 text-center">
+      <section className="max-w-3xl mx-auto px-6 pt-20 pb-4 text-left">
         <p className="text-rose text-xs font-medium tracking-widest uppercase mb-4">
           Bookstore
         </p>
@@ -18,6 +18,10 @@ export default function Bookstore() {
           B&N will be my second home, native to the US.
         </p>
       </section>
+
+      <div className="max-w-3xl mx-auto px-6 pt-8 pb-4">
+        <div className="section-divider" />
+      </div>
 
       {/* The Hibrythian Saga */}
       <SelfPublishedBooks
