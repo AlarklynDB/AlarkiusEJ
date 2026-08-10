@@ -10,6 +10,7 @@ const navLinks = [
       { label: 'The Naiseikai Universe', path: '/naiseikai-universe' },
     ],
   },
+  { label: 'Bookstore', path: '/bookstore' },
   { label: 'Music', path: '/music' },
   { label: 'Tools & Apps', path: '/tools' },
   {
