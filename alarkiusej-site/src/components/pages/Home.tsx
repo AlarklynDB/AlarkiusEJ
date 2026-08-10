@@ -175,8 +175,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Self Published Books — Shopify Buy Buttons */}
-      <SelfPublishedBooks />
+      {/* Self Published Books — Shopify Buy Buttons. The Hibryds I Softcover
+          button lives on /bookstore under The Hibrythian Saga section now. */}
+      <SelfPublishedBooks
+        bookKeys={['hard', 'tqctn']}
+        description={
+          <>Books from both my IPs, The Hibrythian Saga, The Naiseikai Universe.....and more...!</>
+        }
+      />
     </div>
   )
 }
