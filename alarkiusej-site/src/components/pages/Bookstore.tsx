@@ -4,14 +4,14 @@ export default function Bookstore() {
   return (
     <div className="pt-16">
       {/* Intro */}
-      <section className="max-w-3xl mx-auto px-6 pt-20 pb-4 text-left">
+      <section className="max-w-5xl mx-auto px-6 pt-20 pb-4 text-left">
         <p className="text-rose text-xs font-medium tracking-widest uppercase mb-4">
           Bookstore
         </p>
         <h1 className="font-serif text-5xl sm:text-6xl font-bold text-text leading-tight mb-6">
           The Bookstore
         </h1>
-        <p className="text-text-muted text-lg leading-relaxed">
+        <p className="text-text-muted text-lg leading-relaxed max-w-3xl">
           Every self-published title across my worlds, organized by universe.
           This bookstore will house all my author exclusive originals, my main hub. 
           Direct Shipping and Printing is done by Lulu Direct!
@@ -19,7 +19,7 @@ export default function Bookstore() {
         </p>
       </section>
 
-      <div className="max-w-3xl mx-auto px-6 pt-8 pb-4">
+      <div className="max-w-5xl mx-auto px-6 pt-8 pb-4">
         <div className="section-divider" />
       </div>
 
