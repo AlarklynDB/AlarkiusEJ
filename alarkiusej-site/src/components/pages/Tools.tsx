@@ -34,9 +34,9 @@ const upcomingTools = [
     description:
       'A lightweight, cross-platform clipboard manager that lives in your system tray and acts like an default app too. Search your clip history, pin what matters, organize into Quivers, and summon it all with Shift+Alt+V. Never lose copied text again.',
     platform: 'Windows · macOS · Linux (Tauri)',
-    github: 'https://github.com/TheAlarklynZone/Quilvar',
+    github: 'https://thealarklynzone.github.io/Quilvar/',
     icon: '📋',
-    tags: ['Clipboard Manager', 'Desktop', 'Coming Soon'],
+    tags: ['Clipboard Manager', 'Desktop', 'Available Now'],
   },
   {
     name: 'Varmojii',
