@@ -8,6 +8,7 @@ const navLinks = [
     children: [
       { label: 'The Hibrythian Saga', path: '/hibrythian-saga' },
       { label: 'The Naiseikai Universe', path: '/naiseikai-universe' },
+      { label: 'Golden Hour of Ashen Truth', path: '/goldenhour-ashentruth' },
     ],
   },
   { label: 'Bookstore', path: '/bookstore' },
