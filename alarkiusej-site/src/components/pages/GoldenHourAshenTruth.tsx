@@ -11,7 +11,7 @@ export default function GoldenHourAshenTruth() {
         {/* Header */}
         <div className="page-hero">
           <p className="text-rose text-xs font-medium tracking-widest uppercase mb-3">
-            The Naiseikai Universe
+            GHOAT - Original Work
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-text mb-4">
             Golden Hour of Ashen Truth
@@ -26,7 +26,7 @@ export default function GoldenHourAshenTruth() {
             <span className="text-xl flex-shrink-0">🌉</span>
             <p className="text-sm text-text-muted">
               <span className="text-gold font-semibold">Currently in progress.</span> Chapters are
-              being written and refined right now — this page will grow alongside the story.
+              being written and refined right now — this page will grow alongside the story. Will be published soon to: B&N and Google Play Books, alongside alarkiusej.com/bookshelf
             </p>
           </div>
         </div>
