@@ -25,10 +25,7 @@ const liveTools = [
     icon: '🎮',
     tags: ['Discord', 'Rich Presence', 'Desktop', 'Open Source'],
   },
-]
-
-const upcomingTools = [
-  {
+    {
     name: 'Quilvar',
     tagline: 'Store your clips. Paste with precision.',
     status: 'Beta — Active Development',
@@ -39,6 +36,9 @@ const upcomingTools = [
     icon: '📋',
     tags: ['Clipboard Manager', 'Desktop', 'Available Now'],
   },
+]
+
+const upcomingTools = [
   {
     name: 'Varmojii',
     tagline: 'Your glyphs, on demand.',
