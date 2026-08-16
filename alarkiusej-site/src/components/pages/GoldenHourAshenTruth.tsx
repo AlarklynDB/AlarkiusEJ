@@ -1,6 +1,6 @@
 const characters = [
   { name: 'Lhua Gholdt', tag: 'she/her · 25', blurb: 'SS Rank Healer & Combatant — an apothecary who buried her feelings under responsibility.' },
-  { name: 'Oshaeà "Oa" Lenhart', tag: 'she/her · 23', blurb: 'A demon-raised orphan who buried her grief under cheerfulness. Wields S Rank demon magic the city underrates.' },
+  { name: 'Oshaeà "Oa" Ashen Lenhart', tag: 'she/her · 23', blurb: 'A demon-raised orphan who buried her grief under cheerfulness. Wields S Rank demon magic the city underrates.' },
   { name: 'Phaliyá the Slime', tag: 'she/it', blurb: 'Once a Demon Slime Boss — now a smaller, self-aware Rank A slime who teaches Oa to wield her power.' },
 ]
 
