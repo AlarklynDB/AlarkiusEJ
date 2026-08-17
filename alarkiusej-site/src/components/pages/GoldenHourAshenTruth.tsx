@@ -93,6 +93,31 @@ export default function GoldenHourAshenTruth() {
 
         <div className="section-divider" />
 
+        {/* Interactive Calendar */}
+        <section className="mb-12">
+          <p className="text-text-faint text-sm uppercase tracking-widest font-medium mb-3">Explore the World</p>
+          <a
+            href="/thaosia-calendar"
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-4 p-5 bg-surface rounded-xl border border-gold/20 hover:border-gold/40 transition-colors duration-200 group"
+          >
+            <span className="text-3xl flex-shrink-0">📅</span>
+            <div className="flex-1">
+              <p className="text-base font-semibold text-text group-hover:text-gold transition-colors duration-200">
+                The Thaosia Calendar
+              </p>
+              <p className="text-sm text-text-muted leading-snug mt-1">
+                An interactive year calendar for Thaosia — 12 months, 540 days, the bell-based time
+                system, and character birthdays, all mapped alongside GHOAT's chapter events.
+              </p>
+            </div>
+            <span className="text-gold text-sm font-medium whitespace-nowrap self-start sm:self-center">
+              Open Calendar →
+            </span>
+          </a>
+        </section>
+
+        <div className="section-divider" />
+
         {/* Who it's for */}
         <section>
           <div className="callout callout-rose">

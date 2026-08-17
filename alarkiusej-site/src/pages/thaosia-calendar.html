@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Thaosia Calendar | AlarkiusEJ</title>
+<meta name="description" content="An interactive year calendar for Thaosia — the world of Golden Hour of Ashen Truth. Explore the bell system, seasons, months, and character birthdays across the Thaosian year." />
+<link rel="canonical" href="https://www.alarkiusej.com/thaosia-calendar" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;700&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-bg: #0e0c0a;
+  --color-surface: #161210;
+  --color-surface-2: #1c1714;
+  --color-surface-offset: #201a16;
+  --color-divider: #2e2620;
+  --color-border: #3a2f26;
+  --color-text: #e8ddd0;
+  --color-text-muted: #a89880;
+  --color-text-faint: #5c5044;
+  --color-accent-gold: #e8b04a;
+  --color-accent-gold-hover: #f5c66a;
+  --color-accent-ember: #e0703c;
+  --color-accent-ash: #9c8f7e;
+  --color-accent-rose: #d97b8f;
+  --font-display: 'Cinzel Decorative', 'Cinzel', serif;
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Lora', serif;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
+  --shadow-glow-gold: 0 0 24px rgba(232,176,74,0.25);
+}
+* , *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+h1,h2,h3,h4 { font-family: var(--font-heading); line-height: 1.2; }
+button { cursor: pointer; background: none; border: none; color: inherit; font: inherit; }
+
+section { padding: clamp(3rem, 8vw, 5rem) 1.5rem; }
+.section-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
+.section-label {
+  font-family: var(--font-heading); font-size: 0.75rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--color-accent-ember);
+}
+.section-title { font-family: var(--font-display); font-size: clamp(1.3rem, 1.05rem + 1vw, 1.9rem); color: var(--color-text); letter-spacing: 0.03em; }
+.section-desc { font-size: 0.9rem; color: var(--color-text-muted); margin-top: -1rem; }
+
+.section-divider { display: flex; align-items: center; justify-content: center; gap: 12px; max-width: 60%; margin: 0 auto; }
+.section-divider::before, .section-divider::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(to var(--dir,right), transparent, rgba(232,176,74,0.5) 50%, transparent);
+}
+.section-divider::after { --dir: left; }
+.section-divider-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent-gold); box-shadow: 0 0 10px 2px rgba(232,176,74,0.6); flex-shrink: 0; }
+
+/* HERO */
+.hero { position: relative; overflow: hidden; padding: clamp(4rem, 12vw, 6rem) 1.5rem; text-align: center; }
+.hero-stars {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 15% 20%, var(--color-accent-gold), transparent),
+    radial-gradient(1px 1px at 80% 15%, var(--color-accent-ember), transparent),
+    radial-gradient(1.5px 1.5px at 40% 70%, var(--color-accent-rose), transparent),
+    radial-gradient(1px 1px at 65% 50%, #5c5044, transparent),
+    radial-gradient(1px 1px at 20% 80%, #5c5044, transparent),
+    radial-gradient(1.5px 1.5px at 88% 65%, var(--color-accent-gold), transparent),
+    radial-gradient(1px 1px at 55% 10%, #5c5044, transparent),
+    radial-gradient(1px 1px at 30% 40%, var(--color-accent-ember), transparent);
+}
+.hero-content { position: relative; max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1.2rem; }
+.hero-era-badge {
+  font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--color-accent-gold); padding: 4px 16px; border: 1px solid rgba(232,176,74,0.35); border-radius: var(--radius-full);
+}
+.hero-title { font-family: var(--font-display); font-size: clamp(1.75rem, 0.9rem + 4vw, 3rem); text-shadow: 0 0 40px rgba(232,176,74,0.3); }
+.hero-sub { font-family: var(--font-heading); font-size: 1rem; color: var(--color-accent-ember); letter-spacing: 0.05em; }
+.hero-quote { font-style: italic; color: var(--color-text-muted); max-width: 560px; }
+.hero-stats { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem; max-width: 620px; margin-left: auto; margin-right: auto; }
+.stat-pill {
+  display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 1rem 1.5rem;
+  background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+  min-width: 90px; box-shadow: var(--shadow-md);
+}
+.stat-num { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--color-accent-gold); }
+.stat-label { font-size: 0.7rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+
+/* BELL CLOCK */
+.bell-layout { display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem; }
+.bell-unit { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; flex: 0 0 auto; width: clamp(220px, 40%, 320px); }
+.bell-unit-label { font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-text-muted); }
+.bell-face-wrap { filter: drop-shadow(0 0 16px rgba(224,112,60,0.25)); }
+.bell-face { max-width: 260px; width: 100%; }
+.bell-digital { font-family: var(--font-heading); font-size: 1.5rem; color: var(--color-accent-gold); letter-spacing: 0.08em; }
+.bell-clock-readout { font-family: var(--font-heading); font-size: 0.85rem; color: var(--color-text-faint); letter-spacing: 0.14em; font-variant-numeric: tabular-nums; margin-top: 2px; }
+.bell-period { font-size: 0.8rem; color: var(--color-accent-ember); text-transform: uppercase; letter-spacing: 0.1em; }
+.toggle-row { display: flex; justify-content: center; gap: 0.5rem; }
+.toggle-btn {
+  padding: 8px 18px; border: 1px solid var(--color-border); border-radius: var(--radius-full);
+  font-family: var(--font-heading); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--color-text-muted); transition: all 0.2s ease;
+}
+.toggle-btn.active, .toggle-btn:hover { border-color: var(--color-accent-gold); color: var(--color-accent-gold); background: rgba(232,176,74,0.08); }
+
+/* SEASON / MONTH CARDS */
+.months-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: 12px; }
+.month-card {
+  background: var(--color-surface); border: 1px solid var(--color-border); border-left: 3px solid var(--card-accent, #e8b04a);
+  border-radius: var(--radius-md); padding: 14px 16px; display: flex; flex-direction: column; gap: 4px;
+  cursor: pointer; transition: all 0.18s ease;
+}
+.month-card:hover { background: var(--color-surface-2); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.month-card.active-month { border-color: var(--card-accent, #e8b04a); box-shadow: 0 0 0 1px var(--card-accent, #e8b04a); }
+.month-card-season { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--card-accent, #e8b04a); }
+.month-card-name { font-family: var(--font-heading); font-size: 1rem; color: var(--color-text); font-weight: 700; }
+.month-card-days { font-size: 0.75rem; color: var(--color-text-faint); }
+
+/* SEASON BAND */
+.season-band { display: flex; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border); }
+.season-block { flex: 1; padding: 14px 10px; text-align: center; position: relative; }
+.season-block-name { font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; }
+.season-block-months { font-size: 0.7rem; opacity: 0.75; margin-top: 2px; }
+
+/* CALENDAR */
+.year-nav { display: flex; align-items: center; justify-content: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+.year-nav-btn {
+  height: 38px; padding: 0 14px; display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-surface);
+  color: var(--color-text-muted); font-size: 0.8rem; font-family: var(--font-heading); letter-spacing: 0.03em;
+  text-transform: uppercase; transition: all 0.18s ease; cursor: pointer; white-space: nowrap;
+}
+.year-nav-btn:hover { background: var(--color-surface-2); color: var(--color-accent-gold); border-color: var(--color-accent-gold); }
+.year-nav-jump { color: var(--color-accent-ember); font-weight: 700; }
+.year-nav-jump:hover { border-color: var(--color-accent-ember); color: var(--color-accent-ember); }
+.year-display {
+  font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--color-accent-gold);
+  padding: 0 0.75rem; min-width: 110px; text-align: center; letter-spacing: 0.02em;
+}
+.calendar-nav { display: flex; align-items: center; gap: 1rem; justify-content: space-between; }
+.cal-nav-btn {
+  min-width: 40px; height: 40px; padding: 0 14px; display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-md); border: 1px solid var(--color-border); color: var(--color-text-muted);
+  font-size: 1.1rem; transition: all 0.18s ease; flex-shrink: 0; font-family: var(--font-heading);
+}
+.cal-nav-btn:hover { background: var(--color-surface-2); color: var(--color-accent-gold); border-color: var(--color-accent-gold); }
+.cal-month-display { text-align: center; flex: 1; }
+.cal-month-name { display: block; font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text); font-weight: 700; }
+.cal-month-meta { font-size: 0.75rem; color: var(--color-accent-ember); letter-spacing: 0.1em; text-transform: uppercase; }
+
+.cal-day-headers { display: grid; grid-template-columns: repeat(7,minmax(0,1fr)); background: #131110; border-radius: 6px 6px 0 0; overflow: hidden; border-bottom: 1px solid rgba(232,176,74,0.25); }
+.cal-day-header { min-width: 0; text-align: center; padding: 8px 2px; font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cal-day-header .day-full, .cal-day-header .day-abbr { color: var(--color-accent-gold-hover); }
+.cal-day-header span:not(.day-full):not(.day-abbr) { display: block; font-size: 8px; font-weight: 400; color: var(--color-text); opacity: 0.75; text-transform: none; font-family: var(--font-body); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cal-day-header .day-abbr { display: none; }
+
+.cal-grid { display: grid; grid-template-columns: repeat(7,minmax(0,1fr)); border-radius: 0 0 6px 6px; overflow: hidden; }
+.cal-cell {
+  aspect-ratio: 1/1; min-height: 74px; padding: 0; border: none; position: relative;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading); transition: all 0.15s ease; cursor: default; overflow: hidden;
+}
+.cal-cell:nth-child(odd) { background: #1c1714; }
+.cal-cell:nth-child(even) { background: #211b17; }
+.cal-cell.empty { background: #161311 !important; }
+.cal-day-num {
+  position: absolute; top: 0; right: 0; font-size: 11px; font-weight: 600; color: rgba(232,221,208,0.7);
+  background: rgba(10,9,7,0.7); border: 1px solid rgba(232,176,74,0.15); border-top: none; border-right: none;
+  border-bottom-left-radius: 4px; padding: 3px 5px; min-width: 22px; text-align: center;
+}
+.cal-cell.day:hover { background: rgba(232,176,74,0.08) !important; z-index: 1; cursor: pointer; }
+.cal-cell.has-event { cursor: pointer; }
+.cal-cell.has-event .event-dot {
+  width: 10px; height: 10px; border-radius: 50%; background: var(--color-accent-ember);
+  box-shadow: 0 0 10px 3px rgba(224,112,60,0.65);
+}
+.cal-cell.birthday .event-dot { background: var(--color-accent-rose); box-shadow: 0 0 10px 3px rgba(217,123,143,0.6); }
+.cal-cell.milestone .event-dot { background: var(--color-accent-gold); box-shadow: 0 0 10px 3px rgba(232,176,74,0.7); }
+
+.season-legend { display: flex; flex-wrap: wrap; gap: 8px 16px; padding: 12px 24px; background: #161311; border-top: 1px solid rgba(232,176,74,0.12); border-radius: 0 0 8px 8px; }
+.season-legend-item { display: flex; align-items: center; gap: 6px; font-family: var(--font-heading); font-size: 10px; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+.season-legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+/* EVENT PANEL */
+.event-panel {
+  background: var(--color-surface-offset); border: 1px solid var(--color-border); border-left: 3px solid var(--color-accent-ember);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 1rem 1.4rem; min-height: 90px;
+  display: flex; flex-direction: column; gap: 6px; justify-content: center;
+}
+.event-panel .ep-empty { color: var(--color-text-faint); font-style: italic; font-size: 0.85rem; }
+.event-panel .ep-chapter { font-family: var(--font-heading); font-size: 0.7rem; color: var(--color-accent-ember); letter-spacing: 0.1em; text-transform: uppercase; }
+.event-panel .ep-title { font-family: var(--font-heading); font-size: 1.15rem; color: var(--color-text); font-weight: 700; }
+.event-panel .ep-date { font-size: 0.75rem; color: var(--color-accent-gold); }
+.event-panel .ep-desc { font-size: 0.85rem; color: var(--color-text-muted); font-style: italic; }
+
+/* WEEKDAY LIST */
+.days-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 10px; }
+.day-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 12px 14px; }
+.day-name { font-family: var(--font-heading); font-size: 1rem; color: var(--color-text); font-weight: 700; }
+.day-equiv { font-size: 0.7rem; color: var(--color-text-faint); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+
+
+footer { text-align: center; padding: 2rem 1.5rem 3rem; font-size: 0.75rem; color: var(--color-text-faint); }
+footer .footer-link { color: var(--color-accent-gold); text-decoration: none; border-bottom: 1px solid rgba(232,176,74,0.3); }
+footer .footer-link:hover { border-bottom-color: var(--color-accent-gold); }
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-heading); font-size: 0.75rem;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); text-decoration: none;
+  padding: 8px 0; transition: color 0.15s ease;
+}
+.back-link:hover { color: var(--color-accent-gold); }
+
+@media (max-width: 640px) {
+  .cal-cell { min-height: 52px; }
+  .cal-day-header span { display: none; }
+  .year-nav-btn { font-size: 0.7rem; padding: 0 10px; height: 34px; }
+  .year-display { font-size: 1.1rem; min-width: 90px; }
+}
+
+@media (max-width: 480px) {
+  .cal-day-header .day-full { display: none; }
+  .cal-day-header .day-abbr { display: inline; }
+}
+</style>
+</head>
+<body>
+
+<main class="ghoat-cal">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-stars" aria-hidden="true"></div>
+    <div class="hero-content">
+      <a href="/goldenhour-ashentruth" class="back-link">← Golden Hour of Ashen Truth</a>
+      <p class="hero-era-badge">4310 AD · Planet Hraeth</p>
+      <h1 class="hero-title">The Thaosia Calendar</h1>
+      <p class="hero-sub">Golden Hour of Ashen Truth</p>
+      <p class="hero-quote">"It was like the First Flame had came back after rollercoasters of trial — in a form that felt renewed."</p>
+      <div class="hero-stats">
+        <div class="stat-pill"><span class="stat-num">540</span><span class="stat-label">Days / Year</span></div>
+        <div class="stat-pill"><span class="stat-num">12</span><span class="stat-label">Months / Year</span></div>
+        <div class="stat-pill"><span class="stat-num">45</span><span class="stat-label">Days / Month</span></div>
+        <div class="stat-pill"><span class="stat-num">7</span><span class="stat-label">Days / Week</span></div>
+        <div class="stat-pill"><span class="stat-num">24</span><span class="stat-label">Bells / Day</span></div>
+      </div>
+    </div>
+  </section>
+  <div class="section-divider" aria-hidden="true"><span class="section-divider-dot"></span></div>
+
+  <!-- BELL SYSTEM -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">Timekeeping</div>
+      <h2 class="section-title">The Bell System</h2>
+      <p class="section-desc">Thaosians tell time by bell instead of mechanical clocks — a 24-bell day split into two 12-bell cycles.</p>
+
+      <div class="bell-layout">
+        <div class="bell-unit">
+          <div class="bell-unit-label">Dawn Cycle</div>
+          <div class="bell-face-wrap">
+            <svg class="bell-face" viewBox="0 0 300 300" id="dawn-face">
+              <circle cx="150" cy="150" r="145" fill="#161210" stroke="rgba(232,176,74,0.15)" stroke-width="2"/>
+              <g id="dawn-ticks" stroke="#e8b04a"></g>
+              <g id="dawn-labels" fill="#e8ddd0" text-anchor="middle" dominant-baseline="middle" font-family="Cinzel, serif"></g>
+              <line id="dawn-hand" x1="150" y1="150" x2="150" y2="90" stroke="#e0703c" stroke-width="4" stroke-linecap="round"/>
+              <line id="dawn-second-hand" x1="150" y1="150" x2="150" y2="70" stroke="#e8b04a" stroke-width="1.5" stroke-linecap="round" opacity="0.85"/>
+              <circle cx="150" cy="150" r="5" fill="#e8b04a"/>
+            </svg>
+          </div>
+          <div class="bell-digital" id="dawn-digital">Third Bell</div>
+          <div class="bell-clock-readout" id="dawn-clock">00:00:00</div>
+          <div class="bell-period" id="dawn-period">Morning</div>
+        </div>
+        <div class="bell-unit">
+          <div class="bell-unit-label">Dusk Cycle</div>
+          <div class="bell-face-wrap">
+            <svg class="bell-face" viewBox="0 0 300 300" id="dusk-face">
+              <circle cx="150" cy="150" r="145" fill="#161210" stroke="rgba(224,112,60,0.15)" stroke-width="2"/>
+              <g id="dusk-ticks" stroke="#e0703c"></g>
+              <g id="dusk-labels" fill="#e8ddd0" text-anchor="middle" dominant-baseline="middle" font-family="Cinzel, serif"></g>
+              <line id="dusk-hand" x1="150" y1="150" x2="150" y2="90" stroke="#d97b8f" stroke-width="4" stroke-linecap="round"/>
+              <line id="dusk-second-hand" x1="150" y1="150" x2="150" y2="70" stroke="#e0703c" stroke-width="1.5" stroke-linecap="round" opacity="0.85"/>
+              <circle cx="150" cy="150" r="5" fill="#e0703c"/>
+            </svg>
+          </div>
+          <div class="bell-digital" id="dusk-digital">Ninth Bell</div>
+          <div class="bell-clock-readout" id="dusk-clock">00:00:00</div>
+          <div class="bell-period" id="dusk-period">Evening</div>
+        </div>
+      </div>
+      <p style="text-align:center; font-size:0.75rem; color:var(--color-text-faint); font-style:italic;">Bells are counted 1st through 12th each cycle — Thaosians still say the phonetic names aloud ("Zeven Bell" for the 7th, "Yleven Bell" for the 11th), but write them numerically.</p>
+    </div>
+  </section>
+  <div class="section-divider" aria-hidden="true"><span class="section-divider-dot"></span></div>
+
+  <!-- SEASONS -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">The Year</div>
+      <h2 class="section-title">Four Seasons of Thaosia</h2>
+      <p class="section-desc">Each season spans exactly 3 months — 135 days — following Hraeth's orbit.</p>
+      <div class="season-band" id="season-band"></div>
+    </div>
+  </section>
+  <div class="section-divider" aria-hidden="true"><span class="section-divider-dot"></span></div>
+
+  <!-- MONTHS -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">The Twelve Months</div>
+      <h2 class="section-title">Months of the Thaosian Year</h2>
+      <p class="section-desc">Click a month to jump to it in the calendar below. Some Thaosians count numerically instead — a toggle is included.</p>
+      <div class="toggle-row">
+        <button class="toggle-btn active" id="toggle-names">By Season Name</button>
+        <button class="toggle-btn" id="toggle-numbers">By Month Number</button>
+      </div>
+      <div class="months-grid" id="months-grid"></div>
+    </div>
+  </section>
+  <div class="section-divider" aria-hidden="true"><span class="section-divider-dot"></span></div>
+
+  <!-- DAYS OF WEEK -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">The Week</div>
+      <h2 class="section-title">Days of the Week</h2>
+      <div class="days-grid" id="days-grid"></div>
+    </div>
+  </section>
+  <div class="section-divider" aria-hidden="true"><span class="section-divider-dot"></span></div>
+
+  <!-- CALENDAR -->
+  <section class="calendar-section">
+    <div class="section-inner">
+      <div class="section-label">GHOAT · Story Outline &amp; Schedule</div>
+      <h2 class="section-title">Interactive Year Calendar — 4310 AD</h2>
+      <p class="section-desc">Every gold-marked day has a Golden Hour of Ashen Truth chapter attached. Click a highlighted date to preview it.</p>
+
+      <div class="year-nav">
+        <button class="year-nav-btn year-nav-jump" id="year-minus-10" aria-label="Jump back 10 years">&laquo; -10</button>
+        <button class="year-nav-btn" id="year-prev" aria-label="Previous year">&lsaquo; Prev Year</button>
+        <span class="year-display" id="cal-year">4310 AD</span>
+        <button class="year-nav-btn" id="year-next" aria-label="Next year">Next Year &rsaquo;</button>
+        <button class="year-nav-btn year-nav-jump" id="year-plus-10" aria-label="Jump forward 10 years">+10 &raquo;</button>
+      </div>
+
+      <div class="calendar-nav">
+        <button class="cal-nav-btn" id="prev-month" aria-label="Previous month">&#8592;</button>
+        <div class="cal-month-display">
+          <span class="cal-month-name" id="cal-month-name">Vhaughus</span>
+          <span class="cal-month-meta" id="cal-month-meta">Month 8 of 12 · Season of Gold</span>
+        </div>
+        <button class="cal-nav-btn" id="next-month" aria-label="Next month">&#8594;</button>
+      </div>
+
+      <div class="calendar-grid-wrap">
+        <div class="cal-day-headers">
+          <div class="cal-day-header"><span class="day-full">Hynsday</span><span class="day-abbr">Hyn</span><span>day 1</span></div>
+          <div class="cal-day-header"><span class="day-full">Iyonsday</span><span class="day-abbr">Iyo</span><span>day 2</span></div>
+          <div class="cal-day-header"><span class="day-full">Buuseday</span><span class="day-abbr">Buu</span><span>day 3</span></div>
+          <div class="cal-day-header"><span class="day-full">Rhunesday</span><span class="day-abbr">Rhu</span><span>day 4</span></div>
+          <div class="cal-day-header"><span class="day-full">Yhursday</span><span class="day-abbr">Yhu</span><span>day 5</span></div>
+          <div class="cal-day-header"><span class="day-full">Thaosday</span><span class="day-abbr">Tha</span><span>day 6</span></div>
+          <div class="cal-day-header"><span class="day-full">Hethraday</span><span class="day-abbr">Het</span><span>day 7</span></div>
+        </div>
+        <div class="cal-grid" id="cal-grid"></div>
+        <div class="season-legend" id="season-legend"></div>
+      </div>
+
+      <div class="event-panel" id="event-panel">
+        <p class="ep-empty">Click a marked day above to preview the chapter that happens on that date.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>The Thaosia Calendar — built for <a href="/goldenhour-ashentruth" class="footer-link">Golden Hour of Ashen Truth</a>, adapted from the Hibrythia interactive calendar system for Thaosia's 540-day / 12-month year.</footer>
+</main>
+
+<script>
+const MONTHS = [
+  { num:1,  name:'Fhanuarii', season:'Fhulveria', seasonShort:'Spring', accent:'#f4a0c8' },
+  { num:2,  name:'Lhumburary', season:'Fhulveria', seasonShort:'Spring', accent:'#f4a0c8' },
+  { num:3,  name:'Pharch', season:'Fhulveria', seasonShort:'Spring', accent:'#f4a0c8' },
+  { num:4,  name:'Vaepril', season:'Phòa', seasonShort:'Summer', accent:'#f5e642' },
+  { num:5,  name:'Chmae', season:'Phòa', seasonShort:'Summer', accent:'#f5e642' },
+  { num:6,  name:'Jhüun', season:'Phòa', seasonShort:'Summer', accent:'#f5e642' },
+  { num:7,  name:'Jhulai', season:'Gold', seasonShort:'Autumn', accent:'#e8b04a' },
+  { num:8,  name:'Vhaughus', season:'Gold', seasonShort:'Autumn', accent:'#e8b04a' },
+  { num:9,  name:'Bhelmnber', season:'Gold', seasonShort:'Autumn', accent:'#e8b04a' },
+  { num:10, name:'Thaotober', season:'Frazaea', seasonShort:'Winter', accent:'#7ec8e3' },
+  { num:11, name:'Khovember', season:'Frazaea', seasonShort:'Winter', accent:'#7ec8e3' },
+  { num:12, name:'Wintember', season:'Frazaea', seasonShort:'Winter', accent:'#7ec8e3' },
+];
+const DAYS = 45;
+
+const SEASONS = [
+  { name:'Season of Fhulveria', short:'Spring', color:'#f4a0c8', months:[0,1,2] },
+  { name:'Season of Phòa', short:'Summer', color:'#f5e642', months:[3,4,5] },
+  { name:'Season of Gold', short:'Autumn', color:'#e8b04a', months:[6,7,8] },
+  { name:'Season of Frazaea', short:'Winter', color:'#7ec8e3', months:[9,10,11] },
+];
+
+const WEEKDAYS = [
+  { name:'Hynsday', equiv:'Sunday' },
+  { name:'Iyonsday', equiv:'Monday' },
+  { name:'Buuseday', equiv:'Tuesday' },
+  { name:'Rhunesday', equiv:'Wednesday' },
+  { name:'Yhursday', equiv:'Thursday' },
+  { name:'Thaosday', equiv:'Friday' },
+  { name:'Hethraday', equiv:'Saturday' },
+];
+
+// month index is 0-based (Fhanuarii=0 ... Wintember=11)
+// anchor: Vhaughus (idx 7) day 27 = Hethraday (idx 6)
+const ANCHOR_ABS = 7*DAYS + 27;
+const ANCHOR_DOW = 6;
+function absDay(monthIdx, day) { return monthIdx*DAYS + day; }
+function dowIndex(monthIdx, day) {
+  const diff = absDay(monthIdx, day) - ANCHOR_ABS;
+  return ((ANCHOR_DOW + diff) % 7 + 7) % 7;
+}
+function monthStartDow(monthIdx) { return dowIndex(monthIdx, 1); }
+
+// GHOAT chapter events — month index (0-based), day, type
+const EVENTS = [
+  { month:7, day:27, type:'milestone', chapter:'Chapter 0', title:'A Healer’s Gift', desc:'Opening chapter — the world and Lhua Gholdt are introduced.' },
+  { month:7, day:28, type:'event', chapter:'Chapter 1', title:'The Weight of Ordinary Days', desc:'Lhua’s daily routine at the apothecary in Vhaulün.' },
+  { month:7, day:29, type:'event', chapter:'Chapter 2', title:'The Road Kept Her', desc:'Lhua’s history on the road unfolds.' },
+  { month:7, day:30, type:'event', chapter:'Chapter 3', title:'An Ashen History', desc:'Backstory: the loss of Lhua’s parents to a Floraenius Wizard.' },
+  { month:7, day:36, type:'event', chapter:'Chapter 4', title:'Like A Child', desc:'A quieter, tender beat before the storm.' },
+  { month:7, day:37, type:'event', chapter:'Chapter 5', title:'An Ashen Warmth', desc:'Spans Vhaughus 37th through Bhelmnber 5th — building warmth before Chapter 6.' },
+  { month:8, day:13, type:'birthday', chapter:'Chapter 6', title:'Surprise….?', desc:'Lhua’s 25th birthday — the guild bounty notice appears.' },
+  { month:8, day:14, type:'milestone', chapter:'Chapter 7', title:'First Flame', desc:'The cave rescue. Phaliyá’s true identity as the Phlamstygia Onslaught is revealed. Three troublemakers killed. Oa asks Lhua out.' },
+  { month:8, day:15, type:'event', chapter:'Chapter 8 / 9', title:'Blissful / Distance', desc:'Lhua’s post-rescue sickness care arc (Ch.8) and Oa’s parallel POV of the same days (Ch.9) continue through the 17th.' },
+  { month:8, day:18, type:'milestone', chapter:'Chapter 10', title:'Moving On &amp; Moving In', desc:'Oa confesses her forgery, earns Rank S, reconciles with Phaliyá — Lhua kisses her first. They get together. "A Golden Hour of Ashen Trust."' },
+  { month:8, day:35, type:'event', chapter:'Chapter 11', title:'Warmth', desc:'Seventeen days into the relationship — the bookstore, Oa’s sky house, and a challenge Oa wins.' },
+];
+
+function eventsFor(monthIdx, day) {
+  if (currentYear !== STORY_YEAR) return []; // chapter events only exist in the story year
+  return EVENTS.filter(e => e.month === monthIdx && e.day === day);
+}
+
+// Only Chapter 0 gets a visible dot/marker on the calendar grid itself; the other chapters
+// are still selectable via month cards, but don't clutter the grid with a dot each.
+function gridEventsFor(monthIdx, day) {
+  return eventsFor(monthIdx, day).filter(e => e.chapter === 'Chapter 0');
+}
+
+// Recurring character birthdays — month/day repeats every year, birthYear anchors their age.
+const BIRTHDAYS = [
+  { month:8, day:13, birthYear:4285, name:'Lhua Gholdt', title:'Lhua Gholdt\u2019s Birthday', desc:'Born Bhelmnber 13th, 4285 AD \u2014 Lhua Gholdt\u2019s birthday comes around once every Thaosian year.' },
+  { month:10, day:30, birthYear:4287, name:'Oshae\u00e0 Ashen "Oa" Lenhart', title:'Oa Lenhart\u2019s Birthday', desc:'Born Khovember 30th, 4287 AD \u2014 Oshae\u00e0 Ashen "Oa" Lenhart\u2019s birthday comes around once every Thaosian year.' },
+];
+
+function birthdaysFor(monthIdx, day) {
+  // A character's birthday dot only exists from their birth year onward — nothing shows before they're born.
+  return BIRTHDAYS.filter(b => b.month === monthIdx && b.day === day && currentYear >= b.birthYear);
+}
+
+let currentMonthIdx = 7; // start on Vhaughus, where the story begins
+let currentYear = 4310; // GHOAT's story year — the only year with plotted chapter events
+const STORY_YEAR = 4310;
+let byNumber = false;
+
+function monthLabel(m) {
+  return byNumber ? `Month ${m.num}` : m.name;
+}
+
+function renderSeasonBand() {
+  const band = document.getElementById('season-band');
+  band.innerHTML = SEASONS.map(s => `
+    <div class="season-block" style="background:color-mix(in srgb, ${s.color} 14%, #161210); color:${s.color};">
+      <div class="season-block-name">${s.name}</div>
+      <div class="season-block-months">${s.months.map(i=>MONTHS[i].name).join(' · ')}</div>
+    </div>`).join('');
+}
+
+function renderMonthsGrid() {
+  const grid = document.getElementById('months-grid');
+  grid.innerHTML = MONTHS.map((m,i) => `
+    <div class="month-card ${i===currentMonthIdx?'active-month':''}" style="--card-accent:${m.accent}" data-month="${i}">
+      <span class="month-card-season">${m.season} · Month ${m.num} of 12</span>
+      <span class="month-card-name">${monthLabel(m)}</span>
+      <span class="month-card-days">45 days</span>
+    </div>`).join('');
+  grid.querySelectorAll('.month-card').forEach(card => {
+    card.addEventListener('click', () => {
+      currentYear = STORY_YEAR;
+      buildCalendar(Number(card.dataset.month));
+      document.querySelector('.calendar-section').scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+}
+
+function renderDaysGrid() {
+  const grid = document.getElementById('days-grid');
+  grid.innerHTML = WEEKDAYS.map((d,i) => `
+    <div class="day-card">
+      <div class="day-name">${d.name}</div>
+      <div class="day-equiv">Day ${i+1} of 7 · ≈ ${d.equiv}</div>
+    </div>`).join('');
+}
+
+function renderSeasonLegend() {
+  const legend = document.getElementById('season-legend');
+  legend.innerHTML = SEASONS.map(s => `
+    <div class="season-legend-item"><div class="season-legend-dot" style="background:${s.color}"></div>${s.name}</div>`).join('') +
+    `<div class="season-legend-item"><div class="season-legend-dot" style="background:#e0703c"></div>Chapter Event</div>` +
+    `<div class="season-legend-item"><div class="season-legend-dot" style="background:#d97b8f"></div>Birthday</div>` +
+    `<div class="season-legend-item"><div class="season-legend-dot" style="background:#e8b04a"></div>Milestone</div>`;
+}
+
+function showEvent(e) {
+  const panel = document.getElementById('event-panel');
+  const m = MONTHS[e.month];
+  panel.innerHTML = `
+    <span class="ep-chapter">${e.chapter}</span>
+    <span class="ep-title">${e.title}</span>
+    <span class="ep-date">${m.name} ${e.day}${ordinal(e.day)}, ${WEEKDAYS[dowIndex(e.month,e.day)].name}, ${STORY_YEAR} AD</span>
+    <span class="ep-desc">${e.desc}</span>`;
+}
+
+function showBirthday(b) {
+  const panel = document.getElementById('event-panel');
+  const m = MONTHS[b.month];
+  // birthYear is a fixed anchor — age only ever counts up from it, never below 0, never backwards.
+  const age = Math.max(0, currentYear - b.birthYear);
+  const ageLine = currentYear >= b.birthYear
+    ? `Turns ${age}${ordinal(age)} this year (${currentYear} AD)`
+    : `Not yet born in ${currentYear} AD \u2014 born ${b.birthYear} AD`;
+  panel.innerHTML = `
+    <span class="ep-chapter">Character Birthday</span>
+    <span class="ep-title">${b.title}</span>
+    <span class="ep-date">${m.name} ${b.day}${ordinal(b.day)}, ${currentYear} AD \u2014 ${ageLine}</span>
+    <span class="ep-desc">${b.desc}</span>`;
+}
+
+function ordinal(n) {
+  const s = ['th','st','nd','rd'], v = n % 100;
+  return s[(v-20)%10] || s[v] || s[0];
+}
+
+function buildCalendar(monthIdx) {
+  if (monthIdx < 0) monthIdx = 11;
+  if (monthIdx > 11) monthIdx = 0;
+  currentMonthIdx = monthIdx;
+  const m = MONTHS[monthIdx];
+
+  document.getElementById('cal-month-name').textContent = monthLabel(m);
+  document.getElementById('cal-month-meta').textContent = `Month ${m.num} of 12 · Season of ${m.season}`;
+  document.getElementById('cal-year').textContent = `${currentYear} AD`;
+
+  const startDow = monthStartDow(monthIdx);
+  const grid = document.getElementById('cal-grid');
+  let html = '';
+  for (let i=0;i<startDow;i++) html += '<div class="cal-cell empty"></div>';
+  for (let d=1; d<=DAYS; d++) {
+    const evs = gridEventsFor(monthIdx, d);
+    const bdays = birthdaysFor(monthIdx, d);
+    let cls = 'cal-cell day';
+    let dotHtml = '';
+    if (evs.length) {
+      cls += ' has-event';
+      if (evs.some(e=>e.type==='milestone')) cls += ' milestone';
+      dotHtml = '<div class="event-dot"></div>';
+    } else if (bdays.length) {
+      cls += ' has-event birthday';
+      dotHtml = '<div class="event-dot"></div>';
+    }
+    html += `<div class="${cls}" data-month="${monthIdx}" data-day="${d}"><span class="cal-day-num">${d}</span>${dotHtml}</div>`;
+  }
+  const totalCells = startDow + DAYS;
+  const trailing = (7 - (totalCells % 7)) % 7;
+  for (let i=0;i<trailing;i++) html += '<div class="cal-cell empty"></div>';
+  grid.innerHTML = html;
+
+  grid.querySelectorAll('.cal-cell.has-event').forEach(cell => {
+    cell.addEventListener('click', () => {
+      const mi = Number(cell.dataset.month), d = Number(cell.dataset.day);
+      const evs = gridEventsFor(mi, d);
+      if (evs.length) { showEvent(evs[0]); return; }
+      const bdays = birthdaysFor(mi, d);
+      if (bdays.length) showBirthday(bdays[0]);
+    });
+  });
+
+  renderMonthsGrid();
+}
+
+// Bell clock (24-bell day, two 12-bell cycles: Dawn 1-12, Dusk 1-12)
+const BELL_NAMES = ['One','Two','Three','Four','Five','Six','Zeven','Eight','Nine','Ten','Yleven','Twelve'];
+function buildBellFace(ticksId, labelsId) {
+  const ticksG = document.getElementById(ticksId);
+  const labelsG = document.getElementById(labelsId);
+  const cx=150, cy=150, r=138, labelR=115;
+  let tickHTML='', labelHTML='';
+  for (let i=0;i<12;i++) {
+    const angle = (i/12)*2*Math.PI - Math.PI/2;
+    const x1=cx+r*Math.cos(angle), y1=cy+r*Math.sin(angle);
+    const x2=cx+(r-10)*Math.cos(angle), y2=cy+(r-10)*Math.sin(angle);
+    tickHTML += `<line x1="${x1.toFixed(2)}" y1="${y1.toFixed(2)}" x2="${x2.toFixed(2)}" y2="${y2.toFixed(2)}" stroke-width="2" opacity="0.8"/>`;
+    const lx=cx+labelR*Math.cos(angle), ly=cy+labelR*Math.sin(angle);
+    labelHTML += `<text x="${lx.toFixed(2)}" y="${ly.toFixed(2)}" font-size="12" font-weight="600">${i===0?12:i}</text>`;
+  }
+  ticksG.innerHTML = tickHTML;
+  labelsG.innerHTML = labelHTML;
+}
+function updateBells() {
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const seconds = now.getSeconds();
+  const isDawnCycle = hours < 12;
+  const totalBell = hours % 12 + minutes/60;
+  const bellNum = Math.floor(totalBell) === 0 ? 12 : Math.floor(totalBell);
+  const toRad = a => a*Math.PI/180;
+  const handEnd = (a,len=90) => ({x:150+len*Math.sin(toRad(a)), y:150-len*Math.cos(toRad(a))});
+
+  const dawnAngle = (hours % 12 + minutes/60)/12*360;
+
+  const dawnHand = document.getElementById('dawn-hand');
+  const duskHand = document.getElementById('dusk-hand');
+  const e1 = handEnd(dawnAngle);
+  dawnHand.setAttribute('x2', e1.x.toFixed(2));
+  dawnHand.setAttribute('y2', e1.y.toFixed(2));
+  const e2 = handEnd(dawnAngle);
+  duskHand.setAttribute('x2', e2.x.toFixed(2));
+  duskHand.setAttribute('y2', e2.y.toFixed(2));
+
+  const secAngle = (seconds/60)*360;
+  const dawnSecHand = document.getElementById('dawn-second-hand');
+  const duskSecHand = document.getElementById('dusk-second-hand');
+  const es1 = handEnd(secAngle, 105);
+  dawnSecHand.setAttribute('x2', es1.x.toFixed(2));
+  dawnSecHand.setAttribute('y2', es1.y.toFixed(2));
+  const es2 = handEnd(secAngle, 105);
+  duskSecHand.setAttribute('x2', es2.x.toFixed(2));
+  duskSecHand.setAttribute('y2', es2.y.toFixed(2));
+
+  const pad = n => String(n).padStart(2,'0');
+  const clockStr = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+  document.getElementById('dawn-clock').textContent = clockStr;
+  document.getElementById('dusk-clock').textContent = clockStr;
+
+  const bellOrdinal = `${bellNum}${ordinal(bellNum)}`;
+  document.getElementById('dawn-digital').textContent = `${bellOrdinal} Bell`;
+  document.getElementById('dawn-period').textContent = isDawnCycle ? 'Dawn Cycle Active (AM)' : 'Dawn Cycle (AM)';
+  document.getElementById('dusk-digital').textContent = `${bellOrdinal} Bell`;
+  document.getElementById('dusk-period').textContent = !isDawnCycle ? 'Dusk Cycle Active (PM)' : 'Dusk Cycle (PM)';
+}
+
+// nav buttons
+document.getElementById('prev-month').addEventListener('click', () => buildCalendar(currentMonthIdx-1));
+document.getElementById('next-month').addEventListener('click', () => buildCalendar(currentMonthIdx+1));
+
+// year nav buttons
+function changeYear(delta) {
+  currentYear += delta;
+  buildCalendar(currentMonthIdx);
+  if (currentYear !== STORY_YEAR) {
+    document.getElementById('event-panel').innerHTML = `<p class="ep-empty">No GHOAT chapters are plotted in ${currentYear} AD — the story takes place in ${STORY_YEAR} AD. Character birthdays still repeat every year, though — click a pink dot above.</p>`;
+  } else {
+    document.getElementById('event-panel').innerHTML = `<p class="ep-empty">Click a marked day above to preview the chapter that happens on that date.</p>`;
+  }
+}
+document.getElementById('year-prev').addEventListener('click', () => changeYear(-1));
+document.getElementById('year-next').addEventListener('click', () => changeYear(1));
+document.getElementById('year-minus-10').addEventListener('click', () => changeYear(-10));
+document.getElementById('year-plus-10').addEventListener('click', () => changeYear(10));
+document.getElementById('toggle-names').addEventListener('click', () => {
+  byNumber = false;
+  document.getElementById('toggle-names').classList.add('active');
+  document.getElementById('toggle-numbers').classList.remove('active');
+  renderMonthsGrid();
+  buildCalendar(currentMonthIdx);
+});
+document.getElementById('toggle-numbers').addEventListener('click', () => {
+  byNumber = true;
+  document.getElementById('toggle-numbers').classList.add('active');
+  document.getElementById('toggle-names').classList.remove('active');
+  renderMonthsGrid();
+  buildCalendar(currentMonthIdx);
+});
+
+renderSeasonBand();
+renderDaysGrid();
+renderSeasonLegend();
+buildBellFace('dawn-ticks','dawn-labels');
+buildBellFace('dusk-ticks','dusk-labels');
+updateBells();
+setInterval(updateBells, 1000);
+buildCalendar(currentMonthIdx);
+// auto-show first event
+showEvent(EVENTS[0]);
+</script>
+</body>
+</html>
