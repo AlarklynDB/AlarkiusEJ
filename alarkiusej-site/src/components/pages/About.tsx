@@ -223,6 +223,45 @@ function MediumFeedCard() {
   )
 }
 
+/** Floating dismissible notice: anti-GenAI stance, shown once per browser session */
+function GenAINotice() {
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const dismissed = window.localStorage.getItem('genai-notice-dismissed')
+    if (!dismissed) setVisible(true)
+  }, [])
+
+  function dismiss() {
+    setVisible(false)
+    window.localStorage.setItem('genai-notice-dismissed', '1')
+  }
+
+  if (!visible) return null
+
+  return (
+    <div
+      role="alert"
+      className="fixed bottom-5 right-5 left-5 sm:left-auto sm:max-w-sm z-50 flex items-start gap-3 rounded-xl border border-error/40 bg-[#2a1616] px-4 py-3.5 shadow-2xl shadow-black/40"
+    >
+      <span className="text-error text-lg leading-none mt-0.5">⛔</span>
+      <p className="flex-1 text-sm text-error font-medium leading-snug">
+        Support Human Artists and Creators. Say no to GenAI.
+      </p>
+      <button
+        type="button"
+        onClick={dismiss}
+        aria-label="Dismiss notice"
+        className="text-error/70 hover:text-error transition-colors duration-150 flex-shrink-0 -mt-0.5 -mr-1 p-1"
+      >
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  )
+}
+
 export default function About() {
   return (
     <div className="pt-16">
@@ -391,6 +430,8 @@ export default function About() {
         {/* Medium RSS Feed */}
         <MediumFeedCard />
       </div>
+
+      <GenAINotice />
     </div>
   )
 }
