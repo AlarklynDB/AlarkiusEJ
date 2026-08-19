@@ -26,7 +26,7 @@ const lhuaGholdt: CharacterProfile = {
     {
       tone: 'neutral',
       lines: [
-        'Story Presence:',
+        'GHOAT - Book 1 Presence:',
         '- CH 0 through CH 13 (Primary POV)',
         'Point of Origin:',
         '- Vhaulün, Thaosia',

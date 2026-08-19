@@ -169,6 +169,25 @@ export default function CharacterProfileModal({ character, onClose }: CharacterP
             </section>
           )}
 
+          {/* Skills */}
+          {character.skills && (
+            <section>
+              <h3 className="font-serif text-xl font-semibold text-text mb-4">{character.skills.heading}</h3>
+              <div className="space-y-4">
+                {character.skills.items.map((item) => (
+                  <div key={item.label} className="p-3 bg-surface rounded-lg border border-border">
+                    <p className="text-sm font-semibold text-rose-light mb-1.5">{item.label}</p>
+                    {item.description.map((d, i) => (
+                      <p key={i} className="text-text-muted leading-relaxed text-sm mb-1.5 last:mb-0">
+                        {d}
+                      </p>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
           {/* Outfits */}
           {character.outfits && (
             <section>
@@ -190,7 +209,7 @@ export default function CharacterProfileModal({ character, onClose }: CharacterP
 
           {/* Accessories */}
           {character.accessories && (
-            <section className="pb-2">
+            <section>
               <h3 className="font-serif text-xl font-semibold text-text mb-4">{character.accessories.heading}</h3>
               <div className="space-y-4">
                 {character.accessories.items.map((item) => (
@@ -202,6 +221,21 @@ export default function CharacterProfileModal({ character, onClose }: CharacterP
                       </p>
                     ))}
                   </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Notable Quotes */}
+          {character.notableQuotes && (
+            <section className="pb-2">
+              <h3 className="font-serif text-xl font-semibold text-text mb-4">{character.notableQuotes.heading}</h3>
+              <div className="space-y-3">
+                {character.notableQuotes.items.map((item, i) => (
+                  <blockquote key={i} className="border-l-2 border-gold/40 pl-4">
+                    <p className="text-text-muted italic leading-relaxed text-sm">“{item.quote}”</p>
+                    <cite className="block text-xs text-text-faint not-italic mt-1">— {item.attribution}</cite>
+                  </blockquote>
                 ))}
               </div>
             </section>

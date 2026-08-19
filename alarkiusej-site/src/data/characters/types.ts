@@ -37,6 +37,11 @@ export interface CharacterListItem {
   description: string[]
 }
 
+export interface CharacterQuote {
+  quote: string
+  attribution: string
+}
+
 export interface CharacterFacts {
   [key: string]: string
 }
@@ -67,5 +72,13 @@ export interface CharacterProfile {
   accessories?: {
     heading: string
     items: CharacterListItem[]
+  }
+  skills?: {
+    heading: string
+    items: CharacterListItem[]
+  }
+  notableQuotes?: {
+    heading: string
+    items: CharacterQuote[]
   }
 }
