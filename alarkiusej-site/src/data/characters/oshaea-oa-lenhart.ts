@@ -1,13 +1,13 @@
 import type { CharacterProfile } from './types'
 
 /**
- * Source: Notion — "Oshaeà Ashen "Oa" Lenhart" (GHOAT | Golden Hour of Ashen Truth)
+ * Source: Notion — "Oshaeá Ashen "Oa" Lenhart" (GHOAT | Golden Hour of Ashen Truth)
  * https://www.notion.so/alarkiusej/Oshaea-Ashen-Oa-Lenhart-3b9090995abd8074bb75f2e5ee34f2b1
  * Transcribed word for word.
  */
 const oaLenhart: CharacterProfile = {
   slug: 'oshaea-oa-lenhart',
-  name: 'Oshaeà "Oa" Ashen Lenhart',
+  name: 'Oshaeá "Oa" Ashen Lenhart',
   tag: 'she/her · 23',
   quote: '"The only thing I had that they couldn\'t take was how I chose to meet the world in the morning. So I chose."',
   storyCallouts: [
@@ -32,13 +32,13 @@ const oaLenhart: CharacterProfile = {
         'Unknown; raised by the Demon Community (Esselchrine region)',
         'Character Type:',
         '- Dynamic',
-        "Oshaeà Ashen Lenhart. That's me. Let me tell you my story.",
+        "Oshaeá Ashen Lenhart. That's me. Let me tell you my story.",
       ],
     },
   ],
   factsIntro: [],
   facts: {
-    'Full Name': 'Oshaeà Ashen Lenhart',
+    'Full Name': 'Oshaeá Ashen Lenhart',
     Nickname: 'Oa',
     Occupation: 'Guild Cultural Presenter / Folk Story Performer',
     'Guild Rank': 'S (Once Rank B)',
@@ -188,7 +188,7 @@ const oaLenhart: CharacterProfile = {
       {
         label: 'Rank S Guild Card',
         description: [
-          'Oshaeà Ashen Lenhart. Age 23. Rank S. Issued Bhelmnber 18th, 4310 AD. She still acts surprised when she takes it out, not because she doubts it, but because it still means something to see it written down.',
+          'Oshaeá Ashen Lenhart. Age 23. Rank S. Issued Bhelmnber 18th, 4310 AD. She still acts surprised when she takes it out, not because she doubts it, but because it still means something to see it written down.',
         ],
       },
     ],

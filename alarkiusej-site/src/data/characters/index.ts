@@ -11,5 +11,5 @@ export type { CharacterProfile } from './types'
  */
 export const characterProfiles: Record<string, CharacterProfile> = {
   'Lhua Gholdt': lhuaGholdt,
-  'Oshaeà "Oa" Ashen Lenhart': oaLenhart,
+  'Oshaeá "Oa" Ashen Lenhart': oaLenhart,
 }

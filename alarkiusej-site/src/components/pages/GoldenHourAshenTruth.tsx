@@ -4,7 +4,7 @@ import { characterProfiles } from '../../data/characters'
 
 const characters = [
   { name: 'Lhua Gholdt', tag: 'she/her · 25', blurb: 'SS Rank Healer & Combatant — an apothecary who buried her feelings under responsibility.' },
-  { name: 'Oshaeà "Oa" Ashen Lenhart', tag: 'she/her · 23', blurb: 'A demon-raised orphan who buried her grief under cheerfulness. Wields S Rank demon magic the city underrates.' },
+  { name: 'Oshaeá "Oa" Ashen Lenhart', tag: 'she/her · 23', blurb: 'A demon-raised orphan who buried her grief under cheerfulness. Wields S Rank demon magic the city underrates.' },
   { name: 'Phaliyá the Slime', tag: 'she/it', blurb: 'Once a Demon Slime Boss — now a smaller, self-aware Rank A slime who teaches Oa to wield her power.' },
 ]
 
@@ -57,7 +57,7 @@ export default function GoldenHourAshenTruth() {
             <strong className="text-text">Lhua Gholdt</strong> has always kept her world small — the
             apothecary, her work, the quiet discipline of someone who learned early that warmth costs
             too much to give away freely. Then{' '}
-            <strong className="text-text">Oshaeà Lenhart</strong> walks in, all misty blue eyes and
+            <strong className="text-text">Oshaeá Lenhart</strong> walks in, all misty blue eyes and
             unguarded smiles, and ruins the math entirely.
           </p>
           <p className="text-text-muted leading-relaxed mb-6">
