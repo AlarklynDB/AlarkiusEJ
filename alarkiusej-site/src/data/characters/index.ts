@@ -1,5 +1,6 @@
 import type { CharacterProfile } from './types'
 import lhuaGholdt from './lhua-gholdt'
+import oaLenhart from './oshaea-oa-lenhart'
 
 export type { CharacterProfile } from './types'
 
@@ -10,4 +11,5 @@ export type { CharacterProfile } from './types'
  */
 export const characterProfiles: Record<string, CharacterProfile> = {
   'Lhua Gholdt': lhuaGholdt,
+  'Oshaeà "Oa" Ashen Lenhart': oaLenhart,
 }
