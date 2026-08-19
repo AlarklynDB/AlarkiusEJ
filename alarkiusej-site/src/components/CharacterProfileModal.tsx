@@ -85,10 +85,10 @@ export default function CharacterProfileModal({ character, onClose }: CharacterP
           {/* Facts */}
           <section>
             <h3 className="font-serif text-xl font-semibold text-text mb-4">{character.backstory.heading}</h3>
-            <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 mb-5 p-4 bg-surface rounded-lg border border-border">
+            <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 mb-5 p-4 bg-surface rounded-lg border border-border">
               {Object.entries(character.facts).map(([label, value]) => (
-                <div key={label} className="flex gap-2 text-sm">
-                  <dt className="text-text-faint flex-shrink-0">{label}:</dt>
+                <div key={label} className="text-sm">
+                  <dt className="text-text-faint text-xs uppercase tracking-wide mb-0.5">{label}</dt>
                   <dd className="text-text-muted">{value}</dd>
                 </div>
               ))}
