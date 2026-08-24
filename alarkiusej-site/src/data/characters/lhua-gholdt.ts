@@ -114,7 +114,7 @@ const lhuaGholdt: CharacterProfile = {
       {
         heading: 'Hair',
         paragraphs: [
-          'Lhua\u2019s hair is dark, a layered mix of black and brown that shifts depending on the light. In full sun it picks up the warm undertones. In lower light it reads almost entirely black. It is long enough to put up properly, which she usually does. Her default is a high ponytail clipped at the sides, tied with a green band. The sides are pinned back with additional clips. She rarely wears it down. When she does, it tends to mean she is either sick, off-duty, or has stopped caring about something temporarily.',
+          'Lhua\u2019s hair is dark, a layered mix of black and brown that shifts depending on the light. It’s not as long as Oa’s, as it grows out towards her shoulders. In full sun it picks up the warm undertones. In lower light it reads almost entirely black. It is long enough to put up properly, which she usually does. Her default is a high ponytail clipped at the sides, tied with a green band. The sides are pinned back with additional clips. She rarely wears it down. When she does, it tends to mean she is either sick, off-duty, or has stopped caring about something temporarily.',
           'Phaliy\u00e1 blacksmithed a gemstone hairclip for her during their day in the Wildernaughts — a smooth stone set with a small Phaliy\u00e1 emblem on its face. She wears it.',
         ],
       },
