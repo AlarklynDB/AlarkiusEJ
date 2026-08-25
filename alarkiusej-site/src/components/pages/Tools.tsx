@@ -40,14 +40,13 @@ const liveTools = [
     {
     name: 'ARGIS',
     tagline: 'A Really Great Imagery System',
-    description:
-      'A free, open-source, dark-mode-first is an All-In-One Gallery System that can read all visual style files!.',
+    description: 'A free, open-source, dark-mode-first is an All-In-One Gallery System that can read all visual style files!',
     status: 'In Development',
     statusColor: 'gold',
     platform: 'Windows · macOS · Linux (Electron)',
-    github: 'https://github.com/TheAlarklynZone/Quillosofi',
+    github: 'https://github.com/TheAlarklynZone/AReallyGreatImagerySystem',
     icon: '📝',
-    tags: ['Gallery App', 'Windows/Mac/Linux', 'Desktop', 'Open Source'],
+    tags: ['Gallery App', 'Organization', 'Desktop', 'Open Source'],
   },
 ]
 
