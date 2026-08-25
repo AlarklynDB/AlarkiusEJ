@@ -9,6 +9,7 @@ No one shall edit, add, or create content in this repository.
 ---
 **All Creative Control Direction ie:**
 - Writing, Art, Lore, Worldbuilding and Multimedia
+
 is made by Me, Myself and I. Claude Code simply helps with the logic and structure.
 
 ---
