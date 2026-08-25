@@ -3,13 +3,14 @@
 # Important README Files for Alarkius' Worldbuilding Sites & More
 Half of the Projects here are for AlarkiusEJ's Worldbulding Content, which is an automatic copyright created upon creation. All Worldbuilding Content here will have the `All Rights Reserved` tag or label so no content will be stolen. 
 
-All Creative Control Direction ie: 
-- Writing, Art, Lore, Worldbuilding and Multimedia
-is made by Me. Claude Code simply helps with the logic and structure.
-
 This REPO is just for AlarkiusEJ. 
 No one shall edit, add, or create content in this repository.
 
+**All Creative Control Direction ie:**
+- Writing, Art, Lore, Worldbuilding and Multimedia
+is made by Me, Myself and I. Claude Code simply helps with the logic and structure.
+
+---
 All Worldbuilding Content for:
 - The Hibrythian Saga
 - AlarkiusEJ's Portfolio
