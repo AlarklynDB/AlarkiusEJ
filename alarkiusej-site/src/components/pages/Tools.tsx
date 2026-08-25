@@ -32,7 +32,7 @@ const liveTools = [
     statusColor: "gold",
     description:
       'A lightweight, cross-platform clipboard manager that lives in your system tray and acts like an default app too. Search your clip history, pin what matters, organize into Quivers, and summon it all with Shift+Alt+V. Never lose copied text again.',
-    platform: 'Windows · macOS · Linux (Tauri)',
+    platform: 'Windows · macOS · Linux (Electron)',
     github: 'https://thealarklynzone.github.io/Quilvar/',
     icon: '📋',
     tags: ['Clipboard Manager', 'Desktop', 'Available Now'],
