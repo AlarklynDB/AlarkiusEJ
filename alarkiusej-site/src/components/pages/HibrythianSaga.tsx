@@ -69,7 +69,7 @@ export default function HibrythianSaga() {
                 <p className="text-sm font-semibold text-text group-hover:text-rose-light transition-colors">
                   TheHibrythianSaga.com
                 </p>
-                <p className="text-xs text-text-faint">Official Universe Website. (Content has yet to migrate to a similar build for this website. Coming soon!)</p>
+                <p className="text-xs text-text-faint">Official Universe Website! The World will keep on Expanding~!</p>
               </div>
             </div>
             <svg className="w-4 h-4 text-text-faint group-hover:text-rose-light transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
