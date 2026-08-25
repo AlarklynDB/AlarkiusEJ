@@ -31,7 +31,7 @@ export default function CharacterPage({
   return (
     <article className="min-h-screen bg-ink text-text pt-16">
       {/* Header with back navigation */}
-      <header className="sticky top-16 z-40 bg-ink/95 backdrop-blur border-b border-border">
+      <header className="bg-ink/95 backdrop-blur border-b border-border">
         <div className="max-w-4xl mx-auto px-6 py-4">
           <a
             href="/goldenhour-ashentruth"
