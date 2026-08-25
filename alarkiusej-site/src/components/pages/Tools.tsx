@@ -29,6 +29,7 @@ const liveTools = [
     name: 'Quilvar',
     tagline: 'Store your clips. Paste with precision.',
     status: 'Beta — Active Development',
+    statusColor: "gold",
     description:
       'A lightweight, cross-platform clipboard manager that lives in your system tray and acts like an default app too. Search your clip history, pin what matters, organize into Quivers, and summon it all with Shift+Alt+V. Never lose copied text again.',
     platform: 'Windows · macOS · Linux (Tauri)',
