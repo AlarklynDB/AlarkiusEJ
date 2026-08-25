@@ -32,17 +32,16 @@ export default function CharacterPage({
     <article className="min-h-screen bg-ink text-text">
       {/* Header with back navigation */}
       <header className="sticky top-0 z-40 bg-ink/95 backdrop-blur border-b border-border">
-        <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-4xl mx-auto px-6 py-4">
           <a
             href="/goldenhour-ashentruth"
-            className="text-rose hover:text-rose-light transition-colors flex items-center gap-2"
+            className="text-rose hover:text-rose-light transition-colors flex items-center gap-2 mb-3"
           >
             ← Golden Hour
           </a>
-          <h1 className="text-2xl font-serif font-bold text-center flex-1">
+          <h1 className="text-xl sm:text-2xl font-serif font-bold text-text break-words">
             {character.name}
           </h1>
-          <div className="w-24" />
         </div>
       </header>
 
