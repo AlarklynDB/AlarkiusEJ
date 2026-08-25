@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import CharacterPage from '../../components/CharacterPage'
+import lhuaGholdt from '../../data/characters/lhua-gholdt'
+import oaLenhart from '../../data/characters/oshaea-oa-lenhart'
+import phaliyaTheSlime from '../../data/characters/phaliya-the-slime'
+---
+
+<BaseLayout
+  title={`${lhuaGholdt.name} | AlarkiusEJ`}
+  description={`${lhuaGholdt.tag} — ${lhuaGholdt.quote}`}
+  path="/characters/lhua-gholdt"
+>
+  <CharacterPage
+    client:load
+    character={lhuaGholdt}
+    previousCharacter={{
+      name: phaliyaTheSlime.name,
+      slug: phaliyaTheSlime.slug,
+    }}
+    nextCharacter={{
+      name: oaLenhart.name,
+      slug: oaLenhart.slug,
+    }}
+  />
+</BaseLayout>

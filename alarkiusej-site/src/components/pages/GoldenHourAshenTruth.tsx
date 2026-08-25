@@ -1,17 +1,25 @@
-import { useState } from 'react'
-import CharacterProfileModal from '../CharacterProfileModal'
-import { characterProfiles } from '../../data/characters'
-
 const characters = [
-  { name: 'Lhua Gholdt', tag: 'she/her · 25', blurb: 'SS Rank Healer & Combatant — an apothecary who buried her feelings under responsibility.' },
-  { name: 'Oshaeá "Oa" Ashen Lenhart', tag: 'she/her · 23', blurb: 'A demon-raised orphan who buried her grief under cheerfulness. Wields S Rank demon magic the city underrates.' },
-  { name: 'Phaliyá the Slime', tag: 'she/it', blurb: 'Once a Demon Slime Boss — now a smaller, self-aware Rank A slime who teaches Oa to wield her power.' },
+  {
+    name: 'Lhua Gholdt',
+    tag: 'she/her · 25',
+    slug: 'lhua-gholdt',
+    blurb: 'SS Rank Healer & Combatant — an apothecary who buried her feelings under responsibility.',
+  },
+  {
+    name: 'Oshaeá "Oa" Ashen Lenhart',
+    tag: 'she/her · 23',
+    slug: 'oshaea-oa-lenhart',
+    blurb: 'A demon-raised orphan who buried her grief under cheerfulness. Wields S Rank demon magic the city underrates.',
+  },
+  {
+    name: 'Phaliyá the Slime',
+    tag: 'she/it',
+    slug: 'phaliya-the-slime',
+    blurb: 'Once a Demon Slime Boss — now a smaller, self-aware Rank A slime who teaches Oa to wield her power.',
+  },
 ]
 
 export default function GoldenHourAshenTruth() {
-  const [openCharacter, setOpenCharacter] = useState<string | null>(null)
-  const activeProfile = openCharacter ? characterProfiles[openCharacter] : null
-
   return (
     <div className="pt-16">
       <div className="max-w-4xl mx-auto px-6 py-16">
@@ -83,33 +91,22 @@ export default function GoldenHourAshenTruth() {
         <section className="mb-12">
           <h2 className="font-serif text-2xl font-semibold text-text mb-6">Main Characters</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {characters.map((c) => {
-              const hasProfile = Boolean(characterProfiles[c.name])
-              return (
-                <button
-                  key={c.name}
-                  type="button"
-                  onClick={() => hasProfile && setOpenCharacter(c.name)}
-                  disabled={!hasProfile}
-                  className={`text-left flex flex-col gap-2 p-4 bg-surface rounded-lg border border-border transition-colors duration-200 ${
-                    hasProfile
-                      ? 'hover:border-rose/40 hover:bg-surface-hover cursor-pointer'
-                      : 'cursor-default'
-                  }`}
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <div>
-                      <p className="text-sm font-semibold text-text">{c.name}</p>
-                      <p className="text-xs text-text-faint">{c.tag}</p>
-                    </div>
-                    {hasProfile && (
-                      <span className="text-xs text-rose-light flex-shrink-0 mt-0.5">View →</span>
-                    )}
+            {characters.map((c) => (
+              <a
+                key={c.name}
+                href={`/characters/${c.slug}`}
+                className="text-left flex flex-col gap-2 p-4 bg-surface rounded-lg border border-border transition-colors duration-200 hover:border-rose/40 hover:bg-surface-hover"
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <div>
+                    <p className="text-sm font-semibold text-text">{c.name}</p>
+                    <p className="text-xs text-text-faint">{c.tag}</p>
                   </div>
-                  <p className="text-sm text-text-muted leading-snug">{c.blurb}</p>
-                </button>
-              )
-            })}
+                  <span className="text-xs text-rose-light flex-shrink-0 mt-0.5">View →</span>
+                </div>
+                <p className="text-sm text-text-muted leading-snug">{c.blurb}</p>
+              </a>
+            ))}
           </div>
         </section>
 
@@ -154,10 +151,6 @@ export default function GoldenHourAshenTruth() {
           </div>
         </section>
       </div>
-
-      {activeProfile && (
-        <CharacterProfileModal character={activeProfile} onClose={() => setOpenCharacter(null)} />
-      )}
     </div>
   )
 }
