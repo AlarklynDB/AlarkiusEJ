@@ -121,14 +121,15 @@ const accentClasses: Record<string, string> = {
 }
 
 const socialsBackground = {
-  background:
-    'linear-gradient(115deg, #1F2132 0%, #1F2132 42%, rgba(158,42,100,0.8) 62%, rgba(220,47,126,0.8) 75%, rgba(241,117,51,0.8) 88%, rgba(255,128,0,0.8) 100%)',
+  backgroundImage:
+    'radial-gradient(ellipse 140% 110% at 100% 100%, rgba(255,128,0,0.8) 0%, rgba(241,117,51,0.8) 18%, rgba(220,47,126,0.8) 38%, rgba(158,42,100,0.6) 55%, rgba(31,33,50,0) 75%)',
 }
 
 export default function Socials() {
   return (
-    <div className="min-h-screen flex items-center justify-center" style={socialsBackground}>
-      <div className="w-full max-w-2xl mx-auto px-6 py-12 sm:py-16">
+    <div className="min-h-screen flex items-center justify-center relative" style={{ backgroundColor: '#1F2132' }}>
+      <div className="fixed inset-0 pointer-events-none" style={socialsBackground} />
+      <div className="relative w-full max-w-2xl mx-auto px-6 py-12 sm:py-16">
         {/* Header */}
         <div className="page-hero text-center">
           <p className="text-rose text-xs font-medium tracking-widest uppercase mb-3">Find Me Everywhere</p>
