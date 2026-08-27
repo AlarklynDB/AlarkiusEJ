@@ -120,9 +120,14 @@ const accentClasses: Record<string, string> = {
   gold: 'bg-gold-bg border border-gold/30 text-gold group-hover:bg-gold/20',
 }
 
+const socialsBackground = {
+  background:
+    'linear-gradient(115deg, #1F2132 0%, #1F2132 42%, rgba(158,42,100,0.8) 62%, rgba(220,47,126,0.8) 75%, rgba(241,117,51,0.8) 88%, rgba(255,128,0,0.8) 100%)',
+}
+
 export default function Socials() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="min-h-screen flex items-center justify-center" style={socialsBackground}>
       <div className="w-full max-w-2xl mx-auto px-6 py-12 sm:py-16">
         {/* Header */}
         <div className="page-hero text-center">
