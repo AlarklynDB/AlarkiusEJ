@@ -21,6 +21,9 @@ interface Props {
   /** Path of this page, e.g. "/about" — used for the canonical URL + og:url */
   path?: string
   image?: string
+  /** When true, renders just the page content — no Navbar/Footer chrome.
+   *  For standalone fullscreen pages like /socials. */
+  bare?: boolean
 }
 
 const {
@@ -28,6 +31,7 @@ const {
   description = 'AlarkiusEJ — Author, Worldbuilder & Composer. Creator of The Hibrythian Saga and The Naiseikai Universe.',
   path = '/',
   image = 'https://i.ibb.co/cjsLnRW/alarkiusej-banner.png',
+  bare = false,
 } = Astro.props
 
 const canonical = new URL(path, 'https://alarkiusej.com').href
@@ -217,13 +221,19 @@ const canonical = new URL(path, 'https://alarkiusej.com').href
 
     <!-- App shell (was App.tsx). Navbar/Footer hydrate for interactivity. -->
     <PWADevTools client:load />
-    <div class="min-h-screen flex flex-col bg-ink">
-      <Navbar client:load />
-      <main class="flex-1">
+    {bare ? (
+      <div class="min-h-screen bg-ink">
         <slot />
-      </main>
-      <Footer client:load />
-    </div>
+      </div>
+    ) : (
+      <div class="min-h-screen flex flex-col bg-ink">
+        <Navbar client:load />
+        <main class="flex-1">
+          <slot />
+        </main>
+        <Footer client:load />
+      </div>
+    )}
 
     <!-- Fort Knox — Devtools chaos (debugger trap + console flood) -->
     <script is:inline>

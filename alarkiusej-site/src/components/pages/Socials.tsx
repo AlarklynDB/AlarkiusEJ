@@ -122,8 +122,8 @@ const accentClasses: Record<string, string> = {
 
 export default function Socials() {
   return (
-    <div className="pt-16">
-      <div className="max-w-2xl mx-auto px-6 py-16">
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="w-full max-w-2xl mx-auto px-6 py-12 sm:py-16">
         {/* Header */}
         <div className="page-hero text-center">
           <p className="text-rose text-xs font-medium tracking-widest uppercase mb-3">Find Me Everywhere</p>
