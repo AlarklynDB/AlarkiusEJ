@@ -112,6 +112,17 @@ const socials = [
     accent: 'gold',
     icon: <span className="text-lg">🎙️</span>,
   },
+  {
+    name: 'Modrinth',
+    handle: 'AlariaEJ',
+    href: 'https://modrinth.com/user/AlariaEJ',
+    accent: 'teal',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 3.6a8.4 8.4 0 110 16.8 8.4 8.4 0 010-16.8zm-1.2 4.2v3h-3v2.4h3v3h2.4v-3h3V10.8h-3v-3h-2.4z" />
+      </svg>
+    ),
+  },
 ]
 
 const accentClasses: Record<string, string> = {
