@@ -1,15 +1,5 @@
 import { Link } from '../lib/router'
 
-const socials = [
-  { label: 'Support me on Ko-Fi', href: 'https://ko-fi.com/alarkiusej' },
-  { label: 'My LinkedIn', href: 'https://www.linkedin.com/in/alarkiusej/' },
-  { label: 'My Writing YouTube', href: 'https://www.youtube.com/@AlarkiusEJ' },
-  { label: 'Discord', href: 'https://discord.gg/umB3p5qfE4' },
-  { label: 'Reddit', href: 'https://www.reddit.com/user/OfficialAlarkiusJay/'},
-  { label: 'Bluesky', href: 'https://bsky.app/profile/alarkiusjay.bsky.social' },
-  { label: 'Cara.App', href: 'https://cara.app/alarkiusej' },
-]
-
 const footerLinks = [
   { label: 'About', path: '/about' },
   { label: 'Hibrythian Saga', path: '/hibrythian-saga' },
@@ -65,20 +55,18 @@ export default function Footer() {
           {/* Socials */}
           <div>
             <h4 className="text-xs uppercase tracking-widest text-text-faint font-medium mb-4">Find Me</h4>
-            <ul className="space-y-2">
-              {socials.map((s) => (
-                <li key={s.label}>
-                  <a
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-text-muted hover:text-rose-light transition-colors duration-150"
-                  >
-                    {s.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <p className="text-sm text-text-muted leading-relaxed mb-4">
+              Every place I post — music, writing, art, and more.
+            </p>
+            <Link
+              to="/socials"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-surface-raised border border-border text-text text-sm font-medium rounded-lg hover:border-border-light hover:bg-ink transition-colors duration-200"
+            >
+              All My Socials
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
         </div>
 
