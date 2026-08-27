@@ -429,6 +429,26 @@ export default function About() {
 
         {/* Medium RSS Feed */}
         <MediumFeedCard />
+
+        {/* Manifesto */}
+        <a
+          href="/manifesto"
+          className="group mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 sm:p-8 bg-surface rounded-2xl border border-border hover:border-border-light hover:bg-ink-light transition-colors duration-200"
+        >
+          <div>
+            <p className="text-rose text-xs font-medium tracking-widest uppercase mb-1">Author Manifesto</p>
+            <h2 className="font-serif text-xl sm:text-2xl font-semibold text-text">Why I Write</h2>
+            <p className="text-text-muted text-sm mt-1">
+              An Author Manifesto of why I love Writing, based on my Faith in Jesus.
+            </p>
+          </div>
+          <span className="self-start sm:self-auto flex-shrink-0 flex items-center gap-2 px-4 py-2 bg-surface-raised border border-border text-text text-sm font-medium rounded-lg group-hover:border-border-light group-hover:bg-ink transition-colors duration-200 whitespace-nowrap">
+            Read the Manifesto
+            <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </span>
+        </a>
       </div>
 
       <GenAINotice />

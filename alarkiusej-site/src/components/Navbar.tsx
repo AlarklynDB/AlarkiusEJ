@@ -20,7 +20,6 @@ const navLinks = [
       { label: 'About', path: '/about' },
       { label: 'Contact', path: '/contact' },
       { label: 'Policies', path: '/policies' },
-      { label: 'Manifesto', path: '/manifesto' },
     ],
   },
 ]
