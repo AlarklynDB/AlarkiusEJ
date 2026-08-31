@@ -39,6 +39,14 @@ export default function Contact() {
               >
                 Find on Bluesky
               </a>
+              <a
+                href="https://www.linkedin.com/in/alarkiusej/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-surface-raised border border-border text-text text-sm font-medium rounded-lg hover:border-border-light transition-colors duration-200"
+              >
+                Connect on LinkedIn
+              </a>
             </div>
           </div>
         </section>
