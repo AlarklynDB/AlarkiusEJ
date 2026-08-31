@@ -18,7 +18,6 @@ const navLinks = [
     label: 'FAQ',
     children: [
       { label: 'About', path: '/about' },
-      { label: 'Contact', path: '/contact' },
       { label: 'Policies', path: '/policies' },
     ],
   },
