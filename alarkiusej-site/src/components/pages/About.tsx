@@ -46,11 +46,11 @@ function MediumFeedCard() {
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    const RSS_URL = 'https://medium.com/feed/@alarkiusej'
-    // count=20 so future posts are picked up automatically
-    const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&count=20`
-
-    fetch(API_URL)
+    // Served by our own Cloudflare Worker (worker.js), which fetches and
+    // parses Medium's RSS feed server-side — Medium's feed can't be read
+    // directly from the browser (no CORS header), and this avoids relying
+    // on third-party proxy services like rss2json for uptime/rate limits.
+    fetch('/api/medium-feed')
       .then((r) => r.json())
       .then((data) => {
         if (data.status === 'ok' && data.items?.length) {
@@ -58,12 +58,8 @@ function MediumFeedCard() {
             title: item.title,
             link: item.link,
             pubDate: item.pubDate,
-            // Try rss2json thumbnail first, then extract from full content HTML
-            thumbnail:
-              (item.thumbnail && !item.thumbnail.includes('placeholder'))
-                ? item.thumbnail
-                : extractThumbnail(item.content || item.description || ''),
-            description: stripHtml(item.description || item.content || ''),
+            thumbnail: extractThumbnail(item.content || ''),
+            description: stripHtml(item.content || ''),
           }))
           setPosts(mapped)
         } else {

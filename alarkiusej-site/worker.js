@@ -223,6 +223,75 @@ class BodyHandler {
 }
 
 // ------------------------------------------------------------
+// Medium feed proxy — /api/medium-feed
+//
+// The About page used to hit api.rss2json.com client-side. That's a
+// free, keyless third-party proxy with its own rate limits/uptime, and
+// Medium's RSS feed can't be fetched directly from the browser (no
+// CORS header). Since every request already passes through this Worker,
+// fetching Medium's RSS server-to-server here sidesteps both problems —
+// no CORS restriction applies to Worker-to-origin fetches, and the
+// response is edge-cached for 30 minutes.
+// ------------------------------------------------------------
+
+const MEDIUM_FEED_URL = "https://medium.com/feed/@alarkiusej";
+
+function decodeXmlEntities(str) {
+  return str
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&amp;/g, "&");
+}
+
+function extractTag(block, tag) {
+  const match = block.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`, "i"));
+  if (!match) return "";
+  const cdata = match[1].match(/^\s*<!\[CDATA\[([\s\S]*?)\]\]>\s*$/);
+  return cdata ? cdata[1] : match[1].trim();
+}
+
+function parseMediumRss(xml) {
+  const items = [];
+  const blocks = xml.split("<item>").slice(1);
+  for (const raw of blocks) {
+    const block = raw.split("</item>")[0];
+    const title = decodeXmlEntities(extractTag(block, "title"));
+    const link = decodeXmlEntities(extractTag(block, "link"));
+    const pubDate = extractTag(block, "pubDate");
+    const content = extractTag(block, "content:encoded") || extractTag(block, "description");
+    if (title && link) items.push({ title, link, pubDate, content });
+  }
+  return items;
+}
+
+async function handleMediumFeed() {
+  try {
+    const res = await fetch(MEDIUM_FEED_URL, {
+      headers: { "User-Agent": "Mozilla/5.0 (compatible; AlarkiusEJSiteBot/1.0; +https://alarkiusej.com)" },
+      cf: { cacheTtl: 1800, cacheEverything: true },
+    });
+    if (!res.ok) throw new Error(`Medium responded ${res.status}`);
+    const xml = await res.text();
+    const items = parseMediumRss(xml).slice(0, 20);
+    if (!items.length) throw new Error("No items parsed from Medium feed");
+
+    return new Response(JSON.stringify({ status: "ok", items }), {
+      headers: {
+        "content-type": "application/json; charset=UTF-8",
+        "cache-control": "public, max-age=1800",
+      },
+    });
+  } catch (err) {
+    return new Response(JSON.stringify({ status: "error", message: String(err) }), {
+      status: 502,
+      headers: { "content-type": "application/json; charset=UTF-8" },
+    });
+  }
+}
+
+// ------------------------------------------------------------
 // Fetch handler
 // ------------------------------------------------------------
 
@@ -230,6 +299,10 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const hostname = url.hostname;
+
+    if (url.pathname === "/api/medium-feed" && request.method === "GET") {
+      return handleMediumFeed();
+    }
 
     // "shop.alarkiusej.com" is a disguised front door for /bookstore.
     // Rewrite the fetched asset path (not a redirect) so the URL bar keeps
