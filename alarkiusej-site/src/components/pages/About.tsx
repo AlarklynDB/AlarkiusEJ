@@ -361,30 +361,59 @@ export default function About() {
         {/* Indie Author */}
         <section className="mb-12">
           <h2 className="font-serif text-2xl font-semibold text-text mb-2">An Indie Author</h2>
-          <p className="text-rose text-xs font-medium tracking-widest uppercase mb-6">2017+</p>
+          <p className="text-rose text-xs font-medium tracking-widest uppercase mb-6">
+            From Writer turned Indie Author | 2017+
+          </p>
 
           <p className="text-text-muted leading-relaxed mb-6">
-            Ever since writing the first story, there's been deep enjoyment in bringing ideas to
-            life. The first ever world is <em className="text-text">The Hibrythian Saga</em>, a
-            multi-collection series that consists of novels, world lore, and multimedia storytelling.
-            The first book,{' '}
-            <span className="text-gold font-medium">"Hibryds - A Grand Voyage,"</span> is already
-            available on Barnes &amp; Noble and the project continues to grow. These works aren't
-            just stories — they are worlds that are mythic with real heartfelt struggles, turned into
+            Ever since I started to write my first story, I've really enjoyed it since I can bring
+            my ideas to life. My first ever world is{' '}
+            <em className="text-text">The Hibrythian Saga</em>, a multi-collection series that
+            consists of novels, world lore, and multimedia storytelling. The first book of the
+            saga is called{' '}
+            <span className="text-gold font-medium">"Hibryds - A Grand Voyage,"</span> which is
+            already available on Barnes &amp; Nobles and the project continues to grow. It's not
+            just worlds I like to create, I also like creating stories that tie heavily into the
+            world at <em className="text-text">just the right pace</em> without dumping too much.
+          </p>
+
+          <p className="text-text-muted leading-relaxed mb-2">My Works and Universes:</p>
+          <ul className="list-disc list-inside text-text-muted leading-relaxed mb-6 space-y-1">
+            <li>The Hibrythian Saga</li>
+            <li>The Naiseikai Universe</li>
+          </ul>
+          <p className="text-text-muted leading-relaxed mb-6">
+            <a
+              href="/hibrythian-saga"
+              className="text-rose-light hover:text-rose transition-colors underline underline-offset-2"
+            >
+              The Hibrythian Saga
+            </a>{' '}
+            and{' '}
+            <a
+              href="/naiseikai-universe"
+              className="text-rose-light hover:text-rose transition-colors underline underline-offset-2"
+            >
+              The Naiseikai Universe
+            </a>{' '}
+            are my worlds that blend everything that I like to write in. These works aren't just
+            stories…. they are worlds that are mythic with real heartfelt struggles, turned into
             satisfying journeys.
           </p>
 
           <h3 className="font-serif text-lg font-semibold text-text mb-3">My Writing Style</h3>
           <p className="text-text-muted leading-relaxed mb-6">
-            A lot of the works center with a heartfelt mythopoetic tone that can pull weight and
-            love. Stories often blend poetic prose with emotional depth, silent introspection and
-            symbolic themes. There's a mix of faith, character emotion, spiritual conflict, and
-            transformation even in Fantasy, Sci-Fi, or Adventure writing. Narratives explore love,
-            loss, identity, and healing all within intricately built worlds that feel both timeless
-            and intimate.
+            A lot of my works will center with a heartfelt mythopoetic tone that can pull weight
+            and love. My stories often blend poetic prose with emotional depth, silent
+            introspection and symbolic themes. I like to put a mix of{' '}
+            <em className="text-text">faith,</em> character emotion, spiritual conflict, and
+            transformation in my works, even when I write Fantasy, Sci-Fi, or Adventure or more.
+            My narratives explore love, loss, identity, and healing all within intricately built
+            worlds (lores) that feel both timeless and intimate. I also like to blend popular
+            tropes, along with media to shape it into my own style.
           </p>
 
-          <h3 className="font-serif text-lg font-semibold text-text mb-4">Genres</h3>
+          <h3 className="font-serif text-lg font-semibold text-text mb-4">Genres I Write In</h3>
           <div className="flex flex-wrap gap-2 mb-6">
             {genres.map((g) => (
               <span key={g} className="tag tag-rose text-xs">
@@ -398,9 +427,11 @@ export default function About() {
             <div>
               <p className="text-sm font-semibold text-text mb-1">Also Specializing In:</p>
               <p className="text-sm text-text-muted leading-relaxed">
-                <strong className="text-rose-light">Girls' Love (GL) / Queer Romance / Drama</strong>{' '}
-                — tender, emotional, character-driven stories that center around relationships, found
-                family, and more.
+                <strong className="text-rose-light">
+                  Girls' Love (GL) / Queer &amp; Sapphic Romance / Drama
+                </strong>{' '}
+                — tender, emotional, character-driven stories that centers around relationships,
+                found family, and more!
               </p>
             </div>
           </div>
