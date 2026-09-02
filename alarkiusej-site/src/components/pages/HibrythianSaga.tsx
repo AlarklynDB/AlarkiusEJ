@@ -98,7 +98,7 @@ export default function HibrythianSaga() {
           <h2 className="font-serif text-2xl font-semibold text-text mb-4">Series Description</h2>
           <p className="text-text-muted leading-relaxed mb-6">
             <em className="text-text">The Hibrythian Saga</em> is a mythic{' '}
-            <strong className="text-text">Adventure Fantasy</strong> epic chronicling the fate of a
+            <strong className="text-text">Adventure Fantasy</strong> Epic chronicling the fate of a
             fractured world born from divine ambition and human emotion. Set across galaxies, realms,
             and planes of consciousness, this saga unravels the story of{' '}
             <strong className="text-text">Hetra</strong> — a planet forged by spirits, claimed by
