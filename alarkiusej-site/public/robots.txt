@@ -54,6 +54,9 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: alarkoidbot
+Allow: /
+
 # --- Default ---
 User-agent: *
 Allow: /
