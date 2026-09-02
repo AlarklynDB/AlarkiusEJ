@@ -50,7 +50,7 @@ export default function HibrythianSaga() {
             <p className="text-sm text-text-muted">
               <span className="text-gold font-semibold">81 books planned in total.</span> This is my
               main series that I am currently working on! Two books are already available on Barnes
-              &amp; Noble.
+              &amp; Noble! Vol 0 is also avaliable for free on the official website!
             </p>
           </div>
 
