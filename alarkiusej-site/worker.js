@@ -28,7 +28,7 @@ const PERSON_NODE = {
   "@id": AUTHOR_ID,
   name: "Alarkius Elvya Jay",
   alternateName: ["Alarkius Elvya Jay", "AlarkiusEJ", "AJ", "KarasuEJ"],
-  url: "https://www.alarkiusej.com/",
+  url: "https://www.alarkiusej.com/about",
   jobTitle: ["Author", "Composer", "Worldbuilder", "Artist"],
   description:
     "Alarkius Elvya Jay, also known as AlarkiusEJ, is the author of The Hibrythian Saga and creator of the Naiseikai Universe.",
@@ -42,7 +42,7 @@ const PERSON_NODE = {
           "https://www.linkedin.com/in/alarkiusej/",
           "https://github.com/AlarkiusJay",
           "https://github.com/TheAlarklynZone",
-          "https://github.com/AlarklynDB",    
+          "https://github.com/AlarklynDB",
           "https://www.thehibrythiansaga.com/",
           "https://www.naiseikaiuniverse.com/",
           "https://www.barnesandnoble.com/search?q=Alarkius%20Elvya%20Jay&contributorName=alarkius-elvya-jay",
@@ -50,7 +50,8 @@ const PERSON_NODE = {
           "https://www.barnesandnoble.com/search?attributes.mfield_bnb__seriesTitle=The%20Naiseikai%20Universe",
           "https://www.wikidata.org/wiki/Q140438474",
           "https://www.wikidata.org/wiki/Q140438511",
-          "https://www.wikidata.org/wiki/Q140438394"
+          "https://www.wikidata.org/wiki/Q140438394",
+          "https://isni.org/isni/0000000530908746"
   ]
 };
 

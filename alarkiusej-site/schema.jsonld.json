@@ -1,5 +1,5 @@
-  {
-  "_note": "Backup of all JSON-LD schemas used in the alaria-aurelia Cloudflare Worker. Last updated: 2026-06-11.",
+{
+  "_note": "Backup of all JSON-LD schemas used in the alaria-aurelia Cloudflare Worker. Last updated: 2026-09-02.",
 
   "author_schema": {
     "@context": "https://schema.org",
@@ -22,7 +22,7 @@
           "https://www.linkedin.com/in/alarkiusej/",
           "https://github.com/AlarkiusJay",
           "https://github.com/TheAlarklynZone",
-          "https://github.com/AlarklynDB",          
+          "https://github.com/AlarklynDB",
           "https://www.thehibrythiansaga.com/",
           "https://www.naiseikaiuniverse.com/",
           "https://www.barnesandnoble.com/search?q=Alarkius%20Elvya%20Jay&contributorName=alarkius-elvya-jay",
@@ -32,21 +32,21 @@
           "https://www.wikidata.org/wiki/Q140438511",
           "https://www.wikidata.org/wiki/Q140438394",
           "https://alarkiusej.medium.com",
-          "https://isni.org/isni/0000000530908746",
+          "https://isni.org/isni/0000000530908746"
         ]
       },
       {
-      "@type": "ProfilePage",
-      "@id": "https://www.alarkiusej.com/#profilepage",
-      "url": "https://www.alarkiusej.com/",
-      "name": "Alarkius Elvya Jay — Official Author Website",
-      "description": "The official profile and author page of Alarkius Elvya Jay, creator of The Hibrythian Saga and The Naiseikai Universe.",
-      "mainEntity": { "@id": "https://www.alarkiusej.com/#author" },
-      "about": { "@id": "https://www.alarkiusej.com/#author" },
-      "creator": { "@id": "https://www.alarkiusej.com/#author" },
-      "publisher": { "@id": "https://www.alarkiusej.com/#brand" },
-      "dateModified": "2026-06-16"
-      }
+        "@type": "ProfilePage",
+        "@id": "https://www.alarkiusej.com/#profilepage",
+        "url": "https://www.alarkiusej.com/",
+        "name": "Alarkius Elvya Jay — Official Author Website",
+        "description": "The official profile and author page of Alarkius Elvya Jay, creator of The Hibrythian Saga and The Naiseikai Universe.",
+        "mainEntity": { "@id": "https://www.alarkiusej.com/#author" },
+        "about": { "@id": "https://www.alarkiusej.com/#author" },
+        "creator": { "@id": "https://www.alarkiusej.com/#author" },
+        "publisher": { "@id": "https://www.alarkiusej.com/#brand" },
+        "dateModified": "2026-06-16"
+      },
       {
         "@type": "Organization",
         "@id": "https://www.alarkiusej.com/#brand",
@@ -55,17 +55,17 @@
         "founder": { "@id": "https://www.alarkiusej.com/#author" }
       },
       {
-      "@type": "MusicAlbum",
-      "@id": "https://www.alarkiusej.com/#album-1",
-      "name": "Alarkius Elvya Jay",
-      "url": "https://www.youtube.com/@AlarkiusJay",
-      "description": "AlarkiusEJ's Music, but on YouTube.",
-      "byArtist": { "@id": "https://www.alarkiusej.com/#author" },
-      "datePublished": "",
-      "numTracks": ,
-      "genre": ["Original Sound Tracks", "Orchestral", "Film"],
-      "inAlbum": null
-      }  
+        "@type": "MusicAlbum",
+        "@id": "https://www.alarkiusej.com/#album-1",
+        "name": "Alarkius Elvya Jay",
+        "url": "https://www.youtube.com/@AlarkiusJay",
+        "description": "AlarkiusEJ's Music, but on YouTube.",
+        "byArtist": { "@id": "https://www.alarkiusej.com/#author" },
+        "datePublished": null,
+        "numTracks": null,
+        "genre": ["Original Sound Tracks", "Orchestral", "Film"],
+        "inAlbum": null
+      },
       {
         "@type": "WebSite",
         "@id": "https://www.alarkiusej.com/#website",
@@ -101,17 +101,17 @@
         "publisher": { "@id": "https://www.alarkiusej.com/#brand" }
       },
       {
-      "@type": "MusicAlbum",
-      "@id": "https://www.alarkiusej.com/#album-2",
-      "name": "Alarkius Elvya Jay",
-      "url": "https://www.youtube.com/@TheHibrythianSaga",
-      "description": "AlarkiusEJ's Music, but on YouTube, for The Hibrythian Saga.",
-      "byArtist": { "@id": "https://www.alarkiusej.com/#author" },
-      "datePublished": "",
-      "numTracks": ,
-      "genre": ["Original Sound Tracks", "Orchestral", "Film" , "Book Music"],
-      "inAlbum": null
-      }  
+        "@type": "MusicAlbum",
+        "@id": "https://www.alarkiusej.com/#album-2",
+        "name": "Alarkius Elvya Jay",
+        "url": "https://www.youtube.com/@TheHibrythianSaga",
+        "description": "AlarkiusEJ's Music, but on YouTube, for The Hibrythian Saga.",
+        "byArtist": { "@id": "https://www.alarkiusej.com/#author" },
+        "datePublished": null,
+        "numTracks": null,
+        "genre": ["Original Sound Tracks", "Orchestral", "Film", "Book Music"],
+        "inAlbum": null
+      },
       {
         "@type": "WebSite",
         "@id": "https://www.thehibrythiansaga.com/#website",
@@ -121,7 +121,7 @@
         "about":     { "@id": "https://www.thehibrythiansaga.com/#series" },
         "creator":   { "@id": "https://www.alarkiusej.com/#author" },
         "publisher": { "@id": "https://www.alarkiusej.com/#brand" }
-      }
+      },
       {
         "@type": "Book",
         "@id": "https://www.thehibrythiansaga.com/#book-0",
@@ -132,13 +132,13 @@
         "inSeries": { "@id": "https://www.thehibrythiansaga.com/#series" },
         "author": { "@id": "https://www.alarkiusej.com/#author" },
         "url": "https://www.thehibrythiansaga.com/bookshelf/vol0"
-      }
+      },
       {
         "@type": "Book",
         "@id": "https://www.thehibrythiansaga.com/#book-1",
         "name": "Hibryds - A Grand Voyage",
-        "bookEdition": "First Edition", "Hardcover",
-        "isbn": "9798994097663", "9798994097670",
+        "bookEdition": ["First Edition", "Hardcover"],
+        "isbn": ["9798994097663", "9798994097670"],
         "numberOfPages": 542,
         "inSeries": { "@id": "https://www.thehibrythiansaga.com/#series" },
         "author": { "@id": "https://www.alarkiusej.com/#author" },
@@ -177,13 +177,13 @@
         "about":     { "@id": "https://www.naiseikaiuniverse.com/#series" },
         "creator":   { "@id": "https://www.alarkiusej.com/#author" },
         "publisher": { "@id": "https://www.alarkiusej.com/#brand" }
-      }
+      },
       {
         "@type": "Book",
         "@id": "https://www.naiseikaiuniverse.com/#book-1",
         "name": "The Quiet Crow & The Ninja (Shizukana Karasu to Ninja)",
-        "bookEdition": "First Edition", "Collector's Edition",
-        "isbn": "9798994097656", "9798994097656",
+        "bookEdition": ["First Edition", "Collector's Edition"],
+        "isbn": ["9798994097656", "9798994097656"],
         "numberOfPages": 294,
         "inSeries": { "@id": "https://www.naiseikaiuniverse.com/#series" },
         "author": { "@id": "https://www.alarkiusej.com/#author" },
@@ -192,4 +192,3 @@
     ]
   }
 }
-
