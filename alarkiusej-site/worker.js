@@ -295,10 +295,23 @@ async function handleMediumFeed() {
 // Fetch handler
 // ------------------------------------------------------------
 
+// ------------------------------------------------------------
+// Personal short-link redirects — disguised URLs for my own use.
+// Path match is case-insensitive; add more entries as needed.
+// ------------------------------------------------------------
+const PERSONAL_REDIRECTS = {
+  "/isni": "https://isni.oclc.org/cbs/DB=1.2/SET=9/TTL=1/NXT?FRST=1",
+};
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const hostname = url.hostname;
+
+    const personalRedirect = PERSONAL_REDIRECTS[url.pathname.toLowerCase()];
+    if (personalRedirect) {
+      return Response.redirect(personalRedirect, 302);
+    }
 
     if (url.pathname === "/api/medium-feed" && request.method === "GET") {
       return handleMediumFeed();
