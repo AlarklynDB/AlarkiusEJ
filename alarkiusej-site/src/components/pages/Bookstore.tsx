@@ -79,7 +79,7 @@ export default function Bookstore() {
       </div>
 
       {/* Other Novels I write */}
-      <section className="max-w-5xl mx-auto px-6 py-12">
+      <section className="max-w-5xl mx-auto px-6 pb-12">
         <div className="text-center sm:text-left">
           <p className="text-rose text-xs font-medium tracking-widest uppercase mb-2">
             Book Collection
@@ -98,7 +98,7 @@ export default function Bookstore() {
       </div>
 
       {/* eBooks */}
-      <section className="max-w-5xl mx-auto px-6 py-12 pb-20">
+      <section className="max-w-5xl mx-auto px-6 pb-20">
         <div className="text-center sm:text-left mb-6">
           <p className="text-rose text-xs font-medium tracking-widest uppercase mb-2">
             Digital Editions
