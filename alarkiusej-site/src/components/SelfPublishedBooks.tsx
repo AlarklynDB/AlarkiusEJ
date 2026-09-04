@@ -25,7 +25,17 @@ const buyButtonOptions = {
   product: {
     styles: {
       product: {
-        // Each product sits in its own grid cell, so let it fill the cell
+        // Each product sits in its own grid cell, so let it fill the cell.
+        // Set unconditionally (not just at 601px+) so Shopify's own default
+        // mobile margins don't leave the button narrower than its container
+        // — which is exactly what made the "Buy the eBook!" button (a plain
+        // w-full element with no such default) look wider than it in
+        // comparison.
+        width: '100%',
+        'max-width': '100%',
+        'margin-left': '0',
+        'margin-right': '0',
+        'margin-bottom': '0',
         '@media (min-width: 601px)': {
           'max-width': '100%',
           'margin-left': '0',
