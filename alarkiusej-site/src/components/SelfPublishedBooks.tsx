@@ -588,8 +588,11 @@ export default function SelfPublishedBooks({
                 href={book.ebookLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 inline-flex items-center justify-center gap-2 px-[21px] py-[15px] rounded-[40px] text-sm font-semibold bg-surface-raised border border-border text-text hover:border-border-light hover:bg-ink-light transition-colors duration-200"
+                className="mt-3 flex w-fit mx-auto items-center justify-center gap-2 px-[21px] py-[15px] rounded-[40px] text-sm font-semibold bg-surface-raised border border-border text-text hover:border-border-light hover:bg-ink-light transition-colors duration-200"
               >
+                <svg viewBox="0 0 24 24" className="w-4 h-4 flex-shrink-0 fill-current" aria-hidden="true">
+                  <path d="M4 3.5a1 1 0 0 1 1.5-.87l14 8.5a1 1 0 0 1 0 1.74l-14 8.5A1 1 0 0 1 4 20.5v-17z" />
+                </svg>
                 Buy the eBook!
               </a>
             )}
