@@ -331,10 +331,10 @@ const collectionOptions = {
     styles: {
       product: {
         '@media (min-width: 601px)': {
-          'max-width': 'calc(25% - 20px)',
+          'max-width': '220px',
           'margin-left': '20px',
           'margin-bottom': '50px',
-          width: 'calc(25% - 20px)',
+          width: '220px',
         },
         img: {
           height: 'calc(100% - 15px)',
@@ -400,6 +400,7 @@ const collectionOptions = {
   productSet: {
     styles: {
       products: {
+        'justify-content': 'flex-start',
         '@media (min-width: 601px)': {
           'margin-left': '-20px',
         },
