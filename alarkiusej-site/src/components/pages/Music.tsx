@@ -12,6 +12,7 @@ const commissionTiers = [
     duration: 'At least one week or less (without interruptions)',
     revisions: 'Free of charge, unlimited',
     accent: 'teal',
+    link: 'https://ko-fi.com/s/45ba7b9bd5',
   },
   {
     name: 'Themed Bundle',
@@ -279,6 +280,24 @@ export default function Music() {
                   <p className="text-xs text-text-faint mb-2">({tier.priceNote})</p>
                 )}
                 <p className="text-xs text-text-muted mb-3 leading-relaxed">{tier.description}</p>
+
+                {tier.link && (
+                  <a
+                    href={tier.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className={`flex items-center justify-center gap-2 px-4 py-2 mb-3 rounded-lg text-sm font-semibold transition-colors duration-200 ${
+                      tier.accent === 'teal'
+                        ? 'bg-teal text-ink hover:bg-teal-light'
+                        : tier.accent === 'rose'
+                        ? 'bg-rose text-ink hover:bg-rose-light'
+                        : 'bg-gold text-ink hover:bg-gold-light'
+                    }`}
+                  >
+                    Get This Bundle
+                  </a>
+                )}
 
                 {openTier === tier.name && (
                   <div className="mt-3 pt-3 border-t border-border space-y-2">
