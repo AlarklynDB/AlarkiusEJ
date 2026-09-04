@@ -455,6 +455,47 @@ export default function About() {
           </div>
         </section>
 
+        {/* Skills Available for Hire */}
+        <section className="mt-8 p-6 sm:p-8 bg-surface rounded-2xl border border-border">
+          <div className="flex flex-wrap items-center gap-3 mb-4">
+            <h2 className="font-serif text-2xl font-semibold text-text">
+              Skills Available for Hire
+            </h2>
+            <span className="tag tag-rose text-xs">Status: Remote</span>
+          </div>
+
+          <p className="text-text-muted text-sm leading-relaxed mb-4">
+            Want to hire me to break your apps or help improve features? Here's what I can do!
+            It can be your web app, website, apps, or games!
+          </p>
+          <ul className="list-disc list-inside text-text-muted text-sm leading-relaxed mb-6 space-y-1">
+            <li>CBT Beta/Alpha Tester</li>
+            <li>UIX Beta/Alpha Tester</li>
+            <li>UIX Designer (rookie)</li>
+          </ul>
+
+          <p className="text-text-muted text-sm leading-relaxed mb-4">
+            Since I like creating stories and worlds, I can also offer a neat skill for those
+            who are looking for a rich experience:
+          </p>
+          <ul className="list-disc list-inside text-text-muted text-sm leading-relaxed mb-6 space-y-1">
+            <li>Narrative Designer</li>
+          </ul>
+
+          <p className="text-text-muted text-sm leading-relaxed mb-4">
+            You can get in touch with me using the link below!
+          </p>
+          <a
+            href="/contact"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-surface-raised border border-border text-text text-sm font-medium rounded-lg hover:border-border-light hover:bg-ink transition-colors duration-200"
+          >
+            Get in Touch
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </section>
+
         {/* Medium RSS Feed */}
         <MediumFeedCard />
 
