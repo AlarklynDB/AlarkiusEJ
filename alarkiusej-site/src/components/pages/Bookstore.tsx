@@ -26,7 +26,7 @@ export default function Bookstore() {
 
       {/* The Hibrythian Saga */}
       <SelfPublishedBooks
-        bookKeys={['soft']}
+        bookKeys={['hard', 'soft']}
         eyebrow="Book Collection"
         heading="The Hibrythian Saga"
         description={
