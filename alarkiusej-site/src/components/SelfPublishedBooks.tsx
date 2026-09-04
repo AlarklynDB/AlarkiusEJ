@@ -76,8 +76,8 @@ const buyButtonOptions = {
       },
     },
     contents: {
-      button: false,
-      buttonWithQuantity: true,
+      button: true,
+      buttonWithQuantity: false,
     },
     text: {
       button: 'LOCK THAT BOOK IN!',
