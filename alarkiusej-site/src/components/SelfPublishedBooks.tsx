@@ -330,11 +330,12 @@ const collectionOptions = {
   product: {
     styles: {
       product: {
+        'text-align': 'left',
         '@media (min-width: 601px)': {
-          'max-width': '220px',
-          'margin-left': '20px',
+          'max-width': 'calc(33.33333% - 30px)',
+          'margin-left': '30px',
           'margin-bottom': '50px',
-          width: '220px',
+          width: 'calc(33.33333% - 30px)',
         },
         img: {
           height: 'calc(100% - 15px)',
@@ -393,7 +394,7 @@ const collectionOptions = {
       options: false,
     },
     text: {
-      button: 'Add product to cart',
+      button: 'Add to cart',
     },
     googleFonts: ['Crimson Text'],
   },
@@ -402,7 +403,7 @@ const collectionOptions = {
       products: {
         'justify-content': 'flex-start',
         '@media (min-width: 601px)': {
-          'margin-left': '-20px',
+          'margin-left': '-30px',
         },
       },
     },
