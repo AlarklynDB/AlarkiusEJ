@@ -388,12 +388,12 @@ const collectionOptions = {
         color: C.textMuted,
       },
     },
-    buttonDestination: 'modal',
+    buttonDestination: 'cart',
     contents: {
       options: false,
     },
     text: {
-      button: 'View product',
+      button: 'Add product to cart',
     },
     googleFonts: ['Crimson Text'],
   },
