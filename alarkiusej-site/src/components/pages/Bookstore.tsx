@@ -25,12 +25,13 @@ export default function Bookstore() {
       </div>
 
       {/* The Hibrythian Saga */}
-      <SelfPublishedBooks
-        bookKeys={['soft']}
-        eyebrow="Book Collection"
-        heading="The Hibrythian Saga"
-        description={
-          <>
+      <section id="hibrythian-books" className="max-w-5xl mx-auto px-6 pb-20 scroll-mt-24">
+        <div className="mb-10 text-center sm:text-left">
+          <p className="text-rose text-xs font-medium tracking-widest uppercase mb-2">
+            Book Collection
+          </p>
+          <h2 className="font-serif text-3xl font-semibold text-text">The Hibrythian Saga</h2>
+          <p className="text-text-muted mt-2">
             A Mega Collection of all books Related to{' '}
             <a
               href="https://thehibrythiansaga.com"
@@ -40,15 +41,10 @@ export default function Bookstore() {
             >
               The Hibrythian Saga
             </a>
-          </>
-        }
-        showBookstoreLink={false}
-        anchorId="hibrythian-books"
-      />
-
-      <div className="max-w-5xl mx-auto px-6 pb-20">
+          </p>
+        </div>
         <HibrythianCollection />
-      </div>
+      </section>
 
       <div className="max-w-5xl mx-auto px-6">
         <div className="section-divider" />
