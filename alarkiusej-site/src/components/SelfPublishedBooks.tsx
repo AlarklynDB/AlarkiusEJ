@@ -332,7 +332,7 @@ const buyButtonOptions = {
 
 // All self-published books (Shopify product IDs). Each usage of
 // <SelfPublishedBooks /> picks which subset it wants to mount via `bookKeys`.
-const ALL_BOOKS = [
+export const ALL_BOOKS = [
   { key: 'soft', id: '9492713472246', label: 'Hibryds I — Softcover' },
   { key: 'hard', id: '9492713767158', label: 'Hibryds I — Hardcover' },
   {
@@ -593,22 +593,68 @@ export default function SelfPublishedBooks({
                 nodeRefs.current[book.key] = el
               }}
             />
-            {'ebookLink' in book && book.ebookLink && (
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+interface EbookEntry {
+  label: string
+  href: string
+}
+
+interface EbookCategoryProps {
+  category: string
+  ebooks: EbookEntry[]
+  /** Starts expanded when true. Defaults to collapsed. */
+  defaultOpen?: boolean
+}
+
+/** A collapsible "category" dropdown listing eBook links for one universe/series. */
+export function EbookCategory({ category, ebooks, defaultOpen = false }: EbookCategoryProps) {
+  const [open, setOpen] = useState(defaultOpen)
+
+  return (
+    <div className="border border-border rounded-lg bg-surface overflow-hidden">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className="w-full flex items-center justify-between gap-3 px-5 py-4 text-left hover:bg-surface-raised transition-colors duration-200"
+      >
+        <span className="font-serif text-lg font-semibold text-text">{category}</span>
+        <svg
+          className={`w-4 h-4 text-text-muted flex-shrink-0 transition-transform duration-200 ${
+            open ? 'rotate-180' : ''
+          }`}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      {open && (
+        <div className="px-5 pb-5 pt-1 border-t border-border space-y-4">
+          {ebooks.map((book) => (
+            <div key={book.href}>
+              <p className="text-sm text-text-muted mb-2">{book.label}</p>
               <a
-                href={book.ebookLink}
+                href={book.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 flex w-full items-center justify-center gap-2 px-[63px] py-[15px] rounded-none text-sm font-semibold bg-surface-raised border border-border text-text hover:border-border-light hover:bg-ink-light transition-colors duration-200"
+                className="flex w-full items-center justify-center gap-2 px-[63px] py-[15px] rounded-none text-sm font-semibold bg-surface-raised border border-border text-text hover:border-border-light hover:bg-ink-light transition-colors duration-200"
               >
                 <svg viewBox="0 0 24 24" className="w-4 h-4 flex-shrink-0 fill-current" aria-hidden="true">
                   <path d="M4 3.5a1 1 0 0 1 1.5-.87l14 8.5a1 1 0 0 1 0 1.74l-14 8.5A1 1 0 0 1 4 20.5v-17z" />
                 </svg>
                 Buy the eBook!
               </a>
-            )}
-          </div>
-        ))}
-      </div>
-    </section>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   )
 }

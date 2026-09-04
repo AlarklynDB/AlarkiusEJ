@@ -1,4 +1,6 @@
-import SelfPublishedBooks from '../SelfPublishedBooks'
+import SelfPublishedBooks, { ALL_BOOKS, EbookCategory } from '../SelfPublishedBooks'
+
+const tqctn = ALL_BOOKS.find((b) => b.key === 'tqctn')!
 
 export default function Bookstore() {
   return (
@@ -88,6 +90,31 @@ export default function Bookstore() {
           <p className="text-text-muted">
             Alarkius also likes to write in different genres. Coming soon!
           </p>
+        </div>
+      </section>
+
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="section-divider" />
+      </div>
+
+      {/* eBooks */}
+      <section className="max-w-5xl mx-auto px-6 py-20">
+        <div className="text-center sm:text-left mb-8">
+          <p className="text-rose text-xs font-medium tracking-widest uppercase mb-2">
+            Digital Editions
+          </p>
+          <h2 className="font-serif text-3xl font-semibold text-text mb-2">eBooks</h2>
+          <p className="text-text-muted">
+            Prefer reading digitally? Find eBook editions here, organized by world.
+          </p>
+        </div>
+        <div className="space-y-4">
+          <EbookCategory
+            category="The Naiseikai Universe"
+            ebooks={[
+              { label: 'TQCTN — The Quiet Crow & The Ninja!', href: tqctn.ebookLink },
+            ]}
+          />
         </div>
       </section>
     </div>
