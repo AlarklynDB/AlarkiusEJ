@@ -26,6 +26,7 @@ const commissionTiers = [
     revisions: 'Free of charge, unlimited',
     accent: 'rose',
     recommended: true,
+    link: 'https://ko-fi.com/s/74638914a5',
   },
   {
     name: 'Legendary Bundle',
@@ -39,6 +40,7 @@ const commissionTiers = [
     duration: 'Three weeks to a month',
     revisions: 'Free of charge, unlimited',
     accent: 'gold',
+    link: 'https://ko-fi.com/s/ece7ab1509',
   },
 ]
 
