@@ -79,7 +79,7 @@ export default function Bookstore() {
       </div>
 
       {/* Other Novels I write */}
-      <section className="max-w-5xl mx-auto px-6 py-20">
+      <section className="max-w-5xl mx-auto px-6 py-12">
         <div className="text-center sm:text-left">
           <p className="text-rose text-xs font-medium tracking-widest uppercase mb-2">
             Book Collection
@@ -98,8 +98,8 @@ export default function Bookstore() {
       </div>
 
       {/* eBooks */}
-      <section className="max-w-5xl mx-auto px-6 py-20">
-        <div className="text-center sm:text-left mb-8">
+      <section className="max-w-5xl mx-auto px-6 py-12 pb-20">
+        <div className="text-center sm:text-left mb-6">
           <p className="text-rose text-xs font-medium tracking-widest uppercase mb-2">
             Digital Editions
           </p>
@@ -108,7 +108,7 @@ export default function Bookstore() {
             Prefer reading digitally? Find eBook editions here, organized by world.
           </p>
         </div>
-        <div className="space-y-4">
+        <div className="max-w-md mx-auto sm:mx-0 space-y-4">
           <EbookCategory
             category="The Naiseikai Universe"
             ebooks={[
