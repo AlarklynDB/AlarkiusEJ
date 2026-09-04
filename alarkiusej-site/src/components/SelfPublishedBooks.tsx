@@ -617,13 +617,25 @@ export function EbookCategory({ category, ebooks, defaultOpen = false }: EbookCa
   const [open, setOpen] = useState(defaultOpen)
 
   return (
-    <div className="border border-border rounded-lg bg-surface overflow-hidden">
+    <div className="border border-border rounded-lg bg-surface overflow-hidden hover:border-border-light transition-colors duration-200">
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
         className="w-full flex items-center justify-between gap-3 px-5 py-4 text-left hover:bg-surface-raised transition-colors duration-200"
       >
-        <span className="font-serif text-lg font-semibold text-text">{category}</span>
+        <div className="flex items-center gap-3 min-w-0">
+          <span className="w-9 h-9 rounded-lg bg-rose-bg border border-rose/30 flex items-center justify-center flex-shrink-0 text-base">
+            📖
+          </span>
+          <div className="min-w-0">
+            <span className="font-serif text-lg font-semibold text-text block truncate">
+              {category}
+            </span>
+            <span className="text-xs text-text-faint">
+              {ebooks.length} eBook{ebooks.length !== 1 ? 's' : ''}
+            </span>
+          </div>
+        </div>
         <svg
           className={`w-4 h-4 text-text-muted flex-shrink-0 transition-transform duration-200 ${
             open ? 'rotate-180' : ''
@@ -639,7 +651,7 @@ export function EbookCategory({ category, ebooks, defaultOpen = false }: EbookCa
         <div className="px-5 pb-5 pt-1 border-t border-border space-y-4">
           {ebooks.map((book) => (
             <div key={book.href}>
-              <p className="text-sm text-text-muted mb-2">{book.label}</p>
+              <p className="text-sm font-medium text-text mb-2">{book.label}</p>
               <a
                 href={book.href}
                 target="_blank"

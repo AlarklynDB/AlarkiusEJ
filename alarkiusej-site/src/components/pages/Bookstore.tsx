@@ -110,6 +110,15 @@ export default function Bookstore() {
         </div>
         <div className="max-w-md mx-auto sm:mx-0 space-y-4">
           <EbookCategory
+            category="The Hibrythian Saga"
+            ebooks={[
+              {
+                label: 'Hibryds — The Hibrythian Saga (All Volumes)',
+                href: 'https://play.google.com/store/books/series?id=GVR0HQAAABBsSM',
+              },
+            ]}
+          />
+          <EbookCategory
             category="The Naiseikai Universe"
             ebooks={[
               { label: 'TQCTN — The Quiet Crow & The Ninja!', href: tqctn.ebookLink },
