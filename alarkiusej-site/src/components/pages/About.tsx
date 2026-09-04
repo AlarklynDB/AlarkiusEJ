@@ -483,17 +483,8 @@ export default function About() {
           </ul>
 
           <p className="text-text-muted text-sm leading-relaxed mb-4">
-            You can get in touch with me using the link below!
+            You can get in touch with me using the card below!
           </p>
-          <a
-            href="/contact"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-surface-raised border border-border text-text text-sm font-medium rounded-lg hover:border-border-light hover:bg-ink transition-colors duration-200"
-          >
-            Get in Touch
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
         </section>
 
         {/* Medium RSS Feed */}
