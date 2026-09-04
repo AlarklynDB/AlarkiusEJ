@@ -1,4 +1,4 @@
-import SelfPublishedBooks from '../SelfPublishedBooks'
+import SelfPublishedBooks, { HibrythianCollection } from '../SelfPublishedBooks'
 
 export default function Bookstore() {
   return (
@@ -45,6 +45,10 @@ export default function Bookstore() {
         showBookstoreLink={false}
         anchorId="hibrythian-books"
       />
+
+      <div className="max-w-5xl mx-auto px-6 pb-20">
+        <HibrythianCollection />
+      </div>
 
       <div className="max-w-5xl mx-auto px-6">
         <div className="section-divider" />

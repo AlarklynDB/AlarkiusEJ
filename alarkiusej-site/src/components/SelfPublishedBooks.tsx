@@ -16,8 +16,8 @@ const C = {
   text: '#e8e3dc',
   textMuted: '#9e9890',
   textFaint: '#6b6560',
-  orange: '#ff6a00',
-  orangeHover: '#e65f00',
+  orange: '#bd733f',
+  orangeHover: '#aa6839',
 }
 
 // Shared Buy Button UI options — orange buttons, dark-themed cart
@@ -39,7 +39,7 @@ const buyButtonOptions = {
         color: C.text,
       },
       button: {
-        'font-family': 'Crimson Text, serif',
+        'font-family': 'Avant Garde, sans-serif',
         'font-size': '14px',
         'padding-top': '15px',
         'padding-bottom': '15px',
@@ -50,9 +50,9 @@ const buyButtonOptions = {
         ':focus': {
           'background-color': C.orangeHover,
         },
-        'border-radius': '40px',
-        'padding-left': '21px',
-        'padding-right': '21px',
+        'border-radius': '0px',
+        'padding-left': '50px',
+        'padding-right': '50px',
       },
       quantityInput: {
         'font-size': '14px',
@@ -109,7 +109,7 @@ const buyButtonOptions = {
         },
       },
       button: {
-        'font-family': 'Crimson Text, serif',
+        'font-family': 'Avant Garde, sans-serif',
         'font-size': '14px',
         'padding-top': '15px',
         'padding-bottom': '15px',
@@ -120,9 +120,9 @@ const buyButtonOptions = {
         ':focus': {
           'background-color': C.orangeHover,
         },
-        'border-radius': '40px',
-        'padding-left': '21px',
-        'padding-right': '21px',
+        'border-radius': '0px',
+        'padding-left': '50px',
+        'padding-right': '50px',
       },
       quantityInput: {
         'font-size': '14px',
@@ -130,25 +130,25 @@ const buyButtonOptions = {
         'padding-bottom': '15px',
       },
       title: {
-        'font-family': 'Lora, Georgia, serif',
+        'font-family': 'Helvetica Neue, sans-serif',
         'font-weight': 'bold',
         'font-size': '26px',
         color: C.text,
       },
       price: {
-        'font-family': 'Lora, Georgia, serif',
+        'font-family': 'Helvetica Neue, sans-serif',
         'font-weight': 'normal',
         'font-size': '18px',
         color: C.text,
       },
       compareAt: {
-        'font-family': 'Lora, Georgia, serif',
+        'font-family': 'Helvetica Neue, sans-serif',
         'font-weight': 'normal',
         'font-size': '15.3px',
         color: C.textMuted,
       },
       unitPrice: {
-        'font-family': 'Lora, Georgia, serif',
+        'font-family': 'Helvetica Neue, sans-serif',
         'font-weight': 'normal',
         'font-size': '15.3px',
         color: C.textMuted,
@@ -229,7 +229,7 @@ const buyButtonOptions = {
         color: C.text,
       },
       button: {
-        'font-family': 'Crimson Text, serif',
+        'font-family': 'Avant Garde, sans-serif',
         'font-size': '14px',
         'padding-top': '15px',
         'padding-bottom': '15px',
@@ -240,7 +240,7 @@ const buyButtonOptions = {
         ':focus': {
           'background-color': C.orangeHover,
         },
-        'border-radius': '40px',
+        'border-radius': '0px',
       },
     },
     text: {
@@ -303,7 +303,7 @@ const buyButtonOptions = {
   toggle: {
     styles: {
       toggle: {
-        'font-family': 'Crimson Text, serif',
+        'font-family': 'Avant Garde, sans-serif',
         'background-color': C.orange,
         ':hover': {
           'background-color': C.orangeHover,
@@ -318,6 +318,138 @@ const buyButtonOptions = {
     },
     googleFonts: ['Crimson Text'],
   },
+}
+
+// Collection Buy Button options — reuses buyButtonOptions' cart/toggle/
+// option/lineItem/modal/modalProduct styling (already themed for a dark
+// modal + checkout drawer) and only overrides `product`/`productSet` with
+// the grid-of-tiles layout a collection needs (each tile opens the shared
+// modalProduct on click instead of showing an inline quantity + buy button).
+const collectionOptions = {
+  ...buyButtonOptions,
+  product: {
+    styles: {
+      product: {
+        '@media (min-width: 601px)': {
+          'max-width': 'calc(25% - 20px)',
+          'margin-left': '20px',
+          'margin-bottom': '50px',
+          width: 'calc(25% - 20px)',
+        },
+        img: {
+          height: 'calc(100% - 15px)',
+          position: 'absolute',
+          left: '0',
+          right: '0',
+          top: '0',
+        },
+        imgWrapper: {
+          'padding-top': 'calc(75% + 15px)',
+          position: 'relative',
+          height: '0',
+        },
+      },
+      title: {
+        'font-family': 'Crimson Text, serif',
+        'font-weight': 'normal',
+        color: C.text,
+      },
+      button: {
+        'font-family': 'Avant Garde, sans-serif',
+        'font-size': '14px',
+        'padding-top': '15px',
+        'padding-bottom': '15px',
+        ':hover': {
+          'background-color': C.orangeHover,
+        },
+        'background-color': C.orange,
+        ':focus': {
+          'background-color': C.orangeHover,
+        },
+        'border-radius': '0px',
+        'padding-left': '50px',
+        'padding-right': '50px',
+      },
+      quantityInput: {
+        'font-size': '14px',
+        'padding-top': '15px',
+        'padding-bottom': '15px',
+      },
+      price: {
+        'font-family': 'Crimson Text, serif',
+        color: C.text,
+      },
+      compareAt: {
+        'font-family': 'Crimson Text, serif',
+        color: C.textMuted,
+      },
+      unitPrice: {
+        'font-family': 'Crimson Text, serif',
+        color: C.textMuted,
+      },
+    },
+    buttonDestination: 'modal',
+    contents: {
+      options: false,
+    },
+    text: {
+      button: 'View product',
+    },
+    googleFonts: ['Crimson Text'],
+  },
+  productSet: {
+    styles: {
+      products: {
+        '@media (min-width: 601px)': {
+          'margin-left': '-20px',
+        },
+      },
+    },
+  },
+}
+
+// Hibrythian Saga Shopify collection ID (Buy Button "collection" component —
+// shows every product in the collection as a grid, not a single product).
+const HIBRYTHIAN_COLLECTION_ID = '498903384310'
+
+/**
+ * Renders the full Hibrythian Saga Shopify collection as a grid — distinct
+ * from <SelfPublishedBooks />, which mounts individual product buttons.
+ */
+export function HibrythianCollection() {
+  const nodeRef = useRef<HTMLDivElement | null>(null)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    let cancelled = false
+
+    getShopifyClient().then((client) => {
+      if (cancelled) return
+      ;(window as any).ShopifyBuy.UI.onReady(client).then((ui: any) => {
+        if (cancelled || !nodeRef.current) return
+        ui.createComponent('collection', {
+          id: HIBRYTHIAN_COLLECTION_ID,
+          node: nodeRef.current,
+          moneyFormat: '%24%7B%7Bamount%7D%7D',
+          options: collectionOptions,
+        })
+        if (!cancelled) setMounted(true)
+      })
+    })
+
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  return (
+    <div className="w-full">
+      {!mounted && (
+        <p className="text-text-faint text-sm mb-2 text-center">Loading collection...</p>
+      )}
+      <div ref={nodeRef} />
+    </div>
+  )
 }
 
 // All self-published books (Shopify product IDs). Each usage of
