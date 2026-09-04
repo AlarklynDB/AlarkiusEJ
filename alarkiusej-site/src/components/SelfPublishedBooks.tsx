@@ -325,7 +325,12 @@ const buyButtonOptions = {
 const ALL_BOOKS = [
   { key: 'soft', id: '9492713472246', label: 'Hibryds I — Softcover' },
   { key: 'hard', id: '9492713767158', label: 'Hibryds I — Hardcover' },
-  { key: 'tqctn', id: '9492714127606', label: 'TQCTN' },
+  {
+    key: 'tqctn',
+    id: '9492714127606',
+    label: 'TQCTN',
+    ebookLink: 'https://play.google.com/store/books/details?id=XMECEgAAQBAJ',
+  },
 ] as const
 
 type BookKey = (typeof ALL_BOOKS)[number]['key']
@@ -578,6 +583,16 @@ export default function SelfPublishedBooks({
                 nodeRefs.current[book.key] = el
               }}
             />
+            {'ebookLink' in book && book.ebookLink && (
+              <a
+                href={book.ebookLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold bg-surface-raised border border-border text-text hover:border-border-light hover:bg-ink-light transition-colors duration-200"
+              >
+                Buy the eBook!
+              </a>
+            )}
           </div>
         ))}
       </div>
