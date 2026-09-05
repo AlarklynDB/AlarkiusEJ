@@ -183,6 +183,30 @@ export default function Home() {
           <>Books from both my IPs, The Hibrythian Saga, The Naiseikai Universe.....and more...!</>
         }
       />
+
+      {/* Anti-GenAI Notice */}
+      <section className="max-w-5xl mx-auto px-6 py-16">
+        <div className="p-6 sm:p-8 bg-[#2a1616] border-2 border-error/50 rounded-2xl">
+          <div className="flex flex-col sm:flex-row items-start gap-4">
+            <span className="text-3xl flex-shrink-0">⛔</span>
+            <div className="space-y-3">
+              <p className="text-error leading-relaxed">
+                All my websites, worlds, works and content are made{' '}
+                <strong className="font-bold">Without Generative AI</strong>. Under any
+                circumstances, <em>please</em> do not train my works with AI or scrape it. It
+                degrades <em>Author Integrity</em> and mocks <em>Creativity</em>. Any form of
+                pirated content or scraped content done illegally will be issued a{' '}
+                <strong className="font-bold">takedown request</strong>.
+              </p>
+              <p className="text-error font-semibold leading-relaxed">
+                Say no to <strong className="font-bold">Generative AI</strong>.{' '}
+                <strong className="font-bold">Support Human Artists</strong> and{' '}
+                <strong className="font-bold">Creators</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
