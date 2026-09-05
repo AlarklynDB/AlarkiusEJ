@@ -175,6 +175,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Divider between portfolio and books */}
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="section-divider" />
+      </div>
+
       {/* Self Published Books — Shopify Buy Buttons. The Hibryds I Softcover
           button lives on /bookstore under The Hibrythian Saga section now. */}
       <SelfPublishedBooks
@@ -184,8 +189,13 @@ export default function Home() {
         }
       />
 
+      {/* Divider between books and the anti-GenAI notice */}
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="section-divider" />
+      </div>
+
       {/* Anti-GenAI Notice */}
-      <section className="max-w-5xl mx-auto px-6 py-16">
+      <section className="max-w-5xl mx-auto px-6 pb-16">
         <div className="p-6 sm:p-8 bg-[#2a1616] border-2 border-error/50 rounded-2xl">
           <div className="flex flex-col sm:flex-row items-start gap-4">
             <span className="text-3xl flex-shrink-0">⛔</span>
