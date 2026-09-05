@@ -283,19 +283,21 @@ export default function About() {
               alt="Alarkius Elvya Jay"
               className="w-40 h-40 sm:w-44 sm:h-44 rounded-xl object-cover border border-border flex-shrink-0 mx-auto sm:mx-0"
             />
-            <p className="text-sm text-text leading-relaxed">
-              Alarkius Elvya Jay, more commonly known as AlarkiusEJ, is a fantasy-adventure writer
-              that loves the thrill of excitement! One fateful day back in December of 2017, he
-              decided to try and enter the world of crafting stories and worldbuilding. The
-              passion of creating new worlds sparked interest in the making of stories, and so, he
-              stepped in. It was a magical feeling, stepping into the world of stories and
-              fiction, and that was where his interests has sparked a huge idea!
-            </p>
+            <div>
+              <p className="text-sm text-text leading-relaxed">
+                Alarkius Elvya Jay, more commonly known as AlarkiusEJ, is a fantasy-adventure
+                writer that loves the thrill of excitement! One fateful day back in December of
+                2017, he decided to try and enter the world of crafting stories and
+                worldbuilding. The passion of creating new worlds sparked interest in the making
+                of stories, and so, he stepped in. It was a magical feeling, stepping into the
+                world of stories and fiction, and that was where his interests has sparked a huge
+                idea!
+              </p>
+              <div className="section-divider" />
+            </div>
           </div>
 
-          <div className="section-divider" />
-
-          <div className="callout callout-rose">
+          <div className="callout callout-rose mt-6">
             <span className="text-xl flex-shrink-0">🎨</span>
             <div className="text-sm text-text leading-relaxed space-y-3">
               <p>
