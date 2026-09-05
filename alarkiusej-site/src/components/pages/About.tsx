@@ -275,46 +275,38 @@ export default function About() {
           </p>
         </div>
 
-        {/* Bio columns */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <div>
-            <div className="w-full aspect-square rounded-2xl bg-surface border border-border flex items-center justify-center">
-              <div className="text-center p-8">
-                <div className="w-28 h-28 rounded-full bg-rose-bg border-2 border-rose/40 flex items-center justify-center mx-auto mb-5">
-                  <span className="font-serif text-5xl font-bold text-rose">AJ</span>
-                </div>
-                <p className="font-serif text-xl font-semibold text-text">Alarkius Elvya Jay</p>
-                <p className="text-text-muted text-sm mt-1">alarkiusej.com </p>
-                <p className="text-text-faint text-xs mt-1">He/Him · Lvl 25</p>
-                <div className="mt-4 flex flex-wrap gap-2 justify-center">
-                  <span className="tag text-xs">Author</span>
-                  <span className="tag text-xs">Composer</span>
-                  <span className="tag text-xs">Worldbuilder</span>
-                </div>
-              </div>
-            </div>
+        {/* Bio card */}
+        <section className="mb-12 p-6 sm:p-8 bg-surface rounded-2xl border border-border">
+          <div className="flex flex-col sm:flex-row gap-6">
+            <img
+              src="/AlarkiusEJ.jpg"
+              alt="Alarkius Elvya Jay"
+              className="w-40 h-40 sm:w-44 sm:h-44 rounded-xl object-cover border border-border flex-shrink-0 mx-auto sm:mx-0"
+            />
+            <p className="text-sm text-text leading-relaxed">
+              Alarkius Elvya Jay, more commonly known as AlarkiusEJ, is a fantasy-adventure writer
+              that loves the thrill of excitement! One fateful day back in December of 2017, he
+              decided to try and enter the world of crafting stories and worldbuilding. The
+              passion of creating new worlds sparked interest in the making of stories, and so, he
+              stepped in. It was a magical feeling, stepping into the world of stories and
+              fiction, and that was where his interests has sparked a huge idea!
+            </p>
           </div>
 
-          <div className="flex flex-col gap-4">
-            <div className="callout callout-rose">
-              <span className="text-xl flex-shrink-0">🎨</span>
-              <p className="text-sm text-text leading-relaxed">
-                Alarkius Elvya Jay, more commonly known as AJ (AlarkiusEJ), is a fantasy-adventure
-                writer that loves the thrill of excitement! One fateful day back in December of 2017,
-                he decided to try and enter the world of crafting stories and worldbuilding. The
-                passion of creating new worlds sparked interest in the making of stories, and so, he
-                stepped in. It was a magical feeling, stepping into the world of stories and fiction,
-                and that was where his interests has sparked a huge idea!
+          <div className="callout callout-rose mt-6">
+            <span className="text-xl flex-shrink-0">🎨</span>
+            <div className="text-sm text-text leading-relaxed space-y-3">
+              <p>
+                Fast forward to today! Within the past years, he created a world that he calls
+                his child, The Hibrythian Saga, which is an Adventure Fantasy universe that has
+                eighty-one books, an ongoing project! His second universe is The Naiseikai
+                Universe, an anime-inspired light novel universe that has GL as it's main
+                narrative device!
               </p>
-            </div>
-            <div className="callout callout-rose">
-              <span className="text-xl flex-shrink-0">🎨</span>
-              <p className="text-sm text-text leading-relaxed">
-                Fast forward to today! Within the past years, he created a world that he calls his
-                child, The Hibrythian Saga, which has nine long volumes, an ongoing project! Aside
-                from writing, he's constantly imagining up new things for different projects. He loves
-                music and plays the piano, which got him into creating compositions, along with
-                drawing at a young age.
+              <p>
+                Aside from writing, he's constantly imagining up new things for different
+                projects. He loves music and plays the piano, which got him into creating
+                compositions, along with drawing at a young age.
               </p>
             </div>
           </div>
