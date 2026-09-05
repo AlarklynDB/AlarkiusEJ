@@ -293,7 +293,9 @@ export default function About() {
             </p>
           </div>
 
-          <div className="callout callout-rose mt-6">
+          <div className="section-divider" />
+
+          <div className="callout callout-rose">
             <span className="text-xl flex-shrink-0">🎨</span>
             <div className="text-sm text-text leading-relaxed space-y-3">
               <p>
