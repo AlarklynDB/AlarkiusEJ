@@ -203,6 +203,26 @@ export default function Home() {
                 <strong className="font-bold">Support Human Artists</strong> and{' '}
                 <strong className="font-bold">Creators</strong>.
               </p>
+              <p className="text-error leading-relaxed">
+                This policy is also enforced on:{' '}
+                <a
+                  href="https://thehibrythiansaga.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-error/80 transition-colors duration-200"
+                >
+                  https://thehibrythiansaga.com
+                </a>{' '}
+                and{' '}
+                <a
+                  href="https://naiseikaiuniverse.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-error/80 transition-colors duration-200"
+                >
+                  https://naiseikaiuniverse.com
+                </a>
+              </p>
             </div>
           </div>
         </div>
