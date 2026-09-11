@@ -285,13 +285,11 @@ export default function About() {
             />
             <div>
               <p className="text-sm text-text leading-relaxed">
-                Alarkius Elvya Jay, more commonly known as AlarkiusEJ, is a fantasy-adventure
-                writer that loves the thrill of excitement! One fateful day back in December of
-                2017, he decided to try and enter the world of crafting stories and
-                worldbuilding. The passion of creating new worlds sparked interest in the making
-                of stories, and so, he stepped in. It was a magical feeling, stepping into the
-                world of stories and fiction, and that was where his interests has sparked a huge
-                idea!
+                Alarkius Elvya Jay, better known as AlarkiusEJ, is a fantasy-adventure author and worldbuilder with a passion for 
+                creating imaginative worlds and emotionally driven stories. His creative journey began in December 2017, when he 
+                first stepped into storytelling and discovered the magic of bringing entire worlds to life. What began as a simple 
+                interest soon grew into an enduring passion—one that would inspire ambitious stories, expansive universes, and ideas 
+                far greater than he initially imagined.
               </p>
               <div className="section-divider" />
             </div>
@@ -301,16 +299,15 @@ export default function About() {
             <span className="text-xl flex-shrink-0">🎨</span>
             <div className="text-sm text-text leading-relaxed space-y-3">
               <p>
-                Fast forward to today! Within the past years, he created a world that he calls
-                his child, The Hibrythian Saga, which is an Adventure Fantasy universe that has
-                eighty-one books, an ongoing project! His second universe is The Naiseikai
-                Universe, an anime-inspired light novel universe that has GL as it's main
-                narrative device!
+              In the years since, his creative journey has grown into two expansive fictional universes. 
+              His flagship project, The Hibrythian Saga, is an adventure-fantasy universe with an ambitious 
+              main continuity planned across eighty-one books. His second project, The Naiseikai Universe, 
+              is an anime-inspired light novel universe featuring Girls’ Love as one of its central narrative focuses.
               </p>
               <p>
-                Aside from writing, he's constantly imagining up new things for different
-                projects. He loves music and plays the piano, which got him into creating
-                compositions, along with drawing at a young age.
+              Beyond writing, Alarkius is also a musician, composer, and visual artist. His experience with the piano 
+              inspired him to begin composing original music, while his lifelong interest in drawing 
+              became another way of bringing his imagination to life.
               </p>
             </div>
           </div>
