@@ -327,7 +327,6 @@ export default function About() {
           </p>
           <p className="text-text-muted text-sm leading-relaxed mt-3">
             Other similar names to Alarkius Elvya Jay include:
-            available for use:
           </p>
           <ul className="text-text-muted text-sm leading-relaxed list-disc list-inside mt-2 space-y-1">
             <li>"AlarkiusJay"</li>
