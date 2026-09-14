@@ -1,8 +1,8 @@
 const socials = [
   {
     name: 'YouTube — Music',
-    handle: '@alarkiusjay',
-    href: 'https://www.youtube.com/@AlarkiusJay',
+    handle: '@alarklyus',
+    href: 'https://www.youtube.com/@Alarklyus',
     accent: 'rose',
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">

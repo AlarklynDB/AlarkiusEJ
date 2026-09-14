@@ -34,7 +34,7 @@ const PERSON_NODE = {
     "Alarkius Elvya Jay, also known as AlarkiusEJ, is the author of The Hibrythian Saga and creator of the Naiseikai Universe.",
   sameAs: [
           "https://www.youtube.com/@AlarkiusEJ",
-          "https://www.youtube.com/@AlarkiusJay",
+          "https://www.youtube.com/@Alarklyus",
           "https://www.youtube.com/@TheHibrythianSaga",
           "https://www.reddit.com/user/OfficialAlarkiusJay",
           "https://www.reddit.com/r/ShizukanaKarasuNinja/",
