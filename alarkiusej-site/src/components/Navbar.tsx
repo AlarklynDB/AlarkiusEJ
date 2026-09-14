@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from '../lib/router'
+import { Link, useLocation, LocationProvider } from '../lib/router'
 
 const navLinks = [
   { label: 'Home', path: '/' },
@@ -23,11 +23,15 @@ const navLinks = [
   },
 ]
 
-export default function Navbar() {
+// `currentPath` is supplied by BaseLayout.astro (the page's own path
+// prop). Seeding the router shim with it means the correct nav link
+// is active in the server HTML and on the very first client render —
+// no flash of "Home" before the real page highlights.
+export default function Navbar({ currentPath }: { currentPath?: string }) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
-  const location = useLocation()
+  const location = useLocation(currentPath)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -49,6 +53,7 @@ export default function Navbar() {
   const solidNav = scrolled || mobileOpen
 
   return (
+    <LocationProvider pathname={currentPath}>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         solidNav ? 'bg-ink/95 backdrop-blur-sm border-b border-border shadow-lg shadow-black/20' : 'bg-transparent'
@@ -194,5 +199,6 @@ export default function Navbar() {
         </div>
       )}
     </header>
+    </LocationProvider>
   )
 }
