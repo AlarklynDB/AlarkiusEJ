@@ -228,7 +228,7 @@ const canonical = new URL(path, 'https://alarkiusej.com').href
       </div>
     ) : (
       <div class="min-h-screen flex flex-col bg-ink">
-        <Navbar client:load />
+        <Navbar currentPath={path} client:load />
         <main class="flex-1">
           <slot />
         </main>
