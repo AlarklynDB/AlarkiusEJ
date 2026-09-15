@@ -263,6 +263,8 @@ export default function Tools() {
             </div>
           </div>
         </section>
+
+        <div className="section-divider" />
         
     {/* Org callout 2*/}
         <section>
