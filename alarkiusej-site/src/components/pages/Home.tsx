@@ -202,7 +202,7 @@ export default function Home() {
             <div className="space-y-3">
               <p className="text-error leading-relaxed">
                 All my websites, worlds, works and content are made{' '}
-                <strong className="font-bold">Without Generative AI</strong>. Under any
+                <strong className="font-bold">Without Generative AI (anything that deals with art, music, or writing(</strong>. Under any
                 circumstances, <em>please</em> do not train my works with AI or scrape it. It
                 degrades <em>Author Integrity</em> and mocks <em>Creativity</em>. Any form of
                 pirated content or scraped content done illegally will be issued a{' '}
