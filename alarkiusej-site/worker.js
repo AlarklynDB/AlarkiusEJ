@@ -302,6 +302,7 @@ async function handleMediumFeed() {
 // ------------------------------------------------------------
 const PERSONAL_REDIRECTS = {
   "/isni": "https://isni.oclc.org/cbs/DB=1.2/SET=9/TTL=1/NXT?FRST=1",
+  "/discord": "https://discord.gg/K6EdzBpNJy",
 };
 
 export default {
@@ -311,7 +312,13 @@ export default {
 
     const personalRedirect = PERSONAL_REDIRECTS[url.pathname.toLowerCase()];
     if (personalRedirect) {
-      return Response.redirect(personalRedirect, 302);
+      return new Response(null, {
+        status: 302,
+        headers: {
+          "Location": personalRedirect,
+          "X-Robots-Tag": "noindex, nofollow",
+        },
+      });
     }
 
     if (url.pathname === "/api/medium-feed" && request.method === "GET") {
