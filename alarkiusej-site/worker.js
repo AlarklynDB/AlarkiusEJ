@@ -297,12 +297,16 @@ async function handleMediumFeed() {
 // ------------------------------------------------------------
 
 // ------------------------------------------------------------
-// Personal short-link redirects — disguised URLs for my own use.
+// Hidden Links — disguised short-link redirects for personal use.
+// Instant 302 + X-Robots-Tag: noindex, so none of these get crawled
+// or indexed under their own alarkiusej.com path.
 // Path match is case-insensitive; add more entries as needed.
 // ------------------------------------------------------------
-const PERSONAL_REDIRECTS = {
+const HIDDEN_LINKS = {
   "/isni": "https://isni.oclc.org/cbs/DB=1.2/SET=9/TTL=1/NXT?FRST=1",
   "/discord": "https://discord.gg/K6EdzBpNJy",
+  "/find-my-books": "https://www.barnesandnoble.com/search?q=Alarkius%20Elvya%20Jay&contributorName=alarkius-elvya-jay",
+  "/find-my-books/": "https://www.barnesandnoble.com/search?q=Alarkius%20Elvya%20Jay&contributorName=alarkius-elvya-jay",
 };
 
 export default {
@@ -310,12 +314,12 @@ export default {
     const url = new URL(request.url);
     const hostname = url.hostname;
 
-    const personalRedirect = PERSONAL_REDIRECTS[url.pathname.toLowerCase()];
-    if (personalRedirect) {
+    const hiddenLink = HIDDEN_LINKS[url.pathname.toLowerCase()];
+    if (hiddenLink) {
       return new Response(null, {
         status: 302,
         headers: {
-          "Location": personalRedirect,
+          "Location": hiddenLink,
           "X-Robots-Tag": "noindex, nofollow",
         },
       });
