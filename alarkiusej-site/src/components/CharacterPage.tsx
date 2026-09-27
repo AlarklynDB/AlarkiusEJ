@@ -34,7 +34,7 @@ export default function CharacterPage({
       <header className="bg-ink/95 backdrop-blur border-b border-border">
         <div className="max-w-4xl mx-auto px-6 py-4">
           <a
-            href="/goldenhour-ashentruth"
+            href="/thaosian-saga"
             className="text-rose hover:text-rose-light transition-colors flex items-center gap-2 mb-3"
           >
             ← Golden Hour
@@ -309,7 +309,7 @@ export default function CharacterPage({
             )}
 
             <a
-              href="/goldenhour-ashentruth"
+              href="/thaosian-saga"
               className="text-teal hover:text-teal-light transition-colors"
             >
               Back to Golden Hour

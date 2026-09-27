@@ -307,6 +307,15 @@ const HIDDEN_LINKS = {
   "/discord/": "https://discord.gg/K6EdzBpNJy",
 };
 
+// ------------------------------------------------------------
+// Page renames — permanent 301s from an old alarkiusej.com path
+// to its new one. Public/indexable (no noindex), so search
+// engines transfer ranking to the new URL.
+// ------------------------------------------------------------
+const PAGE_RENAMES = {
+  "/goldenhour-ashentruth": "/thaosian-saga",
+};
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -321,6 +330,11 @@ export default {
           "X-Robots-Tag": "noindex, nofollow",
         },
       });
+    }
+
+    const renamedPath = PAGE_RENAMES[url.pathname.toLowerCase()];
+    if (renamedPath) {
+      return Response.redirect(new URL(renamedPath, url).toString(), 301);
     }
 
     if (url.pathname === "/api/medium-feed" && request.method === "GET") {
