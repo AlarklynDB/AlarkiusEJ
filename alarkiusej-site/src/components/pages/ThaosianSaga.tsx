@@ -50,7 +50,7 @@ export default function ThaosianSaga() {
         <section className="mb-10">
           <p className="text-text-faint text-sm uppercase tracking-widest font-medium mb-3">Setting</p>
           <div className="flex flex-wrap gap-2">
-            {['Medieval Sci-fi', 'Planet Hraeth', 'Thaosia — a Pangean Supercontinent', 'Year 4310 AD'].map((t) => (
+            {['Medieval Sci-fi', 'Planet Hraeth', 'Thaosia — A Pangean Supercontinent', 'Year 4310 AD'].map((t) => (
               <span key={t} className="tag text-xs">
                 {t}
               </span>
