@@ -281,6 +281,11 @@ export default function Tools() {
                 A web-based game by Alarkius Elvya Jay — playable straight in your browser,
                 no download required.
               </p>
+              <div className="flex flex-wrap gap-1.5 mb-4">
+                {['Puzzle Game', 'Web Game', 'Browser Game', 'Logic Game', 'Riddle Game', 'Indie Game', 'Free to Play', 'No Download Required'].map((tag) => (
+                  <span key={tag} className="tag tag-rose text-xs">{tag}</span>
+                ))}
+              </div>
               <div className="flex flex-wrap items-center gap-4">
                 <a
                   href="https://www.fl80r.party"
