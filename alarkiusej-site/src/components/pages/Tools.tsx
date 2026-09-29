@@ -268,7 +268,12 @@ export default function Tools() {
 
         {/* Webgame callout */}
         <section>
-          <h2 className="font-serif text-2xl font-semibold text-text mb-6">Explore my Webgame</h2>
+          <h2 className="font-serif text-2xl font-semibold text-text mb-2">Explore my Webgame</h2>
+          <p className="text-sm text-text-muted mb-6">
+            One run. 80 floors. Climb a browser-based tower of riddles, hidden text, typed
+            answers, math traps, memory floors, and chase floors — with a cat boss waiting on
+            every tenth floor. No saves, no checkpoints, wrapped in a retro terminal/CRT aesthetic.
+          </p>
           <div className="flex items-start gap-4 p-6 bg-surface rounded-xl border border-border">
             <div className="w-10 h-10 rounded-lg bg-rose-bg border border-rose/30 flex items-center justify-center flex-shrink-0">
               <span className="text-lg">🎮</span>
